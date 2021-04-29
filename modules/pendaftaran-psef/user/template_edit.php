@@ -117,12 +117,48 @@
             <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
             <input type="hidden" name="dokumenPseUrl" id="v-dokumenPseUrl">
         </div>
+        <div class="form-group">
+            <label>SPPL</label>
+            <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
+                <a href="https://psef.kemkes.go.id{{spplUrl}}" id="close-spplUrl">{{name_spplUrl}}</a>
+            </div>
+            <input type="file" class="form-control" id="spplUrl">
+            <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
+            <input type="hidden" name="spplUrl" id="v-spplUrl">
+        </div>
+        <div class="form-group">
+            <label>Izin Lokasi</label>
+            <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
+                <a href="https://psef.kemkes.go.id{{izinLokasiUrl}}" id="close-izinLokasiUrl">{{name_izinLokasiUrl}}</a>
+            </div>
+            <input type="file" class="form-control" id="izinLokasiUrl">
+            <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
+            <input type="hidden" name="izinLokasiUrl" id="v-izinLokasiUrl">
+        </div>
+        <div class="form-group">
+            <label>IMB</label>
+            <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
+                <a href="https://psef.kemkes.go.id{{imbUrl}}" id="close-imbUrl">{{name_imbUrl}}</a>
+            </div>
+            <input type="file" class="form-control" id="imbUrl">
+            <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
+            <input type="hidden" name="imbUrl" id="v-imbUrl">
+        </div>
+        <div class="form-group">
+            <label>Pembayaran PNBP</label>
+            <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
+                <a href="https://psef.kemkes.go.id{{pembayaranPnbpUrl}}" id="close-pembayaranPnbpUrl">{{name_pembayaranPnbpUrl}}</a>
+            </div>
+            <input type="file" class="form-control" id="pembayaranPnbpUrl">
+            <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
+            <input type="hidden" name="pembayaranPnbpUrl" id="v-pembayaranPnbpUrl">
+        </div>
         <br><br>
         <input type="checkbox" value="check" id="agree" required/> Dengan ini saya menyatakan bahwa data yang saya isi adalah benar
         <br><br>
         <input type="hidden" name="pemohonId" id="pemohonId" value="{{pemohonId}}">
         <input type="hidden" name="id" value="{{id}}">
         <button type="submit" class="btn btn-primary">Kirim</button>
-        <button type="button" class="btn btn-danger" onclick="routing('rumusan_new')">Batal</button>
+        <button type="button" class="btn btn-danger" onclick="routing('rumusan_user')">Batal</button>
     </form>
 </script>
