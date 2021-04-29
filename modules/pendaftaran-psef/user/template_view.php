@@ -105,6 +105,40 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">SPPL</label>
+                    <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
+                        <a href="https://psef.kemkes.go.id{{data_permohonan.spplUrl}}">{{data_permohonan.name_spplUrl}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Izin Lokasi</label>
+                    <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
+                        <a href="https://psef.kemkes.go.id{{data_permohonan.izinLokasiUrl}}">{{data_permohonan.name_izinLokasiUrl}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">IMB</label>
+                    <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
+                        <a href="https://psef.kemkes.go.id{{data_permohonan.imbUrl}}">{{data_permohonan.name_imbUrl}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Pembayaran PNBP</label>
+                    <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
+                        <a href="https://psef.kemkes.go.id{{data_permohonan.pembayaranPnbpUrl}}">{{data_permohonan.name_pembayaranPnbpUrl}}</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <br>
         <h4 class="card-title" style="font-weight: bold;">Data Apotek Mitra</h4>
@@ -137,7 +171,6 @@
                     <tr>
                         <th>No.</th>
                         <th>Nama Klinik</th>
-                        <th>No SIA</th>
                         <th>Nama Apoteker</th>
                         <th>No STRA</th>
                         <th>No SIPA</th>
@@ -159,7 +192,6 @@
                     <tr>
                         <th>No.</th>
                         <th>Nama Rumah Sakit</th>
-                        <th>No SIA</th>
                         <th>Nama Apoteker</th>
                         <th>No STRA</th>
                         <th>No SIPA</th>
@@ -172,7 +204,8 @@
                     </tbody>
             </table>
         </div>
-        <button type="button" class="btn btn-danger" onclick="routing('rumusan_new')">Kembali</button>
+        <br>
+        <button type="button" class="btn btn-danger" onclick="routing('rumusan_user')">Kembali</button>
         <button type="button" class="btn btn-success" onclick="ajukan_permohonan('{{data_permohonan.id}}')">Ajukan Permohonan</button>
     </form>
 </script>
