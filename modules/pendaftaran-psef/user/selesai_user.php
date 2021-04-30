@@ -53,140 +53,6 @@
     </div>
 </div>
 
-<!-- Template for add -->
-<script id="add-data" type="text/x-handlebars-template">
-    <h4 class="card-title">Add Permohonan</h4>
-    <form class="m-t-30" id="add-data-new" onsubmit="data_save(event)">
-    <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>Nomor Permohonan</label>
-                    <input type="text" class="form-control" placeholder="-" disabled> 
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>Alamat Domain Web</label>
-                    <input type="text" class="form-control" name="domain" placeholder="Input Domain." required> 
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>Nama Sistem</label>
-                    <input type="text" class="form-control" name="systemName" placeholder="Input Name System." required>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>Nama Apoteker</label>
-                    <input type="text" class="form-control" name="apotekerName" placeholder="Input Name Apoteker." required>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>Email Apoteker</label>
-                    <input type="email" class="form-control" name="apotekerEmail" placeholder="Input Email Apoteker." required>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>Phone Apoteker</label>
-                    <input type="text" class="form-control" name="apotekerPhone" placeholder="Input Phone Apoteker." required>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>NIK Apoteker</label>
-                    <input type="text" class="form-control" name="apotekerNik" placeholder="Input NIK Apoteker." required>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>Nomor STRA</label>
-                    <input type="text" class="form-control" name="straNumber" placeholder="Input Nomor STRA." required>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="form-group">
-                    <label>Expired STRA</label>
-                    <input type="date" class="form-control" name="straExpiry" required>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <label><b>Contoh Surat Permohonan</b></label>
-            <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
-                <a href="https://psef.kemkes.go.id/assets/doc/Tamplate%20PSE%20(KEMENKES%20PSEF).docx">Contoh Dokumen PSE Kominfo</a>
-            </div>
-        </div>
-        <div class="form-group">
-            <label>Salinan STRA</label>
-            <input type="file" class="form-control" id="straUrl" required>
-            <input type="hidden" name="straUrl" id="v-straUrl">
-        </div>
-        <div class="form-group">
-            <label>Surat Permohonan</label>
-            <input type="file" class="form-control" id="suratPermohonanUrl" required>
-            <input type="hidden" name="suratPermohonanUrl" id="v-suratPermohonanUrl">
-        </div>
-        <div class="form-group">
-            <label>Dok. Proses Bisnis</label>
-            <input type="file" class="form-control" id="prosesBisnisUrl" required>
-            <input type="hidden" name="prosesBisnisUrl" id="v-prosesBisnisUrl">
-        </div>
-        <div class="form-group">
-            <label>Dokumen Application Programmer Interface Sistem PSEF</label>
-            <input type="file" class="form-control" id="dokumenApiUrl" required>
-            <input type="hidden" name="dokumenApiUrl" id="v-dokumenApiUrl">
-        </div>
-        <div class="form-group">
-            <label>Dokumen PSE Kominfo</label>
-            <input type="file" class="form-control" id="dokumenPseUrl" required>
-            <input type="hidden" name="dokumenPseUrl" id="v-dokumenPseUrl">
-        </div>
-        <input type="hidden" name="data" id="data">
-        <div class="row">
-            <div class="col-5 align-self-center">
-            </div>
-            <div class="col-7 align-self-center">
-                <div class="d-flex no-block justify-content-end align-items-center">
-                    <button type="button" class="btn-open-modal btn waves-effect waves-light btn-info" data-toggle="modal" data-target="#myModal" style="display:none;">Add Apotek</button>
-                    <button type="button" class="btn-trigger-modal btn waves-effect waves-light btn-info" >Add Apotek</button>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="table-responsive" id="table-apotek">
-            <table id="zero_config" class="table table-striped table-bordered">
-                <thead>
-                    <tr>
-                        <th>Nama Apotek</th>
-                        <th>No SIA</th>
-                        <th>Nama Apoteker</th>
-                        <th>No STRA</th>
-                        <th>No SIPA</th>
-                        <th>Alamat</th>
-                        <th>Provinsi</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                    <tbody class="detail-item">
-                        <!-- Isi detail-item -->
-                    </tbody>
-            </table>
-        </div>
-        <br><br>
-        <input type="checkbox" value="check" id="agree" required/> Dengan ini saya menyatakan bahwa data yang saya isi adalah benar
-        <br><br>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <button type="button" class="btn btn-danger" onclick="routing('selesai_user')">Cancel</button>
-    </form>
-</script>
-
 <!-- Template for view -->
 <script id="view-data" type="text/x-handlebars-template">
     <h4 class="card-title">Detail Data Permohonan</h4>
@@ -195,7 +61,7 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label class="control-label">Nomor Permohonan</label>
-                    <input type="text" class="form-control" value="{{data_permohonan.permohonanNumber}}"  disabled> 
+                    <input type="text" class="form-control" value="{{data_permohonan.permohonanNumber}}"  disabled>
                 </div>
             </div>
             <div class="col-md-4">
@@ -215,19 +81,19 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label class="control-label">Nama Apoteker</label>
-                    <input type="text" class="form-control" value="{{data_permohonan.apotekerName}}"  disabled> 
+                    <input type="text" class="form-control" value="{{data_permohonan.apotekerName}}"  disabled>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label class="control-label">Email Apoteker</label>
-                    <input type="text" class="form-control" value="{{data_permohonan.apotekerEmail}}"  disabled> 
+                    <input type="text" class="form-control" value="{{data_permohonan.apotekerEmail}}"  disabled>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label class="control-label">Nomor Telepon Apoteker</label>
-                    <input type="text" class="form-control" value="{{data_permohonan.apotekerPhone}}"  disabled> 
+                    <input type="text" class="form-control" value="{{data_permohonan.apotekerPhone}}"  disabled>
                 </div>
             </div>
         </div>
@@ -235,19 +101,19 @@
             <div class="col-md-4">
                 <div class="form-group">
                     <label class="control-label">NIK Apoteker</label>
-                    <input type="text" class="form-control" value="{{data_permohonan.apotekerNik}}"  disabled> 
+                    <input type="text" class="form-control" value="{{data_permohonan.apotekerNik}}"  disabled>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label class="control-label">Nomor STRA</label>
-                    <input type="text" class="form-control" value="{{data_permohonan.straNumber}}"  disabled> 
+                    <input type="text" class="form-control" value="{{data_permohonan.straNumber}}"  disabled>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label class="control-label">Kedaluwarsa STRA</label>
-                    <input type="text" class="form-control" value="{{data_permohonan.straExpiry}}"  disabled> 
+                    <input type="text" class="form-control" value="{{data_permohonan.straExpiry}}"  disabled>
                 </div>
             </div>
         </div>
@@ -398,88 +264,13 @@
     </form>
 </script>
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-body">
-                <h4 class="card-title" id="title-modal">Add Apotek</h4>
-                <form class="m-t-30" id="add_detail_data" onsubmit="detail_add(event)">
-                    <div class="form-group">
-                        <label>Nama Apotek</label>
-                        <input  type="text" class="form-control" id="name" name="name" placeholder="Input Nama Apotek" required>
-                    </div>
-                    <div class="form-group">
-                        <label>No SIA</label>
-                        <input  type="text" class="form-control" id="siaNumber" name="siaNumber" placeholder="Input No SIA" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Nama Apoteker</label>
-                        <input  type="text" class="form-control" id="apotekerName" name="apotekerName" placeholder="Input Nama Apoteker" required>
-                    </div>
-                    <div class="form-group">
-                        <label>No STRA</label>
-                        <input  type="text" class="form-control" id="straNumber" name="straNumber" placeholder="Input No STRA" required>
-                    </div>
-                    <div class="form-group">
-                        <label>No SIPA</label>
-                        <input  type="text" class="form-control" id="sipaNumber" name="sipaNumber" placeholder="Input No SIPA" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Alamat</label>
-                        <input  type="text" class="form-control" id="address" name="address" placeholder="Input Alamat" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Provinsi</label>
-                        <select name="provinsiId" id="provinsiId" class="form-control" style="height: 36px;width: 100%;" required>
-                            <option value="" selected disabled>-- Choose Provinsi --</option>
-                        </select>
-                    </div>
-                    <input type="hidden" name="editdetail" id="editdetail">
-                    <input type="hidden" name="rowdetail" id="rowdetail">
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        <button type="button" class="btn btn-default modal-close-conf" >Close</button>
-                        <button type="button" class="btn btn-default modal-close" data-dismiss="modal" style="display:none">Close</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="modal-pakta" class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document" style="max-width: 80%;">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Pakta Integritas</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <h3 style="font-weight:bold;text-align: center;">PENDAFTARAN PERIZINAN</h3>
-        <h3 style="font-weight:bold;text-align: center;">PADA DIREKTORAT PELAYANAN KEFARMASIAN</h3>
-        <br><br><br>
-        <h5>Dengan ini saya menyatakan akan melaksanakan ketentuan sebagai berikut :</h5>
-        <br>
-        <h5>1. Berperan secara proaktif dalam upaya pencegahan dan pemberantasan Korupsi, Kolusi dan Nepotisme (KKN).</h5>
-        <h5>2. Tidak memberikan secara langsung atau tidak langsung berupa suap, hadiah, bantuan atau bentuk lainnya yang tidak sesuai dengan ketentuan yang berlaku kepada petugas Direktorat Pelayanan Kefarmasian.</h5>
-        <h5>3. Akan mengikuti proses pendaftaran perizinan secara bersih, transparan dan sesuai dengan prosedur yang telah ditetapkan.</h5>
-        <h5>4. Apabila melanggar hal-hal yang tertera dalam pakta integritas ini bersedia menerima sanksi sesuai peraturan yang berlaku.</h5>
-      </div>
-    </div>
-  </div>
-</div>
-
 <script>
-    var accesstoken = <?php echo json_encode($_COOKIE['accesstoken']); ?>; 
+    var accesstoken = <?php echo json_encode($_COOKIE['accesstoken']); ?>;
     var arr_detail_add = [];
     var arr_detail_add_x = [];
     var id_detail_add = 0;
     var cc;
-    $(document).ready(function() { 
+    $(document).ready(function() {
         $('#zero_config').on('xhr.dt', function ( e, settings, json, xhr ) {
             json.data = json.rows;
             json.recordsTotal = json.recordsFiltered = json.total;
@@ -547,7 +338,7 @@
         let source = $("#add-data").html();
         let template = Handlebars.compile(source);
         let cek_open = 0;
-        
+
         $('#load-data').html(template());
         $('.btn-trigger-modal').click(function() {
             $('.btn-open-modal').click()
@@ -574,19 +365,19 @@
             }
         })
 
-        $('#straUrl').change(function() { 
+        $('#straUrl').change(function() {
            upload_stra()
         });
-        $('#dokumenApiUrl').change(function() { 
+        $('#dokumenApiUrl').change(function() {
            upload_dokapi()
         });
-        $('#prosesBisnisUrl').change(function() { 
+        $('#prosesBisnisUrl').change(function() {
            upload_bisnis()
         });
-        $('#suratPermohonanUrl').change(function() { 
+        $('#suratPermohonanUrl').change(function() {
            upload_permohonan()
         });
-        $('#dokumenPseUrl').change(function() { 
+        $('#dokumenPseUrl').change(function() {
            upload_dok_pse()
         });
         $('#modal-pakta').modal('show');
@@ -693,7 +484,7 @@
         formData.append('file', $('#prosesBisnisUrl')[0].files[0]);
         var val_upload = $('#prosesBisnisUrl').val().toLowerCase(),
         regex = new RegExp("(.*?)\.(pdf)$");
-        
+
         if(regex.test(val_upload) || val_upload==''){
             $.ajax({
                 url: 'https://psef.kemkes.go.id/psefapifile/File',
@@ -741,7 +532,7 @@
         formData.append('file', $('#dokumenPseUrl')[0].files[0]);
         var val_upload = $('#dokumenPseUrl').val().toLowerCase(),
         regex = new RegExp("(.*?)\.(pdf)$");
-       
+
         if(regex.test(val_upload) || val_upload==''){
             $.ajax({
                 url: 'https://psef.kemkes.go.id/psefapifile/File',
@@ -789,7 +580,7 @@
         formData.append('file', $('#suratPermohonanUrl')[0].files[0]);
         var val_upload = $('#suratPermohonanUrl').val().toLowerCase(),
         regex = new RegExp("(.*?)\.(pdf)$");
-       
+
         if(regex.test(val_upload) || val_upload==''){
             $.ajax({
                 url: 'https://psef.kemkes.go.id/psefapifile/File',
@@ -853,7 +644,7 @@
         let name_provinsi = $('#provinsiId').select2('data');
 
         if(data.editdetail=='deletedetail'){
-            
+
             $('#'+data.rowdetail).remove()
 
             $.each(arr_detail_add, function( indexa, valuea ) {
@@ -885,13 +676,13 @@
 
         $('#data').val(JSON.stringify(arr_detail_add_x))
         $(".detail-item").append(`<tr id="${id_detail_add}">
-                                    <td>${data.name}</td>                                      
-                                    <td>${data.siaNumber}</td>                                      
-                                    <td>${data.apotekerName}</td>                                      
-                                    <td>${data.straNumber}</td>                                      
-                                    <td>${data.sipaNumber}</td>                                      
-                                    <td>${data.address}</td>                                      
-                                    <td>${name_provinsi[0].text}</td>                                      
+                                    <td>${data.name}</td>
+                                    <td>${data.siaNumber}</td>
+                                    <td>${data.apotekerName}</td>
+                                    <td>${data.straNumber}</td>
+                                    <td>${data.sipaNumber}</td>
+                                    <td>${data.address}</td>
+                                    <td>${name_provinsi[0].text}</td>
                                     <td>
                                         <button onclick="edit_detail_add('${id_detail_add}')" type="button" class="btn waves-effect waves-light btn-primary" iddadd="${id_detail_add}">Edit Detail</button>
                                         <button onclick="delete_detail_add('${id_detail_add}')" type="button" class="btn waves-effect waves-light btn-danger" iddadd="${id_detail_add}">Delete</button>
@@ -916,7 +707,7 @@
                 $("#rowdetail").val(v.iddetail)
             }
         });
-        $('.btn-open-modal').click()  
+        $('.btn-open-modal').click()
     }
 
     function delete_detail_add(id){
@@ -989,7 +780,7 @@
                     detail_data_save.detail[indexa].permohonanId = datax.id
                     delete detail_data_save.detail[indexa].iddetail
                 });
-                
+
                 detail_data_save.apotek = detail_data_save.detail
                 delete detail_data_save.detail
                 detail_data_save.permohonanId = datax.id
@@ -1090,7 +881,7 @@
             }
         });
 
-       
+
     }
 
     function view_data_detail(data_permohonan, data_apotek, data_klinik, data_rs){
@@ -1135,43 +926,43 @@
         if(data.data_apotek!==undefined){
             $.each(data.data_apotek.value, function( index, value ) {
                 $(".detail-item").append(`<tr>
-                                        <td>${index+1}</td>  
-                                        <td>${value.name}</td>                                      
-                                        <td>${value.siaNumber}</td>                                      
-                                        <td>${value.apotekerName}</td>                                      
-                                        <td>${value.straNumber}</td>                                      
-                                        <td>${value.sipaNumber}</td>                                      
-                                        <td>${value.address}</td>                                      
-                                        <td>${value.provinsiName}</td>                                      
+                                        <td>${index+1}</td>
+                                        <td>${value.name}</td>
+                                        <td>${value.siaNumber}</td>
+                                        <td>${value.apotekerName}</td>
+                                        <td>${value.straNumber}</td>
+                                        <td>${value.sipaNumber}</td>
+                                        <td>${value.address}</td>
+                                        <td>${value.provinsiName}</td>
                                     </tr>`)
             });
         }
         if(data.data_klinik!==undefined){
             $.each(data.data_klinik.value, function( index, value ) {
                 $(".detail-item-klinik").append(`<tr>
-                                        <td>${index+1}</td>  
-                                        <td>${value.name}</td>                                     
-                                        <td>${value.apotekerName}</td>                                      
-                                        <td>${value.straNumber}</td>                                      
-                                        <td>${value.sipaNumber}</td>                                      
-                                        <td>${value.address}</td>                                      
-                                        <td>${value.provinsiName}</td>                                      
+                                        <td>${index+1}</td>
+                                        <td>${value.name}</td>
+                                        <td>${value.apotekerName}</td>
+                                        <td>${value.straNumber}</td>
+                                        <td>${value.sipaNumber}</td>
+                                        <td>${value.address}</td>
+                                        <td>${value.provinsiName}</td>
                                     </tr>`)
             });
         }
         if(data.data_rs!==undefined){
             $.each(data.data_rs.value, function( index, value ) {
                 $(".detail-item-rs").append(`<tr>
-                                        <td>${index+1}</td>  
-                                        <td>${value.name}</td>                                  
-                                        <td>${value.apotekerName}</td>                                      
-                                        <td>${value.straNumber}</td>                                      
-                                        <td>${value.sipaNumber}</td>                                      
-                                        <td>${value.address}</td>                                      
-                                        <td>${value.provinsiName}</td>                                      
+                                        <td>${index+1}</td>
+                                        <td>${value.name}</td>
+                                        <td>${value.apotekerName}</td>
+                                        <td>${value.straNumber}</td>
+                                        <td>${value.sipaNumber}</td>
+                                        <td>${value.address}</td>
+                                        <td>${value.provinsiName}</td>
                                     </tr>`)
             });
         }
     }
-    
+
 </script>
