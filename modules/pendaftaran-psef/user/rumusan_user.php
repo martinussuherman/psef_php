@@ -73,6 +73,7 @@
 <?php include ('../template/modal_rumah_sakit.html'); ?>
 
 <?php include ('../template/modal_pakta.html'); ?>
+<?php include ('view_permohonan_script.html'); ?>
 
 <script>
     var accesstoken = <?php echo json_encode($_COOKIE['accesstoken']); ?>;
@@ -114,7 +115,7 @@
                 datax.push(data_straExpiry);
                 datax.push(json.data[i].pemohonStatusName);
 
-                var actions = '<td><button onclick="view_data(\''+json.data[i].id+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">Lihat Detail Data</button><button onclick="edit_data_permohonan(\''+json.data[i].id+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-primary">Ubah Permohonan</button><button onclick="edit_data_apotek(\''+json.data[i].id+'\',\''+json.data[i].permohonanNumber+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-secondary">Ubah Apotek</button><button onclick="edit_data_klinik(\''+json.data[i].id+'\',\''+json.data[i].permohonanNumber+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-warning">Ubah Klinik</button><button onclick="edit_data_rs(\''+json.data[i].id+'\',\''+json.data[i].permohonanNumber+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-danger">Ubah Rumah Sakit</button><button onclick="ajukan_permohonan(\''+json.data[i].id+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-success">Ajukan Permohonan</button></td>';
+                var actions = '<td><button onclick="viewPermohonan(\''+json.data[i].id+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">Lihat Detail Data</button><button onclick="edit_data_permohonan(\''+json.data[i].id+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-primary">Ubah Permohonan</button><button onclick="edit_data_apotek(\''+json.data[i].id+'\',\''+json.data[i].permohonanNumber+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-secondary">Ubah Apotek</button><button onclick="edit_data_klinik(\''+json.data[i].id+'\',\''+json.data[i].permohonanNumber+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-warning">Ubah Klinik</button><button onclick="edit_data_rs(\''+json.data[i].id+'\',\''+json.data[i].permohonanNumber+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-danger">Ubah Rumah Sakit</button><button onclick="ajukan_permohonan(\''+json.data[i].id+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-success">Ajukan Permohonan</button></td>';
 
                 datax.push(actions);
 
@@ -2272,145 +2273,6 @@
                 });
             }
         })
-    }
-
-    function view_data(id){
-        $.ajax({
-            url: url_api_x+"PermohonanCurrentUser("+id+")",
-            type: 'GET',
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('Authorization', 'Bearer '+accesstoken+'');
-            },
-            dataType: 'json',
-            success: function (data, textStatus, xhr) {
-                $.ajax({
-                    url: url_api_x+"PermohonanApotek("+id+")",
-                    type: 'GET',
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader('Authorization', 'Bearer '+accesstoken+'');
-                    },
-                    dataType: 'json',
-                    success: function (datax, textStatus, xhr) {
-                        $.ajax({
-                            url: url_api_x+"PermohonanKlinik("+id+")",
-                            type: 'GET',
-                            beforeSend: function (xhr) {
-                                xhr.setRequestHeader('Authorization', 'Bearer '+accesstoken+'');
-                            },
-                            dataType: 'json',
-                            success: function (datac, textStatus, xhr) {
-                                $.ajax({
-                                    url: url_api_x+"PermohonanRumahSakit("+id+")",
-                                    type: 'GET',
-                                    beforeSend: function (xhr) {
-                                        xhr.setRequestHeader('Authorization', 'Bearer '+accesstoken+'');
-                                    },
-                                    dataType: 'json',
-                                    success: function (datab, textStatus, xhr) {
-                                        view_data_detail(data,datax,datac,datab)
-                                    },
-                                    error: function (xhr, textStatus, errorThrown) {
-                                        console.log('Error in Operation');
-                                    }
-                                });
-                            },
-                            error: function (xhr, textStatus, errorThrown) {
-                                console.log('Error in Operation');
-                            }
-                        });
-                    },
-                    error: function (xhr, textStatus, errorThrown) {
-                        console.log('Error in Operation');
-                    }
-                });
-            },
-            error: function (xhr, textStatus, errorThrown) {
-                console.log('Error in Operation');
-            }
-        });
-
-
-    }
-
-    function view_data_detail(data_permohonan, data_apotek, data_klinik, data_rs){
-        let source = $("#view-data").html();
-        let template = Handlebars.compile(source);
-        let data =[];
-        data.data_permohonan = data_permohonan
-        data.data_apotek = data_apotek
-        data.data_klinik = data_klinik
-        data.data_rs = data_rs
-        data.data_permohonan.straExpiry = moment(data.data_permohonan.straExpiry).format("YYYY-MM-DD");
-        let name_straUrl = data.data_permohonan.straUrl
-        let name_suratPermohonanUrl = data.data_permohonan.suratPermohonanUrl
-        let name_prosesBisnisUrl = data.data_permohonan.prosesBisnisUrl
-        let name_dokumenApiUrl = data.data_permohonan.dokumenApiUrl
-        let name_dokumenPseUrl = data.data_permohonan.dokumenPseUrl
-        let name_spplUrl = data.data_permohonan.spplUrl
-        let name_izinLokasiUrl = data.data_permohonan.izinLokasiUrl
-        let name_imbUrl = data.data_permohonan.imbUrl
-        let name_pembayaranPnbpUrl = data.data_permohonan.pembayaranPnbpUrl
-        var split_straUrl = name_straUrl.split("/");
-        var split_suratPermohonanUrl = name_suratPermohonanUrl.split("/");
-        var split_prosesBisnisUrl = name_prosesBisnisUrl.split("/");
-        var split_dokumenApiUrl = name_dokumenApiUrl.split("/");
-        var split_dokumenPseUrl = name_dokumenPseUrl.split("/");
-        var split_spplUrl = name_spplUrl.split("/");
-        var split_izinLokasiUrl = name_izinLokasiUrl.split("/");
-        var split_imbUrl = name_imbUrl.split("/");
-        var split_pembayaranPnbpUrl = name_pembayaranPnbpUrl.split("/");
-        data.data_permohonan.name_straUrl = split_straUrl[split_straUrl.length-1]
-        data.data_permohonan.name_suratPermohonanUrl = split_suratPermohonanUrl[split_suratPermohonanUrl.length-1]
-        data.data_permohonan.name_prosesBisnisUrl = split_prosesBisnisUrl[split_prosesBisnisUrl.length-1]
-        data.data_permohonan.name_dokumenApiUrl = split_dokumenApiUrl[split_dokumenApiUrl.length-1]
-        data.data_permohonan.name_dokumenPseUrl = split_dokumenPseUrl[split_dokumenPseUrl.length-1]
-        data.data_permohonan.name_spplUrl = split_spplUrl[split_spplUrl.length-1]
-        data.data_permohonan.name_izinLokasiUrl = split_izinLokasiUrl[split_izinLokasiUrl.length-1]
-        data.data_permohonan.name_imbUrl = split_imbUrl[split_imbUrl.length-1]
-        data.data_permohonan.name_pembayaranPnbpUrl = split_pembayaranPnbpUrl[split_pembayaranPnbpUrl.length-1]
-
-        $('#load-data').html(template(data));
-
-        if(data.data_apotek!==undefined){
-            $.each(data.data_apotek.value, function( index, value ) {
-                $(".detail-item").append(`<tr>
-                                        <td>${index+1}</td>
-                                        <td>${value.name}</td>
-                                        <td>${value.siaNumber}</td>
-                                        <td>${value.apotekerName}</td>
-                                        <td>${value.straNumber}</td>
-                                        <td>${value.sipaNumber}</td>
-                                        <td>${value.address}</td>
-                                        <td>${value.provinsiName}</td>
-                                    </tr>`)
-            });
-        }
-        if(data.data_klinik!==undefined){
-            $.each(data.data_klinik.value, function( index, value ) {
-                $(".detail-item-klinik").append(`<tr>
-                                        <td>${index+1}</td>
-                                        <td>${value.name}</td>
-                                        <td>${value.apotekerName}</td>
-                                        <td>${value.straNumber}</td>
-                                        <td>${value.sipaNumber}</td>
-                                        <td>${value.address}</td>
-                                        <td>${value.provinsiName}</td>
-                                    </tr>`)
-            });
-        }
-        if(data.data_rs!==undefined){
-            $.each(data.data_rs.value, function( index, value ) {
-                $(".detail-item-rs").append(`<tr>
-                                        <td>${index+1}</td>
-                                        <td>${value.name}</td>
-                                        <td>${value.apotekerName}</td>
-                                        <td>${value.straNumber}</td>
-                                        <td>${value.sipaNumber}</td>
-                                        <td>${value.address}</td>
-                                        <td>${value.provinsiName}</td>
-                                    </tr>`)
-            });
-        }
     }
 
     function ajukan_permohonan(id){
