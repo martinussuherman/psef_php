@@ -1,0 +1,133 @@
+<script>
+function fileNameFromUrl(url) {
+   let splitUrl = url.split("/");
+   return splitUrl[splitUrl.length - 1];
+}
+
+function viewPermohonan(id) {
+   $.ajax({
+      url: url_api_x + "PermohonanCurrentUser(" + id + ")",
+      type: 'GET',
+      beforeSend: function (xhr) {
+         xhr.setRequestHeader('Authorization', 'Bearer ' + accesstoken + '');
+      },
+      dataType: 'json',
+      success: function (data, textStatus, xhr) {
+         $.ajax({
+            url: url_api_x + "PermohonanApotek(" + id + ")",
+            type: 'GET',
+            beforeSend: function (xhr) {
+               xhr.setRequestHeader('Authorization', 'Bearer ' + accesstoken + '');
+            },
+            dataType: 'json',
+            success: function (datax, textStatus, xhr) {
+               $.ajax({
+                  url: url_api_x + "PermohonanKlinik(" + id + ")",
+                  type: 'GET',
+                  beforeSend: function (xhr) {
+                     xhr.setRequestHeader('Authorization', 'Bearer ' + accesstoken + '');
+                  },
+                  dataType: 'json',
+                  success: function (datac, textStatus, xhr) {
+                     $.ajax({
+                        url: url_api_x + "PermohonanRumahSakit(" + id + ")",
+                        type: 'GET',
+                        beforeSend: function (xhr) {
+                           xhr.setRequestHeader('Authorization', 'Bearer ' + accesstoken + '');
+                        },
+                        dataType: 'json',
+                        success: function (datab, textStatus, xhr) {
+                           viewPermohonan(data, datax, datac, datab)
+                        },
+                        error: function (xhr, textStatus, errorThrown) {
+                           console.log('Error in Operation');
+                        }
+                     });
+                  },
+                  error: function (xhr, textStatus, errorThrown) {
+                     console.log('Error in Operation');
+                  }
+               });
+            },
+            error: function (xhr, textStatus, errorThrown) {
+               console.log('Error in Operation');
+            }
+         });
+      },
+      error: function (xhr, textStatus, errorThrown) {
+         console.log('Error in Operation');
+      }
+   });
+}
+function viewPermohonan(dataPermohonan, dataApotek, dataKlinik, dataRumahSakit) {
+   let source = $("#view-data").html();
+   let template = Handlebars.compile(source);
+   let data = {
+      data_permohonan: dataPermohonan,
+      data_apotek: dataApotek,
+      data_klinik: dataKlinik,
+      data_rs: dataRumahSakit,
+      showAjukanButton: true,
+      routeName: 'rumusan_user',
+   };
+
+   data.data_permohonan.straExpiry = moment(data.data_permohonan.straExpiry).format("YYYY-MM-DD");
+   data.data_permohonan.name_straUrl = fileNameFromUrl(data.data_permohonan.straUrl);
+   data.data_permohonan.name_suratPermohonanUrl = fileNameFromUrl(data.data_permohonan.suratPermohonanUrl);
+   data.data_permohonan.name_prosesBisnisUrl = fileNameFromUrl(data.data_permohonan.prosesBisnisUrl);
+   data.data_permohonan.name_dokumenApiUrl = fileNameFromUrl(data.data_permohonan.dokumenApiUrl);
+   data.data_permohonan.name_dokumenPseUrl = fileNameFromUrl(data.data_permohonan.dokumenPseUrl);
+   data.data_permohonan.name_spplUrl = fileNameFromUrl(data.data_permohonan.spplUrl);
+   data.data_permohonan.name_izinLokasiUrl = fileNameFromUrl(data.data_permohonan.izinLokasiUrl);
+   data.data_permohonan.name_imbUrl = fileNameFromUrl(data.data_permohonan.imbUrl);
+   data.data_permohonan.name_pembayaranPnbpUrl = fileNameFromUrl(data.data_permohonan.pembayaranPnbpUrl);
+
+   $('#load-data').html(template(data));
+
+   if (dataApotek !== undefined) {
+      $.each(dataApotek.value, function (index, value) {
+         $(".detail-item").append(
+            `<tr>
+              <td>${index + 1}</td>
+              <td>${value.name}</td>
+              <td>${value.siaNumber}</td>
+              <td>${value.apotekerName}</td>
+              <td>${value.straNumber}</td>
+              <td>${value.sipaNumber}</td>
+              <td>${value.address}</td>
+              <td>${value.provinsiName}</td>
+           </tr>`);
+      });
+   }
+
+   if (dataKlinik !== undefined) {
+      $.each(dataKlinik.value, function (index, value) {
+         $(".detail-item-klinik").append(
+            `<tr>
+              <td>${index + 1}</td>
+              <td>${value.name}</td>
+              <td>${value.apotekerName}</td>
+              <td>${value.straNumber}</td>
+              <td>${value.sipaNumber}</td>
+              <td>${value.address}</td>
+              <td>${value.provinsiName}</td>
+           </tr>`);
+      });
+   }
+
+   if (dataRumahSakit !== undefined) {
+      $.each(dataRumahSakit.value, function (index, value) {
+         $(".detail-item-rs").append(
+            `<tr>
+              <td>${index + 1}</td>
+              <td>${value.name}</td>
+              <td>${value.apotekerName}</td>
+              <td>${value.straNumber}</td>
+              <td>${value.sipaNumber}</td>
+              <td>${value.address}</td>
+              <td>${value.provinsiName}</td>
+           </tr>`);
+      });
+   }
+}
+</script>
