@@ -1,11 +1,11 @@
 <script>
   function fileUploadError(
-    data,
+    mode,
     fileInputElement,
     closeElement,
     viewElement,
     errorMessage) {
-    if (data == 'edit') {
+    if (mode == 'edit') {
       fileInputElement.prop('required', true);
     }
 
@@ -21,7 +21,7 @@
     });
   }
 
-  function uploadFile(fileInputElement, closeElement, viewElement) {
+  function uploadFile(mode, fileInputElement, closeElement, viewElement) {
     let data_upload = fileInputElement[0].files[0];
     let formData = new FormData();
     formData.append('file', data_upload);
@@ -30,7 +30,7 @@
 
     if (!regex.test(val_upload) && val_upload != '') {
       fileUploadError(
-        formData,
+        mode,
         fileInputElement,
         closeElement,
         viewElement,
@@ -40,7 +40,7 @@
 
     if (data_upload.size <= 0 || data_upload.size > 5300000) {
       fileUploadError(
-        formData,
+        mode,
         fileInputElement,
         closeElement,
         viewElement,
@@ -70,7 +70,7 @@
       },
       error: function (xhr, textStatus, errorThrown) {
         fileUploadError(
-          formData,
+          mode,
           fileInputElement,
           closeElement,
           viewElement,
@@ -79,64 +79,73 @@
     });
   }
 
-  function upload_stra(data) {
+  function upload_stra(mode) {
     uploadFile(
+      mode,
       $("#straUrl"),
       $('#close-straUrl'),
       $('#v-straUrl'));
   }
 
-  function upload_dokapi(data) {
+  function upload_dokapi(mode) {
     uploadFile(
+      mode,
       $('#dokumenApiUrl'),
       $('#close-dokumenApiUrl'),
       $('#v-dokumenApiUrl'));
   }
 
-  function upload_bisnis(data) {
+  function upload_bisnis(mode) {
     uploadFile(
+      mode,
       $('#prosesBisnisUrl'),
       $('#close-prosesBisnisUrl'),
       $('#v-prosesBisnisUrl'));
   }
 
-  function upload_dok_pse(data) {
+  function upload_dok_pse(mode) {
     uploadFile(
+      mode,
       $('#dokumenPseUrl'),
       $('#close-dokumenPseUrl'),
       $('#v-dokumenPseUrl'));
   }
 
-  function upload_permohonan(data) {
+  function upload_permohonan(mode) {
     uploadFile(
+      mode,
       $('#suratPermohonanUrl'),
       $('#close-suratPermohonanUrl'),
       $('#v-suratPermohonanUrl'));
   }
 
-  function upload_sppl(data) {
+  function upload_sppl(mode) {
     uploadFile(
+      mode,
       $('#spplUrl'),
       $('#close-spplUrl'),
       $('#v-spplUrl'));
   }
 
-  function upload_izin_lokasi(data) {
+  function upload_izin_lokasi(mode) {
     uploadFile(
+      mode,
       $('#izinLokasiUrl'),
       $('#close-izinLokasiUrl'),
       $('#v-izinLokasiUrl'));
   }
 
-  function upload_imb(data) {
+  function upload_imb(mode) {
     uploadFile(
+      mode,
       $('#imbUrl'),
       $('#close-imbUrl'),
       $('#v-imbUrl'));
   }
 
-  function upload_pnbp(data) {
+  function upload_pnbp(mode) {
     uploadFile(
+      mode,
       $('#pembayaranPnbpUrl'),
       $('#close-pembayaranPnbpUrl'),
       $('#v-pembayaranPnbpUrl'));
