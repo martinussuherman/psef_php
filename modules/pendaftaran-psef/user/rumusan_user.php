@@ -181,14 +181,6 @@
       routing('rumusan_user');
    }
 
-   function emptyStringIfUndefined(string) {
-      if (string == undefined) {
-         return "";
-      }
-
-      return string;
-   }
-
    function add_data() {
       let source = $("#add-data").html();
       let template = Handlebars.compile(source);
@@ -312,21 +304,6 @@
       })
 
 
-   }
-
-   $('.modal-close-conf').click(function() {
-      close_modals();
-   })
-
-   function close_modals() {
-      $('.modal-close').click();
-      $('#name').val('')
-      $('#siaNumber').val('')
-      $('#apotekerName').val('')
-      $('#straNumber').val('')
-      $('#sipaNumber').val('')
-      $('#address').val('')
-      $('select[name="provinsiId"]').val(null).trigger("change");
    }
 
    function detail_add(e) {
