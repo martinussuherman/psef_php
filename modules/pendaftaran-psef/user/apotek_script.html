@@ -244,4 +244,137 @@
     })
   }
 
+  function detail_add(e) {
+    e.preventDefault();
+    var data = $('#add_detail_data').serializeFormJSON();
+    let name_provinsi = $('#provinsiIdApotek').select2('data');
+
+    if (data.editdetail == 'deletedetail') {
+
+      $('#apotek_' + data.rowdetail).remove()
+
+      $.each(arr_detail_add, function (indexa, valuea) {
+        if (data.rowdetail == valuea.iddetail) {
+          cc = indexa
+        }
+      });
+
+      Array.prototype.remove = function (indexcc) {
+        this.splice(indexcc, 1);
+      }
+
+      arr_detail_add.remove(cc)
+
+      var s_detail = [];
+
+      arr_detail_add.map((val, index) => {
+        s_detail.push(val)
+      })
+      arr_detail_add = s_detail
+      arr_detail_add_x.detail = s_detail;
+    }
+
+    arr_detail_add.push({
+      "name": data.name,
+      "permohonanId": 0,
+      "siaNumber": data.siaNumber,
+      "apotekerName": data.apotekerName,
+      "straNumber": data.straNumber,
+      "sipaNumber": data.sipaNumber,
+      "address": data.address,
+      "provinsiId": data.provinsiId,
+      "iddetail": id_detail_add
+    })
+
+    arr_detail_add_x = {
+      detail: arr_detail_add
+    }
+
+    $('#data').val(JSON.stringify(arr_detail_add_x))
+    $(".detail-item").append(`
+      <tr id="apotek_${id_detail_add}">
+        <td>${data.name}</td>
+        <td>${data.siaNumber}</td>
+        <td>${data.apotekerName}</td>
+        <td>${data.straNumber}</td>
+        <td>${data.sipaNumber}</td>
+        <td>${data.address}</td>
+        <td>${name_provinsi[0].text}</td>
+        <td>
+          <button onclick="edit_detail_add('${id_detail_add}')" type="button" class="btn waves-effect waves-light btn-primary" iddadd="${id_detail_add}">Ubah Apotek</button>
+          <button onclick="delete_detail_add('${id_detail_add}')" type="button" class="btn waves-effect waves-light btn-danger" iddadd="${id_detail_add}">Hapus</button>
+        </td>
+      </tr>
+    `);
+    id_detail_add++;
+    close_modals()
+  }
+
+  function edit_detail_add(id) {
+    $.each(arr_detail_add, function (i, v) {
+      if (id == v.iddetail) {
+        $("#name").val(v.name)
+        $("#siaNumber").val(v.siaNumber)
+        $("#apotekerName").val(v.apotekerName)
+        $("#straNumber").val(v.straNumber)
+        $("#sipaNumber").val(v.sipaNumber)
+        $("#address").val(v.address)
+        $('#provinsiIdApotek').val(v.provinsiId).trigger("change");
+        $('#title-modal').html('Ubah Apotek')
+        $("#editdetail").val('deletedetail')
+        $("#rowdetail").val(v.iddetail)
+      }
+    });
+    $('.btn-open-modal').click()
+  }
+
+  function delete_detail_add(id) {
+    swal({
+      title: 'Hapus Apotek',
+      text: "Apakah Anda yakin menghapus apotek ini ?",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: "Batal",
+      confirmButtonText: 'Ya, Hapus !'
+    }).then((result) => {
+      if (result.value) {
+        $.ajax({
+          success: function (data, textStatus, xhr) {
+            swal(
+              'Berhasil!',
+              'Apotek dihapus',
+              'success'
+            )
+
+            $('#apotek_' + id).remove()
+
+            $.each(arr_detail_add, function (indexa, valuea) {
+              if (id == valuea.iddetail) {
+                cc = indexa
+              }
+            });
+
+            Array.prototype.remove = function (indexcc) {
+              this.splice(indexcc, 1);
+            }
+
+            arr_detail_add.remove(cc)
+
+            var s_detail = [];
+
+            arr_detail_add.map((val, index) => {
+              s_detail.push(val)
+            })
+            arr_detail_add = s_detail
+            arr_detail_add_x.detail = s_detail;
+
+            $('#data').val('')
+            $('#data').val(JSON.stringify(arr_detail_add_x))
+          }
+        });
+      }
+    })
+  }
 </script>
