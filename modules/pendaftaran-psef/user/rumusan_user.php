@@ -837,15 +837,16 @@
 
         updateDataPermohonan(data);
         $('#load-data').html(template(data));
-        $('#v-straUrl').val(name_straUrl)
-        $('#v-suratPermohonanUrl').val(name_suratPermohonanUrl)
-        $('#v-prosesBisnisUrl').val(name_prosesBisnisUrl)
-        $('#v-dokumenApiUrl').val(name_dokumenApiUrl)
-        $('#v-dokumenPseUrl').val(name_dokumenPseUrl)
-        $('#v-spplUrl').val(name_spplUrl)
-        $('#v-izinLokasiUrl').val(name_izinLokasiUrl)
-        $('#v-imbUrl').val(name_imbUrl)
-        $('#v-pembayaranPnbpUrl').val(name_pembayaranPnbpUrl)
+
+        $('#v-straUrl').val(data.straUrl)
+        $('#v-suratPermohonanUrl').val(data.suratPermohonanUrl)
+        $('#v-prosesBisnisUrl').val(data.prosesBisnisUrl)
+        $('#v-dokumenApiUrl').val(data.dokumenApiUrl)
+        $('#v-dokumenPseUrl').val(data.dokumenPseUrl)
+        $('#v-spplUrl').val(data.spplUrl)
+        $('#v-izinLokasiUrl').val(data.izinLokasiUrl)
+        $('#v-imbUrl').val(data.imbUrl)
+        $('#v-pembayaranPnbpUrl').val(data.pembayaranPnbpUrl)
 
         $('#straUrl').change(function() {
            upload_stra('edit')
