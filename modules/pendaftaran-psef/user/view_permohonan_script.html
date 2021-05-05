@@ -1,5 +1,9 @@
 <script>
   function fileNameFromUrl(url) {
+    if (url == undefined) {
+      return "";
+    }
+
     let splitUrl = url.split("/");
     return splitUrl[splitUrl.length - 1];
   }
