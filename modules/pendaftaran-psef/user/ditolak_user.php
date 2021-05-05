@@ -331,6 +331,10 @@
         });
     });
 
+    function viewRouting() {
+      routing('ditolak_user');
+    }
+
     $('.modal-close-conf').click(function() {
         close_modals();
     })
