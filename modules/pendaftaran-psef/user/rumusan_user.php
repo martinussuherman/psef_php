@@ -834,36 +834,8 @@
     function edit_permohonan(data) {
         let source = $("#edit-data").html();
         let template = Handlebars.compile(source);
-        let nib = data.nib
-        data.straExpiry = moment(data.straExpiry).format("YYYY-MM-DD");
-        let name_straUrl = data.straUrl
-        let name_suratPermohonanUrl = data.suratPermohonanUrl
-        let name_prosesBisnisUrl = data.prosesBisnisUrl
-        let name_dokumenApiUrl = data.dokumenApiUrl
-        let name_dokumenPseUrl = data.dokumenPseUrl
-        let name_spplUrl = data.spplUrl
-        let name_izinLokasiUrl = data.izinLokasiUrl
-        let name_imbUrl = data.imbUrl
-        let name_pembayaranPnbpUrl = data.pembayaranPnbpUrl
-        var split_straUrl = name_straUrl.split("/");
-        var split_suratPermohonanUrl = name_suratPermohonanUrl.split("/");
-        var split_prosesBisnisUrl = name_prosesBisnisUrl.split("/");
-        var split_dokumenApiUrl = name_dokumenApiUrl.split("/");
-        var split_dokumenPseUrl = name_dokumenPseUrl.split("/");
-        var split_spplUrl = name_spplUrl.split("/");
-        var split_izinLokasiUrl = name_izinLokasiUrl.split("/");
-        var split_imbUrl = name_imbUrl.split("/");
-        var split_pembayaranPnbpUrl = name_pembayaranPnbpUrl.split("/");
-        data.name_straUrl = split_straUrl[split_straUrl.length-1]
-        data.name_suratPermohonanUrl = split_suratPermohonanUrl[split_suratPermohonanUrl.length-1]
-        data.name_prosesBisnisUrl = split_prosesBisnisUrl[split_prosesBisnisUrl.length-1]
-        data.name_dokumenApiUrl = split_dokumenApiUrl[split_dokumenApiUrl.length-1]
-        data.name_dokumenPseUrl = split_dokumenPseUrl[split_dokumenPseUrl.length-1]
-        data.name_spplUrl = split_spplUrl[split_spplUrl.length-1]
-        data.name_izinLokasiUrl = split_izinLokasiUrl[split_izinLokasiUrl.length-1]
-        data.name_imbUrl = split_imbUrl[split_imbUrl.length-1]
-        data.name_pembayaranPnbpUrl = split_pembayaranPnbpUrl[split_pembayaranPnbpUrl.length-1]
 
+        updateDataPermohonan(data);
         $('#load-data').html(template(data));
         $('#v-straUrl').val(name_straUrl)
         $('#v-suratPermohonanUrl').val(name_suratPermohonanUrl)
