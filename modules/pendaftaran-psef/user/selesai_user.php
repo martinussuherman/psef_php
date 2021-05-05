@@ -331,6 +331,10 @@
         });
     });
 
+    function viewRouting() {
+      routing('selesai_user');
+    }
+
     $('.modal-close-conf').click(function() {
         close_modals();
     })
