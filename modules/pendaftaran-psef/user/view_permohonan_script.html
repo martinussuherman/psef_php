@@ -59,7 +59,8 @@
       }
     });
   }
-  function viewPermohonan(dataPermohonan, dataApotek, dataKlinik, dataRumahSakit) {
+
+  function viewPermohonanData(dataPermohonan, dataApotek, dataKlinik, dataRumahSakit, showAjukanButton) {
     let source = $("#view-data").html();
     let template = Handlebars.compile(source);
     let data = {
@@ -67,8 +68,7 @@
       data_apotek: dataApotek,
       data_klinik: dataKlinik,
       data_rs: dataRumahSakit,
-      showAjukanButton: true,
-      routeName: 'rumusan_user',
+      showAjukanButton: showAjukanButton
     };
 
     data.data_permohonan.straExpiry = moment(data.data_permohonan.straExpiry).format("YYYY-MM-DD");
