@@ -61,4 +61,19 @@
 
     return JSON.parse(JSON.stringify(resultList));
   }
+
+  $('.modal-close-conf').click(function () {
+    close_modals();
+  })
+
+  function close_modals() {
+    $('.modal-close').click();
+    $('#name').val('')
+    $('#siaNumber').val('')
+    $('#apotekerName').val('')
+    $('#straNumber').val('')
+    $('#sipaNumber').val('')
+    $('#address').val('')
+    $('select[name="provinsiId"]').val(null).trigger("change");
+  }
 </script>
