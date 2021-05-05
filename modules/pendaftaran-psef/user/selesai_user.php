@@ -49,6 +49,7 @@
 </div>
 
 <?php include('../template/view_permohonan.html'); ?>
+<?php include('common_script.html'); ?>
 <?php include('view_permohonan_script.html'); ?>
 
 <script>
@@ -129,20 +130,5 @@
 
    function viewRouting() {
       routing('selesai_user');
-   }
-
-   $('.modal-close-conf').click(function() {
-      close_modals();
-   })
-
-   function close_modals() {
-      $('.modal-close').click();
-      $('#name').val('')
-      $('#siaNumber').val('')
-      $('#apotekerName').val('')
-      $('#straNumber').val('')
-      $('#sipaNumber').val('')
-      $('#address').val('')
-      $('select[name="provinsiId"]').val(null).trigger("change");
    }
 </script>
