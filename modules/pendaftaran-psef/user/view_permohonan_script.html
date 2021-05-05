@@ -8,6 +8,19 @@
     return splitUrl[splitUrl.length - 1];
   }
 
+  function updateDataPermohonan(dataPermohonan) {
+    dataPermohonan.straExpiry = moment(dataPermohonan.straExpiry).format("YYYY-MM-DD");
+    dataPermohonan.name_straUrl = fileNameFromUrl(dataPermohonan.straUrl);
+    dataPermohonan.name_suratPermohonanUrl = fileNameFromUrl(dataPermohonan.suratPermohonanUrl);
+    dataPermohonan.name_prosesBisnisUrl = fileNameFromUrl(dataPermohonan.prosesBisnisUrl);
+    dataPermohonan.name_dokumenApiUrl = fileNameFromUrl(dataPermohonan.dokumenApiUrl);
+    dataPermohonan.name_dokumenPseUrl = fileNameFromUrl(dataPermohonan.dokumenPseUrl);
+    dataPermohonan.name_spplUrl = fileNameFromUrl(dataPermohonan.spplUrl);
+    dataPermohonan.name_izinLokasiUrl = fileNameFromUrl(dataPermohonan.izinLokasiUrl);
+    dataPermohonan.name_imbUrl = fileNameFromUrl(dataPermohonan.imbUrl);
+    dataPermohonan.name_pembayaranPnbpUrl = fileNameFromUrl(dataPermohonan.pembayaranPnbpUrl);
+  }
+
   function viewPermohonan(id, showAjukanButton) {
     $.ajax({
       url: url_api_x + "PermohonanCurrentUser(" + id + ")",
@@ -80,17 +93,7 @@
       showAjukanButton: showAjukanButton
     };
 
-    data.data_permohonan.straExpiry = moment(data.data_permohonan.straExpiry).format("YYYY-MM-DD");
-    data.data_permohonan.name_straUrl = fileNameFromUrl(data.data_permohonan.straUrl);
-    data.data_permohonan.name_suratPermohonanUrl = fileNameFromUrl(data.data_permohonan.suratPermohonanUrl);
-    data.data_permohonan.name_prosesBisnisUrl = fileNameFromUrl(data.data_permohonan.prosesBisnisUrl);
-    data.data_permohonan.name_dokumenApiUrl = fileNameFromUrl(data.data_permohonan.dokumenApiUrl);
-    data.data_permohonan.name_dokumenPseUrl = fileNameFromUrl(data.data_permohonan.dokumenPseUrl);
-    data.data_permohonan.name_spplUrl = fileNameFromUrl(data.data_permohonan.spplUrl);
-    data.data_permohonan.name_izinLokasiUrl = fileNameFromUrl(data.data_permohonan.izinLokasiUrl);
-    data.data_permohonan.name_imbUrl = fileNameFromUrl(data.data_permohonan.imbUrl);
-    data.data_permohonan.name_pembayaranPnbpUrl = fileNameFromUrl(data.data_permohonan.pembayaranPnbpUrl);
-
+    updateDataPermohonan(data.data_permohonan);
     $('#load-data').html(template(data));
 
     if (dataApotek !== undefined) {
