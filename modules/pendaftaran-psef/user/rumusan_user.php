@@ -695,6 +695,7 @@
         let detail_data_save
         let detail_data_save_klinik
         let detail_data_save_rs
+
         if(data.data!=''){
             console.log('a')
             if(data.data!='{"detail":[]}'){
@@ -732,6 +733,7 @@
                         detail_data_save.detail[indexa].permohonanId = datax.id
                         delete detail_data_save.detail[indexa].iddetail
                     });
+
                     detail_data_save.apotek = detail_data_save.detail
                     delete detail_data_save.detail
                     detail_data_save.permohonanId = datax.id
@@ -753,6 +755,7 @@
                     });
 
                 }
+
                 if(detail_data_save_klinik!==undefined){
                     $.each(detail_data_save_klinik.detail, function( indexa, valuea ) {
                         detail_data_save_klinik.detail[indexa].permohonanId = datax.id
@@ -778,6 +781,7 @@
                         }
                     });
                 }
+
                 if(detail_data_save_rs!==undefined){
                     $.each(detail_data_save_rs.detail, function( indexa, valuea ) {
                         detail_data_save_rs.detail[indexa].permohonanId = datax.id
@@ -929,11 +933,15 @@
     function edit_apotek(data, no_permohonan, permohonanId) {
         let source = $("#edit-data-apotek").html();
         let template = Handlebars.compile(source);
-        data.permohonanId = permohonanId
-        data.no_permohonan = no_permohonan
+
+        no_permohonan = emptyStringIfUndefined(no_permohonan);
+        data.permohonanId = permohonanId;
+        data.no_permohonan = no_permohonan;
+
         $.each(data.value, function(i, v) {
-            data.value[i].no_permohonan = no_permohonan
+            data.value[i].no_permohonan = no_permohonan;
         });
+
         $('#load-data').html(template(data));
         $('#zero_config_apotek').DataTable({
             "scrollY": '100vh',
@@ -1168,11 +1176,15 @@
     function edit_klinik(data, no_permohonan, permohonanId) {
         let source = $("#edit-data-klinik").html();
         let template = Handlebars.compile(source);
-        data.permohonanId = permohonanId
-        data.no_permohonan = no_permohonan
+
+        no_permohonan = emptyStringIfUndefined(no_permohonan);
+        data.permohonanId = permohonanId;
+        data.no_permohonan = no_permohonan;
+
         $.each(data.value, function(i, v) {
-            data.value[i].no_permohonan = no_permohonan
+            data.value[i].no_permohonan = no_permohonan;
         });
+
         $('#load-data').html(template(data));
         $('#zero_config_klinik').DataTable({
             "scrollY": '100vh',
@@ -1407,11 +1419,15 @@
     function edit_rs(data, no_permohonan, permohonanId) {
         let source = $("#edit-data-rs").html();
         let template = Handlebars.compile(source);
-        data.permohonanId = permohonanId
-        data.no_permohonan = no_permohonan
+
+        no_permohonan = emptyStringIfUndefined(no_permohonan);
+        data.permohonanId = permohonanId;
+        data.no_permohonan = no_permohonan;
+
         $.each(data.value, function(i, v) {
-            data.value[i].no_permohonan = no_permohonan
+            data.value[i].no_permohonan = no_permohonan;
         });
+
         $('#load-data').html(template(data));
         $('#zero_config_rs').DataTable({
             "scrollY": '100vh',
