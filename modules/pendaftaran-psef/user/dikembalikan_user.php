@@ -309,6 +309,10 @@
         });
     });
 
+    function viewRouting() {
+      routing('dikembalikan_user');
+    }
+
     $('.modal-close-conf').click(function() {
         close_modals();
     })
