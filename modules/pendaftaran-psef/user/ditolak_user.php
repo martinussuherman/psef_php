@@ -74,25 +74,30 @@
             "url": url_api_php,
             "type": "POST",
             "dataSrc": function ( json ) {
-                var data=[];
-                for ( var i=0, ien=json.data.length; i<ien ; i++ ) {
-                var datax = [];
+               var data = [];
 
-                datax.push(json.data[i].permohonanNumber);
-                datax.push(json.data[i].domain);
-                datax.push(json.data[i].straNumber);
-                let data_straExpiry = moment(json.data[i].straExpiry).format("YYYY-MM-DD");
-                datax.push(data_straExpiry);
-                datax.push(json.data[i].pemohonStatusName);
+               for (var i = 0, ien = json.data.length; i < ien; i++) {
+                  var datax = [];
 
-                var actions = '<td><button onclick="viewPermohonan(\''+json.data[i].id+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">Lihat Detail Data</button></td>';
+                  let permohonan = json.data[i];
+                  let data_straExpiry = moment(permohonan.straExpiry).format("YYYY-MM-DD");
+                  let actions = `
+                     <td>
+                        <button onclick="viewPermohonan(${permohonan.id}, false)" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">
+                           Lihat Detail Data
+                        </button>
+                     </td>`;
 
-                datax.push(actions);
+                  datax.push(permohonan.permohonanNumber);
+                  datax.push(permohonan.domain);
+                  datax.push(permohonan.straNumber);
+                  datax.push(data_straExpiry);
+                  datax.push(permohonan.pemohonStatusName);
+                  datax.push(actions);
+                  data.push(datax);
+               }
 
-                data.push(datax);
-                }
-                return JSON.parse(JSON.stringify(data));
-
+               return JSON.parse(JSON.stringify(data));
             },
 
             "data": function ( d ) {
