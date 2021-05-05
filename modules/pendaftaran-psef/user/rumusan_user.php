@@ -106,22 +106,43 @@
             "type": "POST",
             "dataSrc": function ( json ) {
                 var data=[];
+
                 for ( var i=0, ien=json.data.length; i<ien ; i++ ) {
                 var datax = [];
 
-                datax.push(json.data[i].permohonanNumber);
-                datax.push(json.data[i].domain);
-                datax.push(json.data[i].straNumber);
-                let data_straExpiry = moment(json.data[i].straExpiry).format("YYYY-MM-DD");
+                let permohonan = json.data[i];
+                let data_straExpiry = moment(permohonan.straExpiry).format("YYYY-MM-DD");
+                let actions = `
+                  <td>
+                     <button onclick="viewPermohonan(${permohonan.id}, true)" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">
+                        Lihat Detail Data
+                     </button>
+                     <button onclick="edit_data_permohonan(${permohonan.id})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-primary">
+                        Ubah Permohonan
+                     </button>
+                     <button onclick="edit_data_apotek(${permohonan.id}, ${permohonan.permohonanNumber})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-secondary">
+                        Ubah Apotek
+                     </button>
+                     <button onclick="edit_data_klinik(${permohonan.id}, ${permohonan.permohonanNumber})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-warning">
+                        Ubah Klinik
+                     </button>
+                     <button onclick="edit_data_rs(${permohonan.id}, ${permohonan.permohonanNumber})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-danger">
+                        Ubah Rumah Sakit
+                     </button>
+                     <button onclick="ajukan_permohonan(${permohonan.id})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-success">
+                        Ajukan Permohonan
+                     </button>
+                  </td>`;
+
+                datax.push(permohonan.permohonanNumber);
+                datax.push(permohonan.domain);
+                datax.push(permohonan.straNumber);
                 datax.push(data_straExpiry);
-                datax.push(json.data[i].pemohonStatusName);
-
-                var actions = '<td><button onclick="viewPermohonan(\''+json.data[i].id+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">Lihat Detail Data</button><button onclick="edit_data_permohonan(\''+json.data[i].id+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-primary">Ubah Permohonan</button><button onclick="edit_data_apotek(\''+json.data[i].id+'\',\''+json.data[i].permohonanNumber+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-secondary">Ubah Apotek</button><button onclick="edit_data_klinik(\''+json.data[i].id+'\',\''+json.data[i].permohonanNumber+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-warning">Ubah Klinik</button><button onclick="edit_data_rs(\''+json.data[i].id+'\',\''+json.data[i].permohonanNumber+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-danger">Ubah Rumah Sakit</button><button onclick="ajukan_permohonan(\''+json.data[i].id+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-success">Ajukan Permohonan</button></td>';
-
+                datax.push(permohonan.pemohonStatusName);
                 datax.push(actions);
-
                 data.push(datax);
                 }
+
                 return JSON.parse(JSON.stringify(data));
 
             },
