@@ -338,21 +338,6 @@
       routing('dikembalikan_user');
    }
 
-   $('.modal-close-conf').click(function() {
-      close_modals();
-   })
-
-   function close_modals() {
-      $('.modal-close').click();
-      $('#name').val('')
-      $('#siaNumber').val('')
-      $('#apotekerName').val('')
-      $('#straNumber').val('')
-      $('#sipaNumber').val('')
-      $('#address').val('')
-      $('select[name="provinsiId"]').val(null).trigger("change");
-   }
-
    function detail_add(e) {
       e.preventDefault();
       var data = $('#add_detail_data').serializeFormJSON();
