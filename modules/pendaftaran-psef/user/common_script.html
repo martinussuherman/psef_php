@@ -1,0 +1,64 @@
+<script>
+  function emptyStringIfUndefined(string) {
+    if (string == undefined) {
+      return "";
+    }
+
+    return string;
+  }
+
+  function actionString(permohonan, isViewOnly) {
+    if (isViewOnly) {
+      return `
+        <td>
+          <button onclick="viewPermohonan(${permohonan.id}, false)" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">
+            Lihat Detail Data
+          </button>
+        </td>`;
+    }
+
+    return `
+      <td>
+        <button onclick="viewPermohonan(${permohonan.id}, true)" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">
+          Lihat Detail Data
+        </button>
+        <button onclick="edit_data_permohonan(${permohonan.id})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-primary">
+          Ubah Permohonan
+        </button>
+        <button onclick="edit_data_apotek(${permohonan.id}, ${permohonan.permohonanNumber})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-secondary">
+          Ubah Apotek
+        </button>
+        <button onclick="edit_data_klinik(${permohonan.id}, ${permohonan.permohonanNumber})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-warning">
+          Ubah Klinik
+        </button>
+        <button onclick="edit_data_rs(${permohonan.id}, ${permohonan.permohonanNumber})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-danger">
+          Ubah Rumah Sakit
+        </button>
+        <button onclick="ajukan_permohonan(${permohonan.id})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-success">
+          Ajukan Permohonan
+        </button>
+      </td>`;
+  }
+
+  function permohonanFromJson(json, isViewOnly) {
+    let resultList = [];
+
+    window.console.log('JSON:', json);
+
+    json.data.forEach(permohonan => {
+      let item = [];
+
+      item.push(permohonan.permohonanNumber);
+      item.push(permohonan.domain);
+      item.push(permohonan.straNumber);
+      item.push(moment(permohonan.straExpiry).format("YYYY-MM-DD"));
+      item.push(permohonan.pemohonStatusName);
+      item.push(actionString(permohonan, isViewOnly));
+      window.console.log('Item:', item);
+
+      resultList.push(item);
+    });
+
+    return JSON.parse(JSON.stringify(resultList));
+  }
+</script>
