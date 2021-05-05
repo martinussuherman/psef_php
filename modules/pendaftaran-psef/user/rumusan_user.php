@@ -173,6 +173,18 @@
         });
     });
 
+    function viewRouting() {
+      routing('rumusan_user');
+    }
+
+    function emptyStringIfUndefined(string){
+      if (string == undefined) {
+         return "";
+      }
+
+      return string;
+    }
+
     function add_data() {
         let source = $("#add-data").html();
         let template = Handlebars.compile(source);
