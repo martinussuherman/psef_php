@@ -62,6 +62,30 @@
     return JSON.parse(JSON.stringify(resultList));
   }
 
+  function permohonanAjaxRequest(data, modulName) {
+    // var order_name = []
+
+    // order_name.push('permohonanNumber');
+    // order_name.push('domain');
+    // order_name.push('straNumber');
+    // order_name.push('straExpiry');
+    // order_name.push('statusName');
+    // order_name.push('id');
+
+    let data = {
+      fpage: (parseInt(data.start) + parseInt(data.length)) / parseInt(data.length),
+      frows: data.length,
+      fsearch: data.search['value'],
+      forder: 'lastUpdate',
+      fsort: 'desc',
+      fmodul: modulName,
+      flsearch: 'permohonanNumber,domain,straNumber',
+      ftots: 3
+    };
+
+    return data;
+  }
+
   $('.modal-close-conf').click(function () {
     close_modals();
   })
