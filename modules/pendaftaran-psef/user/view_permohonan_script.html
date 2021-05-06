@@ -1,4 +1,12 @@
 <script>
+  function emptyStringIfUndefined(string){
+    if (string == undefined) {
+      return "";
+    }
+
+    return string;
+  }
+
   function fileNameFromUrl(url) {
     if (url == undefined) {
       return "";
