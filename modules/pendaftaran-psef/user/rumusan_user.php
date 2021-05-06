@@ -110,68 +110,10 @@
             "url": url_api_php,
             "type": "POST",
             "dataSrc": function(json) {
-               var data = [];
-
-               for (var i = 0, ien = json.data.length; i < ien; i++) {
-                  var datax = [];
-
-                  let permohonan = json.data[i];
-                  let data_straExpiry = moment(permohonan.straExpiry).format("YYYY-MM-DD");
-                  let actions = `
-                  <td>
-                     <button onclick="viewPermohonan(${permohonan.id}, true)" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">
-                        Lihat Detail Data
-                     </button>
-                     <button onclick="edit_data_permohonan(${permohonan.id})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-primary">
-                        Ubah Permohonan
-                     </button>
-                     <button onclick="edit_data_apotek(${permohonan.id}, ${permohonan.permohonanNumber})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-secondary">
-                        Ubah Apotek
-                     </button>
-                     <button onclick="edit_data_klinik(${permohonan.id}, ${permohonan.permohonanNumber})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-warning">
-                        Ubah Klinik
-                     </button>
-                     <button onclick="edit_data_rs(${permohonan.id}, ${permohonan.permohonanNumber})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-danger">
-                        Ubah Rumah Sakit
-                     </button>
-                     <button onclick="ajukan_permohonan(${permohonan.id})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-success">
-                        Ajukan Permohonan
-                     </button>
-                  </td>`;
-
-                  datax.push(permohonan.permohonanNumber);
-                  datax.push(permohonan.domain);
-                  datax.push(permohonan.straNumber);
-                  datax.push(data_straExpiry);
-                  datax.push(permohonan.pemohonStatusName);
-                  datax.push(actions);
-                  data.push(datax);
-               }
-
-               return JSON.parse(JSON.stringify(data));
+               return permohonanFromJson(json, false);
             },
-
             "data": function(d) {
-               var order_name = []
-
-               order_name.push('permohonanNumber');
-               order_name.push('domain');
-               order_name.push('straNumber');
-               order_name.push('straExpiry');
-               order_name.push('statusName');
-               order_name.push('id');
-
-               var data = {};
-
-               data.fpage = (parseInt(d.start) + parseInt(d.length)) / parseInt(d.length);
-               data.frows = d.length;
-               data.fsearch = d.search['value'];
-               data.forder = 'lastUpdate';
-               data.fsort = 'desc';
-               data.fmodul = 'PermohonanCurrentUser/Rumusan';
-               data.flsearch = 'permohonanNumber,domain,straNumber';
-               data.ftots = 3;
-               return data;
+               return permohonanAjaxRequest(d, 'PermohonanCurrentUser/Rumusan');
             }
          }
       });
