@@ -242,4 +242,135 @@
       }
     })
   }
+
+  function detail_add_rs(e) {
+    e.preventDefault();
+    var data = $('#add_detail_data_rs').serializeFormJSON();
+    let name_provinsi = $('#provinsiIdRs').select2('data');
+
+    if (data.editdetail == 'deletedetail') {
+
+      $('#rs_' + data.rowdetail).remove()
+
+      $.each(arr_detail_add_rs, function (indexa, valuea) {
+        if (data.rowdetail == valuea.iddetail) {
+          cc = indexa
+        }
+      });
+
+      Array.prototype.remove = function (indexcc) {
+        this.splice(indexcc, 1);
+      }
+
+      arr_detail_add_rs.remove(cc)
+
+      var s_detail = [];
+
+      arr_detail_add_rs.map((val, index) => {
+        s_detail.push(val)
+      })
+      arr_detail_add_rs = s_detail
+      arr_detail_add_rs_x.detail = s_detail;
+    }
+
+    arr_detail_add_rs.push({
+      "name": data.name,
+      "permohonanId": 0,
+      "apotekerName": data.apotekerName,
+      "straNumber": data.straNumber,
+      "sipaNumber": data.sipaNumber,
+      "address": data.address,
+      "provinsiId": data.provinsiId,
+      "iddetail": id_detail_add_rs
+    })
+
+    arr_detail_add_rs_x = {
+      detail: arr_detail_add_rs
+    }
+
+    $('#data_rs').val(JSON.stringify(arr_detail_add_rs_x))
+    $(".detail-item-rs").append(`
+      <tr id="rs_${id_detail_add_rs}">
+        <td>${data.name}</td>
+        <td>${data.apotekerName}</td>
+        <td>${data.straNumber}</td>
+        <td>${data.sipaNumber}</td>
+        <td>${data.address}</td>
+        <td>${name_provinsi[0].text}</td>
+        <td>
+          <button onclick="edit_detail_add_rs('${id_detail_add_rs}')" type="button" class="btn waves-effect waves-light btn-primary" iddadd="${id_detail_add_rs}">Ubah Rumah Sakit</button>
+          <button onclick="delete_detail_add_rs('${id_detail_add_rs}')" type="button" class="btn waves-effect waves-light btn-danger" iddadd="${id_detail_add_rs}">Hapus</button>
+        </td>
+      </tr>`);
+
+    id_detail_add_rs++;
+    close_modals()
+  }
+
+  function edit_detail_add_rs(id) {
+    $.each(arr_detail_add_rs, function (i, v) {
+      if (id == v.iddetail) {
+        $("#name_rs").val(v.name)
+        $("#apotekerName_rs").val(v.apotekerName)
+        $("#straNumber_rs").val(v.straNumber)
+        $("#sipaNumber_rs").val(v.sipaNumber)
+        $("#address_rs").val(v.address)
+        $('#provinsiIdRs').val(v.provinsiId).trigger("change");
+        $('#title-modal-rs').html('Ubah Rumah Sakit')
+        $("#editdetail_rs").val('deletedetail')
+        $("#rowdetail_rs").val(v.iddetail)
+      }
+    });
+    $('.btn-open-modal-rs').click()
+  }
+
+  function delete_detail_add_rs(id) {
+    swal({
+      title: 'Hapus Rumah Sakit',
+      text: "Apakah Anda yakin menghapus rumah sakit ini ?",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: "Batal",
+      confirmButtonText: 'Ya, Hapus !'
+    }).then((result) => {
+      if (result.value) {
+        $.ajax({
+          success: function (data, textStatus, xhr) {
+            swal(
+              'Berhasil!',
+              'Rumah Sakit dihapus',
+              'success'
+            )
+
+            $('#rs_' + id).remove()
+
+            $.each(arr_detail_add_rs, function (indexa, valuea) {
+              if (id == valuea.iddetail) {
+                cc = indexa
+              }
+            });
+
+            Array.prototype.remove = function (indexcc) {
+              this.splice(indexcc, 1);
+            }
+
+            arr_detail_add_rs.remove(cc)
+
+            var s_detail = [];
+
+            arr_detail_add_rs.map((val, index) => {
+              s_detail.push(val)
+            })
+            arr_detail_add_rs = s_detail
+            arr_detail_add_rs_x.detail = s_detail;
+
+            $('#data_rs').val('')
+            $('#data_rs').val(JSON.stringify(arr_detail_add_rs_x))
+          }
+        });
+      }
+    })
+  }
 </script>
