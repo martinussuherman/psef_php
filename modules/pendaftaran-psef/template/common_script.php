@@ -180,6 +180,64 @@
     });
   }
 
+  function loadAndDisplayPermohonan(permohonanId, apiUrl, token) {
+    loadPermohonan(permohonanId, apiUrl, token).done(function(dataPermohonan, textStatus, xhr) {
+      let pemohonId = dataPermohonan.pemohonId;
+
+      $.when(
+        loadPemohon(pemohonId, apiUrl, token),
+        loadPermohonanApotek(permohonanId, apiUrl, token),
+        loadPermohonanKlinik(permohonanId, apiUrl, token),
+        loadPermohonanRumahSakit(permohonanId, apiUrl, token),
+      ).done(function(
+        loadPemohonResult,
+        loadApotekResult,
+        loadKlinikResult,
+        loadRumahSakitResult) {
+        // Ref: https://api.jquery.com/jquery.when
+        // loadApotekResult: [ data, statusText, jqXHR ]
+
+        viewPermohonan(
+          apiUrl,
+          token,
+          dataPermohonan,
+          loadPemohonResult[0],
+          loadApotekResult[0],
+          loadKlinikResult[0],
+          loadRumahSakitResult[0],
+          true,
+          true);
+      });
+    });
+  }
+
+  function loadAndDisplayPermohonanCurrentUser(permohonanId, apiUrl, token) {
+    $.when(
+      loadPermohonanCurrentUser(permohonanId, apiUrl, token),
+      loadPermohonanApotek(permohonanId, apiUrl, token),
+      loadPermohonanKlinik(permohonanId, apiUrl, token),
+      loadPermohonanRumahSakit(permohonanId, apiUrl, token),
+    ).done(function(
+      loadPermohonanResult,
+      loadApotekResult,
+      loadKlinikResult,
+      loadRumahSakitResult) {
+      // Ref: https://api.jquery.com/jquery.when
+      // loadApotekResult: [ data, statusText, jqXHR ]
+
+      viewPermohonan(
+        apiUrl,
+        token,
+        loadPermohonanResult[0],
+        undefined,
+        loadApotekResult[0],
+        loadKlinikResult[0],
+        loadRumahSakitResult[0],
+        false,
+        false);
+    });
+  }
+
   function loadPermohonan(permohonanId, apiUrl, token) {
     return $.ajax({
       url: `${apiUrl}Permohonan(${permohonanId})`,
