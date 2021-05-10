@@ -16,7 +16,7 @@
     return splitUrl[splitUrl.length - 1];
   }
 
-  function updateDataPermohonan(dataPermohonan) {
+  function transformDataPermohonan(dataPermohonan) {
     dataPermohonan.straExpiry = moment(dataPermohonan.straExpiry).format("YYYY-MM-DD");
     dataPermohonan.name_straUrl = fileNameFromUrl(dataPermohonan.straUrl);
     dataPermohonan.name_suratPermohonanUrl = fileNameFromUrl(dataPermohonan.suratPermohonanUrl);
@@ -123,7 +123,7 @@
     });
   }
 
-  function loadOssData(dataPemohon, apiUrl, token) {
+  function loadAndDisplayOssData(dataPemohon, apiUrl, token) {
     if (dataPemohon == undefined || dataPemohon.nib == undefined) {
       return;
     }
@@ -180,7 +180,7 @@
     });
   }
 
-  function loadPermohonanHistory(permohonanId, apiUrl, token) {
+  function loadAndDisplayPermohonanHistory(permohonanId, apiUrl, token) {
     $.ajax({
       url: `${apiUrl}HistoryPermohonan/ByPermohonan(permohonanId=${permohonanId})`,
       type: 'GET',
