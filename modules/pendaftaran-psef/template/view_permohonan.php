@@ -31,6 +31,10 @@
     if ($extraActions == 'setujui') {
       include('button_setujui.php');
     }
+
+    if ($extraActions == 'validasi') {
+      include('button_validasi.php');
+    }
     ?>
   </form>
 </script>
