@@ -123,4 +123,86 @@
     });
   }
 
+  function loadOssData(dataPemohon, apiUrl, token) {
+    if (dataPemohon == undefined || dataPemohon.nib == undefined) {
+      return;
+    }
+
+    $.ajax({
+      url: `${apiUrl}OssInfo/OssFullInfo?id=${dataPemohon.nib }`,
+      type: 'GET',
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
+      },
+      dataType: 'json',
+      success: function(data, textStatus, xhr) {
+        if (data.keterangan == "Data NIB tidak ditemukan" ||
+          data.keterangan == "NIB harus 13 karakter." ||
+          data.keterangan == "Api Key tidak valid") {
+          $("#cek_nib").css("color", "red");
+          $('#cek_nib').html('Data NIB Tidak di Temukan');
+          $("#nib").removeClass("form-control is-valid").addClass("form-control is-invalid");
+          $('#status_nib').val(0);
+          return;
+        }
+
+        $("#cek_nib").css("color", "green");
+        $('#cek_nib').html(`
+          Data NIB Dapat di Gunakan<br>
+          <a onclick="detail_nib(${dataPemohon.nib})" style="color:blue;text-decoration: underline;cursor: pointer;">
+            Periksa Detail NIB
+          </a>`);
+        $("#nib").removeClass("form-control is-invalid").addClass("form-control is-valid");
+        $('#status_nib').val(1);
+        $('#nib_view').append(`
+          <table class="table table-bordered">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Nama Perusahaan</th>
+                <th scope="col">NIB</th>
+                <th scope="col">NPWP Perusahaan</th>
+                <th scope="col">Nomor Telepon Perusahaan</th>
+                <th scope="col">Alamat Perusahaan</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>${data.namaPerseroan}</th>
+                <th>${data.nib}</th>
+                <th>${data.npwpPerseroan}</th>
+                <th>${data.nomorTelponPerseroan}</th>
+                <th>${data.alamatPerseroan}</th>
+              </tr>
+            </tbody>
+          </table>`);
+      },
+      error: function(xhr, textStatus, errorThrown) {}
+    });
+  }
+
+  function loadPermohonanHistory(permohonanId, apiUrl, token) {
+    $.ajax({
+      url: `${apiUrl}HistoryPermohonan/ByPermohonan(permohonanId=${permohonanId})`,
+      type: 'GET',
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
+      },
+      dataType: 'json',
+      success: function(historyList, textStatus, xhr) {
+        $.each(historyList.value, function(index, history) {
+          $(".detail-history").append(`
+            <tr>
+              <td>${moment(history.updatedAt).format("YYYY-MM-DD, HH:mm:ss")}</td>
+              <td>${history.updatedBy}</td>
+              <td>${history.statusName}</td>
+              <td>${history.reason}</td>
+            </tr>`);
+        });
+      },
+      error: function(xhr, textStatus, errorThrown) {
+        console.log('Error in Operation');
+      }
+    });
+  }
+
 </script>
