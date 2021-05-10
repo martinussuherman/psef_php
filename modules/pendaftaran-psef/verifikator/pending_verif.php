@@ -436,87 +436,10 @@ include('../template/modal_nib.php');
     }
 
     function reject_data(id){
-        Swal.mixin({
-            input: 'text',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            cancelButtonText: "Batal",
-            confirmButtonText: 'Ya'
-        }).queue([
-            {
-                title: 'Kembalikan Permohonan ?',
-                text: 'Mohon isi catatan'
-            }
-        ]).then((result) => {
-            if (result.value) {
-                $.ajax({
-                    url: url_api_x+'Permohonan/VerifikatorKembalikan',
-                    type: 'POST',
-                    data: JSON.stringify({reason:result.value[0], permohonanId: parseInt(id)}),
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader('Authorization', 'Bearer '+accesstoken+'');
-                    },
-                    contentType: 'application/json',
-                    success: function (data, textStatus, xhr) {
-                        if (xhr.status == '204') {
-                            routing('pending_verif');
-                            toastr.success("Permohonan di Kembalikan", 'Berhasil!');
-                        }else{
-                            toastr.error("Permohonan di Kembalikan", 'Gagal!');
-                        }
-                    },
-                    error: function (xhr, textStatus, errorThrown) {
-                        console.log('Error in Operation');
-                    }
-                });
-            }
-        })
-            
+      permohonanKembalikan(id, url_api_x + 'Permohonan/VerifikatorKembalikan', accesstoken);
     }
 
     function process_data(id){
-        let data = {'permohonanId':parseInt(id)}
-        swal({
-            title: 'Penyetujuan Permohonan',
-            text: "Apakah anda yakin ingin menyetujui permohonan ini ?",
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Ya, Ajukan !',
-            cancelButtonText: "Batal",
-            }).then((result) => {
-            if (result.value) {
-                $.ajax({
-                    url: url_api_x+'Permohonan/VerifikatorSetujui',
-                    type: 'POST',
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader('Authorization', 'Bearer '+accesstoken+'');
-                    },
-                    data: JSON.stringify(data),
-                    contentType: 'application/json',
-                    success: function (data, textStatus, xhr) {
-                        if (xhr.status == '204') {
-                            swal(
-                                'Berhasil!',
-                                'Permohonan di Setujui',
-                                'success'
-                            )
-                            routing('pending_verif')
-                        }else{
-                            swal({
-                                type: 'error',
-                                title: 'Oops...',
-                                text: 'Permohonan Gagal di Setujui'
-                            })
-                        }
-                    },
-                    error: function (xhr, textStatus, errorThrown) {
-                        console.log('Error in Operation');
-                    }
-                });
-            }
-        })
+      permohonanSetujui(id, url_api_x + 'Permohonan/VerifikatorSetujui', accesstoken);
     }
 </script>
