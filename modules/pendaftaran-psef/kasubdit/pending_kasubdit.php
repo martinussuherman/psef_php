@@ -322,10 +322,6 @@ include('../template/modal_nib.php');
             current: 4
         });
 
-        $("#nib").blur(function() {
-            cek_nib()
-        });
-
         $.ajax({
             url: url_api_x+"OssInfo/OssFullInfo?id="+nib,
             type: 'GET',
@@ -394,54 +390,6 @@ include('../template/modal_nib.php');
         });
     }
 
-    function cek_nib(){
-        $('#nib_view').html('')
-        let nib = $('#nib').val()
-        $.ajax({
-            url: url_api_x+"OssInfo/OssFullInfo?id="+nib,
-            type: 'GET',
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('Authorization', 'Bearer '+accesstoken+'');
-            },
-            dataType: 'json',
-            success: function (data, textStatus, xhr) {
-                if(data.keterangan != "Data NIB tidak ditemukan" && data.keterangan !="NIB harus 13 karakter." && data.keterangan !="Api Key tidak valid"){
-                    $("#cek_nib").css("color", "green");
-                    $('#cek_nib').html('Data NIB Dapat di Gunakan<br><a onclick="detail_nib(`'+nib+'`)" style="color:blue;text-decoration: underline;cursor: pointer;">Periksa Detail NIB</p>')
-                    $( "#nib" ).removeClass("form-control is-invalid").addClass("form-control is-valid");
-                    $('#status_nib').val(1)
-                    $('#nib_view').append(`<table class="table table-bordered">
-                                        <thead class="thead-light">
-                                            <tr>
-                                                <th scope="col">Name</th>
-                                                <th scope="col">NIB</th>
-                                                <th scope="col">NPWP</th>
-                                                <th scope="col">SIUP</th>
-                                                <th scope="col">Director</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th>${data.name}</th>
-                                                <th>${data.nib}</th>
-                                                <th>${data.npwp}</th>
-                                                <th>${data.siup}</th>
-                                                <th>${data.director}</th>
-                                            </tr>
-                                        </tbody>
-                                    </table>`)
-                }else{
-                    $("#cek_nib").css("color", "red");
-                    $('#cek_nib').html('Data NIB Tidak di Temukan')
-                    $( "#nib" ).removeClass("form-control is-valid").addClass("form-control is-invalid");
-                    $('#status_nib').val(0)
-                }
-            },
-            error: function (xhr, textStatus, errorThrown) {
-               
-            }
-        });
-    }
     function detail_nib(nib){
         localStorage.setItem("nib", nib);
         window.open(url);
