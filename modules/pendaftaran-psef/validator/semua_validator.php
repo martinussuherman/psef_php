@@ -126,6 +126,10 @@ include('../template/modal_nib.php');
         });
     });
 
+    function viewRouting() {
+      routing('semua_validator');
+    }
+
     function view_data(id){
         $.ajax({
             url: url_api_x+"Permohonan("+id+")",
