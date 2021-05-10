@@ -271,6 +271,42 @@
     });
   }
 
+  function viewPermohonan(
+    apiUrl,
+    token,
+    dataPermohonan,
+    dataPemohon,
+    dataApotek,
+    dataKlinik,
+    dataRumahSakit,
+    isDisplayHistory,
+    isDisplayProgress) {
+    let template = Handlebars.compile($("#view-data").html());
+    let data = {
+      data_permohonan: dataPermohonan,
+      data_apotek: dataApotek,
+      data_klinik: dataKlinik,
+      data_rs: dataRumahSakit,
+      data_pemohon: dataPemohon
+    };
+
+    $('#load-data').html(template(data));
+
+    displayApotekData(dataApotek);
+    displayKlinikData(dataKlinik);
+    displayRumahSakitData(dataRumahSakit);
+
+    if (isDisplayProgress) {
+      displayPermohonanProgress(dataPermohonan);
+    }
+
+    loadAndDisplayOssData(dataPemohon, apiUrl, token);
+
+    if (isDisplayHistory) {
+      loadAndDisplayPermohonanHistory(dataPermohonan.id, apiUrl, token);
+    }
+  }
+
   function permohonanKembalikan(permohonanId, apiUrl, token) {
     Swal.mixin({
       input: 'text',
