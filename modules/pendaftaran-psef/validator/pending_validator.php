@@ -128,6 +128,10 @@ include('../template/modal_nib.php');
         });
     });
 
+    function viewRouting() {
+      routing('pending_validator');
+    }
+
     function view_data(id){
         $.ajax({
             url: url_api_x+"Permohonan("+id+")",
