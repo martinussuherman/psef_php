@@ -205,4 +205,96 @@
     });
   }
 
+  function permohonanKembalikan(permohonanId, apiUrl, token) {
+    Swal.mixin({
+      input: 'text',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: "Batal",
+      confirmButtonText: 'Ya'
+    }).queue([{
+      title: 'Kembalikan Permohonan ?',
+      text: 'Mohon isi catatan'
+    }]).then((result) => {
+      if (!result.value) {
+        return;
+      }
+
+      $.ajax({
+        url: apiUrl,
+        type: 'POST',
+        data: JSON.stringify({
+          reason: result.value[0],
+          permohonanId: parseInt(id)
+        }),
+        beforeSend: function(xhr) {
+          xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
+        },
+        contentType: 'application/json',
+        success: function(data, textStatus, xhr) {
+          if (xhr.status == '204') {
+            viewRouting();
+            toastr.success("Permohonan di Kembalikan", 'Berhasil!');
+            return;
+          }
+
+          toastr.error("Permohonan di Kembalikan", 'Gagal!');
+        },
+        error: function(xhr, textStatus, errorThrown) {
+          console.log('Error in Operation');
+        }
+      });
+    });
+  }
+
+  function permohonanSetujui(permohonanId, apiUrl, token) {
+    swal({
+      title: 'Penyetujuan Permohonan',
+      text: "Apakah anda yakin ingin menyetujui permohonan ini ?",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Ya, Ajukan !',
+      cancelButtonText: "Batal",
+    }).then((result) => {
+      if (!result.value) {
+        return;
+      }
+
+      $.ajax({
+        url: apiUrl,
+        type: 'POST',
+        beforeSend: function(xhr) {
+          xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
+        },
+        data: JSON.stringify({
+          'permohonanId': parseInt(permohonanId)
+        }),
+        contentType: 'application/json',
+        success: function(data, textStatus, xhr) {
+          if (xhr.status == '204') {
+            swal(
+              'Berhasil!',
+              'Permohonan di Setujui',
+              'success'
+            );
+
+            viewRouting();
+            return;
+          }
+
+          swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Permohonan Gagal di Setujui'
+          });
+        },
+        error: function(xhr, textStatus, errorThrown) {
+          console.log('Error in Operation');
+        }
+      });
+    })
+  }
 </script>
