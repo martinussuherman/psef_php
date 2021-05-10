@@ -180,6 +180,72 @@
     });
   }
 
+  function loadPermohonan(permohonanId, apiUrl, token) {
+    $.ajax({
+      url: `${apiUrl}Permohonan(${permohonanId})`,
+      type: 'GET',
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
+      },
+      dataType: 'json'
+    });
+  }
+
+  function loadPermohonanCurrentUser(permohonanId, apiUrl, token) {
+    return $.ajax({
+      url: `${apiUrl}PermohonanCurrentUser(${permohonanId})`,
+      type: 'GET',
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
+      },
+      dataType: 'json'
+    });
+  }
+
+  function loadPermohonanApotek(permohonanId, apiUrl, token) {
+    return $.ajax({
+      url: `${apiUrl}PermohonanApotek(${permohonanId})`,
+      type: 'GET',
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
+      },
+      dataType: 'json',
+    });
+  }
+
+  function loadPermohonanKlinik(permohonanId, apiUrl, token) {
+    return $.ajax({
+      url: `${apiUrl}PermohonanKlinik(${permohonanId})`,
+      type: 'GET',
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
+      },
+      dataType: 'json',
+    });
+  }
+
+  function loadPermohonanRumahSakit(permohonanId, apiUrl, token) {
+    return $.ajax({
+      url: `${apiUrl}PermohonanRumahSakit(${permohonanId})`,
+      type: 'GET',
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
+      },
+      dataType: 'json',
+    });
+  }
+
+  function loadPemohon(pemohonId, apiUrl, token) {
+    $.ajax({
+      url: `${apiUrl}Pemohon(${pemohonId})`,
+      type: 'GET',
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
+      },
+      dataType: 'json',
+    });
+  }
+
   function loadAndDisplayPermohonanHistory(permohonanId, apiUrl, token) {
     $.ajax({
       url: `${apiUrl}HistoryPermohonan/ByPermohonan(permohonanId=${permohonanId})`,
