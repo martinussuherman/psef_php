@@ -181,7 +181,7 @@
   }
 
   function loadPermohonan(permohonanId, apiUrl, token) {
-    $.ajax({
+    return $.ajax({
       url: `${apiUrl}Permohonan(${permohonanId})`,
       type: 'GET',
       beforeSend: function(xhr) {
@@ -236,7 +236,7 @@
   }
 
   function loadPemohon(pemohonId, apiUrl, token) {
-    $.ajax({
+    return $.ajax({
       url: `${apiUrl}Pemohon(${pemohonId})`,
       type: 'GET',
       beforeSend: function(xhr) {
