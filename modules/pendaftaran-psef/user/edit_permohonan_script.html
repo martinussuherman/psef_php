@@ -20,7 +20,7 @@
     let source = $("#edit-data").html();
     let template = Handlebars.compile(source);
 
-    updateDataPermohonan(data);
+    transformDataPermohonan(data);
     $('#load-data').html(template(data));
 
     $('#v-straUrl').val(data.straUrl)
