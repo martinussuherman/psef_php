@@ -55,9 +55,13 @@
 </div>
 
 <?php
-if (!isset($pageType)) {
-  include('../template/view_permohonan.html');
-  include('common_script.html');
-  include('view_permohonan_script.html');
-}
+include('../template/common_script.php');
+include('../template/view_permohonan.php');
+include('common_script.html');
 ?>
+
+<script>
+  function permohonanCurrentUser(id, showAjukanButton) {
+    loadAndDisplayPermohonanCurrentUser(id, url_api_x, accesstoken);
+  }
+</script>
