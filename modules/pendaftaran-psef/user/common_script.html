@@ -1,17 +1,9 @@
 <script>
-  function emptyStringIfUndefined(string) {
-    if (string == undefined) {
-      return "";
-    }
-
-    return string;
-  }
-
   function actionString(permohonan, isViewOnly) {
     if (isViewOnly) {
       return `
         <td>
-          <button onclick="viewPermohonan(${permohonan.id}, false)" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">
+          <button onclick="permohonanCurrentUser(${permohonan.id}, false)" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">
             Lihat Detail Data
           </button>
         </td>`;
@@ -19,7 +11,7 @@
 
     return `
       <td>
-        <button onclick="viewPermohonan(${permohonan.id}, true)" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">
+        <button onclick="permohonanCurrentUser(${permohonan.id}, true)" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">
           Lihat Detail Data
         </button>
         <button onclick="edit_data_permohonan(${permohonan.id})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-primary">
@@ -62,8 +54,8 @@
     return JSON.parse(JSON.stringify(resultList));
   }
 
-  function permohonanAjaxRequest(data, modulName) {
-    // var order_name = []
+  function permohonanAjaxRequest(list, modulName) {
+    // var order_name = [];
 
     // order_name.push('permohonanNumber');
     // order_name.push('domain');
@@ -73,9 +65,9 @@
     // order_name.push('id');
 
     let data = {
-      fpage: (parseInt(data.start) + parseInt(data.length)) / parseInt(data.length),
-      frows: data.length,
-      fsearch: data.search['value'],
+      fpage: (parseInt(list.start) + parseInt(list.length)) / parseInt(list.length),
+      frows: list.length,
+      fsearch: list.search['value'],
       forder: 'lastUpdate',
       fsort: 'desc',
       fmodul: modulName,
