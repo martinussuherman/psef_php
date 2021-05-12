@@ -395,6 +395,7 @@
       data_pemohon: dataPemohon
     };
 
+    transformDataPermohonan(dataPermohonan);
     $('#load-data').html(template(data));
 
     displayApotekData(dataApotek);
