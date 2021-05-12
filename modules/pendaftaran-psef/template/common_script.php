@@ -16,6 +16,53 @@
     return splitUrl[splitUrl.length - 1];
   }
 
+  function userDaysColor(days) {
+    if (days < 2) {
+      return 'green';
+    }
+
+    if (days < 3) {
+      return 'yellow';
+    }
+
+    if (days < 4) {
+      return 'red';
+    }
+
+    return 'black';
+  }
+
+  function totalDaysColor(days) {
+    if (days < 5) {
+      return 'green';
+    }
+
+    if (days < 7) {
+      return 'yellow';
+    }
+
+    if (days < 9) {
+      return 'red';
+    }
+
+    return 'black';
+  }
+
+  function configureAjaxRequest(moduleName, requestData) {
+    let data = {
+      fpage: (requestData.start + requestData.length) / requestData.length,
+      frows: requestData.length,
+      fsearch: requestData.search['value'],
+      forder: 'lastUpdate',
+      fsort: 'desc',
+      fmodul: moduleName,
+      flsearch: 'permohonanNumber,domain,straNumber',
+      ftots: 3
+    };
+
+    return data;
+  }
+
   function transformDataPermohonan(dataPermohonan) {
     dataPermohonan.straExpiry = moment(dataPermohonan.straExpiry).format("YYYY-MM-DD");
     dataPermohonan.name_straUrl = fileNameFromUrl(dataPermohonan.straUrl);
