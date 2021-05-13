@@ -7,7 +7,7 @@
   <form class="m-t-30">
     <?php
     if (isset($isKemkesView)) {
-      include('view_permohonan_non_user.php');
+      include('view_permohonan_kemkes.php');
     }
 
     include('view_data_permohonan.php');
