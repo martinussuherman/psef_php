@@ -1,89 +1,9 @@
-<div class="page-breadcrumb">
-    <div class="row">
-        <div class="col-5 align-self-center">
-            <h4 class="page-title" id="page-title">Permohonan</h4>
-            <div class="d-flex align-items-center">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb" id="list-breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Pendaftaran PSEF</a></li>
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Permohonan (Semua)</a></li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-        <div class="col-7 align-self-center">
-            <div class="d-flex no-block justify-content-end align-items-center" id="refresh-page">
-                <button onclick="routing('semua_kasi')" type="button" class="btn waves-effect waves-light btn-rounded btn-primary"><i class="fas fa-redo"></i> Segarkan Halaman</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body" id="load-data">
-                    <div class="row">
-                        <div class="col-5 align-self-center">
-                            <h4 class="page-title">Data Permohonan</h4>
-                        </div>
-                    </div><br>
-                    <div class="table-responsive" id="table-data-here">
-                        <table id="zero_config" class="table table-striped table-bordered" style="width:100%">
-                            <thead>
-                                <tr>
-                                    <th>Nomor Permohonan</th>
-                                    <th>Domain</th>
-                                    <th>Nama Perusahaan</th>
-                                    <th>Email</th>
-                                    <th>Kedaluwarsa STRA</th>
-                                    <th>Status</th>
-                                    <th>Tindakan</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Template show data -->
-<script id="table-data" type="text/x-handlebars-template">
-    <table id="zero_config" class="table table-striped table-bordered" style="width:100%">
-        <thead>
-            <tr>
-                <th>Nomor Permohonan</th>
-                <th>Domain</th>
-                <th>Stra Number</th>
-                <th>Stra Expiry</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#value}}
-                <tr>
-                    <td>{{permohonanNumber}}</td>
-                    <td>{{domain}}</td>
-                    <td>{{straNumber}}</td>
-                    <td>{{straExpiry}}</td>
-                    <td>{{statusName}}</td>
-                    <td>
-                        <button onclick="view_data('{{id}}')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">View Data</button>
-                    </td>
-                </tr>
-            {{/value}}
-        </tbody>
-    </table>
-</script>
-
 <?php
 $isKemkesView = true;
 $showRekamJejak = true;
 
-// $pageTitle = 'Permohonan (Rumusan)';
+$pageTitle = 'Permohonan (Semua)';
+include('../template/template_kemkes.php');
 include('../template/common_script.php');
 include('../template/view_permohonan.php');
 include('../template/modal_nib.php');
