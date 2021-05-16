@@ -10,14 +10,14 @@
       include('view_permohonan_kemkes.php');
     }
 
-    include('view_data_permohonan.php');
-    include('view_dokumen.php');
-    include('table_apotek.php');
-    include('table_klinik.php');
-    include('table_rumah_sakit.php');
+    include('../../template/view_data_permohonan.php');
+    include('../../template/view_dokumen.php');
+    include('../../template/table_apotek.php');
+    include('../../template/table_klinik.php');
+    include('../../template/table_rumah_sakit.php');
 
     if (isset($showRekamJejak)) {
-      include('table_rekam_jejak.php');
+      include('../../template/table_rekam_jejak.php');
     }
     ?>
 
