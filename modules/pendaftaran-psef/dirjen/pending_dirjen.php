@@ -5,9 +5,6 @@ $extraActions = 'setujui';
 
 $pageTitle = 'Permohonan (Tertunda)';
 include('../template/template_kemkes.php');
-include('../template/common_script.php');
-include('../template/view_permohonan.php');
-include('../template/modal_nib.php');
 ?>
 
 <script>
