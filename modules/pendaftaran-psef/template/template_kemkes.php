@@ -66,3 +66,9 @@
     </div>
   </div>
 </div>
+
+<?php
+include('../template/common_script.php');
+include('../template/view_permohonan.php');
+include('../template/modal_nib.php');
+?>
