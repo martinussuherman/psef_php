@@ -249,6 +249,7 @@
           token,
           dataPermohonan,
           loadPemohonResult[0],
+          undefined,
           loadApotekResult[0],
           loadKlinikResult[0],
           loadRumahSakitResult[0],
@@ -276,6 +277,7 @@
         apiUrl,
         token,
         loadPermohonanResult[0],
+        undefined,
         undefined,
         loadApotekResult[0],
         loadKlinikResult[0],
@@ -381,6 +383,7 @@
     token,
     dataPermohonan,
     dataPemohon,
+    dataPerizinan,
     dataApotek,
     dataKlinik,
     dataRumahSakit,
@@ -392,7 +395,8 @@
       data_apotek: dataApotek,
       data_klinik: dataKlinik,
       data_rs: dataRumahSakit,
-      data_pemohon: dataPemohon
+      data_pemohon: dataPemohon,
+      data_izin = dataPerizinan
     };
 
     transformDataPermohonan(dataPermohonan);
