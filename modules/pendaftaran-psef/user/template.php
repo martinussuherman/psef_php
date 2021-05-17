@@ -55,7 +55,7 @@
 </div>
 
 <?php
-include('../template/common_script.php');
+include('../../template/common_script.php');
 include('../template/view_permohonan.php');
 include('common_script.html');
 ?>
