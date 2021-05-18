@@ -78,6 +78,15 @@
     // dataPermohonan.name_pembayaranPnbpUrl = fileNameFromUrl(dataPermohonan.pembayaranPnbpUrl);
   }
 
+  function transformDataPerizinan(dataPerizinan) {
+    if (dataPerizinan == undefined) {
+      return;
+    }
+
+    dataPerizinan.issuedAt = moment(dataPerizinan.issuedAt).format("YYYY-MM-DD");
+    dataPerizinan.expiredAt = moment(dataPerizinan.expiredAt).format("YYYY-MM-DD");
+  }
+
   function progressPermohonanFromStatus(statusId) {
     switch (statusId) {
       case 4:
@@ -289,6 +298,40 @@
     });
   }
 
+  function loadAndDisplayPerizinan(permohonanId, perizinanId, apiUrl, token) {
+    loadPermohonan(permohonanId, apiUrl, token).done(function(dataPermohonan, textStatus, xhr) {
+      let pemohonId = dataPermohonan.pemohonId;
+
+      $.when(
+        loadPemohon(pemohonId, apiUrl, token),
+        loadPerizinan(perizinanId, apiUrl, token),
+        loadPermohonanApotek(permohonanId, apiUrl, token),
+        loadPermohonanKlinik(permohonanId, apiUrl, token),
+        loadPermohonanRumahSakit(permohonanId, apiUrl, token),
+      ).done(function(
+        loadPemohonResult,
+        loadPerizinanResult,
+        loadApotekResult,
+        loadKlinikResult,
+        loadRumahSakitResult) {
+        // Ref: https://api.jquery.com/jquery.when
+        // loadApotekResult: [ data, statusText, jqXHR ]
+
+        viewPermohonan(
+          apiUrl,
+          token,
+          dataPermohonan,
+          loadPemohonResult[0],
+          loadPerizinanResult[0],
+          loadApotekResult[0],
+          loadKlinikResult[0],
+          loadRumahSakitResult[0],
+          false,
+          false);
+      });
+    });
+  }
+
   function loadPermohonan(permohonanId, apiUrl, token) {
     return $.ajax({
       url: `${apiUrl}Permohonan(${permohonanId})`,
@@ -352,6 +395,17 @@
         xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
       },
       dataType: 'json',
+    });
+  }
+
+  function loadPerizinan(perizinanId, apiUrl, token) {
+    return $.ajax({
+      url: `${apiUrl}Perizinan(${perizinanId})`,
+      type: 'GET',
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
+      },
+      dataType: 'json'
     });
   }
 
