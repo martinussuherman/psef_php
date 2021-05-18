@@ -45,15 +45,34 @@
   </div>
   <div class="col-md-4">
     <div class="form-group">
+      <label class="control-label">Dokumen Izin Usaha dari Kementerian Perindustrian</label>
+      <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
+        <a href="https://psef.kemkes.go.id{{data_permohonan.izinUsahaUrl}}">{{data_permohonan.name_izinUsahaUrl}}</a>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col-md-4">
+    <div class="form-group">
       <label class="control-label">SPPL</label>
       <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
         <a href="https://psef.kemkes.go.id{{data_permohonan.spplUrl}}">{{data_permohonan.name_spplUrl}}</a>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
 
 <div class="row">
+  <div class="col-md-4">
+    <div class="form-group">
+      <label class="control-label">Surat Pernyataan Komitmen bekerjasama dengan Apotek</label>
+      <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
+        <a href="https://psef.kemkes.go.id{{data_permohonan.komitmenKerjasamaApotekUrl}}">{{data_permohonan.name_komitmenKerjasamaApotekUrl}}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row">
   <div class="col-md-4">
     <div class="form-group">
       <label class="control-label">Izin Lokasi</label>
@@ -78,4 +97,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
