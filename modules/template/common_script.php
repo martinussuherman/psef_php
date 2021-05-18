@@ -456,6 +456,8 @@
     };
 
     transformDataPermohonan(dataPermohonan);
+    transformDataPerizinan(dataPerizinan);
+
     $('#load-data').html(template(data));
 
     displayApotekData(dataApotek);
