@@ -398,7 +398,7 @@
       data_klinik: dataKlinik,
       data_rs: dataRumahSakit,
       data_pemohon: dataPemohon,
-      data_izin = dataPerizinan
+      data_izin: dataPerizinan
     };
 
     transformDataPermohonan(dataPermohonan);
