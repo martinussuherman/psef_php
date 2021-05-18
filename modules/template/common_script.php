@@ -70,10 +70,12 @@
     dataPermohonan.name_prosesBisnisUrl = fileNameFromUrl(dataPermohonan.prosesBisnisUrl);
     dataPermohonan.name_dokumenApiUrl = fileNameFromUrl(dataPermohonan.dokumenApiUrl);
     dataPermohonan.name_dokumenPseUrl = fileNameFromUrl(dataPermohonan.dokumenPseUrl);
-    dataPermohonan.name_spplUrl = fileNameFromUrl(dataPermohonan.spplUrl);
-    dataPermohonan.name_izinLokasiUrl = fileNameFromUrl(dataPermohonan.izinLokasiUrl);
-    dataPermohonan.name_imbUrl = fileNameFromUrl(dataPermohonan.imbUrl);
-    dataPermohonan.name_pembayaranPnbpUrl = fileNameFromUrl(dataPermohonan.pembayaranPnbpUrl);
+    dataPermohonan.name_izinUsahaUrl = fileNameFromUrl(dataPermohonan.izinUsahaUrl);
+    dataPermohonan.name_komitmenKerjasamaApotekUrl = fileNameFromUrl(dataPermohonan.komitmenKerjasamaApotekUrl);
+    // dataPermohonan.name_spplUrl = fileNameFromUrl(dataPermohonan.spplUrl);
+    // dataPermohonan.name_izinLokasiUrl = fileNameFromUrl(dataPermohonan.izinLokasiUrl);
+    // dataPermohonan.name_imbUrl = fileNameFromUrl(dataPermohonan.imbUrl);
+    // dataPermohonan.name_pembayaranPnbpUrl = fileNameFromUrl(dataPermohonan.pembayaranPnbpUrl);
   }
 
   function progressPermohonanFromStatus(statusId) {
