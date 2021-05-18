@@ -127,6 +127,10 @@ include('../template/view_perizinan.php');
         });
     });
 
+    function viewRouting() {
+      routing('perizinan_admin');
+    }
+
     function view_data(id,id_izin){
         $.ajax({
             url: url_api_x+"Permohonan("+id+")",
