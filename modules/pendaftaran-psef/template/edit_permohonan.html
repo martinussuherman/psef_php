@@ -62,6 +62,14 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+          <div class="col-md-4">
+              <div class="form-group">
+                  <label>Nama Tenaga Ahli</label>
+                  <input type="text" value= "{{tenagaAhliName}}" class="form-control" name="tenagaAhliName" placeholder="Masukan Nama Tenaga Ahli." required>
+              </div>
+          </div>
+        </div>
         <div class="form-group">
             <label><b>Contoh Surat</b></label>
             <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
@@ -70,6 +78,10 @@
             <br>
             <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
                 <a href="https://psef.kemkes.go.id/assets/doc/Contoh%20Dokumen%20PSE%20Kominfo.docx">Contoh Dokumen PSE Kominfo</a>
+            </div>
+            <br>
+            <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
+                <a href="https://psef.kemkes.go.id/assets/doc/Contoh%20Surat%20Pernyataan%20Komitmen%20Bekerjasama%20dengan%20Apotek.docx">Contoh Surat Pernyataan Komitmen bekerjasama dengan Apotek</a>
             </div>
         </div>
         <div class="form-group">
@@ -118,6 +130,24 @@
             <input type="hidden" name="dokumenPseUrl" id="v-dokumenPseUrl">
         </div>
         <div class="form-group">
+          <label>Dokumen Izin Usaha dari Kementerian Perindustrian</label>
+          <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
+              <a href="https://psef.kemkes.go.id{{izinUsahaUrl}}" id="close-izinUsahaUrl">{{name_izinUsahaUrl}}</a>
+          </div>
+          <input type="file" class="form-control" id="izinUsahaUrl">
+          <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
+          <input type="hidden" name="izinUsahaUrl" id="v-izinUsahaUrl">
+        </div>
+        <div class="form-group">
+          <label>Surat Pernyataan Komitmen bekerjasama dengan Apotek</label>
+          <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
+              <a href="https://psef.kemkes.go.id{{komitmenKerjasamaApotekUrl}}" id="close-komitmenKerjasamaApotekUrl">{{name_komitmenKerjasamaApotekUrl}}</a>
+          </div>
+          <input type="file" class="form-control" id="komitmenKerjasamaApotekUrl">
+          <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
+          <input type="hidden" name="komitmenKerjasamaApotekUrl" id="v-komitmenKerjasamaApotekUrl">
+        </div>
+        <!-- <div class="form-group">
             <label>SPPL</label>
             <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
                 <a href="https://psef.kemkes.go.id{{spplUrl}}" id="close-spplUrl">{{name_spplUrl}}</a>
@@ -152,7 +182,7 @@
             <input type="file" class="form-control" id="pembayaranPnbpUrl">
             <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
             <input type="hidden" name="pembayaranPnbpUrl" id="v-pembayaranPnbpUrl">
-        </div>
+        </div> -->
         <br><br>
         <input type="checkbox" value="check" id="agree" required/> Dengan ini saya menyatakan bahwa data yang saya isi adalah benar
         <br><br>
