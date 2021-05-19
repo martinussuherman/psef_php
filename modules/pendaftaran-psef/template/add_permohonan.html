@@ -62,6 +62,14 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+          <div class="col-md-4">
+              <div class="form-group">
+                  <label>Nama Tenaga Ahli</label>
+                  <input type="text" class="form-control" name="tenagaAhliName" placeholder="Masukan Nama Tenaga Ahli." required>
+              </div>
+          </div>
+        </div>
         <div class="form-group">
             <label><b>Contoh Surat</b></label>
             <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
@@ -70,6 +78,10 @@
             <br>
             <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
                 <a href="https://psef.kemkes.go.id/assets/doc/Contoh%20Dokumen%20PSE%20Kominfo.docx">Contoh Dokumen PSE Kominfo</a>
+            </div>
+            <br>
+            <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
+                <a href="https://psef.kemkes.go.id/assets/doc/Contoh%20Surat%20Pernyataan%20Komitmen%20Bekerjasama%20dengan%20Apotek.docx">Contoh Surat Pernyataan Komitmen bekerjasama dengan Apotek</a>
             </div>
         </div>
         <div class="form-group">
@@ -103,6 +115,18 @@
             <input type="hidden" name="dokumenPseUrl" id="v-dokumenPseUrl">
         </div>
         <div class="form-group">
+          <label>Dokumen Izin Usaha dari Kementerian Perindustrian</label>
+          <input type="file" class="form-control" id="izinUsahaUrl" required>
+          <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
+          <input type="hidden" name="izinUsahaUrl" id="v-izinUsahaUrl">
+        </div>
+        <div class="form-group">
+          <label>Surat Pernyataan Komitmen bekerjasama dengan Apotek</label>
+          <input type="file" class="form-control" id="komitmenKerjasamaApotekUrl" required>
+          <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
+          <input type="hidden" name="komitmenKerjasamaApotekUrl" id="v-komitmenKerjasamaApotekUrl">
+        </div>
+        <!-- <div class="form-group">
             <label>SPPL</label>
             <input type="file" class="form-control" id="spplUrl" required>
             <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
@@ -125,7 +149,7 @@
             <input type="file" class="form-control" id="pembayaranPnbpUrl" required>
             <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
             <input type="hidden" name="pembayaranPnbpUrl" id="v-pembayaranPnbpUrl">
-        </div>
+        </div> -->
         <input type="hidden" name="data" id="data">
         <input type="hidden" name="data_rs" id="data_rs">
         <input type="hidden" name="data_klinik" id="data_klinik">
