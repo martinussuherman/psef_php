@@ -48,6 +48,18 @@
     return 'black';
   }
 
+  function dayStatusHtml(dataPermohonan) {
+    return `
+    <p>${dataPermohonan.statusName}</p>
+    <hr style="display: inline;border: 7px solid ${userDaysColor(dataPermohonan.userLevelDays)};">
+      &nbsp;User Days : ${dataPermohonan.userLevelDays}
+    </hr>
+    <br><br>
+    <hr style="display: inline;border: 7px solid ${totalDaysColor(dataPermohonan.totalDays)};">
+      &nbsp;Total Days : ${dataPermohonan.totalDays}
+    </hr>`;
+  }
+
   function configureAjaxRequest(moduleName, requestData) {
     let data = {
       fpage: (requestData.start + requestData.length) / requestData.length,
