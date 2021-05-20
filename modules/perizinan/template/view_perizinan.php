@@ -83,7 +83,6 @@
     include('../../template/table_apotek.php');
     include('../../template/table_klinik.php');
     include('../../template/table_rumah_sakit.php');
-    include('../../template/table_rekam_jejak.php');
     ?>
 
     <button type="button" class="btn btn-danger" onclick="viewRouting()">Kembali</button>
