@@ -109,7 +109,7 @@ include('../template/view_perizinan.php');
     });
 
     function viewRouting() {
-      routing('perizinan_kasubdit');
+      routing('perizinan_user');
     }
 
     function view_data(id,id_izin){
