@@ -108,6 +108,10 @@ include('../template/view_perizinan.php');
         });
     });
 
+    function viewRouting() {
+      routing('perizinan_kasubdit');
+    }
+
     function view_data(id,id_izin){
         $.ajax({
             url: url_api_x+"PermohonanCurrentUser("+id+")",
