@@ -137,17 +137,17 @@
       return;
     }
 
-    dataApotek.forEach((item, index) => {
+    $.each(dataApotek.value, function(index, value) {
       $(".detail-item").append(`
         <tr>
           <td>${index + 1}</td>
-          <td>${item.name}</td>
-          <td>${item.siaNumber}</td>
-          <td>${item.apotekerName}</td>
-          <td>${item.straNumber}</td>
-          <td>${item.sipaNumber}</td>
-          <td>${item.address}</td>
-          <td>${item.provinsiName}</td>
+          <td>${value.name}</td>
+          <td>${value.siaNumber}</td>
+          <td>${value.apotekerName}</td>
+          <td>${value.straNumber}</td>
+          <td>${value.sipaNumber}</td>
+          <td>${value.address}</td>
+          <td>${value.provinsiName}</td>
         </tr>`);
     });
   }
@@ -157,16 +157,16 @@
       return;
     }
 
-    dataKlinik.forEach((item, index) => {
+    $.each(dataKlinik.value, function(index, value) {
       $(".detail-item-klinik").append(`
         <tr>
           <td>${index + 1}</td>
-          <td>${item.name}</td>
-          <td>${item.apotekerName}</td>
-          <td>${item.straNumber}</td>
-          <td>${item.sipaNumber}</td>
-          <td>${item.address}</td>
-          <td>${item.provinsiName}</td>
+          <td>${value.name}</td>
+          <td>${value.apotekerName}</td>
+          <td>${value.straNumber}</td>
+          <td>${value.sipaNumber}</td>
+          <td>${value.address}</td>
+          <td>${value.provinsiName}</td>
         </tr>`);
     });
   }
@@ -176,16 +176,16 @@
       return;
     }
 
-    dataRumahSakit.forEach((item, index) => {
+    $.each(dataRumahSakit.value, function(index, value) {
       $(".detail-item-rs").append(`
         <tr>
           <td>${index + 1}</td>
-          <td>${item.name}</td>
-          <td>${item.apotekerName}</td>
-          <td>${item.straNumber}</td>
-          <td>${item.sipaNumber}</td>
-          <td>${item.address}</td>
-          <td>${item.provinsiName}</td>
+          <td>${value.name}</td>
+          <td>${value.apotekerName}</td>
+          <td>${value.straNumber}</td>
+          <td>${value.sipaNumber}</td>
+          <td>${value.address}</td>
+          <td>${value.provinsiName}</td>
         </tr>`);
     });
   }
