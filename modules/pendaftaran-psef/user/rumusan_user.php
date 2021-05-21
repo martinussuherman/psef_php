@@ -173,18 +173,24 @@ include('template.php');
       $('#dokumenPseUrl').change(function() {
          upload_dok_pse()
       });
-      $('#spplUrl').change(function() {
-         upload_sppl()
+      $('#izinUsahaUrl').change(function() {
+         upload_dok_izin_usaha()
       });
-      $('#izinLokasiUrl').change(function() {
-         upload_izin_lokasi()
+      $('#komitmenKerjasamaApotekUrl').change(function() {
+         upload_dok_kka()
       });
-      $('#imbUrl').change(function() {
-         upload_imb()
-      });
-      $('#pembayaranPnbpUrl').change(function() {
-         upload_pnbp()
-      });
+      // $('#spplUrl').change(function() {
+      //    upload_sppl()
+      // });
+      // $('#izinLokasiUrl').change(function() {
+      //    upload_izin_lokasi()
+      // });
+      // $('#imbUrl').change(function() {
+      //    upload_imb()
+      // });
+      // $('#pembayaranPnbpUrl').change(function() {
+      //    upload_pnbp()
+      // });
 
       let val_modal_pakta = ''
 
