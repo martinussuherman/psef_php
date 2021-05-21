@@ -61,3 +61,10 @@
 include('../../template/common_script.php');
 include('view_perizinan.php');
 ?>
+
+<script>
+  function configurePerizinanRequest(request) {
+    let sortFields = ['perizinanNumber', 'issuedAt', 'expiredAt'];
+    return configureAjaxRequest('Perizinan', 'perizinanNumber', 1, sortFields, request);
+  }
+</script>
