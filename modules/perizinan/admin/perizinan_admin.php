@@ -56,23 +56,7 @@ include('../template/template.php');
             },
 
             "data": function ( d ) {
-                var order_name = []
-
-                order_name.push('perizinanNumber');
-                order_name.push('issuedAt');
-                order_name.push('expiredAt');
-
-                var data={};
-
-                data.fpage = (parseInt(d.start)+parseInt(d.length))/parseInt(d.length);
-                data.frows = d.length;
-                data.fsearch = d.search['value'];
-                data.forder = order_name[d.order[0]['column']];
-                data.fsort = 'desc';
-                data.fmodul = 'Perizinan';
-                data.flsearch = 'perizinanNumber';
-                data.ftots = 1;
-                return data;
+              return configurePerizinanRequest(d);
             }
             }
         });
