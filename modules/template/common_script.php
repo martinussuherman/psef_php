@@ -129,17 +129,17 @@
       return;
     }
 
-    $.each(dataApotek.value, function(index, value) {
+    dataApotek.forEach((item, index) => {
       $(".detail-item").append(`
         <tr>
           <td>${index + 1}</td>
-          <td>${value.name}</td>
-          <td>${value.siaNumber}</td>
-          <td>${value.apotekerName}</td>
-          <td>${value.straNumber}</td>
-          <td>${value.sipaNumber}</td>
-          <td>${value.address}</td>
-          <td>${value.provinsiName}</td>
+          <td>${item.name}</td>
+          <td>${item.siaNumber}</td>
+          <td>${item.apotekerName}</td>
+          <td>${item.straNumber}</td>
+          <td>${item.sipaNumber}</td>
+          <td>${item.address}</td>
+          <td>${item.provinsiName}</td>
         </tr>`);
     });
   }
@@ -149,16 +149,16 @@
       return;
     }
 
-    $.each(dataKlinik.value, function(index, value) {
+    dataKlinik.forEach((item, index) => {
       $(".detail-item-klinik").append(`
         <tr>
           <td>${index + 1}</td>
-          <td>${value.name}</td>
-          <td>${value.apotekerName}</td>
-          <td>${value.straNumber}</td>
-          <td>${value.sipaNumber}</td>
-          <td>${value.address}</td>
-          <td>${value.provinsiName}</td>
+          <td>${item.name}</td>
+          <td>${item.apotekerName}</td>
+          <td>${item.straNumber}</td>
+          <td>${item.sipaNumber}</td>
+          <td>${item.address}</td>
+          <td>${item.provinsiName}</td>
         </tr>`);
     });
   }
@@ -168,16 +168,16 @@
       return;
     }
 
-    $.each(dataRumahSakit.value, function(index, value) {
+    dataRumahSakit.forEach((item, index) => {
       $(".detail-item-rs").append(`
         <tr>
           <td>${index + 1}</td>
-          <td>${value.name}</td>
-          <td>${value.apotekerName}</td>
-          <td>${value.straNumber}</td>
-          <td>${value.sipaNumber}</td>
-          <td>${value.address}</td>
-          <td>${value.provinsiName}</td>
+          <td>${item.name}</td>
+          <td>${item.apotekerName}</td>
+          <td>${item.straNumber}</td>
+          <td>${item.sipaNumber}</td>
+          <td>${item.address}</td>
+          <td>${item.provinsiName}</td>
         </tr>`);
     });
   }
