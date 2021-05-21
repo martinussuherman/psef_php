@@ -60,16 +60,24 @@
     </hr>`;
   }
 
-  function configureAjaxRequest(moduleName, requestData) {
+  function configureAjaxRequest(
+    moduleName,
+    searchedFields,
+    numberOfSearchFields,
+    sortFields,
+    requestData) {
+    let colNumber = requestData.order[0].column;
+    let sortDirection = requestData.order[0].dir;
+
     let data = {
       fpage: (requestData.start + requestData.length) / requestData.length,
       frows: requestData.length,
-      fsearch: requestData.search['value'],
-      forder: 'lastUpdate',
-      fsort: 'desc',
+      fsearch: requestData.search.value,
+      forder: sortFields[colNumber],
+      fsort: sortDirection,
       fmodul: moduleName,
-      flsearch: 'permohonanNumber,domain,straNumber',
-      ftots: 3
+      flsearch: searchedFields,
+      ftots: numberOfSearchFields
     };
 
     return data;
