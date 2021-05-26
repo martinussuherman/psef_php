@@ -34,9 +34,8 @@ include('../template/template_kemkes.php');
                 datax.push(json.data[i].domain);
                 datax.push(json.data[i].companyName);
                 datax.push(json.data[i].email);
-                let data_straExpiry = moment(json.data[i].straExpiry).format("YYYY-MM-DD");
-                datax.push(data_straExpiry);
-                
+                datax.push(moment(json.data[i].lastUpdate).format("YYYY-MM-DD"));
+
                 let userLevelDays = json.data[i].userLevelDays
                 let color_userLevelDays =''
                 if(userLevelDays<2){
