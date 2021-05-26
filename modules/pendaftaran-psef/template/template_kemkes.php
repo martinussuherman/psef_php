@@ -54,7 +54,7 @@
                   <th>Domain</th>
                   <th>Nama Perusahaan</th>
                   <th>Email</th>
-                  <th>Kedaluwarsa STRA</th>
+                  <th>Update Terakhir</th>
                   <th>Status</th>
                   <th>Tindakan</th>
                 </tr>
@@ -72,3 +72,15 @@ include('../../template/common_script.php');
 include('../../template/modal_nib.php');
 include('../template/view_permohonan.php');
 ?>
+
+<script>
+  function configurePermohonanRequest(request, moduleName) {
+    let sortFields = ['permohonanNumber', 'domain', 'companyName', 'email', 'lastUpdate', 'statusName'];
+    return configureAjaxRequest(
+      moduleName,
+      'permohonanNumber,domain,email,companyName',
+      4,
+      sortFields,
+      request);
+  }
+</script>
