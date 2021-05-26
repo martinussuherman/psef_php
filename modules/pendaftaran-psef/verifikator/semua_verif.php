@@ -32,8 +32,7 @@ include('../template/template_kemkes.php');
                 datax.push(json.data[i].domain);
                 datax.push(json.data[i].companyName);
                 datax.push(json.data[i].email);
-                let data_straExpiry = moment(json.data[i].straExpiry).format("YYYY-MM-DD");
-                datax.push(data_straExpiry);
+                datax.push(moment(json.data[i].lastUpdate).format("YYYY-MM-DD"));
                 datax.push(json.data[i].statusName);
 
                 var actions = '<td><button onclick="view_data(\''+json.data[i].permohonanId+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">Lihat Detail Data</button></td>';
