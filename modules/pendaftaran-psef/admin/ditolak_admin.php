@@ -45,26 +45,7 @@ include('../template/template_kemkes.php');
             },
 
             "data": function ( d ) {
-                var order_name = []
-
-                order_name.push('permohonanNumber');
-                order_name.push('domain');
-                order_name.push('straNumber');
-                order_name.push('straExpiry');
-                order_name.push('statusName');
-                order_name.push('id');
-
-                var data={};
-
-                data.fpage = (parseInt(d.start)+parseInt(d.length))/parseInt(d.length);
-                data.frows = d.length;
-                data.fsearch = d.search['value'];
-                data.forder = 'lastUpdate';
-                data.fsort = 'desc';
-                data.fmodul = 'Permohonan/Ditolak';
-                data.flsearch = 'permohonanNumber,domain,straNumber';
-                data.ftots = 3;
-                return data;
+              return configurePermohonanRequest(d, 'Permohonan/Ditolak');
             }
             }
         });
