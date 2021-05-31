@@ -110,6 +110,11 @@ include('../template/view_pemohon.php');
             }
         });
     });
+
+    function viewRouting() {
+      routing('pemohon_kasi');
+    }
+
     function view_data(id){
         $.ajax({
             url: url_api_x+"Pemohon("+id+")",
