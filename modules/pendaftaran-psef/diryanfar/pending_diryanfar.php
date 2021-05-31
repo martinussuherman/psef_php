@@ -36,29 +36,8 @@ include('../template/template_kemkes.php');
                 datax.push(json.data[i].email);
                 datax.push(moment(json.data[i].lastUpdate).format("YYYY-MM-DD"));
 
-                let userLevelDays = json.data[i].userLevelDays
-                let color_userLevelDays =''
-                if(userLevelDays<2){
-                    color_userLevelDays = 'green';
-                }else if(userLevelDays<3){
-                    color_userLevelDays = 'yellow';
-                }else if(userLevelDays<4){
-                    color_userLevelDays = 'red';
-                }else{
-                    color_userLevelDays = 'black';
-                }
-
-                let totalDays = json.data[i].totalDays
-                let color_totalDays =''
-                if(totalDays<5){
-                    color_totalDays = 'green';
-                }else if(totalDays<7){
-                    color_totalDays = 'yellow';
-                }else if(totalDays<9){
-                    color_totalDays = 'red';
-                }else{
-                    color_totalDays = 'black';
-                }
+                let color_userLevelDays = userDaysColor(json.data[i].userLevelDays);
+                let color_totalDays = totalDaysColor(json.data[i].totalDays);
 
                 datax.push('<p>'+json.data[i].statusName+'</p><hr style="display: inline;border: 7px solid '+color_userLevelDays+';">&nbsp;User Days : '+json.data[i].userLevelDays+'</hr><br><br><hr style="display: inline;border: 7px solid '+color_totalDays+';">&nbsp;Total Days : '+json.data[i].totalDays+'</hr>');
                 
