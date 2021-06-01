@@ -47,81 +47,10 @@
     </div>
 </div>
 
-<!-- Template for view -->
-<script id="view-data" type="text/x-handlebars-template">
-    <h4 class="card-title">Detail Data Pemohon</h4>
-    <form class="m-t-30">
-        <div class="form-group">
-            <label>Nomor Telepon</label>
-            <input value="{{phone}}" type="text" class="form-control" disabled>
-        </div>
-        <div class="form-group">
-            <label>Email</label>
-            <input value="{{email}}" type="text" class="form-control" disabled>
-        </div>
-        <div class="form-group">
-            <label>Alamat</label>
-            <input value="{{address}}" type="text" class="form-control" disabled>
-        </div>
-        <div class="form-group">
-            <label>Nama Perusahaan</label>
-            <input value="{{companyName}}" type="text" class="form-control" disabled>
-        </div>
-        <div class="form-group">
-            <label>NIB</label>
-            <input value="{{nib}}" type="text" class="form-control" name="nib" id="nib" disabled>
-            <small class="form-text text-muted"><div id="cek_nib" style="color:white;" ></div></small>
-        </div>
-        <div id="nib_view"></div>
-        <input type="hidden" id="status_nib">
-        <button type="button" class="btn btn-danger" onclick="routing('pemohon_validator')">Kembali</button>
-    </form>
-</script>
-
-<!-- Template for modal nib -->
-<div id="modal-nib" class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Detail NIB</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <table class="table table-striped">
-        <tbody>
-            <tr>
-                <td>Nama Perusahaan</td>
-                <td>:</td>
-                <td class="nib-np"></td>
-            </tr>
-            <tr>
-                <td>NIB</td>
-                <td>:</td>
-                <td class="nib-nib"></td>
-            </tr>
-            <tr>
-                <td>NPWP Perusahaan</td>
-                <td>:</td>
-                <td class="nib-npwpp"></td>
-            </tr>
-            <tr>
-                <td>Nomor Telepon Perusahaan</td>
-                <td>:</td>
-                <td class="nib-ntp"></td>
-            </tr>
-            <tr>
-                <td>Alamat Perusahaan</td>
-                <td>:</td>
-                <td class="nib-ap"></td>
-            </tr>
-        </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
+<?php
+include('../../template/modal_nib.php');
+include('../template/view_pemohon.php');
+?>
 
 <script>
     var accesstoken = <?php echo json_encode($_COOKIE['accesstoken']); ?>; 
