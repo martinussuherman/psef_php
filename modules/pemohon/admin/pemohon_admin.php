@@ -113,6 +113,11 @@ include('../template/view_pemohon.php');
             }
         });
     });
+
+    function viewRouting() {
+      routing('pemohon_admin');
+    }
+
     function delete_data(id){
         swal({
             title: 'Hapus Pemohon',
