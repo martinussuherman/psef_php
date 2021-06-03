@@ -192,12 +192,8 @@
                             <div class="form-group text-center" style="margin-top: 1rem;padding: 15px 15px 5px 15px;background: rgba(232,243,249,.7) !important">
                                 <h2 style="text-decoration: underline;">Kontak Kami</h2>
                                 <p style="text-align:left;">
-                                    <i class="fa fa-phone" aria-hidden="true"></i>
-                                    021-3101590 ext 988
-                                </p>
-                                <p style="text-align:left;">
                                     <i class="fa fa-envelope" aria-hidden="true"></i>
-                                    psef@kemkes.go.id
+                                    admin-psef@kemkes.go.id
                                 </p>
                                 <p style="text-align:left;">
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>
