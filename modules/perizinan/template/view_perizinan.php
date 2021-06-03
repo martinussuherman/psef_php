@@ -61,9 +61,15 @@
     <div class="row">
       <div class="col-md-4">
         <div class="form-group">
-          <label class="control-label">NIB</label>
+          <label class="control-label">
+            NIB
+          </label>
+
           <input value="{{data_pemohon.nib}}" type="text" class="form-control" name="nib" id="nib" disabled>
-          <small class="form-text text-muted"><div id="cek_nib" style="color:white;" ></div></small>
+
+          <small class="form-text text-muted">
+            <div id="cek_nib" style="color:white;" ></div>
+          </small>
         </div>
       </div>
     </div>
@@ -85,7 +91,17 @@
     include('../../template/table_rumah_sakit.php');
     ?>
 
-    <button type="button" class="btn btn-danger" onclick="viewRouting()">Kembali</button>
-    <button onclick="window.open('https://psef.kemkes.go.id{{data_izin.tandaDaftarUrl}}')" target="_blank" type="button" class="btn btn-success">Unduh Tanda Daftar</button>
+    <button type="button" class="btn btn-danger" onclick="viewRouting()">
+      Kembali
+    </button>
+
+    <button
+      onclick="window.open('https://psef.kemkes.go.id{{data_izin.tandaDaftarUrl}}')"
+      target="_blank"
+      type="button"
+      class="btn btn-success"
+    >
+      Unduh Tanda Daftar
+    </button>
   </form>
 </script>
