@@ -111,4 +111,38 @@ include('../template/template_kemkes.php');
             }
         })
     }
+
+    function inputNikPassphrase(id) {
+      Swal
+        .fire({
+          imageUrl: "https://psef.kemkes.go.id/assets/internal/logo-bsre.png",
+          html:
+            '<div class="form-group text-left">' +
+            '<label class="control-label">NIK</label>' +
+            '<input id="swal-input1" type="text" class="form-control">' +
+            "</div>" +
+            '<div class="form-group text-left">' +
+            '<label class="control-label">Passphrase</label>' +
+            '<input id="swal-input2" type="password" class="form-control">' +
+            "</div>",
+          showCancelButton: true,
+          focusConfirm: false,
+          preConfirm: () => {
+            return [
+              document.getElementById("swal-input1").value,
+              document.getElementById("swal-input2").value
+            ];
+          }
+        })
+        .then((result) => {
+          if(result.isDismissed) {
+            return;
+          }
+
+          let nik = result.value[0];
+          let passphrase = result.value[1];
+
+          permohonanTandaDaftar(id, nik, passphrase, url_api_x, accesstoken);
+        });
+    }
 </script>
