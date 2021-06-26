@@ -18,6 +18,8 @@
 
     <div class="col-7 align-self-center">
       <div class="d-flex no-block justify-content-end align-items-center" id="refresh-page">
+        <img src="/assets/internal/logo-bsre.png" height="120px"/>
+
         <button onclick="viewRouting()" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
           <i class="fas fa-redo"></i> Segarkan Halaman
         </button>
