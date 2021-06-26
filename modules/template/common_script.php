@@ -587,4 +587,40 @@
       });
     })
   }
+
+  function permohonanTandaDaftar(permohonanId, nik, passphrase, apiUrl, token) {
+    $.ajax({
+      url: `${apiUrl}Permohonan/ValidatorSelesaikan`,
+      type: 'POST',
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
+      },
+      data: JSON.stringify({
+        'permohonanId': parseInt(permohonanId),
+        'nik': nik,
+        'passphrase': passphrase
+      }),
+      contentType: 'application/json',
+      success: function(data, textStatus, xhr) {
+        if (xhr.status == 204) {
+          Swal.fire(
+            'Berhasil!',
+            'Permohonan di Proses',
+            'success'
+          );
+
+          routing('pending_validator');
+        } else {
+          Swal.fire(
+            'Oops...',
+            'Permohonan Gagal di Proses',
+            'error'
+          );
+        }
+      },
+      error: function(xhr, textStatus, errorThrown) {
+        console.log('Error in Operation');
+      }
+    });
+  }
 </script>
