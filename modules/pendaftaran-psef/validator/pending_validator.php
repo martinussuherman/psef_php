@@ -68,48 +68,26 @@ include('../template/template_kemkes.php');
     }
 
     function process_data(id){
-        let data = {'permohonanId':parseInt(id)}
-        swal({
-            title: 'Penyetujuan Permohonan',
-            text: "Apakah anda yakin ingin memproses permohonan ini ?",
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Ya, Proses !',
-            cancelButtonText: "Batal",
-            }).then((result) => {
-            if (result.value) {
-                $.ajax({
-                    url: url_api_x+'Permohonan/ValidatorSelesaikan',
-                    type: 'POST',
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader('Authorization', 'Bearer '+accesstoken+'');
-                    },
-                    data: JSON.stringify(data),
-                    contentType: 'application/json',
-                    success: function (data, textStatus, xhr) {
-                        if (xhr.status == '204') {
-                            swal(
-                                'Berhasil!',
-                                'Permohonan di Proses',
-                                'success'
-                            )
-                            routing('pending_validator')
-                        }else{
-                            swal({
-                                type: 'error',
-                                title: 'Oops...',
-                                text: 'Permohonan Gagal di Proses'
-                            })
-                        }
-                    },
-                    error: function (xhr, textStatus, errorThrown) {
-                        console.log('Error in Operation');
-                    }
-                });
-            }
+      let data = {'permohonanId':parseInt(id)};
+
+      Swal
+        .fire({
+          title: 'Penyetujuan Permohonan',
+          text: "Apakah anda yakin ingin memproses permohonan ini ?",
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Ya, Proses !',
+          cancelButtonText: "Batal",
         })
+        .then((result) => {
+          if(result.isDismissed) {
+            return;
+          }
+
+          inputNikPassphrase(id);
+        });
     }
 
     function inputNikPassphrase(id) {
