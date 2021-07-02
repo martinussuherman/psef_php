@@ -609,7 +609,7 @@
             'success'
           );
 
-          routing('pending_validator');
+          viewRouting();
         } else {
           Swal.fire(
             'Oops...',
