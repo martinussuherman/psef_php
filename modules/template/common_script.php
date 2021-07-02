@@ -590,7 +590,7 @@
 
   function permohonanTandaDaftar(permohonanId, nik, passphrase, apiUrl, token) {
     $.ajax({
-      url: `${apiUrl}Permohonan/ValidatorSelesaikan`,
+      url: apiUrl,
       type: 'POST',
       beforeSend: function(xhr) {
         xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
