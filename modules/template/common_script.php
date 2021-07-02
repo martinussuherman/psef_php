@@ -619,7 +619,11 @@
         }
       },
       error: function(xhr, textStatus, errorThrown) {
-        console.log('Error in Operation');
+        Swal.fire(
+          'Gagal',
+          `<p>Permohonan Gagal di Proses</p><p>${xhr.responseJSON.failureContent}</p>`,
+          'error'
+        );
       }
     });
   }
