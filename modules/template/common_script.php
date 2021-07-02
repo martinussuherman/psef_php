@@ -627,4 +627,31 @@
       }
     });
   }
+
+  function inputPassphrase(id, apiUrl, token) {
+    Swal
+      .fire({
+        imageUrl: "https://psef.kemkes.go.id/assets/internal/logo-bsre.png",
+        html: '<div class="form-group text-left">' +
+          '<label class="control-label">Passphrase</label>' +
+          '<input id="swal-input" type="password" class="form-control">' +
+          "</div>",
+        showCancelButton: true,
+        focusConfirm: false,
+        preConfirm: () => {
+          return [
+            document.getElementById("swal-input").value
+          ];
+        }
+      })
+      .then((result) => {
+        if (result.isDismissed) {
+          return;
+        }
+
+        let passphrase = result.value[0];
+
+        permohonanTandaDaftar(id, '', passphrase, apiUrl, token);
+      });
+  }
 </script>
