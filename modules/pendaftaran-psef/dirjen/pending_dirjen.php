@@ -76,6 +76,23 @@ include('../template/template_kemkes.php');
     }
 
     function process_data(id){
-      permohonanSetujui(id, url_api_x + 'Permohonan/DirekturJenderalSetujui', accesstoken);
+      Swal
+        .fire({
+          title: 'Penyetujuan Permohonan',
+          text: "Apakah anda yakin ingin memproses permohonan ini ?",
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Ya, Proses !',
+          cancelButtonText: "Batal",
+        })
+        .then((result) => {
+          if(result.isDismissed) {
+            return;
+          }
+
+          inputPassphrase(id, `${url_api_x}Permohonan/DirekturJenderalSelesaikan`, accesstoken);
+        });
     }
 </script>
