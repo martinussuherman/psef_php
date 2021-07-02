@@ -68,8 +68,6 @@ include('../template/template_kemkes.php');
     }
 
     function process_data(id){
-      let data = {'permohonanId':parseInt(id)};
-
       Swal
         .fire({
           title: 'Penyetujuan Permohonan',
