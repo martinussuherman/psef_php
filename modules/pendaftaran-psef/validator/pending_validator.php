@@ -118,7 +118,12 @@ include('../template/template_kemkes.php');
           let nik = result.value[0];
           let passphrase = result.value[1];
 
-          permohonanTandaDaftar(id, nik, passphrase, url_api_x, accesstoken);
+          permohonanTandaDaftar(
+            id,
+            nik,
+            passphrase,
+            `${url_api_x}Permohonan/ValidatorSelesaikan`,
+            accesstoken);
         });
     }
 </script>
