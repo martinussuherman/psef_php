@@ -169,7 +169,9 @@
             <div class="auth-box on-sidebar" style="position:fixed;background: #fff url(../assets/images/bg2.jpg) fixed no-repeat;">
                 <div id="loginform">
                     <div class="logo mb-3">
-                        <span class="db"><img src="/assets/internal/logo-kemkes.png" alt="logo"  height="200px"/></span>
+                        <span class="db">
+                          <img src="/assets/internal/logo-kemkes-bsre.png" alt="logo" width="100%"/>
+                        </span>
                     </div>
                     <!-- Form -->
                     <div class="row">
