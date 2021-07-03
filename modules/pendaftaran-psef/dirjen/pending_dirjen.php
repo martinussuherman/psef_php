@@ -88,7 +88,7 @@ include('../template/template_kemkes.php');
           cancelButtonText: "Batal",
         })
         .then((result) => {
-          if(result.isDismissed) {
+          if(!result.value) {
             return;
           }
 
