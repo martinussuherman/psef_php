@@ -201,6 +201,10 @@
                                     <i class="fa fa-map-marker" aria-hidden="true"></i>
                                     Gedung adhyatma lt. 8 ruang 809 Jl. H.R Rasuna Said Blok X5 Kav. 4-9 Jakarta
                                 </p>
+                                <p class="text-center mt-3 pt-2">
+                                  Sertifikat Elektronik Dijamin oleh:
+                                  <img src="/assets/internal/logo-bsre.png" alt="logo" width="50%"/>
+                                </p>
                             </div>
                         </div>
                     </div>
