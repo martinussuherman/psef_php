@@ -93,7 +93,7 @@
                                                     <li><i class="fa fa-check-square"></i>Data pemohon</li>
                                                     <li><i class="fa fa-check-square"></i>Memiliki NIB</li>
                                                     <li><i class="fa fa-check-square"></i>Memiliki Tanda Daftar Penyelenggara Sistem Elektronik (PSE)</li>
-                                                    <li><i class="fa fa-check-square"></i>Memiliki Izin Usaha Dari Kementerian Perindustrian</li>
+                                                    <li><i class="fa fa-check-square"></i>Memiliki Izin Usaha Berbentuk IUI/PMSE</li>
                                                     <li><i class="fa fa-check-square"></i>Memiliki Apoteker Penanggungjawab</li>
                                                     <li><i class="fa fa-check-square"></i>Mengisi Data Permohonan</li>
                                                     <li><i class="fa fa-check-square"></i>Membuat Surat Permohonan</li>
