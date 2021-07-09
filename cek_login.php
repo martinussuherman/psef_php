@@ -170,7 +170,7 @@
                 <div id="loginform">
                     <div class="logo mb-3">
                         <span class="db">
-                          <img src="/assets/internal/logo-kemkes-bsre.png" alt="logo" width="100%"/>
+                        <img src="/assets/internal/logo-psef.png" alt="logo" width="60%"/>
                         </span>
                     </div>
                     <!-- Form -->
