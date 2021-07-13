@@ -15,14 +15,12 @@ $oidc->authenticate();
 
 $id_token = $oidc->getIdToken();
 $access_token = $oidc->getAccessToken();
-$data_verif = $oidc->getVerifiedClaims();
-$sid_value = $data_verif->sub;
-$role_value = $data_verif->role;
+$userClaims = $oidc->getVerifiedClaims();
 $idTokenData = $oidc->getIdTokenPayload();
-$email = $idTokenData->email;
-setcookie('sid', $sid_value, time() + 86400, "/");
-setcookie('email', $email, time() + 86400, "/");
-setcookie('role', $role_value, time() + 86400, "/");
+
+setcookie('sid', $userClaims->sub, time() + 86400, "/");
+setcookie('role', $userClaims->role, time() + 86400, "/");
+setcookie('email',  $idTokenData->email, time() + 86400, "/");
 setcookie('idtoken', $id_token, time() + 86400, "/");
 setcookie('accesstoken', $access_token, time() + 86400, "/");
 
