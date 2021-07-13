@@ -531,7 +531,7 @@
   <!--Menu sidebar -->
   <script src="dist/js/sidebarmenu.js"></script>
   <!--Custom JavaScript -->
-  <script src="dist/js/custom.min.js"></script>
+  <script src="dist/js/custom.js"></script>
   <script src="assets/js/stepbar.js"></script>
   <!--Datatables -->
   <script src="assets/extra-libs/DataTables/datatables.min.js"></script>
