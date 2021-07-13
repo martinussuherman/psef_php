@@ -124,7 +124,7 @@
                                     <div class=""><img src="assets/images/users/1.jpg" alt="user" class="img-circle" width="60"></div>
                                     <div class="m-l-10">
                                         <h4 class="m-b-0" id="username"></h4>
-                                        <p class=" m-b-0" id="email"></p>
+                                        <p class=" m-b-0" id="email"><?php echo $_COOKIE['email'] ?></p>
                                     </div>
                                 </div>
                                 <a class="dropdown-item" href=" https://usermanagement-simyanfar.kemkes.go.id/manage" target="_blank"><i class="ti-user m-r-5 m-l-5"></i> Profil Saya</a>
