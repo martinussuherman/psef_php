@@ -133,7 +133,7 @@
 
                                 <div class="dropdown-divider"></div>
 
-                                <a style="cursor:pointer;" class="dropdown-item" data-toggle="modal" data-target="#responsive-modal1"><i class="ti-key m-r-5 m-l-5"></i> Ganti Kata Sandi</a>
+                                <a class="dropdown-item" href="https://usermanagement-simyanfar.kemkes.go.id/Manage/ChangePassword" target="_blank"><i class="ti-user m-r-5 m-l-5"></i> Ganti Kata Sandi</a>
 
                                 <div class="dropdown-divider"></div>
                                 <div class="dropdown-divider"></div>
