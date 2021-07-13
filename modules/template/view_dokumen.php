@@ -45,7 +45,7 @@
   </div>
   <div class="col-md-4">
     <div class="form-group">
-      <label class="control-label">Dokumen Izin Usaha dari Kementerian Perindustrian</label>
+      <label class="control-label">Dokumen Izin Usaha Berbentuk IUI/PMSE</label>
       <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
         <a href="https://psef.kemkes.go.id{{data_permohonan.izinUsahaUrl}}">{{data_permohonan.name_izinUsahaUrl}}</a>
       </div>
