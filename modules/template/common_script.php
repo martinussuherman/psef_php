@@ -516,7 +516,7 @@
         type: 'POST',
         data: JSON.stringify({
           reason: result.value[0],
-          permohonanId: parseInt(id)
+          permohonanId: parseInt(permohonanId)
         }),
         beforeSend: function(xhr) {
           xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
