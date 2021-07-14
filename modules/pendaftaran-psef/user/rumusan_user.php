@@ -203,7 +203,15 @@ include('template.php');
    }
 
    function data_save(e) {
-      e.preventDefault();
+      let form = event.target;
+      form.classList.add('was-validated');
+
+      if (form.checkValidity() === false) {
+         event.preventDefault();
+         event.stopPropagation();
+         return;
+      }
+
       var data = $('#add-data-new').serializeFormJSON();
       data.typeId = 1;
       console.log(data)
