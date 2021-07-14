@@ -1,13 +1,12 @@
 <?php
 $showAddData = true;
-$pageType = 'rumusan';
+$extraActions = 'ajukan';
 $pageTitle = 'Permohonan (Rumusan)';
 include('template.php');
 ?>
 
 <?php include('../template/add_permohonan.html'); ?>
 <?php include('../template/edit_permohonan.html'); ?>
-<?php include('../template/view_permohonan.html'); ?>
 
 <?php include('../template/add_apotek.html'); ?>
 <?php include('../template/edit_apotek.html'); ?>
@@ -26,12 +25,10 @@ include('template.php');
 
 <?php include('../template/modal_pakta.html'); ?>
 <?php include('apotek_script.html'); ?>
-<?php include('common_script.html'); ?>
 <?php include('klinik_script.html'); ?>
 <?php include('rumah_sakit_script.html'); ?>
 <?php include('upload_file_script.html'); ?>
 <?php include('edit_permohonan_script.html'); ?>
-<?php include('view_permohonan_script.html'); ?>
 
 <script>
    var accesstoken = <?php echo json_encode($_COOKIE['accesstoken']); ?>;
