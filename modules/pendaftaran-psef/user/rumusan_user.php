@@ -223,11 +223,12 @@ include('edit_permohonan_script.html');
   function data_save(e) {
     let form = event.target;
     form.classList.add('was-validated');
+    event.preventDefault();
 
     if (form.checkValidity() === false) {
-      event.preventDefault();
       event.stopPropagation();
-      return;
+      scrollToTop();
+      return false;
     }
 
     var data = $('#add-data-new').serializeFormJSON();
