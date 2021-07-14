@@ -200,11 +200,9 @@ include('template.php');
       });
       $('#modal-pakta').on('hidden.bs.modal', function() {
          if (val_modal_pakta != 'setuju') {
-            routing('rumusan_user');
+            viewRouting();
          }
       })
-
-
    }
 
    function data_save(e) {
@@ -328,8 +326,7 @@ include('template.php');
                });
             }
 
-            routing('rumusan_user');
-
+            viewRouting();
          },
          error: function(xhr, textStatus, errorThrown) {
             console.log('Error in Operation');
