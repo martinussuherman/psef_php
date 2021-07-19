@@ -13,7 +13,7 @@
     include('../../template/view_data_permohonan.php');
     include('../../template/view_dokumen.php');
     include('../../template/table_apotek.php');
-    include('../../template/table_klinik.php');
+    // include('../../template/table_klinik.php');
     include('../../template/table_rumah_sakit.php');
 
     if (isset($showRekamJejak)) {
