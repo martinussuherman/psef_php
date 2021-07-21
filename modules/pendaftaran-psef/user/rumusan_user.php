@@ -220,7 +220,7 @@ include('edit_permohonan_script.html');
     })
   }
 
-  function data_save(e) {
+  function data_save(event) {
     let form = event.target;
     form.classList.add('was-validated');
     event.preventDefault();
