@@ -9,10 +9,6 @@ include('../template/edit_apotek.html');
 include('../template/view_apotek.html');
 include('../template/modal_apotek.html');
 
-include('../template/add_klinik.html');
-include('../template/edit_klinik.html');
-include('../template/view_klinik.html');
-include('../template/modal_klinik.html');
 
 include('../template/add_rumah_sakit.html');
 include('../template/edit_rumah_sakit.html');
@@ -20,7 +16,6 @@ include('../template/view_rumah_sakit.html');
 include('../template/modal_rumah_sakit.html');
 
 include('apotek_script.html');
-include('klinik_script.html');
 include('rumah_sakit_script.html');
 include('upload_file_script.html');
 include('edit_permohonan_script.html');
