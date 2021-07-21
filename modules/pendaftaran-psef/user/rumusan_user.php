@@ -92,7 +92,9 @@ include('edit_permohonan_script.html');
               $('#provinsiIdApotek').append("<option value='" + v.id + "'>" + v.name + "</option>");
             });
 
-            $('#provinsiIdApotek').select2();
+            $('#provinsiIdApotek').select2({
+              dropdownParent: $('#myModal')
+            });
           },
           error: function(xhr, textStatus, errorThrown) {
             console.log('Error in Operation');
@@ -120,7 +122,9 @@ include('edit_permohonan_script.html');
               $('#provinsiIdKlinik').append("<option value='" + v.id + "'>" + v.name + "</option>");
             });
 
-            $('#provinsiIdKlinik').select2()
+            $('#provinsiIdKlinik').select2({
+              dropdownParent: $('#myModalKlinik')
+            });
           },
           error: function(xhr, textStatus, errorThrown) {
             console.log('Error in Operation');
@@ -148,7 +152,9 @@ include('edit_permohonan_script.html');
               $('#provinsiIdRs').append("<option value='" + v.id + "'>" + v.name + "</option>");
             });
 
-            $('#provinsiIdRs').select2()
+            $('#provinsiIdRs').select2({
+              dropdownParent: $('#myModalRs')
+            });
           },
           error: function(xhr, textStatus, errorThrown) {
             console.log('Error in Operation');
