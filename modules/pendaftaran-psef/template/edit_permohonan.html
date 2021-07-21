@@ -1,7 +1,7 @@
 <!-- Template for edit -->
 <script id="edit-data" type="text/x-handlebars-template">
    <h4 class="card-title">Ubah Data Permohonan</h4>
-    <form class="m-t-30" id="data-update" onsubmit="update_data(event)">
+    <form class="m-t-30 needs-validation" id="data-update" onsubmit="update_data(event)" novalidate>
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
@@ -183,11 +183,14 @@
             <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
             <input type="hidden" name="pembayaranPnbpUrl" id="v-pembayaranPnbpUrl">
         </div> -->
-        <br><br>
-        <input type="checkbox" value="check" id="agree" required/> Dengan ini saya menyatakan bahwa data yang saya isi adalah benar
-        <br><br>
+
         <input type="hidden" name="pemohonId" id="pemohonId" value="{{pemohonId}}">
         <input type="hidden" name="id" value="{{id}}">
+
+        <div class="mb-2">
+          <input type="checkbox" value="check" id="agree" required/> Dengan ini saya menyatakan bahwa data yang saya isi adalah benar
+        </div>
+
         <button type="submit" class="btn btn-primary">Kirim</button>
         <button type="button" class="btn btn-danger" onclick="viewRouting()">Batal</button>
     </form>
