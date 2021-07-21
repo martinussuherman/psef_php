@@ -70,8 +70,17 @@
     // });
   }
 
-  function update_data(e) {
-    e.preventDefault();
+  function update_data(event) {
+    let form = event.target;
+    form.classList.add('was-validated');
+    event.preventDefault();
+
+    if (form.checkValidity() === false) {
+      event.stopPropagation();
+      scrollToTop();
+      return false;
+    }
+
     var data = $('#data-update').serializeFormJSON();
     data.typeId = 1;
     data.pemohonId = parseInt(data.pemohonId)
