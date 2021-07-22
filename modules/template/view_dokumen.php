@@ -70,6 +70,14 @@
       </div>
     </div>
   </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label class="control-label">Surat Pernyataan Keaslian Dokumen</label>
+      <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
+        <a href="https://psef.kemkes.go.id{{data_permohonan.pernyataanKeaslianDokumenUrl}}">{{data_permohonan.name_pernyataanKeaslianDokumenUrl}}</a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- <div class="row">
