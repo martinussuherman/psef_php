@@ -136,6 +136,16 @@
           <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
           <input type="hidden" name="komitmenKerjasamaApotekUrl" id="v-komitmenKerjasamaApotekUrl">
         </div>
+        <div class="form-group">
+          <label>Surat Pernyataan Keaslian Dokumen</label>
+          <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
+              <a href="https://psef.kemkes.go.id{{pernyataanKeaslianDokumenUrl}}" id="close-pernyataanKeaslianDokumenUrl">{{name_pernyataanKeaslianDokumenUrl}}</a>
+          </div>
+          <input type="file" class="form-control" id="pernyataanKeaslianDokumenUrl" required>
+          <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
+          <input type="hidden" name="pernyataanKeaslianDokumenUrl" id="v-pernyataanKeaslianDokumenUrl">
+        </div>
+
         <!-- <div class="form-group">
             <label>SPPL</label>
             <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
