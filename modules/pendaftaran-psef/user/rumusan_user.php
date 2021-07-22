@@ -193,6 +193,10 @@ include('edit_permohonan_script.html');
       upload_dok_kka()
     });
 
+    $('#pernyataanKeaslianDokumenUrl').change(function() {
+      uploadPernyataanKeaslianDokumen();
+    });
+
     // $('#spplUrl').change(function() {
     //    upload_sppl()
     // });
