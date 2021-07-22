@@ -30,6 +30,7 @@
     $('#v-dokumenPseUrl').val(data.dokumenPseUrl)
     $('#v-izinUsahaUrl').val(data.izinUsahaUrl)
     $('#v-komitmenKerjasamaApotekUrl').val(data.komitmenKerjasamaApotekUrl)
+    $('#v-pernyataanKeaslianDokumenUrl').val(data.pernyataanKeaslianDokumenUrl);
     // $('#v-spplUrl').val(data.spplUrl)
     // $('#v-izinLokasiUrl').val(data.izinLokasiUrl)
     // $('#v-imbUrl').val(data.imbUrl)
@@ -56,6 +57,11 @@
     $('#komitmenKerjasamaApotekUrl').change(function () {
       upload_dok_kka('edit')
     });
+
+    $('#pernyataanKeaslianDokumenUrl').change(function() {
+      uploadPernyataanKeaslianDokumen('edit');
+    });
+
     // $('#spplUrl').change(function () {
     //   upload_sppl('edit')
     // });
