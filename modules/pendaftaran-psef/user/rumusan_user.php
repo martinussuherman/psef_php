@@ -4,7 +4,7 @@ $extraActions = 'ajukan';
 $pageTitle = 'Permohonan (Rumusan)';
 include('template.php');
 include('../template/add_permohonan.php');
-include('../template/edit_permohonan.html');
+include('../template/edit_permohonan.php');
 
 include('../template/add_apotek.html');
 include('../template/edit_apotek.html');

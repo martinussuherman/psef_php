@@ -3,7 +3,7 @@ $extraActions = 'ajukan';
 $pageTitle = 'Permohonan (Dikembalikan)';
 
 include('template.php');
-include('../template/edit_permohonan.html');
+include('../template/edit_permohonan.php');
 include('../template/add_apotek.html');
 include('../template/edit_apotek.html');
 include('../template/view_apotek.html');
