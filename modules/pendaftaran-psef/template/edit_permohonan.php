@@ -187,15 +187,7 @@
         <input type="hidden" name="pemohonId" id="pemohonId" value="{{pemohonId}}">
         <input type="hidden" name="id" value="{{id}}">
 
-        <div class="form-check mb-2">
-          <input type="checkbox" value="check" id="agree" class="form-check-input" required/>
-          <label class="form-check-label" for="agree">
-            Dengan ini saya menyatakan bahwa data yang saya isi adalah benar
-          </label>
-          <div class="invalid-feedback">
-            Mohon isi persetujuan.
-          </div>
-        </div>
+<?php include('permohonan_check_agree.php'); ?>
 
         <button type="submit" class="btn btn-primary">Kirim</button>
         <button type="button" class="btn btn-danger" onclick="viewRouting()">Batal</button>
