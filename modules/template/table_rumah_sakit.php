@@ -1,5 +1,5 @@
 <h4 class="card-title" style="font-weight: bold;">
-  Data Rumah Sakit
+  Data Rumah Sakit (Hanya Untuk Pengantaran)
 </h4>
 
 <hr class="m-t-0">
