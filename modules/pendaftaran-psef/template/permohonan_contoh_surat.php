@@ -19,7 +19,7 @@
     </a>
   </div>
   <div class="border px-3 py-1 mb-2" style="background-color: #e9ecef;">
-    <a href="https://psef.kemkes.go.id/assets/doc/Contoh%20Surat%20Pernyataan%Keaslian%20Dokumen.docx">
+    <a href="https://psef.kemkes.go.id/assets/doc/Contoh%20Surat%20Pernyataan%20Keaslian%20Dokumen.docx">
       Contoh Surat Pernyataan Keaslian Dokumen
     </a>
   </div>
