@@ -498,7 +498,7 @@
 
   function permohonanKembalikan(permohonanId, apiUrl, token) {
     Swal.mixin({
-      input: 'text',
+      input: 'textarea',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
