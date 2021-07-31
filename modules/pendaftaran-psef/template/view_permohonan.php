@@ -21,6 +21,14 @@
     }
     ?>
 
+    <div id="alasan-dikembalikan" class="row d-none">
+      <div class="col">
+        <h4 class="card-title text-danger">Alasan Dikembalikan</h4>
+        <p class="text-danger">
+        </p>
+      </div>
+    </div>
+
     <button type="button" class="btn btn-danger" onclick="viewRouting()">Kembali</button>
 
     <?php
