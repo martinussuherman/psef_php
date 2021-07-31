@@ -364,6 +364,17 @@
     });
   }
 
+  function loadPermohonanAlasanDikembalikan(permohonanId, apiUrl, token) {
+    return $.ajax({
+      url: `${apiUrl}PermohonanCurrentUser/AlasanDikembalikan?permohonanId=${permohonanId}`,
+      type: 'GET',
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
+      },
+      dataType: 'json'
+    });
+  }
+
   function loadPermohonanCurrentUser(permohonanId, apiUrl, token) {
     return $.ajax({
       url: `${apiUrl}PermohonanCurrentUser(${permohonanId})`,
