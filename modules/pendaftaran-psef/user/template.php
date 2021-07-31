@@ -61,7 +61,17 @@ include('common_script.html');
 ?>
 
 <script>
-  function permohonanCurrentUser(id, showAjukanButton) {
+  function permohonanCurrentUser(id, showAjukanButton, showAlasanDikembalikan) {
     loadAndDisplayPermohonanCurrentUser(id, url_api_x, accesstoken);
+
+    if (showAlasanDikembalikan) {
+      $.when(
+        loadPermohonanAlasanDikembalikan(id, url_api_x, accesstoken)
+      ).done(function(
+        loadPermohonanAlasanDikembalikanResult) {
+        $('#alasan-dikembalikan').removeClass('d-none');
+        $('#alasan-dikembalikan p').html(loadPermohonanAlasanDikembalikanResult.reason);
+      });
+    }
   }
 </script>
