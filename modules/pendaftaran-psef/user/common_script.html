@@ -1,9 +1,9 @@
 <script>
-  function actionString(permohonan, isViewOnly) {
+  function actionString(permohonan, isViewOnly, showAlasanDikembalikan) {
     if (isViewOnly) {
       return `
         <td>
-          <button onclick="permohonanCurrentUser(${permohonan.id}, false)" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">
+          <button onclick="permohonanCurrentUser(${permohonan.id}, false, ${showAlasanDikembalikan})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">
             Lihat Detail Data
           </button>
         </td>`;
@@ -11,7 +11,7 @@
 
     return `
       <td>
-        <button onclick="permohonanCurrentUser(${permohonan.id}, true)" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">
+        <button onclick="permohonanCurrentUser(${permohonan.id}, true, ${showAlasanDikembalikan})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">
           Lihat Detail Data
         </button>
         <button onclick="edit_data_permohonan(${permohonan.id})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-primary">
@@ -29,7 +29,7 @@
       </td>`;
   }
 
-  function permohonanFromJson(json, isViewOnly) {
+  function permohonanFromJson(json, isViewOnly, showAlasanDikembalikan) {
     let resultList = [];
 
     window.console.log('JSON:', json);
@@ -42,7 +42,7 @@
       item.push(permohonan.straNumber);
       item.push(moment(permohonan.straExpiry).format("YYYY-MM-DD"));
       item.push(permohonan.pemohonStatusName);
-      item.push(actionString(permohonan, isViewOnly));
+      item.push(actionString(permohonan, isViewOnly, showAlasanDikembalikan));
       window.console.log('Item:', item);
 
       resultList.push(item);
