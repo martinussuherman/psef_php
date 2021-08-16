@@ -60,6 +60,21 @@
     </hr>`;
   }
 
+  function dataTablePermohonanPemohonRow(data, info, action) {
+    let row = [
+      moment(data.submittedAt).format("YYYY-MM-DD"),
+      data.permohonanNumber,
+      data.domain,
+      data.companyName,
+      data.email,
+      moment(data.lastUpdate).format("YYYY-MM-DD"),
+      info,
+      action
+    ];
+
+    return row;
+  }
+
   function configureAjaxRequest(
     moduleName,
     searchedFields,
