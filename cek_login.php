@@ -103,7 +103,11 @@
                           <li><i class="fa fa-check-square"></i>Memiliki daftar apotek jaringan yang bekerjasama</li>
                         </ul>
 
-                        <a href="/assets/doc/Checklist%20Perizinan%20PSEF%20untuk%20Pemohon.xlsx" target="_blank"><h5>Checklist Perizinan PSEF Untuk Pemohon</h5></a>
+                        <a href="/assets/doc/Checklist%20Perizinan%20PSEF%20untuk%20Pemohon.xlsx" target="_blank">
+                          <h5>
+                            Checklist Perizinan PSEF Untuk Pemohon<span class="ml-2 fa fa-download"></span>
+                          </h5>
+                        </a>
 
                         <style type="text/css">
                           ul#syarat i.fa {
