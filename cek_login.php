@@ -288,9 +288,11 @@
             if (index == 0) {
               hpBanner = 'active';
             }
-            $("#homePageBanner").append(`<div class="carousel-item ${hpBanner}">
-                                                <img class="d-block w-100" src="${value.url}" alt="First slide">
-                                                </div>`)
+
+            $("#homePageBanner").append(
+              `<div class="carousel-item ${hpBanner}">
+                <img class="d-block w-100" src="${value.url}" alt="Banner Image">
+              </div>`);
           });
         },
         error: function(xhr, textStatus, errorThrown) {
