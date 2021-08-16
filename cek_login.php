@@ -306,20 +306,25 @@
         success: function(data, textStatus, xhr) {
           $.each(data.value, function(index, value) {
             let hpn_publishedAt = moment(value.publishedAt).format("YYYY-MM-DD");
-            let data_content_news = JSON.parse(value.content)
-            $("#homePageNews").append(`<div class="col-lg-6">
-                                                    <div class="card">
-                                                        <img class="card-img-top img-responsive" src="${value.imageUrl}" alt="Card image cap">
-                                                        <div class="card-body">
-                                                            <div class="d-flex no-block align-items-center m-b-15">
-                                                                <span><i class="ti-calendar"></i> ${hpn_publishedAt}</span>
-                                                            </div>
-                                                            <h3 class="font-normal">${value.title}</h3>
-                                                            <p class="m-b-0 m-t-10" id="page-news-${index}"></p>
-                                                            <button onclick="location.href='${value.linkUrl}'" class="btn btn-success btn-rounded waves-effect waves-light m-t-20">Read more</button>
-                                                        </div>
-                                                    </div>
-                                                </div>`)
+            let data_content_news = JSON.parse(value.content);
+
+            $("#homePageNews").append(
+              `<div class="col-lg-6">
+                <div class="card">
+                  <img class="card-img-top img-responsive" src="${value.imageUrl}" alt="News Image"/>
+                  <div class="card-body">
+                    <div class="d-flex no-block align-items-center m-b-15">
+                      <span><i class="ti-calendar"></i> ${hpn_publishedAt}</span>
+                    </div>
+                    <h3 class="font-normal">${value.title}</h3>
+                    <p class="m-b-0 m-t-10" id="page-news-${index}"></p>
+                    <a href="${value.linkUrl}" class="btn btn-success btn-rounded waves-effect waves-light m-t-20" target="_blank">
+                      Read more
+                    </a>
+                  </div>
+                </div>
+              </div>`);
+
             quill = new Quill('#page-news-' + index, {});
             quill.setContents(data_content_news)
             quill.disable();
