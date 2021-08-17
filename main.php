@@ -14,7 +14,7 @@
   <!-- This page plugin CSS -->
   <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
   <!-- Custom CSS -->
-  <link href="dist/css/style.min.css" rel="stylesheet">
+  <link href="dist/css/style.css" rel="stylesheet">
   <link href="dist/css/quill.snow.css" rel="stylesheet">
   <!-- Sweet alert -->
   <link href="assets/libs/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
