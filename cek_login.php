@@ -403,6 +403,18 @@
       window.location = url;
     }
   </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYG4ER359J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('js', new Date());
+    gtag('config', 'G-GYG4ER359J');
+  </script>
+
 </body>
 
 </html>
