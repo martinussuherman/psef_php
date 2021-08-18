@@ -566,55 +566,56 @@
   }
 
   function permohonanSetujui(permohonanId, apiUrl, token) {
-    Swal.fire({
-      input: 'textarea',
-      title: 'Teruskan Permohonan',
-      text: "Apakah anda yakin ingin meneruskan permohonan ini ?",
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Ya, Teruskan !',
-      cancelButtonText: "Batal",
-    })
-    .then((result) => {
-      if (!result.value) {
-        return;
-      }
-
-      $.ajax({
-        url: apiUrl,
-        type: 'POST',
-        beforeSend: function (xhr) {
-          xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
-        },
-        data: JSON.stringify({
-          reason: result.value[0],
-          permohonanId: parseInt(permohonanId)
-        }),
-        contentType: 'application/json',
-        success: function (data, textStatus, xhr) {
-          if (xhr.status == 204) {
-            Swal.fire(
-              'Berhasil!',
-              'Permohonan diteruskan',
-              'success'
-            );
-
-            viewRouting();
-            return;
-          }
-
-          Swal.fire(
-            'Oops...',
-            'Permohonan gagal diteruskan',
-            'error'
-          );
-        },
-        error: function (xhr, textStatus, errorThrown) {
-          console.log('Error in Operation');
+    Swal
+      .fire({
+        input: 'textarea',
+        title: 'Teruskan Permohonan',
+        text: "Apakah anda yakin ingin meneruskan permohonan ini ?",
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Ya, Teruskan !',
+        cancelButtonText: "Batal",
+      })
+      .then((result) => {
+        if (!result.value) {
+          return;
         }
+
+        $.ajax({
+          url: apiUrl,
+          type: 'POST',
+          beforeSend: function (xhr) {
+            xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
+          },
+          data: JSON.stringify({
+            reason: result.value[0],
+            permohonanId: parseInt(permohonanId)
+          }),
+          contentType: 'application/json',
+          success: function (data, textStatus, xhr) {
+            if (xhr.status == 204) {
+              Swal.fire(
+                'Berhasil!',
+                'Permohonan diteruskan',
+                'success'
+              );
+
+              viewRouting();
+              return;
+            }
+
+            Swal.fire(
+              'Oops...',
+              'Permohonan gagal diteruskan',
+              'error'
+            );
+          },
+          error: function (xhr, textStatus, errorThrown) {
+            console.log('Error in Operation');
+          }
+        });
       });
-    });
   }
 
   function permohonanTandaDaftar(permohonanId, nik, passphrase, apiUrl, token) {
