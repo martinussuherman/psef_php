@@ -566,16 +566,17 @@
   }
 
   function permohonanSetujui(permohonanId, apiUrl, token) {
-    swal({
-      title: 'Penyetujuan Permohonan',
-      text: "Apakah anda yakin ingin menyetujui permohonan ini ?",
-      type: 'warning',
+    Swal.fire({
+      input: 'textarea',
+      title: 'Teruskan Permohonan',
+      text: "Apakah anda yakin ingin meneruskan permohonan ini ?",
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Ya, Ajukan !',
+      confirmButtonText: 'Ya, Teruskan !',
       cancelButtonText: "Batal",
-    }).then((result) => {
+    })
+    .then((result) => {
       if (!result.value) {
         return;
       }
@@ -583,18 +584,19 @@
       $.ajax({
         url: apiUrl,
         type: 'POST',
-        beforeSend: function(xhr) {
+        beforeSend: function (xhr) {
           xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
         },
         data: JSON.stringify({
-          'permohonanId': parseInt(permohonanId)
+          reason: result.value[0],
+          permohonanId: parseInt(permohonanId)
         }),
         contentType: 'application/json',
-        success: function(data, textStatus, xhr) {
-          if (xhr.status == '204') {
-            swal(
+        success: function (data, textStatus, xhr) {
+          if (xhr.status == 204) {
+            Swal.fire(
               'Berhasil!',
-              'Permohonan di Setujui',
+              'Permohonan diteruskan',
               'success'
             );
 
@@ -602,17 +604,17 @@
             return;
           }
 
-          swal({
-            type: 'error',
-            title: 'Oops...',
-            text: 'Permohonan Gagal di Setujui'
-          });
+          Swal.fire(
+            'Oops...',
+            'Permohonan gagal diteruskan',
+            'error'
+          );
         },
-        error: function(xhr, textStatus, errorThrown) {
+        error: function (xhr, textStatus, errorThrown) {
           console.log('Error in Operation');
         }
       });
-    })
+    });
   }
 
   function permohonanTandaDaftar(permohonanId, nik, passphrase, apiUrl, token) {
