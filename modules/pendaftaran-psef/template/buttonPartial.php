@@ -8,7 +8,7 @@ function buttonAjukan()
 <?php
 }
 
-function buttonSetujuiKembalikan()
+function buttonTeruskanKembalikan()
 {
 ?>
   <button type="button" class="btn btn-rounded btn-success" onclick="process_data('{{data_permohonan.id}}')">

@@ -40,7 +40,7 @@
     }
 
     if ($extraActions == 'setujui') {
-      buttonSetujuiKembalikan();
+      buttonTeruskanKembalikan();
     }
 
     if ($extraActions == 'validasi') {
