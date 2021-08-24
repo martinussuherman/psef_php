@@ -30,7 +30,9 @@
       </div>
     </div>
 
-    <button type="button" class="btn btn-rounded btn-outline-danger mr-3" onclick="viewRouting()">Back</button>
+    <button type="button" class="btn btn-rounded btn-outline-danger mr-3" onclick="viewRouting()">
+      <i class="fa fa-arrow-left mr-2"></i>Back
+    </button>
 
     <?php
     if ($extraActions == 'ajukan') {
