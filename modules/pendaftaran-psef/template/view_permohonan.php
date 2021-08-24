@@ -10,6 +10,7 @@
       include('view_permohonan_kemkes.php');
     }
 
+    include('buttonPartial.php');
     include('../../template/view_data_permohonan.php');
     include('../../template/view_dokumen.php');
     include('../../template/table_apotek.php');
@@ -33,15 +34,15 @@
 
     <?php
     if ($extraActions == 'ajukan') {
-      include('button_ajukan.php');
+      buttonAjukan();
     }
 
     if ($extraActions == 'setujui') {
-      include('button_setujui.php');
+      buttonSetujuiKembalikan();
     }
 
     if ($extraActions == 'validasi') {
-      include('button_validasi.php');
+      buttonProsesData();
     }
     ?>
   </form>
