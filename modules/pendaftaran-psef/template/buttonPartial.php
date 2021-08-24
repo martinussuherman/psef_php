@@ -15,7 +15,7 @@ function buttonTeruskanKembalikan()
     <i class="fa fa-share mr-2"></i>Teruskan
   </button>
 
-  <button type="button" class="btn btn-rounded btn-warning" onclick="reject_data('{{data_permohonan.id}}')">
+  <button type="button" class="btn btn-rounded btn-secondary" onclick="reject_data('{{data_permohonan.id}}')">
     <i class="fa fa-reply mr-2"></i>Kembalikan
   </button>
 <?php
