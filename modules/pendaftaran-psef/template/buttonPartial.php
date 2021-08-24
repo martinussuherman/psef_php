@@ -3,7 +3,7 @@ function buttonAjukan()
 {
 ?>
   <button type="button" class="btn btn-rounded btn-success" onclick="ajukan_permohonan('{{data_permohonan.id}}')">
-    <i class="fa fa-send mr-2"></i>Ajukan Permohonan
+    <i class="fa fa-paper-plane mr-2"></i>Ajukan Permohonan
   </button>
 <?php
 }
