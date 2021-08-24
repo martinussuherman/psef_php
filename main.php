@@ -193,17 +193,39 @@
           <nav class="sidebar-nav">
             <ul id="sidebarnav">
               <!-- User Profile-->
+
               <?php
               if ($_COOKIE['role'] == 'Psef.Admin') {
               ?>
                 <li id="menu_Administrasi" style="display:block" class="sidebar-item"> <a class="sidebar-link two-column has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fa fa-cogs"></i><span class="hide-menu">Administrasi</span></a>
                   <ul aria-expanded="false" class="collapse  first-level">
-                    <li id="menu_Provinsi" class="sidebar-item"><a onclick="routing('provinsi')" href="javascript:void(0)" class="sidebar-link"><i class="mdi mdi-adjust"></i><span class="hide-menu">Provinsi</span></a></li>
-                    <li id="menu_Spanduk" class="sidebar-item"><a onclick="routing('spanduk')" href="javascript:void(0)" class="sidebar-link"><i class="mdi mdi-adjust"></i><span class="hide-menu">Spanduk</span></a></li>
-                    <li id="menu_Berita" class="sidebar-item"><a onclick="routing('berita')" href="javascript:void(0)" class="sidebar-link"><i class="mdi mdi-adjust"></i><span class="hide-menu">Berita</span></a></li>
+                    <li id="menu_Provinsi" class="sidebar-item">
+                      <a onclick="routing('provinsi')" href="javascript:void(0)" class="sidebar-link">
+                        <i class="mdi mdi-adjust"></i><span class="hide-menu">Provinsi</span>
+                      </a>
+                    </li>
+
+                    <li id="menu_Spanduk" class="sidebar-item">
+                      <a onclick="routing('spanduk')" href="javascript:void(0)" class="sidebar-link">
+                        <i class="mdi mdi-adjust"></i><span class="hide-menu">Spanduk</span>
+                      </a>
+                    </li>
+
+                    <li id="menu_Berita" class="sidebar-item">
+                      <a onclick="routing('berita')" href="javascript:void(0)" class="sidebar-link">
+                        <i class="mdi mdi-adjust"></i><span class="hide-menu">Berita</span>
+                      </a>
+                    </li>
+
+                    <li id="menu-unduhan" class="sidebar-item">
+                      <a onclick="routing('unduhan')" href="javascript:void(0)" class="sidebar-link">
+                        <i class="mdi mdi-adjust"></i><span class="hide-menu">Unduhan</span>
+                      </a>
+                    </li>
                   </ul>
                 </li>
               <?php } ?>
+
               <?php
               if ($_COOKIE['role'] == 'Psef.Admin') {
               ?>
