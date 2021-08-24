@@ -30,7 +30,7 @@
       </div>
     </div>
 
-    <button type="button" class="btn btn-danger" onclick="viewRouting()">Kembali</button>
+    <button type="button" class="btn btn-rounded btn-outline-danger mr-3" onclick="viewRouting()">Back</button>
 
     <?php
     if ($extraActions == 'ajukan') {
