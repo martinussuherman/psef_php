@@ -345,6 +345,23 @@
       });
     });
 
+    $.ajax({
+        url: url_api + "HomepageUnduhan",
+        type: 'GET',
+        dataType: 'json',
+        success: function(data, textStatus, xhr) {
+          $.each(data.value, function(index, value) {
+            $("#home-unduhan").append(
+              `<p class="">
+                <a href="${value.url}" target="_blank">${value.title}<i class="fa fa-file ml-2"></i></a>
+              </p>`);
+          });
+        },
+        error: function(xhr, textStatus, errorThrown) {
+          console.log('Error in Operation');
+        }
+      });
+
     $('#username, #password').keypress(function(event) {
       if (event.keyCode == 13 || event.which == 13) {
         login();
