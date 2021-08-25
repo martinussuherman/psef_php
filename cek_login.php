@@ -164,10 +164,10 @@
                         </tbody>
                       </table>
                     </div>
-                    <div style="padding-left:10px;padding-right:10px;background: rgba(232,243,249,.7) !important">
-                      <h4 class="page-title" style="padding-top:20px;">BERITA</h4>
-                      <div class="row" id="homePageNews">
 
+                    <div class="card">
+                      <h4 class="card-header bg-secondary text-white">BERITA</h4>
+                      <div class="row mt-2" id="homePageNews">
                       </div>
                     </div>
                   </div>
