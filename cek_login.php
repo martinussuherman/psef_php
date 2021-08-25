@@ -177,6 +177,12 @@
                       <div class="row mt-2" id="home-unduhan">
                       </div>
                     </div>
+
+                    <div class="card">
+                      <h4 class="card-header bg-orange text-white">STATISTIK PENGUNJUNG</h4>
+                      <div class="row mt-2" id="home-statistik">
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
