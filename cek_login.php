@@ -149,9 +149,11 @@
                         </style>
                       </div>
                     </div>
-                    <div style="padding-left:10px;padding-right:10px;background: rgba(232,243,249,.7) !important">
-                      <h4 class="page-title" style="padding-top:20px;">Tanda Daftar PSEF Yang Terbit</h4>
-                      <table id="zero_config" class="table table-striped table-bordered" style="width:100%">
+
+                    <div class="card">
+                      <h4 class="card-header bg-success text-white">Tanda Daftar PSEF Yang Terbit</h4>
+
+                      <table id="zero_config" class="card-body table table-striped table-bordered">
                         <thead>
                           <tr>
                             <th>Tanda Daftar PSEF</th>
@@ -160,7 +162,6 @@
                           </tr>
                         </thead>
                         <tbody class="detail-table-halaman">
-                          <!-- Isi detail-table-halaman -->
                         </tbody>
                       </table>
                     </div>
