@@ -171,6 +171,12 @@
                       <div class="row mt-2" id="homePageNews">
                       </div>
                     </div>
+
+                    <div class="card">
+                      <h4 class="card-header bg-warning text-white">UNDUHAN</h4>
+                      <div class="row mt-2" id="home-unduhan">
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
