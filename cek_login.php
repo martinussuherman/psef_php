@@ -174,7 +174,7 @@
 
                     <div class="card">
                       <h4 class="card-header bg-cyan text-white">UNDUHAN</h4>
-                      <div class="row mt-2" id="home-unduhan">
+                      <div class="card-body" id="home-unduhan">
                       </div>
                     </div>
 
@@ -358,9 +358,11 @@
         success: function(data, textStatus, xhr) {
           $.each(data.value, function(index, value) {
             $("#home-unduhan").append(
-              `<p class="">
-                <a href="${value.url}" target="_blank">${value.title}<i class="fa fa-file ml-2"></i></a>
-              </p>`);
+              `<div class="list-group">
+                <a href="${value.url}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start" target="_blank">
+                  ${value.title}<i class="fa fa-file ml-2"></i>
+                </a>
+              </div>`);
           });
         },
         error: function(xhr, textStatus, errorThrown) {
