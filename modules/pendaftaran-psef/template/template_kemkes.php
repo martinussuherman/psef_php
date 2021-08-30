@@ -50,6 +50,7 @@
             <table id="zero_config" class="table table-striped table-bordered" style="width:100%">
               <thead>
                 <tr>
+                  <th>Tanggal Diajukan</th>
                   <th>Nomor Permohonan</th>
                   <th>Domain</th>
                   <th>Nama Perusahaan</th>
@@ -75,7 +76,7 @@ include('../template/view_permohonan.php');
 
 <script>
   function configurePermohonanRequest(request, moduleName) {
-    let sortFields = ['permohonanNumber', 'domain', 'companyName', 'email', 'lastUpdate', 'statusName'];
+    let sortFields = ['submittedAt', 'permohonanNumber', 'domain', 'companyName', 'email', 'lastUpdate', 'statusName'];
     return configureAjaxRequest(
       moduleName,
       'permohonanNumber,domain,email,companyName',
