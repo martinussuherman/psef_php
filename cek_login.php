@@ -11,6 +11,17 @@
   <!-- Favicon icon -->
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/internal/logo.png">
   <title>Selamat Datang di Sistem PSEF</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-205037947-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-205037947-1');
+  </script>
+
   <!-- Custom CSS -->
   <link href="dist/css/style.min.css" rel="stylesheet">
   <!-- Toastr -->
@@ -435,18 +446,6 @@
       window.location = url;
     }
   </script>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYG4ER359J"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag(){dataLayer.push(arguments);}
-
-    gtag('js', new Date());
-    gtag('config', 'G-GYG4ER359J');
-  </script>
-
 </body>
 
 </html>
