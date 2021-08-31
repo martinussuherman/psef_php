@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
+<?php
+include('analytics.php');
+?>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -191,7 +195,10 @@
 
                     <div class="card">
                       <h4 class="card-header bg-orange text-white">STATISTIK PENGUNJUNG</h4>
-                      <div class="row mt-2" id="home-statistik">
+                      <div class="card-body" id="home-statistik">
+                        <?php
+                          retrieveAnalytics();
+                        ?>
                       </div>
                     </div>
                   </div>
