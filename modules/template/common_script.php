@@ -589,7 +589,7 @@
             xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
           },
           data: JSON.stringify({
-            reason: result.value[0],
+            reason: result.value,
             permohonanId: parseInt(permohonanId)
           }),
           contentType: 'application/json',
