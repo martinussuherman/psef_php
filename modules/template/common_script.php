@@ -523,46 +523,56 @@
   }
 
   function permohonanKembalikan(permohonanId, apiUrl, token) {
-    Swal.mixin({
-      input: 'textarea',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      cancelButtonText: "Batal",
-      confirmButtonText: 'Ya'
-    }).queue([{
-      title: 'Kembalikan Permohonan ?',
-      text: 'Mohon isi catatan'
-    }]).then((result) => {
-      if (!result.value) {
-        return;
-      }
-
-      $.ajax({
-        url: apiUrl,
-        type: 'POST',
-        data: JSON.stringify({
-          reason: result.value[0],
-          permohonanId: parseInt(permohonanId)
-        }),
-        beforeSend: function(xhr) {
-          xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
-        },
-        contentType: 'application/json',
-        success: function(data, textStatus, xhr) {
-          if (xhr.status == '204') {
-            viewRouting();
-            toastr.success("Permohonan di Kembalikan", 'Berhasil!');
-            return;
-          }
-
-          toastr.error("Permohonan di Kembalikan", 'Gagal!');
-        },
-        error: function(xhr, textStatus, errorThrown) {
-          console.log('Error in Operation');
+    Swal
+      .fire({
+        input: 'textarea',
+        title: 'Kembalikan Permohonan',
+        text: "Apakah anda yakin ingin mengembalikan permohonan ini ?",
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Ya, Kembalikan !',
+        cancelButtonText: "Batal",
+      })
+      .then((result) => {
+        if (!result.value) {
+          return;
         }
+
+        $.ajax({
+          url: apiUrl,
+          type: 'POST',
+          data: JSON.stringify({
+            reason: result.value,
+            permohonanId: parseInt(permohonanId)
+          }),
+          beforeSend: function(xhr) {
+            xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
+          },
+          contentType: 'application/json',
+          success: function(data, textStatus, xhr) {
+            if (xhr.status == '204') {
+              Swal.fire(
+                'Berhasil!',
+                'Permohonan dikembalikan',
+                'success'
+              );
+
+              viewRouting();
+              return;
+            }
+
+            Swal.fire(
+              'Oops...',
+              'Permohonan gagal dikembalikan',
+              'error'
+            );
+          },
+          error: function(xhr, textStatus, errorThrown) {
+            console.log('Error in Operation');
+          }
+        });
       });
-    });
   }
 
   function permohonanSetujui(permohonanId, apiUrl, token) {
