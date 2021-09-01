@@ -26,29 +26,24 @@ include('../template/template_kemkes.php');
             "url": url_api_php,
             "type": "POST",
             "dataSrc": function ( json ) {
-                var data=[];
-                for ( var i=0, ien=json.data.length; i<ien ; i++ ) {
-                var datax = [];
+              let data = [];
 
-                datax.push(json.data[i].permohonanNumber);
-                datax.push(json.data[i].domain);
-                datax.push(json.data[i].companyName);
-                datax.push(json.data[i].email);
-                datax.push(moment(json.data[i].lastUpdate).format("YYYY-MM-DD"));
+              for (let i = 0; i < json.data.length; i++) {
+                let info =
+                    `<p>${json.data[i].statusName}</p>` +
+                    `<p><hr style="display: inline;border: 7px solid ${userDaysColor(json.data[i].userLevelDays)};" />` +
+                    `User Days : ${json.data[i].userLevelDays}</p>` +
+                    `<p><hr style="display: inline;border: 7px solid ${totalDaysColor(json.data[i].totalDays)};" />` +
+                    `Total Days : ${json.data[i].totalDays}</p>`;
+                let action =
+                  `<button onclick="view_data('${json.data[i].permohonanId}')" class="btn btn-xs btn-block btn-info">Lihat Detail Data</button>` +
+                  `<button onclick="process_data('${json.data[i].permohonanId}')" class="btn btn-xs btn-block btn-success">Setujui</button>` +
+                  `<button onclick="reject_data('${json.data[i].permohonanId}')" class="btn btn-xs btn-block btn-warning">Kembalikan</button>`;
 
-                let color_userLevelDays = userDaysColor(json.data[i].userLevelDays);
-                let color_totalDays = totalDaysColor(json.data[i].totalDays);
+                data.push(dataTablePermohonanPemohonRow(json.data[i], info, action));
+              }
 
-                datax.push('<p>'+json.data[i].statusName+'</p><hr style="display: inline;border: 7px solid '+color_userLevelDays+';">&nbsp;User Days : '+json.data[i].userLevelDays+'</hr><br><br><hr style="display: inline;border: 7px solid '+color_totalDays+';">&nbsp;Total Days : '+json.data[i].totalDays+'</hr>');
-
-                var actions = '<td><button onclick="view_data(\''+json.data[i].permohonanId+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">Lihat Detail Data</button><button onclick="process_data(\''+json.data[i].permohonanId+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-success">Setujui</button><button onclick="reject_data(\''+json.data[i].permohonanId+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-warning">Kembalikan</button></td>';
-
-                datax.push(actions);
-
-                data.push(datax);
-                }
-                return JSON.parse(JSON.stringify(data));
-
+              return data;
             },
 
             "data": function ( d ) {
