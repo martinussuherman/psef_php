@@ -25,23 +25,17 @@ include('../template/template_kemkes.php');
               "url": url_api_php,
               "type": "POST",
               "dataSrc": function ( json ) {
-                var data=[];
-                for ( var i=0, ien=json.data.length; i<ien ; i++ ) {
-                  var datax = [];
-                  datax.push(json.data[i].permohonanNumber);
-                  datax.push(json.data[i].domain);
-                  datax.push(json.data[i].straNumber);
-                  datax.push(moment(json.data[i].lastUpdate).format("YYYY-MM-DD"));
-                  datax.push(json.data[i].statusName);
+                let data = [];
 
-                  var actions = '<td><button onclick="view_data(\''+json.data[i].id+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">Lihat Detail Data</button></td>';
+                for (let i = 0; i < json.data.length; i++) {
+                  let info = json.data[i].statusName;
+                  let action =
+                    `<button onclick="view_data('${json.data[i].permohonanId}')" class="btn btn-xs btn-block btn-info">Lihat Detail Data</button>`;
 
-                  datax.push(actions);
-
-                  data.push(datax);
+                  data.push(dataTablePermohonanPemohonRow(json.data[i], info, action));
                 }
-                return JSON.parse(JSON.stringify(data));
 
+                return data;
               },
 
               "data": function ( d ) {
