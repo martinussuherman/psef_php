@@ -37,7 +37,7 @@ include('../template/template_kemkes.php');
                     `Total Days : ${json.data[i].totalDays}</p>`;
                 let action =
                   `<button onclick="view_data('${json.data[i].permohonanId}')" class="btn btn-xs btn-block btn-info">Lihat Detail Data</button>` +
-                  `<button onclick="process_data('${json.data[i].permohonanId}')" class="btn btn-xs btn-block btn-success">Setujui</button>` +
+                  `<button onclick="process_data('${json.data[i].permohonanId}')" class="btn btn-xs btn-block btn-success">Teruskan</button>` +
                   `<button onclick="reject_data('${json.data[i].permohonanId}')" class="btn btn-xs btn-block btn-warning">Kembalikan</button>`;
 
                 data.push(dataTablePermohonanPemohonRow(json.data[i], info, action));
