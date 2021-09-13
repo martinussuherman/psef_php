@@ -57,6 +57,7 @@ function routing(key) {
     "semua_diryanfar": "modules/pendaftaran-psef/diryanfar/semua_diryanfar.php",
     "pending_dirjen": "modules/pendaftaran-psef/dirjen/pending_dirjen.php",
     "semua_dirjen": "modules/pendaftaran-psef/dirjen/semua_dirjen.php",
+    "transaksi": "modules/transaksi/transaksi.php",
   };
 
   $('.preloader').show();
