@@ -68,14 +68,14 @@ function displayMenuPerizinan(string $role)
 
 function displayMenuTransaksi(string $role)
 {
-  if ($role == '') {
+  if ($role == "") {
     return;
   }
-  ?>
+?>
 
-  <li style="display:block" class="sidebar-item">
-    <a class="sidebar-link two-column has-arrow waves-effect waves-dark" href="javascript:routing('transaksi')" aria-expanded="false">
-      <i class="fa fa-list-ul"></i><span class="hide-menu">Data Transaksi</span>
+  <li class="sidebar-item">
+    <a onclick="routing('transaksi')" class="sidebar-link two-column has-arrow" href="javascript:void()" aria-expanded="false">
+      <i class="fa fa-list-ul"></i>Data Transaksi
     </a>
   </li>
 <?php
