@@ -224,15 +224,6 @@
                 </li>
               <?php } ?>
 
-              <?php
-              if ($_COOKIE['role'] == 'Psef.Admin') {
-              ?>
-                <!-- <li id="menu_warehouse" style="display:block" class="sidebar-item"> <a class="sidebar-link two-column has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fa fa-share"></i><span class="hide-menu">Data Referensi </span></a>
-                                <ul aria-expanded="false" class="collapse first-level">
-                                    <li id="menu_Warehouse-Location-list-Menu" class="sidebar-item"><a onclick="routing_menu('Warehouse-Location-list-List-Data')" href="javascript:void(0)" class="sidebar-link"><i class="mdi mdi-adjust"></i><span class="hide-menu">Kode Izin </span></a></li>
-                                </ul>
-                            </li> -->
-              <?php } ?>
               <?php if ($_COOKIE['role'] == '') { ?>
                 <li id="menu_PemohonUser" style="display:block" class="sidebar-item"> <a onclick="routing('pemohon_user')" class="sidebar-link two-column has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span class="hide-menu">Pemohon</span></a>
                 </li>
