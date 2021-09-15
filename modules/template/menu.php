@@ -1,5 +1,5 @@
 <?php
-function displayMenuPemohonan(string $role)
+function displayMenuPermohonan(string $role)
 {
 ?>
   <li class="sidebar-item">
