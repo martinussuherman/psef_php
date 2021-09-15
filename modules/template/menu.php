@@ -1,4 +1,32 @@
 <?php
+function displayMenuPermohonanAdmin()
+{
+?>
+  <ul aria-expanded="false" class="collapse first-level">
+    <li class="sidebar-item">
+      <a onclick="routing('rumusan_admin')" href="javascript:void()" class="sidebar-link">
+        <i class="mdi mdi-file-outline"></i>Rumusan
+      </a>
+    </li>
+    <li class="sidebar-item">
+      <a onclick="routing('proses_admin')" href="javascript:void()" class="sidebar-link">
+        <i class="mdi mdi-timer-sand"></i>Dalam Proses
+      </a>
+    </li>
+    <li class="sidebar-item">
+      <a onclick="routing('selesai_admin')" href="javascript:void()" class="sidebar-link">
+        <i class="mdi mdi-check-circle"></i>Selesai
+      </a>
+    </li>
+    <li class="sidebar-item">
+      <a onclick="routing('ditolak_admin')" href="javascript:void()" class="sidebar-link">
+        <i class="mdi mdi-close-circle"></i>Ditolak
+      </a>
+    </li>
+  </ul>
+<?php
+}
+
 function displayMenuPermohonanUser()
 {
 ?>
