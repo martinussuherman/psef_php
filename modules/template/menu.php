@@ -1,4 +1,37 @@
 <?php
+function displayMenuPermohonanUser()
+{
+?>
+  <ul aria-expanded="false" class="collapse first-level">
+    <li class="sidebar-item">
+      <a onclick="routing('rumusan_user')" href="javascript:void()" class="sidebar-link">
+        <i class="mdi mdi-file-outline"></i>Rumusan
+      </a>
+    </li>
+    <li class="sidebar-item">
+      <a onclick="routing('proses_user')" href="javascript:void()" class="sidebar-link">
+        <i class="mdi mdi-timer-sand"></i>Dalam Proses
+      </a>
+    </li>
+    <li class="sidebar-item">
+      <a onclick="routing('dikembalikan_user')" href="javascript:void()" class="sidebar-link">
+        <i class="mdi mdi-keyboard-return"></i>Dikembalikan
+      </a>
+    </li>
+    <li class="sidebar-item">
+      <a onclick="routing('selesai_user')" href="javascript:void()" class="sidebar-link">
+        <i class="mdi mdi-check-circle"></i>Selesai
+      </a>
+    </li>
+    <li class="sidebar-item">
+      <a onclick="routing('ditolak_user')" href="javascript:void()" class="sidebar-link">
+        <i class="mdi mdi-close-circle"></i>Ditolak
+      </a>
+    </li>
+  </ul>
+<?php
+}
+
 function displayMenuPermohonanValidator()
 {
 ?>
