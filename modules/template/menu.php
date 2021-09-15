@@ -1,4 +1,50 @@
 <?php
+function displayMenuPemohonan(string $role)
+{
+?>
+  <li class="sidebar-item">
+    <a class="sidebar-link has-arrow" href="javascript:void()" aria-expanded="false">
+      <i class="fa fa-share"></i>Pendaftaran PSEF
+    </a>
+
+    <?php
+    if ($role == "Psef.Admin") {
+      displayMenuPermohonanAdmin();
+    }
+
+    if ($role == "") {
+      displayMenuPermohonanUser();
+    }
+
+    if ($role == "Psef.ValidatorSertifikat") {
+      displayMenuPermohonanValidator();
+    }
+
+    if ($role == "Psef.Verifikator") {
+      displayMenuPermohonanPendingSemua("pending_verif", "semua_verif");
+    }
+
+    if ($role == "Psef.Kasi") {
+      displayMenuPermohonanPendingSemua("pending_kasi", "semua_kasi");
+    }
+
+    if ($role == "Psef.Kasubdit") {
+      displayMenuPermohonanPendingSemua("pending_kasubdit", "semua_kasubdit");
+    }
+
+    if ($role == "Psef.Diryanfar") {
+      displayMenuPermohonanPendingSemua("pending_diryanfar", "semua_diryanfar");
+    }
+
+    if ($role == "Psef.Dirjen") {
+      displayMenuPermohonanPendingSemua("pending_dirjen", "semua_dirjen");
+    }
+    ?>
+
+  </li>
+<?php
+}
+
 function displayMenuPermohonanAdmin()
 {
 ?>
