@@ -209,11 +209,11 @@ include('analytics.php');
         </div>
       </div>
 
-      <div class="auth-box on-sidebar" style="position:fixed;background: #fff url(../assets/images/bg2.jpg) fixed no-repeat;">
+      <div class="auth-box on-sidebar text-white" style="position:fixed; background-image: url(../assets/internal/bg-dark.jpg);">
         <div id="loginform">
           <div class="logo mb-3">
             <span class="db">
-              <img src="/assets/internal/logo-psef.png" alt="logo" width="60%" />
+              <img src="/assets/internal/logo-psef-white.png" alt="logo" width="60%" />
             </span>
           </div>
           <!-- Form -->
@@ -231,7 +231,7 @@ include('analytics.php');
                   </div>
                 </div>
                 <div class="custom-control custom-checkbox">
-                  <a href="https://usermanagement-simyanfar.kemkes.go.id/Account/ForgotPassword" class="text-dark float-right" target="_blank"><i class="fa fa-lock m-r-5"></i> Lupa Kata Sandi?</a>
+                  <a href="https://usermanagement-simyanfar.kemkes.go.id/Account/ForgotPassword" class="text-white float-right" target="_blank"><i class="fa fa-lock m-r-5"></i> Lupa Kata Sandi?</a>
                 </div>
               </div>
               <div class="form-group text-center p-1 mt-3">
