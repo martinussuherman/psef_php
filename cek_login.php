@@ -85,45 +85,72 @@ include('analytics.php');
                         <span class="sr-only">Next</span>
                       </a>
                     </div>
-                    <hr>
-                    <br>
-                    <div style="background: rgba(232,243,249,.7) !important">
-                      <div class="box-header with-border">
-                        <h2 class="box-title" style="padding-left:0px">Selamat Datang di Sistem PSEF</h2>
-                      </div>
-                      <div class="box box-body" style="background: rgba(232,243,249,.7) !important">
-                        <ul class="breadcrumb" id="breadcrumb" style="display: none;">
-                        </ul>
-                        <h2>Penyelenggara Sistem Elektronik Farmasi (PSEF)</h2>
-                        <h3>Tentang Pendaftaran PSEF</h3>
-                        <p style="line-height: 1.5">
-                          Pendaftaran Penyedia Sistem Elektronik Farmasi (PSEF) merupakan persyaratan untuk
-                          Penyedia Sistem Elektronik (PSE) yang memfasilitasi pelayanan kefarmasian.<br>
-                          Pelaku usaha yang dapat mendaftarkan diri sebagai PSEF adalah pelaku usaha berbadan hukum, dan telah
-                          atau akan bekerjasama dengan pelaksana pekerjaan kefarmasian sesuai dengan ketentuan yang berlaku.<br>
-                          Pemberi pelayanan kefarmasian yang difasilitasi oleh PSEF harus berupa apotek yang resmi dan berizin.<br>
-                        </p>
-                        <h3>Persyaratan Pendaftaran</h3>
-                        <ul id="syarat" style="list-style-type: none; padding-left: 2px;">
-                          <li><i class="fa fa-check-square"></i>Data pemohon</li>
-                          <li><i class="fa fa-check-square"></i>Memiliki NIB</li>
-                          <li><i class="fa fa-check-square"></i>Memiliki Tanda Daftar Penyelenggara Sistem Elektronik (PSE)</li>
-                          <li><i class="fa fa-check-square"></i>Memiliki Izin Usaha Berbentuk IUI/PMSE</li>
-                          <li><i class="fa fa-check-square"></i>Memiliki Apoteker Penanggungjawab</li>
-                          <li><i class="fa fa-check-square"></i>Mengisi Data Permohonan</li>
-                          <li><i class="fa fa-check-square"></i>Membuat Surat Permohonan</li>
-                          <li><i class="fa fa-check-square"></i>Membuat Dokumentasi API</li>
-                          <li><i class="fa fa-check-square"></i>Membuat Dokumen Proses Bisnis Aplikasi</li>
-                          <li><i class="fa fa-check-square"></i>Membuat Surat Pernyataan Komitmen bekerjasama dengan Apotek</li>
-                          <li><i class="fa fa-check-square"></i>Memiliki daftar apotek jaringan yang bekerjasama</li>
-                        </ul>
 
-                        <a href="/assets/doc/Checklist%20Perizinan%20PSEF%20untuk%20Pemohon.xlsx" target="_blank">
-                          <h5>
-                            Checklist Perizinan PSEF Untuk Pemohon<span class="ml-2 fa fa-download"></span>
-                          </h5>
+                    <hr />
+
+                    <div class="jumbotron text-center" style="background-image: url(../assets/images/bg2.jpg);">
+                      <h1>Selamat Datang di Sistem PSEF</h1>
+                      <hr />
+                      <h2>Penyelenggara Sistem Elektronik Farmasi (PSEF)</h2>
+                    </div>
+
+                    <div class="card">
+                      <h4 class="card-header bg-dark text-white">TENTANG PENDAFTARAN PSEF</h4>
+                      <p class="card-body text-justify" style="font-size: 1.25em;">
+                        Pendaftaran Penyedia Sistem Elektronik Farmasi (PSEF) merupakan persyaratan untuk
+                        Penyedia Sistem Elektronik (PSE) yang memfasilitasi pelayanan kefarmasian.<br />
+                        Pelaku usaha yang dapat mendaftarkan diri sebagai PSEF adalah pelaku usaha berbadan hukum, dan telah
+                        atau akan bekerjasama dengan pelaksana pekerjaan kefarmasian sesuai dengan ketentuan yang berlaku.<br />
+                        Pemberi pelayanan kefarmasian yang difasilitasi oleh PSEF harus berupa apotek yang resmi dan berizin.
+                      </p>
+                    </div>
+
+                    <div class="card">
+                      <h4 class="card-header bg-purple text-white">PERSYARATAN PENDAFTARAN</h4>
+
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                          <i class="fa fa-check-square mr-2"></i>Data pemohon
+                        </li>
+                        <li class="list-group-item">
+                          <i class="fa fa-check-square mr-2"></i>Memiliki NIB
+                        </li>
+                        <li class="list-group-item">
+                          <i class="fa fa-check-square mr-2"></i>Memiliki Tanda Daftar Penyelenggara Sistem Elektronik (PSE)
+                        </li>
+                        <li class="list-group-item">
+                          <i class="fa fa-check-square mr-2"></i>Memiliki Izin Usaha Berbentuk IUI/PMSE
+                        </li>
+                        <li class="list-group-item">
+                          <i class="fa fa-check-square mr-2"></i>Memiliki Apoteker Penanggungjawab
+                        </li>
+                        <li class="list-group-item">
+                          <i class="fa fa-check-square mr-2"></i>Mengisi Data Permohonan
+                        </li>
+                        <li class="list-group-item">
+                          <i class="fa fa-check-square mr-2"></i>Membuat Surat Permohonan
+                        </li>
+                        <li class="list-group-item">
+                          <i class="fa fa-check-square mr-2"></i>Membuat Dokumentasi API
+                        </li>
+                        <li class="list-group-item">
+                          <i class="fa fa-check-square mr-2"></i>Membuat Dokumen Proses Bisnis Aplikasi
+                        </li>
+                        <li class="list-group-item">
+                          <i class="fa fa-check-square mr-2"></i>Membuat Surat Pernyataan Komitmen bekerjasama dengan Apotek
+                        </li>
+                        <li class="list-group-item">
+                          <i class="fa fa-check-square mr-2"></i>Memiliki daftar apotek jaringan yang bekerjasama
+                        </li>
+                      </ul>
+
+                      <div class="mt-2">
+                        <a target="_blank" href="/assets/doc/Checklist%20Perizinan%20PSEF%20untuk%20Pemohon.xlsx" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start text-primary">
+                          <h5>Checklist Perizinan PSEF Untuk Pemohon</h5><i class="fa fa-download"></i>
                         </a>
-
+                        <a target="_blank" href="/assets/doc/Contoh%20Surat%20Pernyataan.docx"  class="list-group-item list-group-item-action d-flex justify-content-between align-items-start text-primary">
+                          <h5>Contoh Surat Pernyataan</h5><i class="fa fa-download"></i>
+                        </a>
                       </div>
                     </div>
 
