@@ -155,7 +155,7 @@ include('analytics.php');
                     </div>
 
                     <div class="card">
-                      <h4 class="card-header bg-success text-white">Tanda Daftar PSEF Yang Terbit</h4>
+                      <h4 class="card-header bg-success text-white">TANDA DAFTAR PSEF YANG TERBIT</h4>
 
                       <table id="zero_config" class="card-body table table-striped table-bordered">
                         <thead>
