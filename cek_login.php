@@ -63,7 +63,7 @@ include('analytics.php');
             <div class="card-body">
               <div class="col-md-8">
                 <div id="_the_view_" class="col-md-12">
-                  <div class="box box-info">
+                  <div class="box box-info bg-white">
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                       <div class="carousel-inner" id="homePageBanner">
                         <!-- <div class="carousel-item active">
