@@ -4598,7 +4598,7 @@ button.close {
   .bs-popover-top .arrow::before, .bs-popover-auto[x-placement^="top"] .arrow::before {
     bottom: 0;
     border-top-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-top .arrow::after,
   .bs-popover-auto[x-placement^="top"] .arrow::after {
     bottom: 1px;
@@ -4618,7 +4618,7 @@ button.close {
   .bs-popover-right .arrow::before, .bs-popover-auto[x-placement^="right"] .arrow::before {
     left: 0;
     border-right-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-right .arrow::after,
   .bs-popover-auto[x-placement^="right"] .arrow::after {
     left: 1px;
@@ -4635,7 +4635,7 @@ button.close {
   .bs-popover-bottom .arrow::before, .bs-popover-auto[x-placement^="bottom"] .arrow::before {
     top: 0;
     border-bottom-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-bottom .arrow::after,
   .bs-popover-auto[x-placement^="bottom"] .arrow::after {
     top: 1px;
@@ -4664,7 +4664,7 @@ button.close {
   .bs-popover-left .arrow::before, .bs-popover-auto[x-placement^="left"] .arrow::before {
     right: 0;
     border-left-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-left .arrow::after,
   .bs-popover-auto[x-placement^="left"] .arrow::after {
     right: 1px;
@@ -6954,7 +6954,7 @@ a.text-purple:hover, a.text-purple:focus {
     border: 1px solid #dee2e6 !important; } }
 
 /*******************
-Padding margin property 
+Padding margin property
 *******************/
 html[dir="ltr"] body .m-t-5 {
   margin-top: 5px; }
@@ -7197,9 +7197,8 @@ html[dir="ltr"] body .p-b-0 {
 html[dir="ltr"] body .p-l-0 {
   padding-left: 0; }
 
-#main-wrapper[data-layout="vertical"], #main-wrapper[data-layout="horizontal"] {
   /*This is for the logo bg*/
-  /*This is for the sidebar bg*/ }
+  /*This is for the sidebar bg*/
   #main-wrapper[data-layout="vertical"] .topbar .top-navbar .navbar-header[data-logobg="skin1"], #main-wrapper[data-layout="horizontal"] .topbar .top-navbar .navbar-header[data-logobg="skin1"] {
     background: #2962FF; }
   #main-wrapper[data-layout="vertical"] .topbar .top-navbar .navbar-header[data-logobg="skin2"], #main-wrapper[data-layout="horizontal"] .topbar .top-navbar .navbar-header[data-logobg="skin2"] {
@@ -7271,8 +7270,8 @@ html[dir="ltr"] body .p-l-0 {
     #main-wrapper[data-layout="vertical"] .left-sidebar[data-sidebarbg="skin6"] .create-btn, #main-wrapper[data-layout="horizontal"] .left-sidebar[data-sidebarbg="skin6"] .create-btn {
       background: #4fc3f7; }
 
-/*============================================================== 
- For all pages 
+/*==============================================================
+ For all pages
  ============================================================== */
 #main-wrapper {
   width: 100%;
@@ -7332,12 +7331,11 @@ html[dir="ltr"] body .p-l-0 {
 /*******************
  Vertical layout
 *******************/
-#main-wrapper[data-layout="vertical"] {
   /*Vertical*/
   /*sidebar type*/
   /*Sidebar position*/
   /*Header position*/
-  /*Boxed Layout*/ }
+  /*Boxed Layout*/
   #main-wrapper[data-layout="vertical"] .topbar .top-navbar .navbar-header {
     transition: 0.2s ease-in; }
   #main-wrapper[data-layout="vertical"][data-sidebartype="full"] .page-wrapper {
@@ -7382,11 +7380,10 @@ html[dir="ltr"] body .p-l-0 {
  Vertical responsive layout
 *******************/
 @media (min-width: 768px) {
-  #main-wrapper[data-layout="vertical"] {
     /*Vertical*/
     /*Sidebar position*/
     /*Vertical with mini-sidebar*/
-    /*Fixed sidebar with minisidebar*/ }
+    /*Fixed sidebar with minisidebar*/
     #main-wrapper[data-layout="vertical"][data-sidebartype="full"] .topbar .top-navbar .navbar-header {
       width: 250px; }
     #main-wrapper[data-layout="vertical"][data-sidebar-position="fixed"][data-sidebartype="full"] .topbar .top-navbar .navbar-collapse, #main-wrapper[data-layout="vertical"][data-sidebar-position="fixed"][data-sidebartype="overlay"] .topbar .top-navbar .navbar-collapse {
@@ -7423,8 +7420,7 @@ html[dir="ltr"] body .p-l-0 {
           justify-content: flex-start; } }
 
 @media (max-width: 766px) {
-  #main-wrapper {
-    /*Header position*/ }
+    /*Header position*/
     #main-wrapper[data-sidebartype="mini-sidebar"] .left-sidebar {
       left: -250px; }
     #main-wrapper.show-sidebar .left-sidebar {
@@ -8147,10 +8143,9 @@ sidebar navigation
   height: calc(100% - 20px);
   position: relative; }
 
-.sidebar-nav ul {
   /*******************
          Small cap
-         ******************/ }
+         ******************/
   .sidebar-nav ul .sidebar-item {
     width: 250px;
     /*******************
@@ -8200,8 +8195,8 @@ sidebar navigation
       line-height: 30px;
       margin: 0 5px; }
 
-.sidebar-nav > #sidebarnav > .sidebar-item > .sidebar-link:hover {
-  /*background: rgba(0, 0, 0, 0.04);*/ }
+/* .sidebar-nav > #sidebarnav > .sidebar-item > .sidebar-link:hover {
+  background: rgba(0, 0, 0, 0.04); } */
 
 /*******************
  common m-p removed
@@ -11308,9 +11303,8 @@ label {
   width: 100% !important;
   height: auto !important; }
 
-html[dir="rtl"] {
   /*******************
-Padding margin property 
+Padding margin property
 *******************/
   /** * Zero */
   /* Stickey inner-left-part */
@@ -11322,7 +11316,7 @@ Padding margin property
         margin-left: 10px;
         line-height: 20px;
     }*/
-  /* Vertical responsive layout */ }
+  /* Vertical responsive layout */
   html[dir="rtl"] body .m-t-5 {
     margin-top: 5px; }
   html[dir="rtl"] body .m-b-5 {
@@ -11669,8 +11663,7 @@ Padding margin property
   html[dir="rtl"] .treeview span.icon {
     margin-right: 0;
     margin-left: 5px; }
-  html[dir="rtl"] #main-wrapper {
-    /*sidebar type*/ }
+    /*sidebar type*/
     html[dir="rtl"] #main-wrapper[data-sidebartype="full"] .page-wrapper {
       margin-right: 250px;
       margin-left: 0; }
@@ -11686,9 +11679,8 @@ Padding margin property
   html[dir="rtl"] .dz-hidden-input {
     display: none; }
   @media (min-width: 768px) {
-    html[dir="rtl"] #main-wrapper {
       /*Sidebar position*/
-      /*Fixed sidebar with minisidebar*/ }
+      /*Fixed sidebar with minisidebar*/
       html[dir="rtl"] #main-wrapper[data-sidebar-position="fixed"][data-sidebartype="full"] .topbar .top-navbar .navbar-collapse, html[dir="rtl"] #main-wrapper[data-sidebar-position="fixed"][data-sidebartype="overlay"] .topbar .top-navbar .navbar-collapse {
         margin-right: 250px;
         margin-left: 0; }
@@ -13538,13 +13530,12 @@ Template Name: Admin Template
 Author: Niravjoshi / Wrappixel
 File: scss
 */
-#main-wrapper[data-layout="horizontal"] {
   /****************************
     This is for the fixed header layout
     ***************************/
   /****************************
     This is for the fixed sidebar layout
-    ***************************/ }
+    ***************************/
   #main-wrapper[data-layout="horizontal"][data-header-position="fixed"] .topbar {
     position: fixed;
     width: 100%; }
@@ -13687,24 +13678,24 @@ Author: Wrappixel
 
 File: scss
 */
-/*============================================================== 
- For Desktop & above all (1650px) 
+/*==============================================================
+ For Desktop & above all (1650px)
  ============================================================== */
-/*============================================================== 
- For Laptop & above all (1370px) 
+/*==============================================================
+ For Laptop & above all (1370px)
  ============================================================== */
-/*-- ============================================================== 
- Small Desktop & above all (1024px) 
+/*-- ==============================================================
+ Small Desktop & above all (1024px)
  ============================================================== */
-/*-- ============================================================== 
- Ipad & above all(768px) 
+/*-- ==============================================================
+ Ipad & above all(768px)
  ============================================================== */
 @media (min-width: 768px) {
   .bc-content {
     justify-content: flex-end; } }
 
-/*-- ============================================================== 
- Phone and below ipad(767px) 
+/*-- ==============================================================
+ Phone and below ipad(767px)
  ============================================================== */
 @media (max-width: 991.98px) {
   .do-block {
