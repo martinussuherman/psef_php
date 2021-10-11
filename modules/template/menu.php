@@ -147,7 +147,7 @@ function displayMenuPermohonanPendingSemua(string $pendingRoute, string $allRout
 <?php
 }
 
-function displayMenuPerizinan(string $role)
+function displayMenuPerizinan($role)
 {
   $route = "";
 
@@ -173,7 +173,7 @@ function displayMenuPerizinan(string $role)
     case "Psef.Admin":
       $route = "routing('perizinan_admin')";
       break;
-    case "":
+    default:
       $route = "routing('perizinan_user')";
       break;
   }
