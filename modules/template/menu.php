@@ -1,5 +1,5 @@
 <?php
-function displayMenuPermohonan(string $role)
+function displayMenuPermohonan($role)
 {
 ?>
   <li class="sidebar-item">
@@ -12,7 +12,7 @@ function displayMenuPermohonan(string $role)
       displayMenuPermohonanAdmin();
     }
 
-    if ($role == "") {
+    if (is_null($role) || $role == "") {
       displayMenuPermohonanUser();
     }
 
