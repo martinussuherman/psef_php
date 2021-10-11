@@ -1,54 +1,12 @@
-<?php
-include('modules/template/menu.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <!-- Favicon icon -->
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/internal/logo.png">
-  <title>Selamat Datang di Sistem PSEF</title>
+<?php
+include('modules/template/menu.php');
+include('modules/template/header.php');
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-205037947-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-205037947-1');
-  </script>
-
-  <!-- This page plugin CSS -->
-  <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
-  <!-- Custom CSS -->
-  <link href="dist/css/style.css" rel="stylesheet">
-  <link href="dist/css/quill.snow.css" rel="stylesheet">
-  <!-- Sweet alert -->
-  <link href="assets/libs/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
-  <!-- select2 -->
-  <link href="assets/libs/select2/dist/css/select2.min.css" rel="stylesheet">
-  <!-- Toastr -->
-  <link href="assets/libs/toastr/build/toastr.min.css" rel="stylesheet">
-  <!-- Bootstrap Switch -->
-  <link rel="stylesheet" type="text/css" href="assets/libs/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css">
-  <!-- easyui -->
-  <!-- <link rel="stylesheet" type="text/css" href="assets/libs/easyui/easyui.css">
-	<link rel="stylesheet" type="text/css" href="assets/libs/easyui/icon.css"> -->
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-</head>
+displayHeader();
+?>
 
 <body>
   <!-- ============================================================== -->
