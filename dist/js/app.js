@@ -74,7 +74,7 @@ $.fn.AdminSettings = function (settings) {
                 else {
                     $('#' + myid + ' .topbar .top-navbar .navbar-header').attr("data-logobg", "skin1");
                 }
-            };
+            }
             setlogobg();
             // Navbar bg attribute
             function setnavbarbg() {
@@ -89,7 +89,7 @@ $.fn.AdminSettings = function (settings) {
                      $('#' + myid + ' .topbar').attr("data-navbarbg", "skin1");
                     $('#' + myid).attr("data-navbarbg", "skin1");
                 }
-            };
+            }
             setnavbarbg();
         }
         , //****************************
@@ -238,7 +238,7 @@ $.fn.AdminSettings = function (settings) {
                 else {
                     $('#' + myid + ' .left-sidebar').attr("data-sidebarbg", "skin1");
                 }
-            };
+            }
             setsidebarbg();
         }
         , //****************************
