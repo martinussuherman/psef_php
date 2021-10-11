@@ -1,4 +1,43 @@
 <?php
+function displayMenuPemohon($role)
+{
+  $route = "";
+
+  switch ($role) {
+    case "Psef.Verifikator":
+      $route = "routing('pemohon_verif')";
+      break;
+    case "Psef.Kasi":
+      $route = "routing('pemohon_kasi')";
+      break;
+    case "Psef.Kasubdit":
+      $route = "routing('pemohon_kasubdit')";
+      break;
+    case "Psef.Diryanfar":
+      $route = "routing('pemohon_diryanfar')";
+      break;
+    case "Psef.Dirjen":
+      $route = "routing('pemohon_dirjen')";
+      break;
+    case "Psef.ValidatorSertifikat":
+      $route = "routing('pemohon_validator')";
+      break;
+    case "Psef.Admin":
+      $route = "routing('pemohon_admin')";
+      break;
+    default:
+      $route = "routing('pemohon_user')";
+      break;
+  }
+?>
+  <li class="sidebar-item">
+    <a onclick="<?php echo $route; ?>" class="sidebar-link two-column has-arrow" href="javascript:void(0)" aria-expanded="false">
+      <i class="mdi mdi-account-circle"></i>Pemohon
+    </a>
+  </li>
+<?php
+}
+
 function displayMenuPermohonan($role)
 {
 ?>
