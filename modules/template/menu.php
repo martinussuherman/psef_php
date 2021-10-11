@@ -186,9 +186,9 @@ function displayMenuPerizinan($role)
 <?php
 }
 
-function displayMenuTransaksi(string $role)
+function displayMenuTransaksi($role)
 {
-  if ($role == "") {
+  if (is_null($role) || $role == "") {
     return;
   }
 ?>
