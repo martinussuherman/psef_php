@@ -186,33 +186,8 @@ displayHeader();
                 </li>
               <?php } ?>
 
-              <?php if ($_COOKIE['role'] == '') { ?>
-                <li id="menu_PemohonUser" style="display:block" class="sidebar-item"> <a onclick="routing('pemohon_user')" class="sidebar-link two-column has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span class="hide-menu">Pemohon</span></a>
-                </li>
-              <?php } else if ($_COOKIE['role'] == 'Psef.Verifikator') { ?>
-                <li id="menu_PemohonVerifikator" style="display:block" class="sidebar-item"> <a onclick="routing('pemohon_verif')" class="sidebar-link two-column has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span class="hide-menu">Pemohon</span></a>
-                </li>
-              <?php } else if ($_COOKIE['role'] == 'Psef.Dirjen') { ?>
-                <li id="menu_PemohonDirjen" style="display:block" class="sidebar-item"> <a onclick="routing('pemohon_dirjen')" class="sidebar-link two-column has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span class="hide-menu">Pemohon</span></a>
-                </li>
-              <?php } else if ($_COOKIE['role'] == 'Psef.Diryanfar') { ?>
-                <li id="menu_PemohonDiryanfar" style="display:block" class="sidebar-item"> <a onclick="routing('pemohon_diryanfar')" class="sidebar-link two-column has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span class="hide-menu">Pemohon</span></a>
-                </li>
-              <?php } else if ($_COOKIE['role'] == 'Psef.Kasubdit') { ?>
-                <li id="menu_PemohonKasubdit" style="display:block" class="sidebar-item"> <a onclick="routing('pemohon_kasubdit')" class="sidebar-link two-column has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span class="hide-menu">Pemohon</span></a>
-                </li>
-              <?php } else if ($_COOKIE['role'] == 'Psef.Kasi') { ?>
-                <li id="menu_PemohonKasi" style="display:block" class="sidebar-item"> <a onclick="routing('pemohon_kasi')" class="sidebar-link two-column has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span class="hide-menu">Pemohon</span></a>
-                </li>
-              <?php } else if ($_COOKIE['role'] == 'Psef.ValidatorSertifikat') { ?>
-                <li id="menu_PemohonValidator" style="display:block" class="sidebar-item"> <a onclick="routing('pemohon_validator')" class="sidebar-link two-column has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span class="hide-menu">Pemohon</span></a>
-                </li>
-              <?php } else if ($_COOKIE['role'] == 'Psef.Admin') { ?>
-                <li id="menu_PemohonAdmin" style="display:block" class="sidebar-item"> <a onclick="routing('pemohon_admin')" class="sidebar-link two-column has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account-circle"></i><span class="hide-menu">Pemohon</span></a>
-                </li>
-              <?php } ?>
-
               <?php
+                displayMenuPemohon($_COOKIE['role']);
                 displayMenuPermohonan($_COOKIE['role']);
                 displayMenuPerizinan($_COOKIE['role']);
                 displayMenuTransaksi($_COOKIE['role']);
