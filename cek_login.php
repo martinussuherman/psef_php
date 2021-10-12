@@ -35,15 +35,6 @@ displayHeader();
                   <div class="box box-info bg-white">
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                       <div class="carousel-inner" id="homePageBanner">
-                        <!-- <div class="carousel-item active">
-                                                <img class="d-block w-100" src="https://www.kemkes.go.id/web/assets/images/banner/banner%20coronavirus.jpg" alt="First slide">
-                                                </div>
-                                                <div class="carousel-item">
-                                                <img class="d-block w-100" src="https://www.kemkes.go.id/web/assets/images/imgHeaderBackground-ind.jpg" alt="Second slide">
-                                                </div>
-                                                <div class="carousel-item">
-                                                <img class="d-block w-100" src="https://www.kemkes.go.id/web/assets/images/article/Keselamatan%20Tenaga%20Kesehatan%20Keselamatan%20Kita%20Semua.jpeg" alt="Third slide">
-                                                </div> -->
                       </div>
                       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
