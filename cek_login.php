@@ -222,21 +222,16 @@ displayHeader();
       </div>
     </div>
   </div>
+
   <!-- ============================================================== -->
   <!-- All Required js -->
   <!-- ============================================================== -->
-  <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
-  <script src="/assets/js/moment.min.js"></script>
-  <!-- Bootstrap tether Core JavaScript -->
-  <script src="/assets/libs/popper.js/dist/umd/popper.min.js"></script>
-  <script src="/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-  <!-- Taostr -->
-  <script src="../../assets/libs/toastr/build/toastr.min.js"></script>
-  <!-- ============================================================== -->
-  <!-- This page plugin js -->
-  <!-- ============================================================== -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha512-pgGHFWjBtbKHTTDW5buGZ9mU0nGfxNavf5kWK/Od2ugA//9FuMHAunkAiMe5jeL/5WW1r0UxwKi6D5LpMOJD3w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   <script src="/assets/js/config.js"></script>
-  <script src="assets/js/quill.min.js"></script>
+
   <script>
     $('[data-toggle="tooltip"]').tooltip();
     $(".preloader").fadeOut();
