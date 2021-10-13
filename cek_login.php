@@ -254,6 +254,7 @@ displayHeader();
           console.log('Error in Operation');
         }
       });
+
       $.ajax({
         url: url_api + "HomepageBanner",
         type: 'GET',
@@ -275,6 +276,7 @@ displayHeader();
           console.log('Error in Operation');
         }
       });
+
       $.ajax({
         url: url_api + "HomepageNews",
         type: 'GET',
