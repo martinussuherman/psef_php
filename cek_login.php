@@ -4,7 +4,9 @@
 <?php
 include('analytics.php');
 include('modules/template/header.php');
+include("configReader.php");
 
+$settingData = readConfig();
 displayHeader();
 ?>
 
