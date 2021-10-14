@@ -27,7 +27,28 @@ displayHeader();
     <!-- ============================================================== -->
     <div class="auth-wrapper d-flex no-block justify-content-center align-items-center">
       <div class="row">
-        <div class="page-wrapper" style="display: block;background: #fff url(../assets/images/bg0.jpg) fixed no-repeat;">
+
+        <nav class="col navbar navbar-dark bg-dark d-xs-block d-lg-none">
+          <img src="/assets/internal/logo-kemkes.png" alt="logo" class="light-logo" height="50px" />
+
+          <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-5">
+              <li class="nav-item mt-5 mb-3">
+                <a href="login.php" class="btn btn-rounded btn-block btn-info">Masuk</a>
+              </li>
+              <li class="nav-item mb-3">
+                <a href="https://usermanagement-simyanfar.kemkes.go.id/Account/Register" class="btn btn-rounded btn-block btn-success" target="_blank">Daftar</a>
+              </li>
+              <li class="nav-item mb-3">
+                <a href="https://usermanagement-simyanfar.kemkes.go.id/Account/ForgotPassword" class="text-white" target="_blank"><i class="fa fa-lock m-r-5"></i> Lupa Kata Sandi?</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
           <div class="form-horizontal">
             <div class="card-body">
               <div class="col-md-8">
