@@ -49,9 +49,10 @@ displayHeader();
             </ul>
           </div>
         </nav>
+
+        <div class="page-wrapper col-12 col-lg-8 d-block">
           <div class="form-horizontal">
             <div class="card-body">
-              <div class="col-md-8">
                 <div id="_the_view_" class="col-md-12">
                   <div class="box box-info bg-white">
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -173,52 +174,47 @@ displayHeader();
                     </div>
                   </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="auth-box on-sidebar text-white" style="position:fixed; background-image: url(../assets/internal/bg-dark.jpg);">
-        <div id="loginform">
-          <div class="logo mb-3">
-            <span class="db">
-              <img src="/assets/internal/logo-psef-white.png" alt="logo" width="60%" />
-            </span>
-          </div>
-          <!-- Form -->
-          <div class="row">
-            <div class="col-12">
-              <div class="px-3 py-2" style="box-shadow: inset 0 3px 6px rgba(134, 167, 213, 1), 0 4px 6px rgba(134, 167, 213, 1);border-radius: 10px;">
-                <div class="form-group text-center mt-2">
-                  <div class="col-xs-12">
-                    <a href="./login.php" class="btn btn-block btn-lg btn-info">Masuk</a>
-                  </div>
-                </div>
-                <div class="form-group text-center">
-                  <div class="col-xs-12">
-                    <a href="https://usermanagement-simyanfar.kemkes.go.id/Account/Register" class="btn btn-block btn-lg btn-success" target="_blank">Daftar</a>
-                  </div>
-                </div>
-                <div class="custom-control custom-checkbox">
-                  <a href="https://usermanagement-simyanfar.kemkes.go.id/Account/ForgotPassword" class="text-white float-right" target="_blank"><i class="fa fa-lock m-r-5"></i> Lupa Kata Sandi?</a>
+        <div class="auth-box on-sidebar text-white col-lg-4 d-none d-lg-block">
+          <div id="loginform">
+            <div class="logo mb-3">
+              <span class="db">
+                <img src="/assets/internal/logo-psef-white.png" alt="logo" width="60%" />
+              </span>
+            </div>
+
+            <div class="px-3 py-2" style="box-shadow: inset 0 3px 6px rgba(134, 167, 213, 1), 0 4px 6px rgba(134, 167, 213, 1);border-radius: 10px;">
+              <div class="form-group text-center mt-2">
+                <div class="col-xs-12">
+                  <a href="./login.php" class="btn btn-block btn-lg btn-info">Masuk</a>
                 </div>
               </div>
-              <div class="form-group text-center p-1 mt-3">
-                <h3 style="text-decoration: underline;">Kontak Kami</h3>
-                <p class="text-left">
-                  <i class="fa fa-envelope" aria-hidden="true"></i>
-                  admin-psef@kemkes.go.id
-                </p>
-                <p class="text-left">
-                  <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  Gedung adhyatma lt. 8 ruang 809 Jl. H.R Rasuna Said Blok X5 Kav. 4-9 Jakarta
-                </p>
-                <p class="text-center mt-3 pt-2">
-                  Sertifikat Elektronik Dijamin oleh:
-                  <img src="/assets/internal/logo-bsre.png" alt="logo" width="50%" />
-                </p>
+              <div class="form-group text-center">
+                <div class="col-xs-12">
+                  <a href="https://usermanagement-simyanfar.kemkes.go.id/Account/Register" class="btn btn-block btn-lg btn-success" target="_blank">Daftar</a>
+                </div>
               </div>
+              <div class="custom-control custom-checkbox">
+                <a href="https://usermanagement-simyanfar.kemkes.go.id/Account/ForgotPassword" class="text-white float-right" target="_blank"><i class="fa fa-lock m-r-5"></i> Lupa Kata Sandi?</a>
+              </div>
+            </div>
+            <div class="form-group text-center p-1 mt-3">
+              <h3 style="text-decoration: underline;">Kontak Kami</h3>
+              <p class="text-left">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                admin-psef@kemkes.go.id
+              </p>
+              <p class="text-left">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                Gedung adhyatma lt. 8 ruang 809 Jl. H.R Rasuna Said Blok X5 Kav. 4-9 Jakarta
+              </p>
+              <p class="text-center mt-3 pt-2">
+                Sertifikat Elektronik Dijamin oleh:
+                <img src="/assets/internal/logo-bsre.png" alt="logo" width="50%" />
+              </p>
             </div>
           </div>
         </div>
