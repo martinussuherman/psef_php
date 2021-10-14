@@ -30,6 +30,7 @@ function displayHeader(string $title = 'Selamat Datang di Sistem PSEF')
 
     <!-- Custom CSS -->
     <link href="dist/css/style.css" rel="stylesheet">
+    <link href="assets/custom.css" rel="stylesheet">
 
     <!-- Sweet alert -->
     <link href="assets/libs/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
