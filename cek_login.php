@@ -43,10 +43,10 @@ displayHeader();
                 <a href="login.php" class="btn btn-rounded btn-block btn-info">Masuk</a>
               </li>
               <li class="nav-item mb-3">
-                <a href="https://usermanagement-simyanfar.kemkes.go.id/Account/Register" class="btn btn-rounded btn-block btn-success" target="_blank">Daftar</a>
+                <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/Register" class="btn btn-rounded btn-block btn-success" target="_blank">Daftar</a>
               </li>
               <li class="nav-item mb-3">
-                <a href="https://usermanagement-simyanfar.kemkes.go.id/Account/ForgotPassword" class="text-white" target="_blank"><i class="fa fa-lock m-r-5"></i> Lupa Kata Sandi?</a>
+                <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/ForgotPassword" class="text-white" target="_blank"><i class="fa fa-lock m-r-5"></i> Lupa Kata Sandi?</a>
               </li>
             </ul>
           </div>
@@ -196,11 +196,11 @@ displayHeader();
               </div>
               <div class="form-group text-center">
                 <div class="col-xs-12">
-                  <a href="https://usermanagement-simyanfar.kemkes.go.id/Account/Register" class="btn btn-block btn-lg btn-success" target="_blank">Daftar</a>
+                  <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/Register" class="btn btn-block btn-lg btn-success" target="_blank">Daftar</a>
                 </div>
               </div>
               <div class="custom-control custom-checkbox">
-                <a href="https://usermanagement-simyanfar.kemkes.go.id/Account/ForgotPassword" class="text-white float-right" target="_blank"><i class="fa fa-lock m-r-5"></i> Lupa Kata Sandi?</a>
+                <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/ForgotPassword" class="text-white float-right" target="_blank"><i class="fa fa-lock m-r-5"></i> Lupa Kata Sandi?</a>
               </div>
             </div>
             <div class="form-group text-center p-1 mt-3">
