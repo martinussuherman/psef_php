@@ -55,127 +55,127 @@ displayHeader();
         <div class="page-wrapper col-12 col-lg-8 d-block">
           <div class="form-horizontal">
             <div class="card-body">
-                <div id="_the_view_" class="col-md-12">
-                  <div class="box box-info bg-white">
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                      <div class="carousel-inner" id="homePageBanner">
-                      </div>
-                      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                      </a>
-                      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                      </a>
+              <div id="_the_view_" class="col-md-12">
+                <div class="box box-info bg-white">
+                  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" id="homePageBanner">
                     </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
 
+                  <hr />
+
+                  <div class="jumbotron text-center" style="background-image: url(../assets/images/bg2.jpg);">
+                    <h1>Selamat Datang di Sistem PSEF</h1>
                     <hr />
+                    <h2>Penyelenggara Sistem Elektronik Farmasi (PSEF)</h2>
+                  </div>
 
-                    <div class="jumbotron text-center" style="background-image: url(../assets/images/bg2.jpg);">
-                      <h1>Selamat Datang di Sistem PSEF</h1>
-                      <hr />
-                      <h2>Penyelenggara Sistem Elektronik Farmasi (PSEF)</h2>
+                  <div class="card">
+                    <h4 class="card-header bg-dark text-white">TENTANG PENDAFTARAN PSEF</h4>
+                    <p class="card-body text-justify" style="font-size: 1.25em;">
+                      Pendaftaran Penyedia Sistem Elektronik Farmasi (PSEF) merupakan persyaratan untuk
+                      Penyedia Sistem Elektronik (PSE) yang memfasilitasi pelayanan kefarmasian.<br />
+                      Pelaku usaha yang dapat mendaftarkan diri sebagai PSEF adalah pelaku usaha berbadan hukum, dan telah
+                      atau akan bekerjasama dengan pelaksana pekerjaan kefarmasian sesuai dengan ketentuan yang berlaku.<br />
+                      Pemberi pelayanan kefarmasian yang difasilitasi oleh PSEF harus berupa apotek yang resmi dan berizin.
+                    </p>
+                  </div>
+
+                  <div class="card">
+                    <h4 class="card-header bg-purple text-white">PERSYARATAN PENDAFTARAN</h4>
+
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <i class="fa fa-check-square mr-2"></i>Data pemohon
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-check-square mr-2"></i>Memiliki NIB
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-check-square mr-2"></i>Memiliki Tanda Daftar Penyelenggara Sistem Elektronik (PSE)
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-check-square mr-2"></i>Memiliki Izin Usaha Berbentuk IUI/PMSE
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-check-square mr-2"></i>Memiliki Apoteker Penanggungjawab
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-check-square mr-2"></i>Mengisi Data Permohonan
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-check-square mr-2"></i>Membuat Surat Permohonan
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-check-square mr-2"></i>Membuat Dokumentasi API
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-check-square mr-2"></i>Membuat Dokumen Proses Bisnis Aplikasi
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-check-square mr-2"></i>Membuat Surat Pernyataan Komitmen bekerjasama dengan Apotek
+                      </li>
+                      <li class="list-group-item">
+                        <i class="fa fa-check-square mr-2"></i>Memiliki daftar apotek jaringan yang bekerjasama
+                      </li>
+                    </ul>
+
+                    <div class="mt-2">
+                      <a target="_blank" href="/assets/doc/Checklist%20Perizinan%20PSEF%20untuk%20Pemohon.xlsx" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start text-primary">
+                        <h5>Checklist Perizinan PSEF Untuk Pemohon</h5><i class="fa fa-download"></i>
+                      </a>
+                      <a target="_blank" href="/assets/doc/Contoh%20Surat%20Pernyataan.docx" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start text-primary">
+                        <h5>Contoh Surat Pernyataan</h5><i class="fa fa-download"></i>
+                      </a>
                     </div>
+                  </div>
 
-                    <div class="card">
-                      <h4 class="card-header bg-dark text-white">TENTANG PENDAFTARAN PSEF</h4>
-                      <p class="card-body text-justify" style="font-size: 1.25em;">
-                        Pendaftaran Penyedia Sistem Elektronik Farmasi (PSEF) merupakan persyaratan untuk
-                        Penyedia Sistem Elektronik (PSE) yang memfasilitasi pelayanan kefarmasian.<br />
-                        Pelaku usaha yang dapat mendaftarkan diri sebagai PSEF adalah pelaku usaha berbadan hukum, dan telah
-                        atau akan bekerjasama dengan pelaksana pekerjaan kefarmasian sesuai dengan ketentuan yang berlaku.<br />
-                        Pemberi pelayanan kefarmasian yang difasilitasi oleh PSEF harus berupa apotek yang resmi dan berizin.
-                      </p>
+                  <div class="card">
+                    <h4 class="card-header bg-success text-white">TANDA DAFTAR PSEF YANG TERBIT</h4>
+
+                    <table id="zero_config" class="card-body table table-striped table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Tanda Daftar PSEF</th>
+                          <th>Nama Perusahaan</th>
+                          <th>Tanggal</th>
+                        </tr>
+                      </thead>
+                      <tbody class="detail-table-halaman">
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="card">
+                    <h4 class="card-header bg-secondary text-white">BERITA</h4>
+                    <div class="row mt-2" id="homePageNews">
                     </div>
+                  </div>
 
-                    <div class="card">
-                      <h4 class="card-header bg-purple text-white">PERSYARATAN PENDAFTARAN</h4>
-
-                      <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                          <i class="fa fa-check-square mr-2"></i>Data pemohon
-                        </li>
-                        <li class="list-group-item">
-                          <i class="fa fa-check-square mr-2"></i>Memiliki NIB
-                        </li>
-                        <li class="list-group-item">
-                          <i class="fa fa-check-square mr-2"></i>Memiliki Tanda Daftar Penyelenggara Sistem Elektronik (PSE)
-                        </li>
-                        <li class="list-group-item">
-                          <i class="fa fa-check-square mr-2"></i>Memiliki Izin Usaha Berbentuk IUI/PMSE
-                        </li>
-                        <li class="list-group-item">
-                          <i class="fa fa-check-square mr-2"></i>Memiliki Apoteker Penanggungjawab
-                        </li>
-                        <li class="list-group-item">
-                          <i class="fa fa-check-square mr-2"></i>Mengisi Data Permohonan
-                        </li>
-                        <li class="list-group-item">
-                          <i class="fa fa-check-square mr-2"></i>Membuat Surat Permohonan
-                        </li>
-                        <li class="list-group-item">
-                          <i class="fa fa-check-square mr-2"></i>Membuat Dokumentasi API
-                        </li>
-                        <li class="list-group-item">
-                          <i class="fa fa-check-square mr-2"></i>Membuat Dokumen Proses Bisnis Aplikasi
-                        </li>
-                        <li class="list-group-item">
-                          <i class="fa fa-check-square mr-2"></i>Membuat Surat Pernyataan Komitmen bekerjasama dengan Apotek
-                        </li>
-                        <li class="list-group-item">
-                          <i class="fa fa-check-square mr-2"></i>Memiliki daftar apotek jaringan yang bekerjasama
-                        </li>
-                      </ul>
-
-                      <div class="mt-2">
-                        <a target="_blank" href="/assets/doc/Checklist%20Perizinan%20PSEF%20untuk%20Pemohon.xlsx" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start text-primary">
-                          <h5>Checklist Perizinan PSEF Untuk Pemohon</h5><i class="fa fa-download"></i>
-                        </a>
-                        <a target="_blank" href="/assets/doc/Contoh%20Surat%20Pernyataan.docx"  class="list-group-item list-group-item-action d-flex justify-content-between align-items-start text-primary">
-                          <h5>Contoh Surat Pernyataan</h5><i class="fa fa-download"></i>
-                        </a>
-                      </div>
+                  <div class="card">
+                    <h4 class="card-header bg-cyan text-white">UNDUHAN</h4>
+                    <div class="card-body" id="home-unduhan">
                     </div>
+                  </div>
 
-                    <div class="card">
-                      <h4 class="card-header bg-success text-white">TANDA DAFTAR PSEF YANG TERBIT</h4>
-
-                      <table id="zero_config" class="card-body table table-striped table-bordered">
-                        <thead>
-                          <tr>
-                            <th>Tanda Daftar PSEF</th>
-                            <th>Nama Perusahaan</th>
-                            <th>Tanggal</th>
-                          </tr>
-                        </thead>
-                        <tbody class="detail-table-halaman">
-                        </tbody>
-                      </table>
-                    </div>
-
-                    <div class="card">
-                      <h4 class="card-header bg-secondary text-white">BERITA</h4>
-                      <div class="row mt-2" id="homePageNews">
-                      </div>
-                    </div>
-
-                    <div class="card">
-                      <h4 class="card-header bg-cyan text-white">UNDUHAN</h4>
-                      <div class="card-body" id="home-unduhan">
-                      </div>
-                    </div>
-
-                    <div class="card">
-                      <h4 class="card-header bg-orange text-white">STATISTIK PENGUNJUNG</h4>
-                      <div class="card-body" id="home-statistik">
-                        <?php
-                          retrieveAnalytics();
-                        ?>
-                      </div>
+                  <div class="card">
+                    <h4 class="card-header bg-orange text-white">STATISTIK PENGUNJUNG</h4>
+                    <div class="card-body" id="home-statistik">
+                      <?php
+                      retrieveAnalytics();
+                      ?>
                     </div>
                   </div>
                 </div>
+              </div>
             </div>
           </div>
         </div>
