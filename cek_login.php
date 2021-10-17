@@ -150,6 +150,7 @@ displayHeader();
                         </tr>
                       </thead>
                       <tbody class="detail-table-halaman">
+                        <?php displayPerizinan($settingData); ?>
                       </tbody>
                     </table>
                   </div>
@@ -255,25 +256,6 @@ displayHeader();
   </script>
   <script>
     $(document).ready(function() {
-      $.ajax({
-        url: url_api_x + "Perizinan/HalamanMuka",
-        type: 'GET',
-        dataType: 'json',
-        success: function(data, textStatus, xhr) {
-          $.each(data.value, function(index, value) {
-            let dth_issuedAt = moment(value.issuedAt).format("YYYY-MM-DD");
-            $(".detail-table-halaman").append(`<tr>
-                                        <td>${value.perizinanNumber}</td>
-                                        <td>${value.companyName}</td>
-                                        <td>${dth_issuedAt}</td>
-                                        </tr>`)
-          });
-        },
-        error: function(xhr, textStatus, errorThrown) {
-          console.log('Error in Operation');
-        }
-      });
-
       $.ajax({
         url: url_api + "HomepageBanner",
         type: 'GET',
