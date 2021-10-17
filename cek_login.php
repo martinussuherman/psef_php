@@ -358,3 +358,26 @@ displayHeader();
 </body>
 
 </html>
+
+<?php
+function displayPerizinan($settingData)
+{
+  $fileContent = file_get_contents("{$settingData->apiServerUrl}/api/v0.1/Perizinan/HalamanMuka");
+
+  if ($fileContent === false) {
+    return;
+  }
+
+  $apiResponse = json_decode($fileContent, false);
+
+  foreach ($apiResponse->value as $row) {
+    $issuedDate = DateTime::createFromFormat("Y-m-d\TH:i:sP", $row->issuedAt);
+?>
+    <tr>
+      <td><?php echo $row->perizinanNumber; ?></td>
+      <td><?php echo $row->companyName; ?></td>
+      <td><?php echo $issuedDate->format("d-m-Y"); ?></td>
+    </tr>
+<?php
+  }
+}
