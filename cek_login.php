@@ -146,6 +146,7 @@ displayHeader();
                         <tr>
                           <th>Tanda Daftar PSEF</th>
                           <th>Nama Perusahaan</th>
+                          <th>Domain</th>
                           <th>Tanggal</th>
                         </tr>
                       </thead>
@@ -339,6 +340,7 @@ function displayPerizinan($settingData)
     <tr>
       <td><?php echo $row->perizinanNumber; ?></td>
       <td><?php echo $row->companyName; ?></td>
+      <td><?php echo $row->domain; ?></td>
       <td><?php echo $issuedDate->format("d-m-Y"); ?></td>
     </tr>
 <?php
