@@ -59,6 +59,7 @@ displayHeader();
                 <div class="box box-info bg-white">
                   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner" id="homePageBanner">
+                      <?php displayBanner($settingData); ?>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -258,28 +259,6 @@ displayHeader();
   </script>
   <script>
     $(document).ready(function() {
-      $.ajax({
-        url: url_api + "HomepageBanner",
-        type: 'GET',
-        dataType: 'json',
-        success: function(data, textStatus, xhr) {
-          $.each(data.value, function(index, value) {
-            let hpBanner = '';
-            if (index == 0) {
-              hpBanner = 'active';
-            }
-
-            $("#homePageBanner").append(
-              `<div class="carousel-item ${hpBanner}">
-                <img class="d-block w-100" src="${value.url}" alt="Banner Image">
-              </div>`);
-          });
-        },
-        error: function(xhr, textStatus, errorThrown) {
-          console.log('Error in Operation');
-        }
-      });
-
       $.ajax({
         url: url_api + "HomepageNews",
         type: 'GET',
