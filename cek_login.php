@@ -316,7 +316,7 @@ function getDataFromApi($settingData, string $apiUrl)
 
 function displayBanner($settingData)
 {
-  $apiResponse = getDataFromApi($settingData, "{$settingData->apiServerUrl}/api/v1/HomepageBanner");
+  $apiResponse = getDataFromApi($settingData, "/api/v1/HomepageBanner");
 
   if ($apiResponse === false) {
     return;
@@ -337,7 +337,7 @@ function displayBanner($settingData)
 
 function displayPerizinan($settingData)
 {
-  $apiResponse = getDataFromApi($settingData, "{$settingData->apiServerUrl}/api/v0.1/Perizinan/HalamanMuka");
+  $apiResponse = getDataFromApi($settingData, "/api/v0.1/Perizinan/HalamanMuka");
 
   if ($apiResponse === false) {
     return;
@@ -358,7 +358,7 @@ function displayPerizinan($settingData)
 
 function displayUnduhan($settingData)
 {
-  $apiResponse = getDataFromApi($settingData, "{$settingData->apiServerUrl}/api/v1/HomepageUnduhan");
+  $apiResponse = getDataFromApi($settingData, "/api/v1/HomepageUnduhan");
 
   if ($apiResponse === false) {
     return;
