@@ -360,7 +360,7 @@ function displayUnduhan($settingData)
   foreach ($apiResponse->value as $row) {
 ?>
     <div class="list-group">
-      <a href="<?php echo $row->url; ?>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start" target="_blank">
+      <a href="<?php echo "{$settingData->resourceUrl}{$row->url}"; ?>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start" target="_blank">
         <?php echo $row->title; ?><i class="fa fa-file ml-2"></i>
       </a>
     </div>
