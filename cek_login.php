@@ -363,3 +363,24 @@ function displayPerizinan($settingData)
 <?php
   }
 }
+
+function displayUnduhan($settingData)
+{
+  $fileContent = file_get_contents("{$settingData->apiServerUrl}/api/v1/HomepageUnduhan");
+
+  if ($fileContent === false) {
+    return;
+  }
+
+  $apiResponse = json_decode($fileContent, false);
+
+  foreach ($apiResponse->value as $row) {
+?>
+    <div class="list-group">
+      <a href="<?php echo $row->url; ?>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start" target="_blank">
+        <?php echo $row->title; ?><i class="fa fa-file ml-2"></i>
+      </a>
+    </div>
+<?php
+  }
+}
