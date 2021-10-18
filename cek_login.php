@@ -192,35 +192,29 @@ displayHeader();
               </span>
             </div>
 
-            <div class="px-3 py-2" style="box-shadow: inset 0 3px 6px rgba(134, 167, 213, 1), 0 4px 6px rgba(134, 167, 213, 1);border-radius: 10px;">
-              <div class="form-group text-center mt-2">
-                <div class="col-xs-12">
-                  <a href="./login.php" class="btn btn-block btn-lg btn-info">Masuk</a>
-                </div>
-              </div>
-              <div class="form-group text-center">
-                <div class="col-xs-12">
-                  <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/Register" class="btn btn-block btn-lg btn-success" target="_blank">Daftar</a>
-                </div>
-              </div>
-              <div class="custom-control custom-checkbox">
-                <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/ForgotPassword" class="text-white float-right" target="_blank"><i class="fa fa-lock m-r-5"></i> Lupa Kata Sandi?</a>
-              </div>
+            <a href="./login.php" class="btn btn-block btn-lg btn-rounded btn-primary mt-3">Masuk</a>
+
+            <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/Register" class="btn btn-block btn-lg btn-rounded btn-success mb-2" target="_blank">Daftar</a>
+
+            <div class="text-right mb-3">
+              <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/ForgotPassword" class="text-white" target="_blank">
+                <i class="fa fa-lock m-r-5"></i> Lupa Kata Sandi?
+              </a>
             </div>
-            <div class="form-group text-center p-1 mt-3">
-              <h3 style="text-decoration: underline;">Kontak Kami</h3>
-              <p class="text-left">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
-                admin-psef@kemkes.go.id
-              </p>
-              <p class="text-left">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                Gedung adhyatma lt. 8 ruang 809 Jl. H.R Rasuna Said Blok X5 Kav. 4-9 Jakarta
-              </p>
-              <p class="text-center mt-3 pt-2">
+
+            <div class="form-group mt-3">
+              <h3 class="text-center">Kontak Kami</h3>
+              <hr class="white-line my-1"/>
+              <div>
+                <i class="fa fa-envelope mr-2" aria-hidden="true"></i>admin-psef@kemkes.go.id
+              </div>
+              <div>
+                <i class="fa fa-map-marker mr-2" aria-hidden="true"></i>Gedung adhyatma lt. 8 ruang 809 Jl. H.R Rasuna Said Blok X5 Kav. 4-9 Jakarta
+              </div>
+              <div class="text-center mt-3 pt-2">
                 Sertifikat Elektronik Dijamin oleh:
                 <img src="/assets/internal/logo-bsre.png" alt="logo" width="50%" />
-              </p>
+              </div>
             </div>
           </div>
         </div>
