@@ -303,6 +303,17 @@ displayHeader();
 </html>
 
 <?php
+function getDataFromApi($settingData, string $apiUrl)
+{
+  $fileContent = file_get_contents("{$settingData->apiServerUrl}{$apiUrl}");
+
+  if ($fileContent === false) {
+    return false;
+  }
+
+  return json_decode($fileContent, false);
+}
+
 function displayBanner($settingData)
 {
   $fileContent = file_get_contents("{$settingData->apiServerUrl}/api/v1/HomepageBanner");
