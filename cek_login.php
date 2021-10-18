@@ -324,6 +324,28 @@ displayHeader();
 </html>
 
 <?php
+function displayBanner($settingData)
+{
+  $fileContent = file_get_contents("{$settingData->apiServerUrl}/api/v1/HomepageBanner");
+
+  if ($fileContent === false) {
+    return;
+  }
+
+  $apiResponse = json_decode($fileContent, false);
+  $index = 0;
+
+  foreach ($apiResponse->value as $row) {
+    $active = $index == 0 ? "active" : "";
+?>
+    <div class="carousel-item <?php echo $active; ?>">
+      <img class="d-block w-100" src="<?php echo "{$settingData->resourceUrl}{$row->url}"; ?>" alt="Banner Image">
+    </div>
+<?php
+    $index++;
+  }
+}
+
 function displayPerizinan($settingData)
 {
   $fileContent = file_get_contents("{$settingData->apiServerUrl}/api/v0.1/Perizinan/HalamanMuka");
