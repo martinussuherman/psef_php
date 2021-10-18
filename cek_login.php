@@ -316,13 +316,12 @@ function getDataFromApi($settingData, string $apiUrl)
 
 function displayBanner($settingData)
 {
-  $fileContent = file_get_contents("{$settingData->apiServerUrl}/api/v1/HomepageBanner");
+  $apiResponse = getDataFromApi($settingData, "{$settingData->apiServerUrl}/api/v1/HomepageBanner");
 
-  if ($fileContent === false) {
+  if ($apiResponse === false) {
     return;
   }
 
-  $apiResponse = json_decode($fileContent, false);
   $index = 0;
 
   foreach ($apiResponse->value as $row) {
@@ -338,13 +337,11 @@ function displayBanner($settingData)
 
 function displayPerizinan($settingData)
 {
-  $fileContent = file_get_contents("{$settingData->apiServerUrl}/api/v0.1/Perizinan/HalamanMuka");
+  $apiResponse = getDataFromApi($settingData, "{$settingData->apiServerUrl}/api/v0.1/Perizinan/HalamanMuka");
 
-  if ($fileContent === false) {
+  if ($apiResponse === false) {
     return;
   }
-
-  $apiResponse = json_decode($fileContent, false);
 
   foreach ($apiResponse->value as $row) {
     $issuedDate = DateTime::createFromFormat("Y-m-d\TH:i:sP", $row->issuedAt);
@@ -361,13 +358,11 @@ function displayPerizinan($settingData)
 
 function displayUnduhan($settingData)
 {
-  $fileContent = file_get_contents("{$settingData->apiServerUrl}/api/v1/HomepageUnduhan");
+  $apiResponse = getDataFromApi($settingData, "{$settingData->apiServerUrl}/api/v1/HomepageUnduhan");
 
-  if ($fileContent === false) {
+  if ($apiResponse === false) {
     return;
   }
-
-  $apiResponse = json_decode($fileContent, false);
 
   foreach ($apiResponse->value as $row) {
 ?>
