@@ -204,16 +204,16 @@ displayHeader();
               </a>
             </div>
 
-            <div class="form-group mt-3">
+            <div class="form-group mt-4">
               <h3 class="text-center">Kontak Kami</h3>
-              <hr class="white-line my-1"/>
+              <hr class="white-line my-1" />
               <div>
                 <i class="fa fa-envelope mr-2" aria-hidden="true"></i>admin-psef@kemkes.go.id
               </div>
               <div>
                 <i class="fa fa-map-marker mr-2" aria-hidden="true"></i>Gedung adhyatma lt. 8 ruang 809 Jl. H.R Rasuna Said Blok X5 Kav. 4-9 Jakarta
               </div>
-              <div class="text-center mt-3 pt-2">
+              <div class="text-center mt-2 pt-2">
                 Sertifikat Elektronik Dijamin oleh:
                 <img src="/assets/internal/logo-bsre.png" alt="logo" width="50%" />
               </div>
