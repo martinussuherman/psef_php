@@ -6,3 +6,11 @@
 .page-wrapper {
   background: #fff url(/assets/images/bg0.jpg) fixed no-repeat;
 }
+
+#loginform .logo img {
+  max-width: 220px;
+}
+
+hr.white-line{
+  border-top: 1px solid white;
+}
