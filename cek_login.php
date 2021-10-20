@@ -189,9 +189,7 @@ displayHeader();
         <div class="auth-box on-sidebar text-white col-lg-4 d-none d-lg-block">
           <div id="loginform">
             <div class="logo mb-3">
-              <span class="db">
-                <img src="/assets/internal/logo-psef-white.png" alt="logo" width="60%" />
-              </span>
+              <img src="/assets/internal/logo-psef-white.png" alt="logo" width="60%" />
             </div>
 
             <a href="./login.php" class="btn btn-block btn-lg btn-rounded btn-primary mt-3">Masuk</a>
