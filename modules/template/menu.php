@@ -173,12 +173,12 @@ function displayMenuPermohonanPendingSemua(string $pendingRoute, string $allRout
 ?>
   <ul aria-expanded="false" class="collapse first-level">
     <li class="sidebar-item">
-      <a onclick="<?php echo $pendingRoute; ?>" href="javascript:void()" class="sidebar-link">
+      <a onclick="routing('<?php echo $pendingRoute; ?>')" href="javascript:void()" class="sidebar-link">
         <i class="fa fa-exclamation-circle"></i>Tertunda
       </a>
     </li>
     <li class="sidebar-item">
-      <a onclick="<?php echo $allRoute; ?>" href="javascript:void()" class="sidebar-link">
+      <a onclick="routing('<?php echo $allRoute; ?>')" href="javascript:void()" class="sidebar-link">
         <i class="mdi mdi-file-multiple"></i>Semua
       </a>
     </li>
