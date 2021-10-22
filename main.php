@@ -200,7 +200,7 @@ displayHeader();
       </aside>
     </div>
 
-    <div class="page-wrapper" id="content">
+    <div id="content">
     </div>
 
     <footer class="footer text-center">
