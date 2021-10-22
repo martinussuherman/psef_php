@@ -14,3 +14,7 @@
 hr.white-line{
   border-top: 1px solid white;
 }
+
+#content {
+  padding-top: 125px;
+}
