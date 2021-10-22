@@ -387,7 +387,7 @@ displayHeader();
     function unset_sess() {
       delCookie("sid");
       delCookie("role");
-      window.location = 'https://psef.kemkes.go.id/logout.php';
+      window.location = 'logout.php';
     }
   </script>
 
