@@ -199,9 +199,10 @@ displayHeader();
         <!-- End Sidebar scroll-->
       </aside>
     </div>
-    <div class="page-wrapper" id="content" style="padding-top:125px;">
 
+    <div class="page-wrapper" id="content">
     </div>
+
     <footer class="footer text-center">
       <!-- All Rights Reserved by PT CIPTA HASIL SUGIARTO 2018</a>. -->
     </footer>
