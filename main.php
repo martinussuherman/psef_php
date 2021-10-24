@@ -45,13 +45,6 @@ displayHeader();
                 <img src="/assets/internal/logo-kemkes.png" alt="homepage" class="light-logo" height="50px" />
               </b>
               <!--End Logo icon -->
-              <!-- Logo text -->
-              <?php /* <span class="logo-text">
-                             <!-- dark Logo text -->
-                             <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                             <!-- Light Logo text -->
-                             <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
-                        </span> */ ?>
             </a>
             <!-- ============================================================== -->
             <!-- End Logo -->
