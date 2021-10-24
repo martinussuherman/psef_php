@@ -8,7 +8,7 @@ $(function() {
             var logobgskin = $(this).attr("data-logobg");
             $('.topbar .top-navbar .navbar-header').attr("data-logobg", logobgskin);
         });
-    };
+    }
     handlelogobg();
     //****************************
     /* Top navbar Theme Change function Start */
@@ -38,7 +38,7 @@ $(function() {
                 }
         });
         
-    };
+    }
 
     handlenavbarbg();
     
@@ -47,7 +47,7 @@ $(function() {
     //****************************
     function handlesidebartype() {
         
-    };
+    }
     handlesidebartype();
      
     
@@ -59,7 +59,7 @@ $(function() {
             var sidebarbgskin = $(this).attr("data-sidebarbg");
             $('.left-sidebar').attr("data-sidebarbg", sidebarbgskin);
         });
-    };
+    }
     handlesidebarbg();
     //****************************
     /* sidebar position */
@@ -75,7 +75,7 @@ $(function() {
             }
         });
         
-	};
+	}
     handlesidebarposition ();
     //****************************
     /* Header position */
@@ -88,7 +88,7 @@ $(function() {
                 $('#main-wrapper').attr("data-header-position", 'relative' ); 
             }      
         });
-	};
+	}
     handleheaderposition ();
     //****************************
     /* sidebar position */
@@ -102,7 +102,7 @@ $(function() {
             }
         });
         
-	};
+	}
     handleboxedlayout ();
     //****************************
     /* Header position */
@@ -115,6 +115,6 @@ $(function() {
                 $('body').attr("data-theme", 'light' ); 
             }      
         });
-	};
+	}
     handlethemeview ();
 });
