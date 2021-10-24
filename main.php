@@ -40,9 +40,9 @@ displayHeader();
               <b class="logo-icon">
                 <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                 <!-- Dark Logo icon -->
-                <img src="/assets/internal/logo-kemkes-no-text.png" alt="homepage" class="dark-logo" height="50px" />
+                <img src="/assets/internal/logo-kemkes.png" alt="homepage" class="dark-logo" height="50px" />
                 <!-- Light Logo icon -->
-                <img src="/assets/internal/logo-kemkes-no-text.png" alt="homepage" class="light-logo" height="50px" />
+                <img src="/assets/internal/logo-kemkes.png" alt="homepage" class="light-logo" height="50px" />
               </b>
               <!--End Logo icon -->
               <!-- Logo text -->
