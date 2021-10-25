@@ -265,7 +265,7 @@ displayHeader();
             $("#homePageNews").append(
               `<div class="col-lg-6">
                 <div class="card">
-                  <img class="card-img-top img-responsive" src="${value.imageUrl}" alt="News Image"/>
+                  <img class="card-img-top img-responsive" src="<?php echo $settingData->resourceUrl; ?>${value.imageUrl}" alt="News Image"/>
                   <div class="card-body">
                     <div class="d-flex no-block align-items-center m-b-15">
                       <span><i class="ti-calendar"></i> ${hpn_publishedAt}</span>
