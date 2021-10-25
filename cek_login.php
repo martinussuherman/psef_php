@@ -144,7 +144,7 @@ displayHeader();
 
                     <div class="table-responsive">
                       <table class="table table-sm">
-                        <thead class="text-center bg-light text-danger">
+                        <thead class="text-center bg-light text-cyan">
                           <tr>
                             <th>Tanda Daftar PSEF</th>
                             <th>Nama Perusahaan</th>
