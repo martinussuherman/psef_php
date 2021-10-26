@@ -286,8 +286,7 @@ function displayMenuUserInfo(string $email, $settingData)
 {
 ?>
   <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle text-muted pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <img src="assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31">
+      <i class="fas fa-user-circle h1 mt-2"></i>
     </a>
 
     <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
@@ -297,10 +296,7 @@ function displayMenuUserInfo(string $email, $settingData)
       </span>
 
       <div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
-        <div class="">
-          <i class=""></i>
-          <img src="assets/images/users/1.jpg" alt="user" class="img-circle" width="60">
-        </div>
+        <i class="fa fa-user"></i>
 
         <div class="m-l-10">
           <h4 class="m-b-0" id="username">
