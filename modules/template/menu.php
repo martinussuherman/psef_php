@@ -286,6 +286,7 @@ function displayMenuUserInfo(string $email, $settingData)
 {
 ?>
   <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle text-orange" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <i class="fas fa-user-circle h1 mt-2"></i>
     </a>
 
