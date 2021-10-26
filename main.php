@@ -96,35 +96,6 @@ displayHeader();
           </div>
         </nav>
       </header>
-      <!-- sample modal content -->
-
-      <div id="responsive-modal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title" id="name_change_password">Ganti Kanta Sandi </h4>
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            </div>
-            <form id="add-change-password" onsubmit="change_password_set(event)">
-              <div class="modal-body">
-                <div class="form-group">
-                  <label for="recipient-name" class="control-label">Kata Sandi Lama:</label>
-                  <input type="password" id="old-password" class="form-control" name="oldPassword">
-                </div>
-                <div class="form-group">
-                  <label for="recipient-name" class="control-label">Kata Sandi Baru:</label>
-                  <input type="password" id="new-password" class="form-control" name="newPassword">
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal" id="modal-close-cp">Batal</button>
-                <button type="submit" class="btn btn-danger waves-effect waves-light">Simpan Perubahan</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <!-- /.modal -->
 
       <aside class="left-sidebar">
         <!-- Sidebar scroll-->
@@ -152,7 +123,6 @@ displayHeader();
     </div>
 
     <footer class="footer text-center">
-      <!-- All Rights Reserved by PT CIPTA HASIL SUGIARTO 2018</a>. -->
     </footer>
   </div>
   <aside class="customizer">
