@@ -1,13 +1,25 @@
 <?php
-require 'vendor/autoload.php';
- 
-$issuer = 'https://usermanagement-simyanfar.kemkes.go.id/';
-$cid = 'localhost-test';
-$secret = '89504488-d7e9-2647-e03a-bcfa29081884';
-$oidc = new Jumbojett\OpenIDConnectClient($issuer, $cid, $secret);
-$oidc->signOut($_COOKIE['idtoken'], 'https://psef.kemkes.go.id/');
-setcookie('sid', '', time() - 3600); 
-setcookie('role', '', time() - 3600); 
-setcookie('idtoken', '', time() - 3600); 
-setcookie('accesstoken', '', time() - 3600); 
-?>
+session_start();
+
+require("vendor/autoload.php");
+include("configReader.php");
+
+$settingData = readConfig();
+$oidc = new Jumbojett\OpenIDConnectClient(
+  $settingData->identity->identityServerUrl,
+  $settingData->identity->clientId
+);
+
+$idToken = $_SESSION["idToken"];
+session_unset();
+session_destroy();
+session_write_close();
+
+setcookie('sid', '', time() - 3600);
+setcookie('role', '', time() - 3600);
+setcookie('idtoken', '', time() - 3600);
+setcookie('accesstoken', '', time() - 3600);
+setcookie('email',  '', time() - 3600);
+setcookie(session_name(), '', 0, '/');
+
+$oidc->signOut($idToken, $settingData->identity->logoutRedirectUrl);
