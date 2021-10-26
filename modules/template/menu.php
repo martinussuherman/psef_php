@@ -248,36 +248,36 @@ function displayMenuAdmin($role)
   }
 
 ?>
-    <li class="sidebar-item">
-      <a class="sidebar-link two-column has-arrow" href="javascript:void(0)" aria-expanded="false">
-        <i class="fa fa-cogs"></i>Administrasi
-      </a>
+  <li class="sidebar-item">
+    <a class="sidebar-link two-column has-arrow" href="javascript:void(0)" aria-expanded="false">
+      <i class="fa fa-cogs"></i>Administrasi
+    </a>
 
-      <ul aria-expanded="false" class="collapse first-level">
-        <li class="sidebar-item">
-          <a onclick="routing('provinsi')" href="javascript:void(0)" class="sidebar-link">
-            <i class="mdi mdi-adjust"></i>Provinsi
-          </a>
-        </li>
+    <ul aria-expanded="false" class="collapse first-level">
+      <li class="sidebar-item">
+        <a onclick="routing('provinsi')" href="javascript:void(0)" class="sidebar-link">
+          <i class="mdi mdi-adjust"></i>Provinsi
+        </a>
+      </li>
 
-        <li class="sidebar-item">
-          <a onclick="routing('spanduk')" href="javascript:void(0)" class="sidebar-link">
-            <i class="mdi mdi-adjust"></i>Spanduk
-          </a>
-        </li>
+      <li class="sidebar-item">
+        <a onclick="routing('spanduk')" href="javascript:void(0)" class="sidebar-link">
+          <i class="mdi mdi-adjust"></i>Spanduk
+        </a>
+      </li>
 
-        <li class="sidebar-item">
-          <a onclick="routing('berita')" href="javascript:void(0)" class="sidebar-link">
-            <i class="mdi mdi-adjust"></i>Berita
-          </a>
-        </li>
+      <li class="sidebar-item">
+        <a onclick="routing('berita')" href="javascript:void(0)" class="sidebar-link">
+          <i class="mdi mdi-adjust"></i>Berita
+        </a>
+      </li>
 
-        <li class="sidebar-item">
-          <a onclick="routing('unduhan')" href="javascript:void(0)" class="sidebar-link">
-            <i class="mdi mdi-adjust"></i>Unduhan
-          </a>
-        </li>
-      </ul>
-    </li>
+      <li class="sidebar-item">
+        <a onclick="routing('unduhan')" href="javascript:void(0)" class="sidebar-link">
+          <i class="mdi mdi-adjust"></i>Unduhan
+        </a>
+      </li>
+    </ul>
+  </li>
 <?php
 }
