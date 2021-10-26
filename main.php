@@ -8,6 +8,8 @@ $role = $_SESSION["role"];
 <html lang="en" dir="ltr">
 
 <?php
+include("modules/template/header.php");
+include("modules/template/menu.php");
 include("modules/template/pageScripts.php");
 include("configReader.php");
 
