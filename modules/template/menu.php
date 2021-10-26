@@ -313,25 +313,13 @@ function displayMenuUserInfo(string $email, $settingData)
         <i class="far fa-id-card mr-2"></i>Profil Saya
       </a>
 
-      <div class="dropdown-divider">
-      </div>
-
       <a class="dropdown-item" href="<?php echo $settingData->identity->identityServerUrl; ?>/Manage/ChangePassword" target="_blank">
         <i class="fa fa-key mr-2"></i>Ganti Kata Sandi
       </a>
 
-      <div class="dropdown-divider">
-      </div>
-
-      <div class="dropdown-divider">
-      </div>
-
       <a class="dropdown-item" href="logout.php">
         <i class="fas fa-sign-out-alt mr-2"></i>Keluar
       </a>
-
-      <div class="dropdown-divider">
-      </div>
     </div>
   </li>
 <?php
