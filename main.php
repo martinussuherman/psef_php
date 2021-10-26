@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+$role = $_SESSION["role"];
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -28,9 +34,9 @@ displayHeader();
             <!-- ============================================================== -->
             <!-- Logo -->
             <!-- ============================================================== -->
-            <a onclick="<?php if ($_COOKIE['role'] == '') {
+            <a onclick="<?php if ($role == '') {
                           echo "routing('pemohon_user')";
-                        } elseif ($_COOKIE['role'] == 'Psef.Admin') {
+                        } elseif ($role == 'Psef.Admin') {
                           echo "routing('pemohon_admin')";
                         } else {
                           echo "routing('welcome')";
@@ -147,11 +153,11 @@ displayHeader();
             <ul id="sidebarnav">
               <!-- User Profile-->
               <?php
-                displayMenuAdmin($_COOKIE['role']);
-                displayMenuPemohon($_COOKIE['role']);
-                displayMenuPermohonan($_COOKIE['role']);
-                displayMenuPerizinan($_COOKIE['role']);
-                displayMenuTransaksi($_COOKIE['role']);
+              displayMenuAdmin($role);
+              displayMenuPemohon($role);
+              displayMenuPermohonan($role);
+              displayMenuPerizinan($role);
+              displayMenuTransaksi($role);
               ?>
             </ul>
           </nav>
@@ -355,7 +361,7 @@ displayHeader();
 
   <script type="text/javascript">
     const sid = "<?php echo $_COOKIE['sid'] ?>";
-    const role = "<?php echo $_COOKIE['role'] ?>";
+    const role = "<?php echo $role; ?>";
 
     $(document).ready(function() {
       var accesstoken = <?php echo json_encode($_COOKIE['accesstoken']); ?>;
