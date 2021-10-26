@@ -300,10 +300,10 @@ function displayMenuUserInfo(string $email, $settingData)
         <i class="fa fa-user"></i>
 
         <div class="m-l-10">
-          <h4 class="m-b-0" id="username">
+          <h4 class="mb-0">
           </h4>
 
-          <p class=" m-b-0" id="email">
+          <p class="mb-0">
             <?php echo $email; ?>
           </p>
         </div>
