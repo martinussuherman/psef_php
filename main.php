@@ -10,7 +10,9 @@ $role = $_SESSION["role"];
 <?php
 include('modules/template/menu.php');
 include('modules/template/header.php');
+include("configReader.php");
 
+$settingData = readConfig();
 displayHeader();
 ?>
 
