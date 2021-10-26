@@ -310,14 +310,14 @@ function displayMenuUserInfo(string $email, $settingData)
       </div>
 
       <a class="dropdown-item" href="<?php echo $settingData->identity->identityServerUrl; ?>/Manage" target="_blank">
-        <i class="ti-user m-r-5 m-l-5"></i>Profil Saya
+        <i class="far fa-id-card mr-2"></i>Profil Saya
       </a>
 
       <div class="dropdown-divider">
       </div>
 
       <a class="dropdown-item" href="<?php echo $settingData->identity->identityServerUrl; ?>/Manage/ChangePassword" target="_blank">
-        <i class="ti-user m-r-5 m-l-5"></i>Ganti Kata Sandi
+        <i class="fa fa-key mr-2"></i>Ganti Kata Sandi
       </a>
 
       <div class="dropdown-divider">
@@ -327,7 +327,7 @@ function displayMenuUserInfo(string $email, $settingData)
       </div>
 
       <a class="dropdown-item" href="logout.php">
-        <i class="fa fa-power-off m-r-5 m-l-5"></i>Keluar
+        <i class="fas fa-sign-out-alt mr-2"></i>Keluar
       </a>
 
       <div class="dropdown-divider">
