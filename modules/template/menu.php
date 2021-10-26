@@ -281,3 +281,61 @@ function displayMenuAdmin($role)
   </li>
 <?php
 }
+
+function displayMenuUserInfo(string $email, $settingData)
+{
+?>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle text-muted pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <img src="assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31">
+    </a>
+
+    <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
+      <span class="with-arrow">
+        <span class="bg-primary">
+        </span>
+      </span>
+
+      <div class="d-flex no-block align-items-center p-15 bg-primary text-white m-b-10">
+        <div class="">
+          <i class=""></i>
+          <img src="assets/images/users/1.jpg" alt="user" class="img-circle" width="60">
+        </div>
+
+        <div class="m-l-10">
+          <h4 class="m-b-0" id="username">
+          </h4>
+
+          <p class=" m-b-0" id="email">
+            <?php echo $email; ?>
+          </p>
+        </div>
+      </div>
+
+      <a class="dropdown-item" href="<?php echo $settingData->identity->identityServerUrl; ?>/Manage" target="_blank">
+        <i class="ti-user m-r-5 m-l-5"></i>Profil Saya
+      </a>
+
+      <div class="dropdown-divider">
+      </div>
+
+      <a class="dropdown-item" href="<?php echo $settingData->identity->identityServerUrl; ?>/Manage/ChangePassword" target="_blank">
+        <i class="ti-user m-r-5 m-l-5"></i>Ganti Kata Sandi
+      </a>
+
+      <div class="dropdown-divider">
+      </div>
+
+      <div class="dropdown-divider">
+      </div>
+
+      <a class="dropdown-item" href="logout.php">
+        <i class="fa fa-power-off m-r-5 m-l-5"></i>Keluar
+      </a>
+
+      <div class="dropdown-divider">
+      </div>
+    </div>
+  </li>
+<?php
+}
