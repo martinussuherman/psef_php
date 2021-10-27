@@ -88,26 +88,12 @@ function displayMenuPermohonanAdmin()
 {
 ?>
   <ul aria-expanded="false" class="collapse first-level">
-    <li class="sidebar-item">
-      <a onclick="routing('rumusan_admin')" href="javascript:void()" class="sidebar-link">
-        <i class="mdi mdi-file-outline"></i>Rumusan
-      </a>
-    </li>
-    <li class="sidebar-item">
-      <a onclick="routing('proses_admin')" href="javascript:void()" class="sidebar-link">
-        <i class="mdi mdi-timer-sand"></i>Dalam Proses
-      </a>
-    </li>
-    <li class="sidebar-item">
-      <a onclick="routing('selesai_admin')" href="javascript:void()" class="sidebar-link">
-        <i class="mdi mdi-check-circle"></i>Selesai
-      </a>
-    </li>
-    <li class="sidebar-item">
-      <a onclick="routing('ditolak_admin')" href="javascript:void()" class="sidebar-link">
-        <i class="mdi mdi-close-circle"></i>Ditolak
-      </a>
-    </li>
+    <?php
+    displaySidebarMenuItem("routing('rumusan_admin')", "Rumusan", "mdi mdi-file-outline");
+    displaySidebarMenuItem("routing('proses_admin')", "Dalam Proses", "mdi mdi-timer-sand");
+    displaySidebarMenuItem("routing('selesai_admin')", "Selesai", "mdi mdi-check-circle");
+    displaySidebarMenuItem("routing('ditolak_admin')", "Ditolak", "mdi mdi-close-circle");
+    ?>
   </ul>
 <?php
 }
