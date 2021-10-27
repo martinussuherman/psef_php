@@ -324,3 +324,15 @@ function displayMenuUserInfo(string $email, $settingData)
   </li>
 <?php
 }
+
+function displaySidebarMenuItem(string $route, string $caption, string $iconClass)
+{
+?>
+  <li class="sidebar-item">
+    <a onclick="<?php echo $route; ?>" href="javascript:void()" class="sidebar-link">
+      <i class="<?php echo $iconClass; ?>"></i><?php echo $caption; ?>
+    </a>
+  </li>
+<?php
+}
+
