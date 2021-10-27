@@ -117,21 +117,11 @@ function displayMenuPermohonanValidator()
 {
 ?>
   <ul aria-expanded="false" class="collapse first-level">
-    <li class="sidebar-item">
-      <a onclick="routing('pending_validator')" href="javascript:void()" class="sidebar-link">
-        <i class="fa fa-exclamation-circle"></i>Tertunda
-      </a>
-    </li>
-    <li class="sidebar-item">
-      <a onclick="routing('done_validator')" href="javascript:void()" class="sidebar-link">
-        <i class="fa fa-check-circle"></i>Selesai
-      </a>
-    </li>
-    <li class="sidebar-item">
-      <a onclick="routing('semua_validator')" href="javascript:void()" class="sidebar-link">
-        <i class="mdi mdi-file-multiple"></i>Semua
-      </a>
-    </li>
+    <?php
+    displaySidebarMenuItem("routing('pending_validator')", "Tertunda", "fa fa-exclamation-circle");
+    displaySidebarMenuItem("routing('done_validator')", "Selesai", "fa fa-check-circle");
+    displaySidebarMenuItem("routing('semua_validator')", "Semua", "mdi mdi-file-multiple");
+    ?>
   </ul>
 <?php
 }
