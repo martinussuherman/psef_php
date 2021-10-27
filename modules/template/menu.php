@@ -31,7 +31,7 @@ function displayMenuPemohon($role)
   }
 ?>
   <li class="sidebar-item">
-    <a onclick="<?php echo $route; ?>" class="sidebar-link two-column has-arrow" href="javascript:void(0)" aria-expanded="false">
+    <a onclick="<?php echo $route; ?>" class="sidebar-link two-column" href="javascript:void(0)" aria-expanded="false">
       <i class="mdi mdi-account-circle"></i>Pemohon
     </a>
   </li>
@@ -170,7 +170,7 @@ function displayMenuPerizinan($role)
   }
 ?>
   <li class="sidebar-item">
-    <a onclick="<?php echo $route; ?>" class="sidebar-link two-column has-arrow" href="javascript:void()" aria-expanded="false">
+    <a onclick="<?php echo $route; ?>" class="sidebar-link two-column" href="javascript:void()" aria-expanded="false">
       <i class="fa fa-id-card"></i>Tanda Terdaftar
     </a>
   </li>
@@ -185,7 +185,7 @@ function displayMenuTransaksi($role)
 ?>
 
   <li class="sidebar-item">
-    <a onclick="routing('transaksi')" class="sidebar-link two-column has-arrow" href="javascript:void()" aria-expanded="false">
+    <a onclick="routing('transaksi')" class="sidebar-link two-column" href="javascript:void()" aria-expanded="false">
       <i class="fa fa-list-ul"></i>Data Transaksi
     </a>
   </li>
