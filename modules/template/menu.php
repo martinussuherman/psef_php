@@ -183,14 +183,12 @@ function displayMenuTransaksi($role)
     return;
   }
 ?>
-
   <li class="sidebar-item">
     <a onclick="routing('transaksi')" class="sidebar-link two-column" href="javascript:void()" aria-expanded="false">
       <i class="fa fa-list-ul"></i>Data Transaksi
     </a>
   </li>
 <?php
-
 }
 
 function displayMenuAdmin($role)
@@ -198,7 +196,6 @@ function displayMenuAdmin($role)
   if (is_null($role) || $role != "Psef.Admin") {
     return;
   }
-
 ?>
   <li class="sidebar-item">
     <a class="sidebar-link two-column has-arrow" href="javascript:void(0)" aria-expanded="false">
@@ -270,4 +267,3 @@ function displaySidebarMenuItem(string $route, string $caption, string $iconClas
   </li>
 <?php
 }
-
