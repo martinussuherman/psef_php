@@ -254,29 +254,12 @@ function displayMenuAdmin($role)
     </a>
 
     <ul aria-expanded="false" class="collapse first-level">
-      <li class="sidebar-item">
-        <a onclick="routing('provinsi')" href="javascript:void(0)" class="sidebar-link">
-          <i class="mdi mdi-adjust"></i>Provinsi
-        </a>
-      </li>
-
-      <li class="sidebar-item">
-        <a onclick="routing('spanduk')" href="javascript:void(0)" class="sidebar-link">
-          <i class="mdi mdi-adjust"></i>Spanduk
-        </a>
-      </li>
-
-      <li class="sidebar-item">
-        <a onclick="routing('berita')" href="javascript:void(0)" class="sidebar-link">
-          <i class="mdi mdi-adjust"></i>Berita
-        </a>
-      </li>
-
-      <li class="sidebar-item">
-        <a onclick="routing('unduhan')" href="javascript:void(0)" class="sidebar-link">
-          <i class="mdi mdi-adjust"></i>Unduhan
-        </a>
-      </li>
+      <?php
+      displaySidebarMenuItem("routing('provinsi')", "Provinsi", "mdi mdi-adjust");
+      displaySidebarMenuItem("routing('spanduk')", "Spanduk", "mdi mdi-adjust");
+      displaySidebarMenuItem("routing('berita')", "Berita", "mdi mdi-adjust");
+      displaySidebarMenuItem("routing('unduhan')", "Unduhan", "mdi mdi-adjust");
+      ?>
     </ul>
   </li>
 <?php
