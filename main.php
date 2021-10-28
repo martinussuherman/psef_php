@@ -339,40 +339,7 @@ displayHeader();
             routing('welcome');
         }
       }
-
     });
-
-    function logout() {
-      unset_sess();
-    }
-
-    function change_password_set(e) {
-      e.preventDefault();
-      var data = $('#add-change-password').serializeFormJSON();
-      var accesstoken = <?php echo json_encode($_COOKIE['accesstoken']); ?>;
-      $.ajax({
-        url: url_api_ia + 'CurrentUser/ChangePassword',
-        type: 'POST',
-        beforeSend: function(xhr) {
-          xhr.setRequestHeader('Authorization', 'Bearer ' + accesstoken + '');
-        },
-        data: JSON.stringify(data),
-        contentType: 'application/json',
-        success: function(data, textStatus, xhr) {
-          if (xhr.status == '200') {
-            toastr.success(data.CrudMsg, 'Kata Sandi Berhasi diubah!');
-            $('#old-password').val('')
-            $('#new-password').val('')
-            $('#modal-close-cp').click()
-          } else {
-            toastr.error('Kata Sandi Lama yang Anda Masukkan Salah!', 'Error!');
-          }
-        },
-        error: function(xhr, textStatus, errorThrown) {
-          toastr.error('Kata Sandi Lama yang Anda Masukkan Salah!', 'Error!');
-        }
-      });
-    }
   </script>
 </body>
 
