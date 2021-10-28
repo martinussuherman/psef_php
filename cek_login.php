@@ -40,7 +40,7 @@ displayHeader();
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-5">
               <li class="nav-item mt-5 mb-3">
-                <a href="login.php" class="btn btn-rounded btn-block btn-info">Masuk</a>
+                <a href="/login" class="btn btn-rounded btn-block btn-info">Masuk</a>
               </li>
               <li class="nav-item mb-3">
                 <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/Register" class="btn btn-rounded btn-block btn-success" target="_blank">Daftar</a>
@@ -190,7 +190,7 @@ displayHeader();
               <img src="/assets/internal/logo-psef-white.png" alt="logo" width="60%" />
             </div>
 
-            <a href="./login.php" class="btn btn-block btn-lg btn-rounded btn-primary mt-3">Masuk</a>
+            <a href="/login" class="btn btn-block btn-lg btn-rounded btn-primary mt-3">Masuk</a>
 
             <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/Register" class="btn btn-block btn-lg btn-rounded btn-success mb-2" target="_blank">Daftar</a>
 
