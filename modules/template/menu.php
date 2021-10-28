@@ -249,7 +249,7 @@ function displayMenuUserInfo(string $email, $settingData)
         <i class="fa fa-key mr-2"></i>Ganti Kata Sandi
       </a>
 
-      <a class="dropdown-item" href="logout.php">
+      <a class="dropdown-item" href="/logout">
         <i class="fas fa-sign-out-alt mr-2"></i>Keluar
       </a>
     </div>
