@@ -217,14 +217,6 @@ displayHeader();
           </div>
         </div>
 
-        <div class="form-group m-b-0 m-t-10" style="position: absolute;
-                bottom: 0!important;width: inherit;
-                margin-bottom: 0px;">
-          <div class="col-sm-12 text-center">
-            <!-- 2018 PT CIPTA HASIL SUGIARTO.<br/>Syarat &amp; Ketentuan   Kebijakan Privasi -->
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
