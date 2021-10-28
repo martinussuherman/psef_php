@@ -30,15 +30,15 @@ function displayHeader(string $title = 'Selamat Datang di Sistem PSEF')
     </script>
 
     <!-- Custom CSS -->
-    <link href="dist/css/style.css" rel="stylesheet">
-    <link href="assets/custom.css" rel="stylesheet">
+    <link href="/dist/css/style.css" rel="stylesheet">
+    <link href="/assets/custom.css" rel="stylesheet">
 
     <!-- Sweet alert -->
-    <link href="assets/libs/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="/assets/libs/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
     <!-- select2 -->
-    <link href="assets/libs/select2/dist/css/select2.min.css" rel="stylesheet">
+    <link href="/assets/libs/select2/dist/css/select2.min.css" rel="stylesheet">
     <!-- Toastr -->
-    <link href="assets/libs/toastr/build/toastr.min.css" rel="stylesheet">
+    <link href="/assets/libs/toastr/build/toastr.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.3.7/quill.snow.min.css" integrity="sha512-/FHUK/LsH78K9XTqsR9hbzr21J8B8RwHR/r8Jv9fzry6NVAOVIGFKQCNINsbhK7a1xubVu2r5QZcz2T9cKpubw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.4/css/bootstrap3/bootstrap-switch.min.css" integrity="sha512-Z4xQriqw+HPtU3LkEew7O1zcKQqOzF4TVwQH4ptokxpokTTCpZy1XxI9oEvjtonXbP8PRfPSMAs4vfO2FAjuWA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -46,7 +46,7 @@ function displayHeader(string $title = 'Selamat Datang di Sistem PSEF')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/6.2.95/css/materialdesignicons.min.css" integrity="sha512-tYefTUoWKpCvU14EKu/b/VxnSaT3+1ZBlL0BhTPSYCiqsMTbGylad3l6HCr9i4vpsDgJIFke+LQBq3MCXko6Qw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tablesaw/3.1.2/tablesaw.min.css" integrity="sha512-FW7xwIsGt3iCswNR3o4kcXqkKDvN8Q7obwdxFODRT+L6XkRtScLElfvobA7bjiC2iTgG/sRaBUqdrhqx0RTauw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="assets/extra-libs/DataTables/datatables.min.css" />
+    <link rel="stylesheet" href="/assets/extra-libs/DataTables/datatables.min.css" />
 
     <!-- easyui -->
     <!-- <link rel="stylesheet" type="text/css" href="assets/libs/easyui/easyui.css">
