@@ -29,7 +29,7 @@ function displayTextInputRow(
     <div class="col-md-2">
       <div class="form-group text-center">
         <label class="control-label">Sesuai</label>
-        <input type="checkbox" class="form-control" name="<?php echo $checkName; ?>" value="<?php echo $checkValue; ?>" <?php echo $checkState; ?> />
+        <input type="checkbox" class="form-control mt-2 check-large" name="<?php echo $checkName; ?>" value="<?php echo $checkValue; ?>" <?php echo $checkState; ?> />
       </div>
     </div>
 
@@ -96,7 +96,7 @@ function displayFileInputRow(
     <div class="col-md-2">
       <div class="form-group text-center">
         <label class="control-label">Sesuai</label>
-        <input type="checkbox" class="form-control" name="<?php echo $checkName; ?>" value="<?php echo $checkValue; ?>" <?php echo $checkState; ?> />
+        <input type="checkbox" class="form-control mt-2 check-large" name="<?php echo $checkName; ?>" value="<?php echo $checkValue; ?>" <?php echo $checkState; ?> />
       </div>
     </div>
 
