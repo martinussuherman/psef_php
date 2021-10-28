@@ -19,3 +19,8 @@ hr.white-line{
 #content {
   padding-top: 125px;
 }
+
+input[type="checkbox"].check-large{
+  height: 1.5em;
+}
+
