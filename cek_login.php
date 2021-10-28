@@ -142,21 +142,19 @@ displayHeader();
                   <div class="card">
                     <h4 class="card-header bg-success text-white">TANDA DAFTAR PSEF YANG TERBIT</h4>
 
-                    <div class="table-responsive">
-                      <table class="table table-sm">
-                        <thead class="text-center bg-light text-cyan">
-                          <tr>
-                            <th>Tanda Daftar PSEF</th>
-                            <th>Nama Perusahaan</th>
-                            <th>Domain</th>
-                            <th>Tanggal</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <?php displayPerizinan($settingData); ?>
-                        </tbody>
-                      </table>
-                    </div>
+                    <table class="tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+                      <thead class="text-center bg-light text-cyan">
+                        <tr>
+                          <th>Tanda Daftar PSEF</th>
+                          <th>Nama Perusahaan</th>
+                          <th>Domain</th>
+                          <th>Tanggal</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php displayPerizinan($settingData); ?>
+                      </tbody>
+                    </table>
                   </div>
 
                   <div class="card">
