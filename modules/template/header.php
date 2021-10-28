@@ -2,6 +2,7 @@
 function displayHeader(string $title = 'Selamat Datang di Sistem PSEF')
 {
 ?>
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,7 +44,9 @@ function displayHeader(string $title = 'Selamat Datang di Sistem PSEF')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.4/css/bootstrap3/bootstrap-switch.min.css" integrity="sha512-Z4xQriqw+HPtU3LkEew7O1zcKQqOzF4TVwQH4ptokxpokTTCpZy1XxI9oEvjtonXbP8PRfPSMAs4vfO2FAjuWA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/6.2.95/css/materialdesignicons.min.css" integrity="sha512-tYefTUoWKpCvU14EKu/b/VxnSaT3+1ZBlL0BhTPSYCiqsMTbGylad3l6HCr9i4vpsDgJIFke+LQBq3MCXko6Qw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="assets/extra-libs/DataTables/datatables.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tablesaw/3.1.2/tablesaw.min.css" integrity="sha512-FW7xwIsGt3iCswNR3o4kcXqkKDvN8Q7obwdxFODRT+L6XkRtScLElfvobA7bjiC2iTgG/sRaBUqdrhqx0RTauw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="assets/extra-libs/DataTables/datatables.min.css" />
 
     <!-- easyui -->
     <!-- <link rel="stylesheet" type="text/css" href="assets/libs/easyui/easyui.css">
