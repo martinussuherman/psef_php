@@ -12,33 +12,33 @@ function displayPageScripts()
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesaw/3.1.2/tablesaw.jquery.min.js" integrity="sha512-/Un6gjn0IXHJtR9j8VBYmN3ZoAVNMTQTufizEkeImLkb67lxsJcXv/cFswbOig2v5ykbGxX6zngh4u8ff7FJ0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesaw/3.1.2/tablesaw-init.min.js" integrity="sha512-w/1hLca9Fyn6iwnkMxUU55d/OlcA65RnP4v6kJ8NssnzHeHnJBeOzuHEkJ67zpt0ksiH1LQn8FKYZc/TT1O/aQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script src="assets/libs/sweetalert2/dist/sweetalert2.all.min.js"></script>
-  <script src="assets/libs/select2/dist/js/select2.full.min.js"></script>
-  <script src="assets/libs/toastr/build/toastr.min.js"></script>
-  <script src="assets/extra-libs/DataTables/datatables.min.js"></script>
+  <script src="/assets/libs/sweetalert2/dist/sweetalert2.all.min.js"></script>
+  <script src="/assets/libs/select2/dist/js/select2.full.min.js"></script>
+  <script src="/assets/libs/toastr/build/toastr.min.js"></script>
+  <script src="/assets/extra-libs/DataTables/datatables.min.js"></script>
 
   <!-- slimscrollbar scrollbar JavaScript -->
-  <script src="assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-  <script src="assets/extra-libs/sparkline/sparkline.js"></script>
+  <script src="/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+  <script src="/assets/extra-libs/sparkline/sparkline.js"></script>
 
   <!-- apps -->
-  <script src="dist/js/app.js"></script>
-  <script src="dist/js/app.init.horizontal-fullwidth.js"></script>
-  <script src="dist/js/app-style-switcher.horizontal.js"></script>
+  <script src="/dist/js/app.js"></script>
+  <script src="/dist/js/app.init.horizontal-fullwidth.js"></script>
+  <script src="/dist/js/app-style-switcher.horizontal.js"></script>
   <!--Wave Effects -->
-  <script src="dist/js/waves.js"></script>
+  <script src="/dist/js/waves.js"></script>
   <!--Menu sidebar -->
-  <script src="dist/js/sidebarmenu.js"></script>
+  <script src="/dist/js/sidebarmenu.js"></script>
   <!--Custom JavaScript -->
-  <script src="dist/js/custom.js"></script>
+  <script src="/dist/js/custom.js"></script>
 
-  <script src="assets/js/stepbar.js"></script>
-  <script src="assets/js/print.min.js"></script>
-  <script src="assets/js/config.js?5" defer></script>
-  <script src="assets/js/jquery.number.min.js"></script>
-  <script src="assets/js/keyboardShortcut.js"></script>
-  <script src="assets/js/async.min.js"></script>
-  <script src="assets/js/jquery.form.min.js" defer></script>
+  <script src="/assets/js/stepbar.js"></script>
+  <script src="/assets/js/print.min.js"></script>
+  <script src="/assets/js/config.js?5" defer></script>
+  <script src="/assets/js/jquery.number.min.js"></script>
+  <script src="/assets/js/keyboardShortcut.js"></script>
+  <script src="/assets/js/async.min.js"></script>
+  <script src="/assets/js/jquery.form.min.js" defer></script>
   <!-- <script src="assets/js/jquery.easyui.min.js"></script> -->
 
   <!-- start - This is for export functionality only -->
