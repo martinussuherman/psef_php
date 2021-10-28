@@ -35,14 +35,7 @@ displayHeader();
             <!-- ============================================================== -->
             <!-- Logo -->
             <!-- ============================================================== -->
-            <a onclick="<?php if ($role == '') {
-                          echo "routing('pemohon_user')";
-                        } elseif ($role == 'Psef.Admin') {
-                          echo "routing('pemohon_admin')";
-                        } else {
-                          echo "routing('welcome')";
-                        } ?>" href="javascript:void(0)" class="navbar-brand">
-
+            <a href="/" class="navbar-brand">
               <!-- Logo icon -->
               <b class="logo-icon">
                 <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
