@@ -27,7 +27,7 @@ function displayTextInputRow(
     </div>
 
     <div class="col-md-2">
-      <div class="form-group">
+      <div class="form-group text-center">
         <label class="control-label">Sesuai</label>
         <input type="checkbox" class="form-control" name="<?php echo $checkName; ?>" value="<?php echo $checkValue; ?>" <?php echo $checkState; ?> />
       </div>
@@ -42,4 +42,3 @@ function displayTextInputRow(
   </div>
 <?php
 }
-
