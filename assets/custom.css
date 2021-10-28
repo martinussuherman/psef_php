@@ -4,7 +4,8 @@
 }
 
 .page-wrapper {
-  background: #fff url(/assets/images/bg0.jpg) fixed no-repeat;
+  background-image: url(/assets/images/bg0.jpg);
+  background-size: cover;
 }
 
 #loginform .logo img {
