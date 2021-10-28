@@ -73,7 +73,7 @@ function displayFileInputRow(
 
         <div>
           <a class="btn btn-block btn-outline-secondary text-left" href="<?php echo $fileUrl; ?>" target="_blank" id="<?php echo $closeElementId; ?>">
-            <?php echo $fileName; ?>
+          <i class="fa fa-file mr-2"></i><?php echo $fileName; ?>
           </a>
         </div>
 
