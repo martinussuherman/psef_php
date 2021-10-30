@@ -17,7 +17,7 @@ function initCurl(string $apiUrl, string $token)
   return $curl;
 }
 
-function execCurl(CurlHandle|false $curl)
+function execCurl($curl)
 {
   if ($curl === false) {
     return false;
