@@ -1,8 +1,8 @@
 <?php
-include("header.php");
-include("menu.php");
-include("pageScripts.php");
-include("configReader.php");
+require_once("configReader.php");
+require_once("header.php");
+require_once("menu.php");
+require_once("pageScripts.php");
 
 function displayPage(callable $contentFunction)
 {
