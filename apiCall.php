@@ -28,10 +28,10 @@ function execCurl($curl)
   curl_close($curl);
 
   if ($errorMsg != "") {
-    return $errorMsg;
+    return json_decode('{"success": false, "result": ' . $errorMsg . '}');
   }
 
-  return json_decode($response, false);
+  return json_decode('{"success": true, "result": ' . $response . '}');
 }
 
 function callGetApi(string $apiUrl, string $token)
