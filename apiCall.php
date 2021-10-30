@@ -36,13 +36,13 @@ function execCurl($curl)
 
 function callGetApi(string $apiUrl, string $token)
 {
-  $curl = initCurl($apiUrl,  $token);
+  $curl = initCurl($apiUrl, $token);
   return execCurl($curl);
 }
 
 function callPostApi(string $apiUrl, string $token, $postData)
 {
-  $curl = initCurl($apiUrl,  $token);
+  $curl = initCurl($apiUrl, $token);
   curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($curl, CURLOPT_POSTFIELDS, $postData);
   return execCurl($curl);
