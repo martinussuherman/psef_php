@@ -4,7 +4,7 @@ require_once("header.php");
 require_once("menu.php");
 require_once("pageScripts.php");
 
-function displayPage(callable $contentFunction)
+function displayPage(callable $contentFunction, string $pageTitle)
 {
   $settingData = readConfig();
   $role = $_SESSION["role"];
@@ -12,7 +12,7 @@ function displayPage(callable $contentFunction)
   <!DOCTYPE html>
   <html lang="en" dir="ltr">
 
-  <?php displayHeader(); ?>
+  <?php displayHeader($pageTitle); ?>
 
   <body>
     <!-- ============================================================== -->
