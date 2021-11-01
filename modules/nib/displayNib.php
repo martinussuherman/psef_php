@@ -444,7 +444,7 @@ function displayJenisPerseroan(string $kodeJenisPerseroan)
 {
   switch ($kodeJenisPerseroan) {
     case "01":
-      return "Perseroan Terbatas (PT)";
+      return "Perusahaan Terbatas (PT)";
     case "02":
       return "Perseroan Komanditer (CV)";
     case "04":
