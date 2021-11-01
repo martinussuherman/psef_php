@@ -246,7 +246,7 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Jenis ID User</label>
-              <input value="<?php echo $apiResult->result->jenisIdUserProses; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo displayJenisIdUserProses($apiResult->result->jenisIdUserProses); ?>" type="text" class="form-control" disabled>
             </div>
           </div>
           <div class="col-md-4">
@@ -494,6 +494,18 @@ function displayTipeDokumen(string $kodeTipeDokumen)
       return "Pencabutan";
     case "4":
       return "Pembatalan";
+    default:
+      return "-";
+  }
+}
+
+function displayJenisIdUserProses(string $kodeJenisIdUserProses)
+{
+  switch ($kodeJenisIdUserProses) {
+    case "01":
+      return "Kartu Tanda Penduduk (KTP)";
+    case "02":
+      return "Paspor";
     default:
       return "-";
   }
