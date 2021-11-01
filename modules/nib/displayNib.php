@@ -408,6 +408,11 @@ function displayContent()
 <?php
 }
 
+function displayNumberWithSeparator($number)
+{
+  return number_format($number, 0, ",", ".");
+}
+
 function displayDateFromJson(string $jsonDate)
 {
   $date = DateTime::createFromFormat("Y-m-d\TH:i:sP", $jsonDate);
