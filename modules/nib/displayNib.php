@@ -433,8 +433,10 @@ function displayStatusPenanamanModal(string $kodePenanamanModal)
       return "Penanaman Modal Asing";
     case "02":
       return "Penanaman Modal Dalam Negeri";
-    default:
+    case "03":
       return "Bukan (PMA/PMDN)";
+    default:
+      return "-";
   }
 }
 
