@@ -459,6 +459,8 @@ function displayJenisPerseroan(string $kodeJenisPerseroan)
       return "Yayasan";
     case "16":
       return "Bentuk Usaha Tetap (BUT)";
+    case "17":
+      return "Perseorangan";
     case "18":
       return "Badan Layanan Umum (BLU)";
     case "19":
