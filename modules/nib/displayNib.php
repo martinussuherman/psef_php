@@ -328,7 +328,7 @@ function displayContent()
               </tr>
             </thead>
             <tbody class="detail-item-pj">
-
+              <?php displayDataPenanggungJawab($apiResult->result->penanggungJwb); ?>
             </tbody>
           </table>
         </div>
@@ -529,6 +529,28 @@ function displayDataPemegangSaham(array $listDataPemegangSaham)
       </td>
       <td>
         <?php echo $pemegangSaham->totalModalPemegang; ?>
+      </td>
+    </tr>
+  <?php
+  }
+}
+
+function displayDataPenanggungJawab(array $listDataPenanggungJawab)
+{
+  foreach ($listDataPenanggungJawab as $penanggungJawab) {
+  ?>
+    <tr>
+      <td>
+        <?php echo $penanggungJawab->namaPenanggungJwb; ?>
+        <br />NPWP : <?php echo $penanggungJawab->npwpPenanggungJwb; ?>
+        <br />KTP/PASPOR : <?php echo $penanggungJawab->noIdentitasPenanggungJwb; ?>
+        <br />Jabatan : <?php echo $penanggungJawab->jabatanPenanggungJwb; ?>
+      </td>
+      <td>
+        <?php echo $penanggungJawab->alamatPenanggungJwb; ?> RT/RW <?php echo $penanggungJawab->rtRwPenanggungJwb; ?>
+        <br />Telp : <?php echo $penanggungJawab->noHpPenanggungJwb; ?>
+        <br />E-mail : <?php echo $penanggungJawab->emailPenanggungJwb; ?>
+        <br />Negara Asal : <?php echo $penanggungJawab->negaraAsalPenanggungJwb; ?>
       </td>
     </tr>
 <?php
