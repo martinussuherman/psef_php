@@ -312,7 +312,7 @@ function displayContent()
               </tr>
             </thead>
             <tbody class="detail-item-ps">
-
+              <?php displayDataPemegangSaham($apiResult->result->pemegangSaham); ?>
             </tbody>
           </table>
         </div>
@@ -508,6 +508,30 @@ function displayJenisIdUserProses(string $kodeJenisIdUserProses)
       return "Paspor";
     default:
       return "-";
+  }
+}
+
+function displayDataPemegangSaham($listDataPemegangSaham)
+{
+  foreach ($listDataPemegangSaham as $pemegangSaham) {
+  ?>
+    <tr>
+      <td>
+        <?php echo $pemegangSaham->namaPemegangSaham; ?>
+        <br />NPWP : <?php echo $pemegangSaham->npwpPemegangSaham; ?>
+        <br />KTP/PASPOR : <?php echo $pemegangSaham->noIdentitasPemegangSaham; ?>
+        <br />Jabatan : <?php echo $pemegangSaham->jabatanPemegangSaham; ?>
+      </td>
+      <td>
+        <?php echo $pemegangSaham->alamatPemegangSaham; ?>
+        <br />Fax : <?php echo $pemegangSaham->faxPemegangSaham; ?>
+        <br />E-mail : <?php echo $pemegangSaham->emailPemegangSaham; ?>
+      </td>
+      <td>
+        <?php echo $pemegangSaham->totalModalPemegang; ?>
+      </td>
+    </tr>
+<?php
   }
 }
 
