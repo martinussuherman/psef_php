@@ -416,11 +416,14 @@ function displayDateFromJson(string $jsonDate)
 
 function displayStatusBadanHukum(string $kodeBadanHukum)
 {
-  if ($kodeBadanHukum == "01") {
-    return "Badan Hukum";
+  switch ($kodeBadanHukum) {
+    case "01":
+      return "Badan Hukum";
+    case "02":
+      return "Bukan Badan Hukum";
+    default:
+      return "-";
   }
-
-  return "Bukan Badan Hukum";
 }
 
 function displayStatusPenanamanModal(string $kodePenanamanModal)
