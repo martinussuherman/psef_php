@@ -511,7 +511,7 @@ function displayJenisIdUserProses(string $kodeJenisIdUserProses)
   }
 }
 
-function displayDataPemegangSaham($listDataPemegangSaham)
+function displayDataPemegangSaham(array $listDataPemegangSaham)
 {
   foreach ($listDataPemegangSaham as $pemegangSaham) {
   ?>
