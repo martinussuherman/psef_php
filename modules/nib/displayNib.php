@@ -152,7 +152,7 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Alamat Perusahaan</label>
-              <textarea class="form-control" rows="7" disabled>{{alamatPerseroan}} RT/RW {{rtRwPerseroan}}, Kel.{{kelurahanPerseroan}} &#13;&#10;Kode Pos: {{kodePosPerseroan}}&#13;&#10;No. Telp: {{nomorTelponPerseroan}}&#13;&#10;Email : {{emailPerusahaan}}</textarea>
+              <textarea class="form-control" rows="7" disabled><?php echo displayAlamatPerseroan($apiResult->result); ?></textarea>
             </div>
           </div>
           <div class="col-md-4">
@@ -516,6 +516,17 @@ function displayJenisIdUserProses(string $kodeJenisIdUserProses)
     default:
       return "-";
   }
+}
+
+function displayAlamatPerseroan($apiData)
+{
+  return
+    $apiData->alamatPerseroan .
+    " RT/RW " . $apiData->rtRwPerseroan .
+    ", Kel. " . $apiData->kelurahanPerseroan .
+    "&#13;&#10;Kode Pos: " . $apiData->kodePosPerseroan .
+    "&#13;&#10;No. Telp: " . $apiData->nomorTelponPerseroan .
+    "&#13;&#10;Email : " . $apiData->emailPerusahaan;
 }
 
 function displayDataPemegangSaham(array $listDataPemegangSaham)
