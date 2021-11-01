@@ -146,7 +146,7 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Badan Usaha</label>
-              <input value="<?php echo $apiResult->result->jenisPerseroan; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo displayJenisPerseroan($apiResult->result->jenisPerseroan); ?>" type="text" class="form-control" disabled>
             </div>
           </div>
           <div class="col-md-4">
@@ -232,7 +232,7 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Status NIB</label>
-              <input value="<?php echo $apiResult->result->statusNib; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo displayStatusNib($apiResult->result->statusNib); ?>" type="text" class="form-control" disabled>
             </div>
           </div>
           <div class="col-md-4">
@@ -437,6 +437,50 @@ function displayStatusPenanamanModal(string $kodePenanamanModal)
 
 function displayJenisPerseroan(string $kodeJenisPerseroan)
 {
+  switch ($kodeJenisPerseroan) {
+    case "01":
+      return "Perseroan Terbatas (PT)";
+    case "02":
+      return "Perseroan Komanditer (CV)";
+    case "04":
+      return "Badan Usaha Pemerintah";
+    case "05":
+      return "Firma (Fa)";
+    case "06":
+      return "Persekutuan Perdata";
+    case "07":
+      return "Koperasi";
+    case "10":
+      return "Yayasan";
+    case "16":
+      return "Bentuk Usaha Tetap (BUT)";
+    case "18":
+      return "Badan Layanan Umum (BLU)";
+    case "19":
+      return "Badan Hukum (selain PT,Yayasan dan Koperasi)";
+    default:
+      return "-";
+  }
+}
+
+function displayStatusNib(string $kodeStatusNib)
+{
+  switch ($kodeStatusNib) {
+    case "01":
+      return "Aktif";
+    case "02":
+      return "Belum Aktif";
+    case "03":
+      return "Diizinkan Usaha";
+    case "04":
+      return "Diizinkan Beroperasi";
+    case "05":
+      return "Dibekukan";
+    case "06":
+      return "Dicabut";
+    default:
+      return "-";
+  }
 }
 
 displayPage("displayContent", "Sistem PSEF - Detail NIB");
