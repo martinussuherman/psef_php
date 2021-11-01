@@ -238,7 +238,7 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Tipe Dokumen</label>
-              <input value="<?php echo $apiResult->result->tipeDokumen; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo displayTipeDokumen($apiResult->result->tipeDokumen); ?>" type="text" class="form-control" disabled>
             </div>
           </div>
         </div>
@@ -478,6 +478,22 @@ function displayStatusNib(string $kodeStatusNib)
       return "Dibekukan";
     case "06":
       return "Dicabut";
+    default:
+      return "-";
+  }
+}
+
+function displayTipeDokumen(string $kodeTipeDokumen)
+{
+  switch ($kodeTipeDokumen) {
+    case "9":
+      return "Original";
+    case "5":
+      return "Update";
+    case "3":
+      return "Pencabutan";
+    case "4":
+      return "Pembatalan";
     default:
       return "-";
   }
