@@ -548,6 +548,18 @@ function displayJenisLegalitas(string $kodeJenisLegalitas)
   }
 }
 
+function displayJenisRptka(string $kodeJenisRptka)
+{
+  switch ($kodeJenisRptka) {
+    case "01":
+      return "Baru";
+    case "02":
+      return "Perubahan";
+    default:
+      return "-";
+  }
+}
+
 function displayAlamatPerseroan($apiData)
 {
   return
@@ -629,7 +641,7 @@ function displayDataRptka($dataRptka)
 {
   ?>
   <tr>
-    <td><?php echo $dataRptka->jenisRptka; ?></td>
+    <td><?php echo displayJenisRptka($dataRptka->jenisRptka); ?></td>
     <td><?php echo $dataRptka->noRptka; ?></td>
     <td><?php echo $dataRptka->rptkaAwal; ?></td>
     <td><?php echo $dataRptka->rptkaAkhir; ?></td>
