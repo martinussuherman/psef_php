@@ -399,7 +399,7 @@ function displayContent()
               </tr>
             </thead>
             <tbody class="detail-item-ck">
-
+              <?php displayDataChecklist($apiResult->result->dataChecklist); ?>
             </tbody>
           </table>
         </div>
@@ -658,6 +658,21 @@ function displayDataDni(array $listDataDni)
   ?>
     <tr>
       <td><?php echo $dataDni->kdDni; ?></td>
+    </tr>
+  <?php
+  }
+}
+
+function displayDataChecklist(array $listDataChecklist)
+{
+  foreach ($listDataChecklist as $dataChecklist) {
+  ?>
+    <tr>
+      <td><?php echo $dataChecklist->idIzin; ?></td>
+      <td><?php echo $dataChecklist->idProyek; ?></td>
+      <td><?php echo $dataChecklist->kdIzin; ?></td>
+      <td><?php echo $dataChecklist->namaIzin; ?></td>
+      <td><?php echo $dataChecklist->flagChecklist; ?></td>
     </tr>
 <?php
   }
