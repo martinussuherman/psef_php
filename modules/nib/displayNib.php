@@ -172,7 +172,7 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Dalam Bentuk Lain</label>
-              <input value="<?php echo $apiResult->result->dalamBentukLain; ?>" type="text" class="form-control" disabled>
+              <textarea class="form-control" rows="7" disabled><?php echo $apiResult->result->dalamBentukLain; ?></textarea>
             </div>
           </div>
           <div class="col-md-4">
