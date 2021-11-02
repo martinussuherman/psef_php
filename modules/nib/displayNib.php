@@ -47,7 +47,7 @@ function displayContent()
 
   <div class="container-fluid">
     <div class="card">
-      <h4 class="card-title">Detail NIB</h4>
+      <h4 class="card-title mt-4 ml-4">Detail NIB</h4>
 
       <form class="card-body m-t-30">
         <h4 class="card-title" style="font-weight: bold;">
