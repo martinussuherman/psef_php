@@ -24,11 +24,11 @@ function execCurl($curl)
   }
 
   $response = curl_exec($curl);
-  $errorMsg = curl_error($curl);
+  $responseCode = curl_getinfo($curl, CURLINFO_RESPONSE_CODE);
   curl_close($curl);
 
-  if ($errorMsg != "") {
-    return json_decode('{"success": false, "result": ' . $errorMsg . '}');
+  if ($responseCode != 200 && $responseCode != 201 && $responseCode != 204) {
+    return json_decode('{"success": false, "result": ' . $responseCode . '}');
   }
 
   return json_decode('{"success": true, "result": ' . $response . '}');
