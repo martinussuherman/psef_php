@@ -524,6 +524,30 @@ function displayJenisIdUserProses(string $kodeJenisIdUserProses)
   }
 }
 
+function displayJenisLegalitas(string $kodeJenisLegalitas)
+{
+  switch ($kodeJenisLegalitas) {
+    case "01":
+      return "Akta Pendirian";
+    case "02":
+      return "Akta Perubahan";
+    case "06":
+      return "Kontrak";
+    case "07":
+      return "Peraturan";
+    case "09":
+      return "SK Penetapan";
+    case "10":
+      return "Akta Likuidasi";
+    case "11":
+      return "Akta Merger";
+    case "12":
+      return "Akta Pembubaran";
+    default:
+      return "-";
+  }
+}
+
 function displayAlamatPerseroan($apiData)
 {
   return
@@ -588,8 +612,7 @@ function displayDataLegalitas(array $listDataLegalitas)
     <tr>
       <td>
         Nomor Legal : <?php echo $legalitas->noLegal; ?>
-        <br />Tgl Legal : <?php echo $legalitas->tglLegal; ?>
-        <br />Jenis Legal : <?php echo $legalitas->jenisLegal; ?>
+        <br />Jenis Legal : <?php echo displayJenisLegalitas($legalitas->jenisLegal); ?>
       </td>
       <td>
         <?php echo $legalitas->namaNotaris; ?>
