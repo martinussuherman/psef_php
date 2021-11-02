@@ -365,7 +365,7 @@ function displayContent()
               </tr>
             </thead>
             <tbody class="detail-item-rptka">
-
+              <?php displayDataRptka($apiResult->result->dataRptka); ?>
             </tbody>
           </table>
         </div>
@@ -623,6 +623,21 @@ function displayDataLegalitas(array $listDataLegalitas)
     </tr>
 <?php
   }
+}
+
+function displayDataRptka($dataRptka)
+{
+  ?>
+  <tr>
+    <td><?php echo $dataRptka->jenisRptka; ?></td>
+    <td><?php echo $dataRptka->noRptka; ?></td>
+    <td><?php echo $dataRptka->rptkaAwal; ?></td>
+    <td><?php echo $dataRptka->rptkaAkhir; ?></td>
+    <td><?php echo $dataRptka->jumlahTkaRptka; ?></td>
+    <td><?php echo $dataRptka->jangkaPenggunaanWaktu; ?></td>
+    <td><?php echo $dataRptka->jangkaWaktuPermohonanRptka; ?></td>
+  </tr>
+<?php
 }
 
 displayPage("displayContent", "Sistem PSEF - Detail NIB");
