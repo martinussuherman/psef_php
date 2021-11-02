@@ -572,6 +572,18 @@ function displayStatusTanah(string $kodeStatusTanah)
   }
 }
 
+function displaySatuanLuasTanah(string $kodeSatuanLuasTanah)
+{
+  switch ($kodeSatuanLuasTanah) {
+    case "01":
+      return "M2";
+    case "02":
+      return "Ha";
+    default:
+      return "-";
+  }
+}
+
 function displayAlamatPerseroan($apiData)
 {
   return
