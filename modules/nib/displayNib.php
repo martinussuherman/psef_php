@@ -560,6 +560,18 @@ function displayJenisRptka(string $kodeJenisRptka)
   }
 }
 
+function displayStatusTanah(string $kodeStatusTanah)
+{
+  switch ($kodeStatusTanah) {
+    case "01":
+      return "Sewa";
+    case "02":
+      return "Bukan Sewa";
+    default:
+      return "-";
+  }
+}
+
 function displayAlamatPerseroan($apiData)
 {
   return
