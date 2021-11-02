@@ -18,10 +18,19 @@ function displayContent()
   );
 
   if ($apiResult->success === false) {
-    // TODO: display message
+?>
+    <div class="container-fluid">
+      <div class="card text-center text-white bg-danger m-3">
+        <h3 class="card-title mt-4">Terdapat masalah dalam menampilkan data NIB</h4>
+        <div class="card-body">
+          Error code: <?php echo $apiResult->result; ?>
+        </div>
+      </div>
+    </div>
+  <?php
     return;
   }
-?>
+  ?>
   <div class="page-breadcrumb">
     <div class="row">
       <div class="col-5 align-self-center">
