@@ -612,6 +612,7 @@ function displayDataLegalitas(array $listDataLegalitas)
     <tr>
       <td>
         Nomor Legal : <?php echo $legalitas->noLegal; ?>
+        <br />Tgl Legal : <?php echo displayDateFromJson($legalitas->tglLegal); ?>
         <br />Jenis Legal : <?php echo displayJenisLegalitas($legalitas->jenisLegal); ?>
       </td>
       <td>
