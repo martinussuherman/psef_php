@@ -380,7 +380,7 @@ function displayContent()
               </tr>
             </thead>
             <tbody class="detail-item-dni">
-
+              <?php displayDataDni($apiResult->result->dataDni); ?>
             </tbody>
           </table>
         </div>
@@ -649,7 +649,18 @@ function displayDataRptka($dataRptka)
     <td><?php echo $dataRptka->jangkaPenggunaanWaktu; ?></td>
     <td><?php echo $dataRptka->jangkaWaktuPermohonanRptka; ?></td>
   </tr>
+  <?php
+}
+
+function displayDataDni(array $listDataDni)
+{
+  foreach ($listDataDni as $dataDni) {
+  ?>
+    <tr>
+      <td><?php echo $dataDni->kdDni; ?></td>
+    </tr>
 <?php
+  }
 }
 
 displayPage("displayContent", "Sistem PSEF - Detail NIB");
