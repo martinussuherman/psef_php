@@ -417,7 +417,7 @@ function displayNumberWithSeparator($number)
 function displayDateFromJson(string $jsonDate)
 {
   $date = DateTime::createFromFormat("Y-m-d\TH:i:sP", $jsonDate);
-  return $date->format("d-m-Y");
+  return $date->format("j M Y");
 }
 
 function displayStatusBadanHukum(string $kodeBadanHukum)
