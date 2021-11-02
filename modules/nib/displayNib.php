@@ -344,6 +344,7 @@ function displayContent()
               </tr>
             </thead>
             <tbody class="detail-item-legilitas">
+              <?php displayDataLegalitas($apiResult->result->legalitas); ?>
             </tbody>
           </table>
         </div>
@@ -574,6 +575,26 @@ function displayDataPenanggungJawab(array $listDataPenanggungJawab)
         <br />Telp : <?php echo $penanggungJawab->noHpPenanggungJwb; ?>
         <br />E-mail : <?php echo $penanggungJawab->emailPenanggungJwb; ?>
         <br />Negara Asal : <?php echo $penanggungJawab->negaraAsalPenanggungJwb; ?>
+      </td>
+    </tr>
+  <?php
+  }
+}
+
+function displayDataLegalitas(array $listDataLegalitas)
+{
+  foreach ($listDataLegalitas as $legalitas) {
+  ?>
+    <tr>
+      <td>
+        Nomor Legal : <?php echo $legalitas->noLegal; ?>
+        <br />Tgl Legal : <?php echo $legalitas->tglLegal; ?>
+        <br />Jenis Legal : <?php echo $legalitas->jenisLegal; ?>
+      </td>
+      <td>
+        <?php echo $legalitas->namaNotaris; ?>
+        <br /><?php echo $legalitas->alamatNotaris; ?>
+        <br />Telp. <?php echo $legalitas->teleponNotaris; ?>
       </td>
     </tr>
 <?php
