@@ -217,13 +217,13 @@
     });
   }
 
-  function loadAndDisplayOssData(dataPemohon, apiUrl, token) {
-    if (dataPemohon == undefined || dataPemohon.nib == undefined) {
+  function loadAndDisplayOssData(nib, apiUrl, token) {
+    if (nib == undefined) {
       return;
     }
 
     $.ajax({
-      url: `${apiUrl}OssInfo/OssFullInfo?id=${dataPemohon.nib }`,
+      url: `${apiUrl}OssInfo/OssFullInfo?id=${nib}`,
       type: 'GET',
       beforeSend: function(xhr) {
         xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
@@ -243,7 +243,7 @@
         $("#cek_nib").css("color", "green");
         $('#cek_nib').html(`
           Data NIB Dapat di Gunakan<br>
-          <a onclick="detail_nib(${dataPemohon.nib})" style="color:blue;text-decoration: underline;cursor: pointer;">
+          <a href="/view-nib/${nib}" class="btn btn-primary" target="_blank">
             Periksa Detail NIB
           </a>`);
         $("#nib").removeClass("form-control is-invalid").addClass("form-control is-valid");
@@ -515,7 +515,7 @@
       displayPermohonanProgress(dataPermohonan);
     }
 
-    loadAndDisplayOssData(dataPemohon, apiUrl, token);
+    loadAndDisplayOssData(dataPemohon.nib, apiUrl, token);
 
     if (isDisplayHistory) {
       loadAndDisplayPermohonanHistory(dataPermohonan.id, apiUrl, token);
