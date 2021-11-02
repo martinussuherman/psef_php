@@ -295,7 +295,7 @@ function displayContent()
               </tr>
             </thead>
             <tbody class="detail-item-proyek">
-
+              <?php displayDataProyek($apiResult->result->dataProyek); ?>
             </tbody>
           </table>
         </div>
@@ -697,6 +697,56 @@ function displayDataChecklist(array $listDataChecklist)
       <td><?php echo $dataChecklist->kdIzin; ?></td>
       <td><?php echo $dataChecklist->namaIzin; ?></td>
       <td><?php echo $dataChecklist->flagChecklist; ?></td>
+    </tr>
+  <?php
+  }
+}
+
+function displayDataProyek(array $listDataProyek)
+{
+  foreach ($listDataProyek as $dataProyek) {
+  ?>
+    <tr>
+      <td>
+        <?php echo $dataProyek->idProyek; ?>
+      </td>
+      <td>
+        <?php echo $dataProyek->kbli; ?>
+      </td>
+      <td>
+        <?php echo $dataProyek->sektor; ?>
+      </td>
+      <td>
+        <?php echo $dataProyek->dataProyekProduk[0]->jenisProduksi; ?>
+      </td>
+      <td>
+        TKI PRIA : <?php echo $dataProyek->jumlahTkiL; ?>
+        <br />TKI WANITA : <?php echo $dataProyek->jumlahTkiP; ?>
+        <br />TKA PRIA : <?php echo $dataProyek->jumlahTkaL; ?>
+        <br />TKA WANITA : <?php echo $dataProyek->jumlahTkaP; ?>
+      </td>
+      <td>
+        Pembelian Pematangan Tanah : <?php echo displayNumberWithSeparator($dataProyek->pembelianPematangTanah); ?>
+        <br />Bangunan Gedung : <?php echo displayNumberWithSeparator($dataProyek->bangunanGedung); ?>
+        <br />Mesin Peralatan : <?php echo displayNumberWithSeparator($dataProyek->mesinPeralatan); ?>
+        <br />Mesin Peralatan USD : <?php echo displayNumberWithSeparator($dataProyek->mesinPeralatanUsd); ?>
+        <br />Sub Jumlah : <?php echo displayNumberWithSeparator($dataProyek->subJumlah); ?>
+        <br />Modal Kerja : <?php echo displayNumberWithSeparator($dataProyek->modalKerja); ?>
+        <br />Total Investasi : <?php echo displayNumberWithSeparator($dataProyek->jumlahInvestasi); ?>
+      </td>
+      <td>
+        <?php echo displayStatusTanah($dataProyek->statusTanah); ?>
+        <br />Luas Tanah : <?php echo displayNumberWithSeparator($dataProyek->luasTanah); ?> <?php echo displaySatuanLuasTanah($dataProyek->satuanLuasTanah); ?>
+      </td>
+      <td>
+        <?php echo $dataProyek->dataLokasiProyek[0]->alamatUsaha; ?>
+      </td>
+      <td>
+        Kapasitas : <?php echo displayNumberWithSeparator($dataProyek->dataProyekProduk[0]->kapasitas); ?>
+        <br />Satuan : <?php echo $dataProyek->dataProyekProduk[0]->satuan; ?>
+        <br />Merk Dagang : <?php echo $dataProyek->dataProyekProduk[0]->merkDagang; ?>
+        <br />Jenis Produksi : <?php echo $dataProyek->dataProyekProduk[0]->jenisProduksi; ?>
+      </td>
     </tr>
 <?php
   }
