@@ -166,7 +166,7 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Dalam Bentuk Uang</label>
-              <input value="<?php echo $apiResult->result->dalamBentukUang; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo displayNumberWithSeparator($apiResult->result->dalamBentukUang); ?>" type="text" class="form-control text-right" disabled>
             </div>
           </div>
           <div class="col-md-4">
@@ -178,7 +178,7 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Total Modal Dasar</label>
-              <input value="<?php echo $apiResult->result->totalModalDasar; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo displayNumberWithSeparator($apiResult->result->totalModalDasar); ?>" type="text" class="form-control text-right" disabled>
             </div>
           </div>
         </div>
@@ -186,7 +186,7 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Total Modal Ditempatkan</label>
-              <input value="<?php echo $apiResult->result->totalModalDitempatkan; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo displayNumberWithSeparator($apiResult->result->totalModalDitempatkan); ?>" type="text" class="form-control text-right" disabled>
             </div>
           </div>
           <div class="col-md-4">
@@ -611,8 +611,8 @@ function displayDataPemegangSaham(array $listDataPemegangSaham)
         <br />Fax : <?php echo $pemegangSaham->faxPemegangSaham; ?>
         <br />E-mail : <?php echo $pemegangSaham->emailPemegangSaham; ?>
       </td>
-      <td>
-        <?php echo $pemegangSaham->totalModalPemegang; ?>
+      <td class="text-right">
+        <?php echo displayNumberWithSeparator($pemegangSaham->totalModalPemegang); ?>
       </td>
     </tr>
   <?php
