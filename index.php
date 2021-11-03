@@ -7,3 +7,4 @@ get('/', $homeRoute);
 get('/login', 'login.php');
 get('/logout', 'logout.php');
 get('/view-nib/$nib', 'modules/nib/displayNib.php');
+get('/sso/receive-token', 'modules/sso/receiveToken.php');
