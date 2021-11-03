@@ -270,7 +270,12 @@
             </tbody>
           </table>`);
       },
-      error: function(xhr, textStatus, errorThrown) {}
+      error: function(xhr, textStatus, errorThrown) {
+        $("#cek_nib").css("color", "white");
+        $('#cek_nib').html('')
+        $( "#nib" ).removeClass("is-valid is-invalid");
+        $('#status_nib').val(0)
+      }
     });
   }
 
