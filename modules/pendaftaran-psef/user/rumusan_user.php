@@ -244,10 +244,8 @@ include('edit_permohonan_script.html');
     let detail_data_save_rs
 
     if (data.data != '') {
-      console.log('a')
 
       if (data.data != '{"detail":[]}') {
-        console.log('b')
         detail_data_save = JSON.parse(data.data)
       }
     }
