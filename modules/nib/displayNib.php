@@ -433,7 +433,7 @@ function displayDateFromJson($jsonDate)
   return $date->format("j M Y");
 }
 
-function displayStatusBadanHukum(string $kodeBadanHukum)
+function displayStatusBadanHukum($kodeBadanHukum)
 {
   switch ($kodeBadanHukum) {
     case "01":
@@ -445,7 +445,7 @@ function displayStatusBadanHukum(string $kodeBadanHukum)
   }
 }
 
-function displayStatusPenanamanModal(string $kodePenanamanModal)
+function displayStatusPenanamanModal($kodePenanamanModal)
 {
   switch ($kodePenanamanModal) {
     case "01":
@@ -459,7 +459,7 @@ function displayStatusPenanamanModal(string $kodePenanamanModal)
   }
 }
 
-function displayJenisPerseroan(string $kodeJenisPerseroan)
+function displayJenisPerseroan($kodeJenisPerseroan)
 {
   switch ($kodeJenisPerseroan) {
     case "01":
@@ -489,7 +489,7 @@ function displayJenisPerseroan(string $kodeJenisPerseroan)
   }
 }
 
-function displayStatusNib(string $kodeStatusNib)
+function displayStatusNib($kodeStatusNib)
 {
   switch ($kodeStatusNib) {
     case "01":
@@ -509,7 +509,7 @@ function displayStatusNib(string $kodeStatusNib)
   }
 }
 
-function displayTipeDokumen(string $kodeTipeDokumen)
+function displayTipeDokumen($kodeTipeDokumen)
 {
   switch ($kodeTipeDokumen) {
     case "9":
@@ -525,7 +525,7 @@ function displayTipeDokumen(string $kodeTipeDokumen)
   }
 }
 
-function displayJenisIdUserProses(string $kodeJenisIdUserProses)
+function displayJenisIdUserProses($kodeJenisIdUserProses)
 {
   switch ($kodeJenisIdUserProses) {
     case "01":
@@ -537,7 +537,7 @@ function displayJenisIdUserProses(string $kodeJenisIdUserProses)
   }
 }
 
-function displayJenisLegalitas(string $kodeJenisLegalitas)
+function displayJenisLegalitas($kodeJenisLegalitas)
 {
   switch ($kodeJenisLegalitas) {
     case "01":
@@ -561,7 +561,7 @@ function displayJenisLegalitas(string $kodeJenisLegalitas)
   }
 }
 
-function displayJenisRptka(string $kodeJenisRptka)
+function displayJenisRptka($kodeJenisRptka)
 {
   switch ($kodeJenisRptka) {
     case "01":
@@ -573,7 +573,7 @@ function displayJenisRptka(string $kodeJenisRptka)
   }
 }
 
-function displayStatusTanah(string $kodeStatusTanah)
+function displayStatusTanah($kodeStatusTanah)
 {
   switch ($kodeStatusTanah) {
     case "01":
@@ -585,7 +585,7 @@ function displayStatusTanah(string $kodeStatusTanah)
   }
 }
 
-function displaySatuanLuasTanah(string $kodeSatuanLuasTanah)
+function displaySatuanLuasTanah($kodeSatuanLuasTanah)
 {
   switch ($kodeSatuanLuasTanah) {
     case "01":
