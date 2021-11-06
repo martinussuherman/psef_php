@@ -423,8 +423,12 @@ function displayNumberWithSeparator($number)
   return number_format($number, 0, ",", ".");
 }
 
-function displayDateFromJson(string $jsonDate)
+function displayDateFromJson($jsonDate)
 {
+  if (is_null($jsonDate)) {
+    return "-";
+  }
+
   $date = DateTime::createFromFormat("Y-m-d\TH:i:sP", $jsonDate);
   return $date->format("j M Y");
 }
