@@ -21,7 +21,7 @@ function displayContent()
 ?>
     <div class="container-fluid">
       <div class="card text-center text-white bg-danger m-3">
-        <h3 class="card-title mt-4">Terdapat masalah dalam menampilkan data NIB</h4>
+        <h3 class="card-title mt-4">Terdapat masalah dalam menampilkan data NIB</h3>
         <div class="card-body">
           Error code: <?php echo $apiResult->result; ?>
         </div>
