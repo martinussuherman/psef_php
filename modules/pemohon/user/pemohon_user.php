@@ -269,6 +269,8 @@ require_once("../../template/common_script.php");
         $("#nib").blur(function() {
             cek_nib()
         });
+
+        cek_nib();
     }
     function update_data(e) {
         e.preventDefault();
