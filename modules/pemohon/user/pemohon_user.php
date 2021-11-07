@@ -261,7 +261,6 @@ require_once("../../template/common_script.php");
     function edit(data) {
         let source = $("#edit-data").html();
         let template = Handlebars.compile(source);
-        let nib = data.nib
         data.straExpiry = moment(data.straExpiry).format("YYYY-MM-DD");
 
         $('#load-data').html(template(data));
