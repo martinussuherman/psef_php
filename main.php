@@ -324,20 +324,16 @@ displayHeader();
           $("#boxed-layout").click();
         }
       }
-      if (local_nib != null) {
-        routing('detail_nib')
-      } else {
-        console.log(role)
-        switch (role) {
-          case "":
-            routing('pemohon_user');
-            break;
-          case "Psef.Admin":
-            routing('pemohon_admin');
-            break;
-          default:
-            routing('welcome');
-        }
+
+      switch (role) {
+        case "":
+          routing('pemohon_user');
+          break;
+        case "Psef.Admin":
+          routing('pemohon_admin');
+          break;
+        default:
+          routing('welcome');
       }
     });
   </script>
