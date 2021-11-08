@@ -304,7 +304,7 @@ function displayBanner($settingData)
     <div class="carousel-item <?php echo $active; ?>">
       <img class="d-block w-100" src="<?php echo "{$settingData->resourceUrl}{$row->url}"; ?>" alt="Banner Image">
     </div>
-<?php
+  <?php
     $index++;
   }
 }
@@ -319,14 +319,14 @@ function displayPerizinan($settingData)
 
   foreach ($apiResponse->value as $row) {
     $issuedDate = DateTime::createFromFormat("Y-m-d\TH:i:sP", $row->issuedAt);
-?>
+  ?>
     <tr>
       <td><?php echo $row->perizinanNumber; ?></td>
       <td><?php echo $row->companyName; ?></td>
       <td><?php echo $row->domain; ?></td>
       <td><?php echo $issuedDate->format("d-m-Y"); ?></td>
     </tr>
-<?php
+  <?php
   }
 }
 
@@ -339,13 +339,13 @@ function displayUnduhan($settingData)
   }
 
   foreach ($apiResponse->value as $row) {
-?>
+  ?>
     <div class="list-group">
       <a href="<?php echo "{$settingData->resourceUrl}{$row->url}"; ?>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start" target="_blank">
         <?php echo $row->title; ?><i class="fa fa-file ml-2"></i>
       </a>
     </div>
-<?php
+  <?php
   }
 }
 
