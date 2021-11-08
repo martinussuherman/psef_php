@@ -90,50 +90,8 @@ require_once("../template/displayPemohon.php");
 
         $('#load-data').html(template(data));
 
-        $.ajax({
-            url: url_api_x+"OssInfo/OssFullInfo?id="+nib,
-            type: 'GET',
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('Authorization', 'Bearer '+accesstoken+'');
-            },
-            dataType: 'json',
-            success: function (data, textStatus, xhr) {
-                if(data.keterangan != "Data NIB tidak ditemukan" && data.keterangan !="NIB harus 13 karakter." && data.keterangan !="Api Key tidak valid"){
-                    $("#cek_nib").css("color", "green");
-                    $('#cek_nib').html('Data NIB Dapat di Gunakan<br><a onclick="detail_nib(`'+nib+'`)" style="color:blue;text-decoration: underline;cursor: pointer;">Periksa Detail NIB</p>')
-                    $( "#nib" ).removeClass("form-control is-invalid").addClass("form-control is-valid");
-                    $('#status_nib').val(1)
-                    $('#nib_view').append(`<table class="table table-bordered">
-                                        <thead class="thead-light">
-                                            <tr>
-                                                <th scope="col">Nama Perusahaan</th>
-                                                <th scope="col">NIB</th>
-                                                <th scope="col">NPWP Perusahaan</th>
-                                                <th scope="col">Nomor Telepon Perusahaan</th>
-                                                <th scope="col">Alamat Perusahaan</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <th>${data.namaPerseroan}</th>
-                                                <th>${data.nib}</th>
-                                                <th>${data.npwpPerseroan}</th>
-                                                <th>${data.nomorTelponPerseroan}</th>
-                                                <th>${data.alamatPerseroan}</th>
-                                            </tr>
-                                        </tbody>
-                                    </table>`)
-                }else{
-                    $("#cek_nib").css("color", "red");
-                    $('#cek_nib').html('Data NIB Tidak di Temukan')
-                    $( "#nib" ).removeClass("form-control is-valid").addClass("form-control is-invalid");
-                    $('#status_nib').val(0)
-                }
-            },
-            error: function (xhr, textStatus, errorThrown) {
-            }
-        });
-    }
+        loadAndDisplayOssData(nib, url_api_x, accesstoken);
+      }
 
     function detail_nib(nib){
         localStorage.setItem("nib", nib);
