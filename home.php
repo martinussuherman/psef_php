@@ -37,19 +37,7 @@ displayHeader();
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mx-5">
-              <li class="nav-item mt-5 mb-3">
-                <a href="/login" class="btn btn-rounded btn-block btn-info">Masuk</a>
-              </li>
-              <li class="nav-item mb-3">
-                <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/Register" class="btn btn-rounded btn-block btn-success" target="_blank">Daftar</a>
-              </li>
-              <li class="nav-item mb-3">
-                <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/ForgotPassword" class="text-white" target="_blank"><i class="fa fa-lock m-r-5"></i> Lupa Kata Sandi?</a>
-              </li>
-            </ul>
-          </div>
+          <?php displayMobileMenu($settingData); ?>
         </nav>
 
         <div class="page-wrapper col-12 col-lg-8 d-block">
@@ -359,4 +347,31 @@ function displayUnduhan($settingData)
     </div>
 <?php
   }
+}
+
+function displayMobileMenu($settingData)
+{
+  ?>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mx-5">
+      <li class="nav-item mt-5 mb-3">
+        <a href="/login" class="btn btn-rounded btn-block btn-info">
+          Masuk
+        </a>
+      </li>
+
+      <li class="nav-item mb-3">
+        <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/Register" class="btn btn-rounded btn-block btn-success" target="_blank">
+          Daftar
+        </a>
+      </li>
+
+      <li class="nav-item mb-3">
+        <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/ForgotPassword" class="text-white" target="_blank">
+          <i class="fa fa-lock m-r-5"></i> Lupa Kata Sandi?
+        </a>
+      </li>
+    </ul>
+  </div>
+<?php
 }
