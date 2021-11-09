@@ -50,9 +50,4 @@ require_once("../template/template.php");
     function view_data(id, id_izin) {
       loadAndDisplayPerizinan(id, id_izin, url_api_x, accesstoken);
     }
-
-    function detail_nib(nib){
-        localStorage.setItem("nib", nib);
-        window.open(url);
-    }
 </script>
