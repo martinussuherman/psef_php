@@ -69,9 +69,8 @@
 </div>
 
 <?php
-include('../../template/common_script.php');
-include('../../template/modal_nib.php');
-include('view_permohonan.php');
+require_once("../../template/common_script.php");
+require_once("view_permohonan.php");
 ?>
 
 <script>
