@@ -61,6 +61,5 @@
 
 <?php
 require_once("../../template/common_script.php");
-require_once("../../template/modal_nib.php");
 require_once("view_pemohon.php");
 ?>
