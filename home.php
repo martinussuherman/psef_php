@@ -34,7 +34,7 @@ displayHeader();
           <img src="/assets/internal/logo-kemkes.png" alt="logo" class="light-logo" height="50px" />
 
           <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <i class="fas fa-bars"></i>
           </button>
 
           <?php displayMobileMenu($settingData); ?>
