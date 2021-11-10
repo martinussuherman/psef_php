@@ -1,6 +1,5 @@
 <?php
-include('../../template/modal_nib.php');
-include('../template/template.php');
+require_once("../template/template.php");
 ?>
 
 <!-- Template for edit -->
