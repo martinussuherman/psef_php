@@ -69,11 +69,6 @@ require_once("../template/template.php");
       loadAndDisplayPerizinan(id, id_izin, url_api_x, accesstoken);
     }
 
-    function detail_nib(nib){
-        localStorage.setItem("nib", nib);
-        window.open(url);
-    }
-
     function edit_data(id) {
         $.ajax({
             url: url_api_x+"Perizinan("+id+")",
