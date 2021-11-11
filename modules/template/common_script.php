@@ -75,6 +75,18 @@
     return row;
   }
 
+  function dataTablePerizinanRow(data, action) {
+    let row = [
+      data.perizinanNumber,
+      data.domain,
+      moment(data.issuedAt).format("YYYY-MM-DD"),
+      moment(data.expiredAt).format("YYYY-MM-DD"),
+      action
+    ];
+
+    return row;
+  }
+
   function configureAjaxRequest(
     moduleName,
     searchedFields,
