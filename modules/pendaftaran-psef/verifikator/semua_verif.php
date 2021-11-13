@@ -52,9 +52,4 @@ include('../template/template_kemkes.php');
     function view_data(id){
       loadAndDisplayPermohonan(id, url_api_x, accesstoken);
     }
-
-    function detail_nib(nib){
-        localStorage.setItem("nib", nib);
-        window.open(url);
-    }
 </script>
