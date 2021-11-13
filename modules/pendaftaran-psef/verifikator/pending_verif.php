@@ -59,11 +59,6 @@ include('../template/template_kemkes.php');
       loadAndDisplayPermohonan(id, url_api_x, accesstoken);
     }
 
-    function detail_nib(nib){
-        localStorage.setItem("nib", nib);
-        window.open(url);
-    }
-
     function reject_data(id){
       permohonanKembalikan(id, url_api_x + 'Permohonan/VerifikatorKembalikan', accesstoken);
     }
