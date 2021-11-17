@@ -1,5 +1,6 @@
 <?php
-require_once("{$_SERVER['DOCUMENT_ROOT']}/router.php");
+set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER["DOCUMENT_ROOT"]);
+require_once("router.php");
 
 $homeRoute = empty($_SESSION["accessToken"]) ? "home.php" : "main.php";
 
