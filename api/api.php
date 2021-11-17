@@ -1,4 +1,9 @@
 <?php
+require_once("configReader.php");
+require_once("apiCall.php");
+
+$settingData = readConfig();
+
 $fpage = isset($_POST['fpage']) ? intval($_POST['fpage']) : 1;
 $frows = isset($_POST['frows']) ? intval($_POST['frows']) : 10;
 $fsearch = isset($_POST['fsearch']) ? strval($_POST['fsearch']) : '';
