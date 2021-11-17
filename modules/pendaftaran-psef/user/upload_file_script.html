@@ -64,7 +64,7 @@
           let split_dokumen = data.value.split("/");
           let name_dokumen = split_dokumen[split_dokumen.length - 1];
           closeElement.html(name_dokumen);
-          closeElement.attr("href", "https://psef.kemkes.go.id" + data.value);
+          closeElement.attr("href", data.value);
           fileInputElement.prop('required', true);
         }
       },
