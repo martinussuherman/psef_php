@@ -2,7 +2,8 @@ const url = "https://psef.kemkes.go.id/";
 const url_api = "https://psef.kemkes.go.id/psefapiodata/api/v1/";
 const url_api_x = "https://psef.kemkes.go.id/psefapiodata/api/v0.1/";
 const url_api_ia = "https://usermanagement-simyanfar.kemkes.go.id/api/";
-const url_api_php = "/api/api.php";
+const url_api_php = "/call-api";
+
 var timer;
 var monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"];
