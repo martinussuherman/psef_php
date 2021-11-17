@@ -32,9 +32,7 @@ if($fsearch){
   $all_search ='';
 }
 
-$url_get_data = "https://psef.kemkes.go.id/psefapiodata/api/v0.1/$fmodul?$all_search%24orderby=$forder%20$fsort&%24top=$frows&%24skip=$foffset&%24count=true";
-// echo $url_get_data;
-// die;
+$url_get_data = "{$settingData->apiServerUrl}/api/v0.1/$fmodul?$all_search%24orderby=$forder%20$fsort&%24top=$frows&%24skip=$foffset&%24count=true";
 
 $curl = curl_init();
 curl_setopt_array($curl, array(
