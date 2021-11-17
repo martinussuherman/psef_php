@@ -1,6 +1,6 @@
 <?php
-require("vendor/autoload.php");
-include("configReader.php");
+require_once("vendor/autoload.php");
+require_once("configReader.php");
 
 $settingData = readConfig();
 $oidc = new Jumbojett\OpenIDConnectClient(
