@@ -46,6 +46,7 @@
               <thead>
                 <tr>
                   <th>Nomor Sertifikat PSEF</th>
+                  <th>Domain</th>
                   <th>Tanggal Terbit</th>
                   <th>Tanggal Berakhir</th>
                   <th>Tindakan</th>
@@ -66,7 +67,7 @@ include('view_perizinan.php');
 
 <script>
   function configurePerizinanRequest(request) {
-    let sortFields = ['perizinanNumber', 'issuedAt', 'expiredAt'];
+    let sortFields = ['perizinanNumber', 'domain', 'issuedAt', 'expiredAt'];
     return configureAjaxRequest('Perizinan', 'perizinanNumber', 1, sortFields, request);
   }
 </script>
