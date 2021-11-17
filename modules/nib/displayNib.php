@@ -1,5 +1,4 @@
 <?php
-set_include_path(get_include_path() . ":" . $_SERVER["DOCUMENT_ROOT"]);
 require_once("configReader.php");
 require_once("apiCall.php");
 require_once("modules/template/pageDisplay.php");
