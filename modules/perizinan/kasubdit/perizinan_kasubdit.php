@@ -17,23 +17,21 @@ require_once("../template/template.php");
             "url": url_api_php,
             "type": "POST",
             "dataSrc": function ( json ) {
-                var data=[];
-                for ( var i=0, ien=json.data.length; i<ien ; i++ ) {
-                var datax = [];
-                datax.push(json.data[i].perizinanNumber);
-                let data_issuedAt = moment(json.data[i].issuedAt).format("YYYY-MM-DD");
-                datax.push(data_issuedAt);
-                let data_expiredAt = moment(json.data[i].expiredAt).format("YYYY-MM-DD");
-                datax.push(data_expiredAt);
+                let data = [];
 
-                var actions = '<td><button onclick="view_data(\''+json.data[i].permohonanId+'\',\''+json.data[i].id+'\')" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">Lihat Detail Data</button><button onclick="window.open(\'https://psef.kemkes.go.id'+json.data[i].tandaDaftarUrl+'\')" target="_blank" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-success">Unduh Tanda Daftar</button></td>';
+                for (let i = 0; i < json.data.length; i++) {
+                  let action =`
+                    <button onclick="view_data('${json.data[i].permohonanId}', '${json.data[i].id}')" class="btn btn-xs btn-block btn-info">
+                      Lihat Detail Data
+                    </button>
+                    <a href="${json.data[i].tandaDaftarUrl}" target="_blank" class="btn btn-xs btn-block btn-success">
+                      Unduh Tanda Daftar
+                    </a>`;
 
-                datax.push(actions);
-
-                data.push(datax);
+                  data.push(dataTablePerizinanRow(json.data[i], action));
                 }
-                return JSON.parse(JSON.stringify(data));
 
+                return data;
             },
 
             "data": function ( d ) {
