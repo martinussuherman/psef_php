@@ -2,6 +2,15 @@
 require_once("configReader.php");
 require_once("apiCall.php");
 
+if (
+  !isset($_GET["access-token"]) ||
+  !isset($_GET["refresh_token"]) ||
+  !isset($_GET["kd_izin"]) ||
+  !isset($_GET["id_izin"])
+) {
+  return;
+}
+
 $ssoAccessToken = $_GET["access-token"];
 $ssoRefreshToken = $_GET["refresh_token"];
 $ssoKodeIzin = $_GET["kd_izin"];
