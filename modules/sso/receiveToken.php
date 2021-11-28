@@ -3,7 +3,7 @@ require_once("configReader.php");
 require_once("apiCall.php");
 
 $ssoAccessToken = $_GET["access-token"];
-$ssoRefreshToken = $_GET["refresh_token"];
+$ssoRefreshToken = $_GET["refresh-token"];
 $ssoKodeIzin = $_GET["kd_izin"];
 $ssoIdIzin = $_GET["id_izin"];
 $redirectTo = $_SERVER["SERVER_NAME"];
