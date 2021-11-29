@@ -190,7 +190,7 @@ displayHeader();
   </aside>
   <div class="chat-windows"></div>
 
-  <?php displayPageScripts(); ?>
+  <?php displayPageScripts(false); ?>
 
   <script>
     //=============================================//

@@ -95,7 +95,7 @@ function displayPage(callable $contentFunction, string $pageTitle)
       </footer>
     </div>
 
-    <?php displayPageScripts(); ?>
+    <?php displayPageScripts(false); ?>
   </body>
 
   </html>
