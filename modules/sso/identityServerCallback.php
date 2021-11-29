@@ -1,5 +1,6 @@
 <?php
-$_SESSION["kodeIzin"] = $_GET["kodeIzin"];
-$_SESSION["idIzin"] = $_GET["idIzin"];
+$_SESSION["ssoSuccess"] = $_GET["statusCode"] == 200;
+$_SESSION["ssoStatusCode"] = $_GET["statusCode"];
+$_SESSION["ssoReason"] = $_GET["reason"];
 
 header("Location: /");
