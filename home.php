@@ -272,6 +272,10 @@ displayHeader();
           console.log('Error in Operation');
         }
       });
+
+      <?php
+      displayOssSsoToaster();
+      ?>
     });
   </script>
 </body>
@@ -376,4 +380,13 @@ function displayMobileMenu($settingData)
     </ul>
   </div>
 <?php
+}
+
+function displayOssSsoToaster()
+{
+  if (!isset($_SESSION["ssoSuccess"])) {
+    return;
+  }
+
+  echo "displayOssSsoToastr({$_SESSION["ssoStatusCode"]}, '{$_SESSION["ssoReason"]}');";
 }
