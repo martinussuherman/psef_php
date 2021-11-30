@@ -34,4 +34,4 @@ setcookie('email',  $idTokenData->email, time() + 86400, "/");
 setcookie('idtoken', $idToken, time() + 86400, "/");
 setcookie('accesstoken', $accessToken, time() + 86400, "/");
 
-header("Location: /");
+header("Location: /dashboard");
