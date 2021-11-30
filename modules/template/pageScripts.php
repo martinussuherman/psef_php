@@ -14,7 +14,7 @@ function displayPageScripts(bool $isHome)
   <script src="/modules/scripts/psef.js"></script>
 
   <?php
-  if ($$isHome) {
+  if ($isHome) {
     return;
   }
   ?>
