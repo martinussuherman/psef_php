@@ -49,3 +49,10 @@ function displayOssSsoToastr(statusCode, message) {
     }
     toastr.error(message, title, options);
 }
+function displayHomeNewsItem(resourceUrl, news, index) {
+    $("#homePageNews").append("<div class=\"col-lg-6\">\n      <div class=\"card\">\n        <img class=\"card-img-top img-responsive\" src=\"" + resourceUrl + news.imageUrl + "\" alt=\"News Image\"/>\n        <div class=\"card-body\">\n          <div class=\"d-flex no-block align-items-center m-b-15\">\n            <span><i class=\"ti-calendar\"></i> " + moment(news.publishedAt).format("YYYY-MM-DD") + "</span>\n          </div>\n          <h3 class=\"font-normal\">" + news.title + "</h3>\n          <p class=\"m-b-0 m-t-10\" id=\"page-news-" + index + "\"></p>\n          <a href=\"" + news.linkUrl + "\" class=\"btn btn-success btn-rounded waves-effect waves-light m-t-20\" target=\"_blank\">\n            Read more\n          </a>\n        </div>\n      </div>\n    </div>");
+    var quill = new Quill("#page-news-" + index, {});
+    quill.setContents(JSON.parse(news.content));
+    quill.disable();
+    $('.ql-editor').css('padding', '0');
+}
