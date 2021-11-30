@@ -2,9 +2,10 @@
 <html lang="en" dir="ltr">
 
 <?php
-include('analytics.php');
-include('modules/template/header.php');
-include("configReader.php");
+require_once('analytics.php');
+require_once('modules/template/header.php');
+require_once('modules/template/pageScripts.php');
+require_once("configReader.php");
 
 $settingData = readConfig();
 displayHeader();
