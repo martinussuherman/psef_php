@@ -1,3 +1,9 @@
+import moment from "moment";
+import { Quill } from "quill";
+import { components as apiv1 } from "./psef-api-v1";
+
+type HomepageNews = apiv1["schemas"]["HomepageNews"];
+
 // Reference: https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
 function setInputFilter(textbox: Element, inputFilter: (value: string) => boolean): void {
   ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function (event) {
@@ -54,4 +60,28 @@ function displayOssSsoToastr(statusCode: number, message: string) {
   }
 
   toastr.error(message, title, options);
+}
+
+function displayHomeNewsItem(resourceUrl: string, news: HomepageNews, index: number) {
+  $("#homePageNews").append(
+    `<div class="col-lg-6">
+      <div class="card">
+        <img class="card-img-top img-responsive" src="${resourceUrl}${news.imageUrl}" alt="News Image"/>
+        <div class="card-body">
+          <div class="d-flex no-block align-items-center m-b-15">
+            <span><i class="ti-calendar"></i> ${moment(news.publishedAt).format("YYYY-MM-DD")}</span>
+          </div>
+          <h3 class="font-normal">${news.title}</h3>
+          <p class="m-b-0 m-t-10" id="page-news-${index}"></p>
+          <a href="${news.linkUrl}" class="btn btn-success btn-rounded waves-effect waves-light m-t-20" target="_blank">
+            Read more
+          </a>
+        </div>
+      </div>
+    </div>`);
+
+  let quill = new Quill(`#page-news-${index}`, {});
+  quill.setContents(JSON.parse(news.content as string));
+  quill.disable();
+  $('.ql-editor').css('padding', '0');
 }
