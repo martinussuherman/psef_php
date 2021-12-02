@@ -225,7 +225,7 @@ displayHeader();
   <script>
     $(document).ready(function() {
       $.ajax({
-        url: url_api + "HomepageNews",
+        url: "<?php echo "{$settingData->apiServerUrl}/api/v1/HomepageNews"; ?>",
         type: 'GET',
         dataType: 'json',
         success: function(data, textStatus, xhr) {
