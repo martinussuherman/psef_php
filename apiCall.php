@@ -1,17 +1,22 @@
 <?php
 function initCurl(string $apiUrl, string $token)
 {
+  $header = [
+    "cache-control: no-cache",
+    "Content-Type: application/json"
+  ];
+
+  if ($token != "") {
+    array_push($header, "Authorization: Bearer {$token}");
+  }
+
   $curl = curl_init();
   curl_setopt_array($curl, array(
     CURLOPT_URL => $apiUrl,
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_TIMEOUT => 30,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_2TLS,
-    CURLOPT_HTTPHEADER => array(
-      "cache-control: no-cache",
-      'Content-Type: application/json',
-      'Authorization: Bearer ' . $token,
-    ),
+    CURLOPT_HTTPHEADER => $header
   ));
 
   return $curl;
