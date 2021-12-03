@@ -175,19 +175,7 @@ displayHeader();
 
         <div class="auth-box on-sidebar text-white col-lg-4 d-none d-lg-block">
           <div id="loginform">
-            <div class="logo mb-3">
-              <img src="/assets/internal/logo-psef-white.png" alt="logo" width="60%" />
-            </div>
-
-            <a href="/login" class="btn btn-block btn-lg btn-rounded btn-primary mt-3">Masuk</a>
-
-            <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/Register" class="btn btn-block btn-lg btn-rounded btn-success mb-2" target="_blank">Daftar</a>
-
-            <div class="text-right mb-3">
-              <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/ForgotPassword" class="text-white" target="_blank">
-                <i class="fa fa-lock m-r-5"></i> Lupa Kata Sandi?
-              </a>
-            </div>
+            <?php displayDesktopLoginLink($settingData); ?>
 
             <div class="form-group mt-4">
               <h3 class="text-center">Kontak Kami</h3>
@@ -354,4 +342,23 @@ function displayOssSsoToaster()
   }
 
   echo "displayOssSsoToastr({$_SESSION["ssoStatusCode"]}, '{$_SESSION["ssoReason"]}');";
+}
+
+function displayDesktopLoginLink($settingData)
+{
+?>
+  <div class="logo mb-3">
+    <img src="/assets/internal/logo-psef-white.png" alt="logo" width="60%" />
+  </div>
+
+  <a href="/login" class="btn btn-block btn-lg btn-rounded btn-primary mt-3">Masuk</a>
+
+  <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/Register" class="btn btn-block btn-lg btn-rounded btn-success mb-2" target="_blank">Daftar</a>
+
+  <div class="text-right mb-3">
+    <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/ForgotPassword" class="text-white" target="_blank">
+      <i class="fa fa-lock m-r-5"></i> Lupa Kata Sandi?
+    </a>
+  </div>
+<?php
 }
