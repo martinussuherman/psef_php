@@ -1,12 +1,19 @@
 <?php
 require_once("vendor/autoload.php");
 require_once("configReader.php");
+require_once("apiCall.php");
 
 $settingData = readConfig();
 $oidc = new Jumbojett\OpenIDConnectClient(
   $settingData->identity->identityServerUrl,
   $settingData->identity->clientId
 );
+
+$postData = [
+  'token' => $_SESSION["ssoAccessToken"]
+];
+
+callPostApi("{$settingData->identity->identityServerUrl}/Oss/RevokeToken", "", $postData);
 
 $idToken = $_SESSION["idToken"];
 session_unset();
