@@ -35,7 +35,7 @@ displayHeader();
             <!-- ============================================================== -->
             <!-- Logo -->
             <!-- ============================================================== -->
-            <a href="/" class="navbar-brand">
+            <a href="/dashboard" class="navbar-brand">
               <!-- Logo icon -->
               <b class="logo-icon">
                 <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
