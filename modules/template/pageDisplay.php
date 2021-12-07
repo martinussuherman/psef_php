@@ -38,7 +38,7 @@ function displayPage(callable $contentFunction, string $pageTitle)
               <!-- ============================================================== -->
               <!-- Logo -->
               <!-- ============================================================== -->
-              <a href="/" class="navbar-brand">
+              <a href="/dashboard" class="navbar-brand">
                 <b class="logo-icon">
                   <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                   <img src="/assets/internal/logo-kemkes.png" alt="homepage" class="dark-logo" height="50px" />
