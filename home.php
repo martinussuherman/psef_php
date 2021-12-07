@@ -319,17 +319,23 @@ function displayMobileMenu($settingData)
         </a>
       </li>
 
-      <li class="nav-item mb-3">
-        <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/Register" class="btn btn-rounded btn-block btn-success" target="_blank">
-          Daftar
-        </a>
-      </li>
+      <?php
+      if (!isset($_SESSION["ssoSuccess"])) {
+      ?>
+        <li class="nav-item mb-3">
+          <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/Register" class="btn btn-rounded btn-block btn-success" target="_blank">
+            Daftar
+          </a>
+        </li>
 
-      <li class="nav-item mb-3">
-        <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/ForgotPassword" class="text-white" target="_blank">
-          <i class="fa fa-lock m-r-5"></i> Lupa Kata Sandi?
-        </a>
-      </li>
+        <li class="nav-item mb-3">
+          <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/ForgotPassword" class="text-white" target="_blank">
+            <i class="fa fa-lock m-r-5"></i> Lupa Kata Sandi?
+          </a>
+        </li>
+      <?php
+      }
+      ?>
     </ul>
   </div>
 <?php
@@ -352,6 +358,12 @@ function displayDesktopLoginLink($settingData)
   </div>
 
   <a href="/login" class="btn btn-block btn-lg btn-rounded btn-primary mt-3">Masuk</a>
+
+  <?php
+  if (isset($_SESSION["ssoSuccess"])) {
+    return;
+  }
+  ?>
 
   <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/Register" class="btn btn-block btn-lg btn-rounded btn-success mb-2" target="_blank">Daftar</a>
 
