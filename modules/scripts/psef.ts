@@ -1,8 +1,10 @@
 import moment from "moment";
 import { Quill } from "quill";
 import { components as apiv1 } from "./psef-api-v1";
+import { components as apiv01 } from "./psef-api-v01";
 
 type HomepageNews = apiv1["schemas"]["HomepageNews"];
+type OssFullInfo = apiv01["schemas"]["OssFullInfo"];
 
 // Reference: https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
 function setInputFilter(textbox: Element, inputFilter: (value: string) => boolean): void {
