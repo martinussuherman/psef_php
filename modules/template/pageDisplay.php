@@ -101,3 +101,17 @@ function displayPage(callable $contentFunction, string $pageTitle)
   </html>
 <?php
 }
+
+function displayError(string $title, $response)
+{
+?>
+  <div class="container-fluid">
+    <div class="card text-center text-white bg-danger m-3">
+      <h3 class="card-title mt-4"><?php echo $title; ?></h3>
+      <div class="card-body">
+        Error code: <?php echo $response->result; ?>
+      </div>
+    </div>
+  </div>
+<?php
+}
