@@ -87,3 +87,14 @@ function displayHomeNewsItem(resourceUrl: string, news: HomepageNews, index: num
   quill.disable();
   $('.ql-editor').css('padding', '0');
 }
+
+function loadData(url: string, token: string) {
+  return $.ajax({
+    url: url,
+    method: "GET",
+    beforeSend: function (xhr) {
+      xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+    },
+    dataType: "json"
+  });
+}
