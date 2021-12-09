@@ -2,6 +2,7 @@
 function displayMenuPemohon($role)
 {
   $route = "";
+  $href = "javascript:void(0)";
 
   switch ($role) {
     case "Psef.Verifikator":
@@ -26,12 +27,12 @@ function displayMenuPemohon($role)
       $route = "routing('pemohon_admin')";
       break;
     default:
-      $route = "routing('pemohon_user')";
+      $href = "/pemohon-user";
       break;
   }
 ?>
   <li class="sidebar-item">
-    <a onclick="<?php echo $route; ?>" class="sidebar-link two-column" href="javascript:void(0)" aria-expanded="false">
+    <a onclick="<?php echo $route; ?>" class="sidebar-link two-column" href="<?php echo $href; ?>" aria-expanded="false">
       <i class="mdi mdi-account-circle"></i>Pemohon
     </a>
   </li>
