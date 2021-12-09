@@ -106,14 +106,15 @@ function loadAndDisplayNib(
   inputElementId: string,
   statusElementId: string,
   viewElementId: string) {
-  if (nib == undefined) {
+  if (nib == undefined || nib == "") {
     return;
   }
 
-  loadData(`${apiServerUrl}OssInfo/OssFullInfo?id=${nib}`, token).then(function (data: OssFullInfo) {
+  loadData(`${apiServerUrl}/api/v0.1/OssInfo/OssFullInfo?id=${nib}`, token).then(function (data: OssFullInfo) {
     if (data.keterangan == 'Data NIB tidak ditemukan' ||
       data.keterangan == 'NIB harus 13 karakter.' ||
       data.keterangan == 'Api Key tidak valid') {
+      $(viewElementId).html("");
       $(statusElementId).css('color', 'red');
       $(statusElementId).html('Data NIB Tidak di Temukan');
       $(inputElementId).removeClass('is-valid').addClass('is-invalid');
