@@ -11,13 +11,13 @@ function displayContent()
   global $passedNib;
 
   $settingData = readConfig();
-  $apiResult = callGetApi(
+  $nibResponse = callGetApi(
     "{$settingData->apiServerUrl}/api/v0.1/OssInfo/OssFullInfo?id={$passedNib}",
     $_SESSION["accessToken"]
   );
 
-  if ($apiResult->success === false) {
-    displayError("Terdapat masalah dalam menampilkan data NIB", $apiResult);
+  if ($nibResponse->success === false) {
+    displayError("Terdapat masalah dalam menampilkan data NIB", $nibResponse);
     return;
   }
   ?>
@@ -59,21 +59,21 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">NIB</label>
-              <input value="<?php echo $apiResult->result->nib; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo $nibResponse->result->nib; ?>" type="text" class="form-control" disabled>
             </div>
           </div>
 
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">OSS ID</label>
-              <input value="<?php echo $apiResult->result->ossId; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo $nibResponse->result->ossId; ?>" type="text" class="form-control" disabled>
             </div>
           </div>
 
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Tanggal Pengajuan NIB</label>
-              <input value="<?php echo displayDateFromJson($apiResult->result->tglPengajuanNib); ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo displayDateFromJson($nibResponse->result->tglPengajuanNib); ?>" type="text" class="form-control" disabled>
             </div>
           </div>
         </div>
@@ -82,21 +82,21 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Tanggal Terbit NIB</label>
-              <input value="<?php echo displayDateFromJson($apiResult->result->tglTerbitNib); ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo displayDateFromJson($nibResponse->result->tglTerbitNib); ?>" type="text" class="form-control" disabled>
             </div>
           </div>
 
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Tanggal Perubahan NIB</label>
-              <input value="<?php echo displayDateFromJson($apiResult->result->tglPerubahanNib); ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo displayDateFromJson($nibResponse->result->tglPerubahanNib); ?>" type="text" class="form-control" disabled>
             </div>
           </div>
 
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">No NPP</label>
-              <input value="<?php echo $apiResult->result->noNpp; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo $nibResponse->result->noNpp; ?>" type="text" class="form-control" disabled>
             </div>
           </div>
         </div>
@@ -105,19 +105,19 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">No VA</label>
-              <input value="<?php echo $apiResult->result->noVa; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo $nibResponse->result->noVa; ?>" type="text" class="form-control" disabled>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">No WLKP</label>
-              <input value="<?php echo $apiResult->result->noWlkp; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo $nibResponse->result->noWlkp; ?>" type="text" class="form-control" disabled>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Badan Hukum</label>
-              <input value="<?php echo displayStatusBadanHukum($apiResult->result->statusBadanHukum); ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo displayStatusBadanHukum($nibResponse->result->statusBadanHukum); ?>" type="text" class="form-control" disabled>
             </div>
           </div>
         </div>
@@ -125,19 +125,19 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Penanaman Modal</label>
-              <input value="<?php echo displayStatusPenanamanModal($apiResult->result->statusPenanamanModal); ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo displayStatusPenanamanModal($nibResponse->result->statusPenanamanModal); ?>" type="text" class="form-control" disabled>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">NPWP</label>
-              <input value="<?php echo $apiResult->result->npwpPerseroan; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo $nibResponse->result->npwpPerseroan; ?>" type="text" class="form-control" disabled>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Nama Perusahaan</label>
-              <input value="<?php echo $apiResult->result->namaPerseroan; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo $nibResponse->result->namaPerseroan; ?>" type="text" class="form-control" disabled>
             </div>
           </div>
         </div>
@@ -145,19 +145,19 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Badan Usaha</label>
-              <input value="<?php echo displayJenisPerseroan($apiResult->result->jenisPerseroan); ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo displayJenisPerseroan($nibResponse->result->jenisPerseroan); ?>" type="text" class="form-control" disabled>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Alamat Perusahaan</label>
-              <textarea class="form-control" rows="7" disabled><?php echo displayAlamatPerseroan($apiResult->result); ?></textarea>
+              <textarea class="form-control" rows="7" disabled><?php echo displayAlamatPerseroan($nibResponse->result); ?></textarea>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Jenis API</label>
-              <input value="<?php echo $apiResult->result->jenisApi; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo $nibResponse->result->jenisApi; ?>" type="text" class="form-control" disabled>
             </div>
           </div>
         </div>
@@ -165,19 +165,19 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Dalam Bentuk Uang</label>
-              <input value="<?php echo displayNumberWithSeparator($apiResult->result->dalamBentukUang); ?>" type="text" class="form-control text-right" disabled>
+              <input value="<?php echo displayNumberWithSeparator($nibResponse->result->dalamBentukUang); ?>" type="text" class="form-control text-right" disabled>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Dalam Bentuk Lain</label>
-              <textarea class="form-control" rows="7" disabled><?php echo $apiResult->result->dalamBentukLain; ?></textarea>
+              <textarea class="form-control" rows="7" disabled><?php echo $nibResponse->result->dalamBentukLain; ?></textarea>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Total Modal Dasar</label>
-              <input value="<?php echo displayNumberWithSeparator($apiResult->result->totalModalDasar); ?>" type="text" class="form-control text-right" disabled>
+              <input value="<?php echo displayNumberWithSeparator($nibResponse->result->totalModalDasar); ?>" type="text" class="form-control text-right" disabled>
             </div>
           </div>
         </div>
@@ -185,19 +185,19 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Total Modal Ditempatkan</label>
-              <input value="<?php echo displayNumberWithSeparator($apiResult->result->totalModalDitempatkan); ?>" type="text" class="form-control text-right" disabled>
+              <input value="<?php echo displayNumberWithSeparator($nibResponse->result->totalModalDitempatkan); ?>" type="text" class="form-control text-right" disabled>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">No Pengesahan</label>
-              <input value="<?php echo $apiResult->result->noPengesahan; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo $nibResponse->result->noPengesahan; ?>" type="text" class="form-control" disabled>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Tgl Pengesahan</label>
-              <input value="<?php echo displayDateFromJson($apiResult->result->tglPengesahan); ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo displayDateFromJson($nibResponse->result->tglPengesahan); ?>" type="text" class="form-control" disabled>
             </div>
           </div>
         </div>
@@ -205,19 +205,19 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">No Akta Lama</label>
-              <input value="<?php echo $apiResult->result->noAktaLama; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo $nibResponse->result->noAktaLama; ?>" type="text" class="form-control" disabled>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Tgl Akta Lama</label>
-              <input value="<?php echo displayDateFromJson($apiResult->result->tglAktaLama); ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo displayDateFromJson($nibResponse->result->tglAktaLama); ?>" type="text" class="form-control" disabled>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">No Pengesahan Lama</label>
-              <input value="<?php echo $apiResult->result->noPengesahanLama; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo $nibResponse->result->noPengesahanLama; ?>" type="text" class="form-control" disabled>
             </div>
           </div>
         </div>
@@ -225,19 +225,19 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Tgl Pengesahan Lama</label>
-              <input value="<?php echo displayDateFromJson($apiResult->result->tglPengesahanLama); ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo displayDateFromJson($nibResponse->result->tglPengesahanLama); ?>" type="text" class="form-control" disabled>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Status NIB</label>
-              <input value="<?php echo displayStatusNib($apiResult->result->statusNib); ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo displayStatusNib($nibResponse->result->statusNib); ?>" type="text" class="form-control" disabled>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Tipe Dokumen</label>
-              <input value="<?php echo displayTipeDokumen($apiResult->result->tipeDokumen); ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo displayTipeDokumen($nibResponse->result->tipeDokumen); ?>" type="text" class="form-control" disabled>
             </div>
           </div>
         </div>
@@ -245,19 +245,19 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Jenis ID User</label>
-              <input value="<?php echo displayJenisIdUserProses($apiResult->result->jenisIdUserProses); ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo displayJenisIdUserProses($nibResponse->result->jenisIdUserProses); ?>" type="text" class="form-control" disabled>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">No ID</label>
-              <input value="<?php echo $apiResult->result->noIdUserProses; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo $nibResponse->result->noIdUserProses; ?>" type="text" class="form-control" disabled>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Nama User</label>
-              <input value="<?php echo $apiResult->result->namaUserProses; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo $nibResponse->result->namaUserProses; ?>" type="text" class="form-control" disabled>
             </div>
           </div>
         </div>
@@ -265,13 +265,13 @@ function displayContent()
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">Email User</label>
-              <input value="<?php echo $apiResult->result->emailUserProses; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo $nibResponse->result->emailUserProses; ?>" type="text" class="form-control" disabled>
             </div>
           </div>
           <div class="col-md-4">
             <div class="form-group">
               <label class="control-label">No HP User</label>
-              <input value="<?php echo $apiResult->result->hpUserProses; ?>" type="text" class="form-control" disabled>
+              <input value="<?php echo $nibResponse->result->hpUserProses; ?>" type="text" class="form-control" disabled>
             </div>
           </div>
         </div>
@@ -294,7 +294,7 @@ function displayContent()
               </tr>
             </thead>
             <tbody class="detail-item-proyek">
-              <?php displayDataProyek($apiResult->result->dataProyek); ?>
+              <?php displayDataProyek($nibResponse->result->dataProyek); ?>
             </tbody>
           </table>
         </div>
@@ -311,7 +311,7 @@ function displayContent()
               </tr>
             </thead>
             <tbody class="detail-item-ps">
-              <?php displayDataPemegangSaham($apiResult->result->pemegangSaham); ?>
+              <?php displayDataPemegangSaham($nibResponse->result->pemegangSaham); ?>
             </tbody>
           </table>
         </div>
@@ -327,7 +327,7 @@ function displayContent()
               </tr>
             </thead>
             <tbody class="detail-item-pj">
-              <?php displayDataPenanggungJawab($apiResult->result->penanggungJwb); ?>
+              <?php displayDataPenanggungJawab($nibResponse->result->penanggungJwb); ?>
             </tbody>
           </table>
         </div>
@@ -343,7 +343,7 @@ function displayContent()
               </tr>
             </thead>
             <tbody class="detail-item-legilitas">
-              <?php displayDataLegalitas($apiResult->result->legalitas); ?>
+              <?php displayDataLegalitas($nibResponse->result->legalitas); ?>
             </tbody>
           </table>
         </div>
@@ -364,7 +364,7 @@ function displayContent()
               </tr>
             </thead>
             <tbody class="detail-item-rptka">
-              <?php displayDataRptka($apiResult->result->dataRptka); ?>
+              <?php displayDataRptka($nibResponse->result->dataRptka); ?>
             </tbody>
           </table>
         </div>
@@ -379,7 +379,7 @@ function displayContent()
               </tr>
             </thead>
             <tbody class="detail-item-dni">
-              <?php displayDataDni($apiResult->result->dataDni); ?>
+              <?php displayDataDni($nibResponse->result->dataDni); ?>
             </tbody>
           </table>
         </div>
@@ -398,7 +398,7 @@ function displayContent()
               </tr>
             </thead>
             <tbody class="detail-item-ck">
-              <?php displayDataChecklist($apiResult->result->dataChecklist); ?>
+              <?php displayDataChecklist($nibResponse->result->dataChecklist); ?>
             </tbody>
           </table>
         </div>
