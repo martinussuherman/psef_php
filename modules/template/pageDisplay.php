@@ -4,7 +4,7 @@ require_once("header.php");
 require_once("menu.php");
 require_once("pageScripts.php");
 
-function displayPage(callable $contentFunction, string $pageTitle)
+function displayPage(callable $contentFunction, callable $scriptFunction, string $pageTitle)
 {
   $settingData = readConfig();
   $role = $_SESSION["role"];
@@ -95,7 +95,13 @@ function displayPage(callable $contentFunction, string $pageTitle)
       </footer>
     </div>
 
-    <?php displayPageScripts(false); ?>
+    <?php
+    displayPageScripts(false);
+
+    if ($scriptFunction != "") {
+      $scriptFunction();
+    }
+    ?>
   </body>
 
   </html>

@@ -755,4 +755,4 @@ function displayDataProyek(array $listDataProyek)
   }
 }
 
-displayPage("displayContent", "Sistem PSEF - Detail NIB");
+displayPage("displayContent", "", "Sistem PSEF - Detail NIB");
