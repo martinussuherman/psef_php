@@ -98,3 +98,55 @@ function loadData(url: string, token: string) {
     dataType: "json"
   });
 }
+
+function loadAndDisplayNib(
+  nib: string | undefined,
+  apiServerUrl: string,
+  token: string,
+  inputElementId: string,
+  statusElementId: string,
+  viewElementId: string) {
+  if (nib == undefined) {
+    return;
+  }
+
+  loadData(`${apiServerUrl}OssInfo/OssFullInfo?id=${nib}`, token).then(function (data: OssFullInfo) {
+    if (data.keterangan == 'Data NIB tidak ditemukan' ||
+      data.keterangan == 'NIB harus 13 karakter.' ||
+      data.keterangan == 'Api Key tidak valid') {
+      $(statusElementId).css('color', 'red');
+      $(statusElementId).html('Data NIB Tidak di Temukan');
+      $(inputElementId).removeClass('is-valid').addClass('is-invalid');
+      return;
+    }
+
+    $(statusElementId).css('color', 'green');
+    $(statusElementId).html(`
+      Data NIB Dapat di Gunakan<br>
+      <a href="/view-nib/${nib}" class="btn btn-primary" target="_blank">
+        Periksa Detail NIB
+      </a>`);
+    $(inputElementId).removeClass('is-invalid').addClass('is-valid');
+    $(viewElementId).append(`
+      <table class="table table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Nama Perusahaan</th>
+            <th scope="col">NIB</th>
+            <th scope="col">NPWP Perusahaan</th>
+            <th scope="col">Nomor Telepon Perusahaan</th>
+            <th scope="col">Alamat Perusahaan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>${data.namaPerseroan}</th>
+            <th>${data.nib}</th>
+            <th>${data.npwpPerseroan}</th>
+            <th>${data.nomorTelponPerseroan}</th>
+            <th>${data.alamatPerseroan}</th>
+          </tr>
+        </tbody>
+      </table>`);
+  });
+}
