@@ -170,3 +170,27 @@ function loadAndDisplayNib(
       </table>`);
   });
 }
+
+function dataTablePemohon(elementSelector: string, url: string) {
+  jQuery(function () {
+    $(elementSelector).DataTable({
+      processing: true,
+      serverSide: true,
+      ajax: {
+        url: url,
+        method: "POST"
+      },
+      columns: [
+        { data: "id" },
+        { data: "phone" },
+        { data: "address" },
+        { data: "nib" },
+        { data: "companyName" },
+        { data: "penanggungJawab" }
+        // "userId": "string",
+        // "name": "string",
+        // "email": "string"
+      ]
+    });
+  });
+}
