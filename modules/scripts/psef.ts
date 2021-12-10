@@ -133,7 +133,7 @@ function loadAndDisplayNib(
         Periksa Detail NIB
       </a>`);
     $(inputElementId).removeClass('is-invalid').addClass('is-valid');
-    $(viewElementId).append(`
+    $(viewElementId).html(`
       <table class="table table-bordered">
         <thead class="thead-light">
           <tr>
