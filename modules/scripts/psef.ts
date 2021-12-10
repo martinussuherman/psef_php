@@ -33,6 +33,20 @@ function setNumberOnlyInputFilter(textbox: Element) {
   });
 }
 
+function setSaveButtonStateOnInputChanged(formElementId: string, saveButtonElementId: string) {
+  $(formElementId)
+    .each(function () {
+      $(this).data("serialized", $(this).serialize());
+    })
+    .on("change input", function () {
+      $(this)
+        .find(saveButtonElementId)
+        .prop("disabled", $(this).serialize() == $(this).data("serialized"));
+    })
+    .find(saveButtonElementId)
+    .prop("disabled", true);
+}
+
 function setToastrOptions() {
   let options: ToastrOptions = {
     closeButton: true,
