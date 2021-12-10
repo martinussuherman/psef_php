@@ -33,6 +33,12 @@ function setNumberOnlyInputFilter(textbox: Element) {
   });
 }
 
+function setPhoneNumberInputFilter(textbox: Element) {
+  setInputFilter(textbox, function (value) {
+    return /^[+\d\s-+]*$/.test(value);
+  });
+}
+
 function setSaveButtonStateOnInputChanged(formElementId: string, saveButtonElementId: string) {
   $(formElementId)
     .each(function () {
