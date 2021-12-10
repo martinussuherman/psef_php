@@ -55,23 +55,7 @@ function setToastrOptions() {
 }
 
 function displayOssSsoToastr(statusCode: number, message: string) {
-  let options: ToastrOptions = {
-    closeButton: true,
-    debug: false,
-    newestOnTop: false,
-    progressBar: false,
-    positionClass: "toast-bottom-right",
-    preventDuplicates: false,
-    showDuration: 0,
-    hideDuration: 1000,
-    timeOut: 0,
-    extendedTimeOut: 0,
-    showEasing: "swing",
-    hideEasing: "linear",
-    showMethod: "fadeIn",
-    hideMethod: "fadeOut"
-  };
-
+  let options = setToastrOptions();
   let title = "OSS SSO";
 
   if (statusCode == 200) {
