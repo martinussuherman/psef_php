@@ -9,4 +9,5 @@ get('/logout', 'logout.php');
 get('/view-nib/$nib', 'modules/nib/displayNib.php');
 get('/sso/receive-token', 'modules/sso/receiveToken.php');
 get('/sso/ids-sso', 'modules/sso/identityServerCallback.php');
+get('/pemohon-user', 'modules/pemohon/displayPemohonUser.php');
 post('/call-api', 'api/api.php');
