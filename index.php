@@ -1,6 +1,10 @@
 <?php
 set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER["DOCUMENT_ROOT"]);
 require_once("router.php");
+require_once("configReader.php");
+
+global $settingData;
+$settingData = readConfig();
 
 get('/', 'home.php');
 get('/dashboard', 'main.php');
