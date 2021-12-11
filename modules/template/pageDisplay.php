@@ -3,7 +3,7 @@ require_once("header.php");
 require_once("menu.php");
 require_once("pageScripts.php");
 
-function displayPage(callable $contentFunction, callable $scriptFunction, string $pageTitle)
+function displayPage(callable $contentFunction, $scriptFunction, string $pageTitle)
 {
   global $settingData;
   $role = $_SESSION["role"];
@@ -97,7 +97,7 @@ function displayPage(callable $contentFunction, callable $scriptFunction, string
     <?php
     displayPageScripts(false);
 
-    if ($scriptFunction != "") {
+    if (is_callable($scriptFunction)) {
       $scriptFunction();
     }
     ?>
