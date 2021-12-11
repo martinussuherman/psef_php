@@ -1,5 +1,4 @@
 <?php
-require_once("configReader.php");
 require_once("apiCall.php");
 require_once("modules/template/pageDisplay.php");
 
@@ -8,9 +7,9 @@ $passedNib = $nib;
 
 function displayContent()
 {
+  global $settingData;
   global $passedNib;
 
-  $settingData = readConfig();
   $nibResponse = callGetApi(
     "{$settingData->apiServerUrl}/api/v0.1/OssInfo/OssFullInfo?id={$passedNib}",
     $_SESSION["accessToken"]

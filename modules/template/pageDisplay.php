@@ -1,12 +1,11 @@
 <?php
-require_once("configReader.php");
 require_once("header.php");
 require_once("menu.php");
 require_once("pageScripts.php");
 
 function displayPage(callable $contentFunction, callable $scriptFunction, string $pageTitle)
 {
-  $settingData = readConfig();
+  global $settingData;
   $role = $_SESSION["role"];
 ?>
   <!DOCTYPE html>

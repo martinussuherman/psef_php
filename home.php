@@ -5,9 +5,8 @@
 require_once('analytics.php');
 require_once('modules/template/header.php');
 require_once('modules/template/pageScripts.php');
-require_once("configReader.php");
 
-$settingData = readConfig();
+global $settingData;
 displayHeader();
 ?>
 

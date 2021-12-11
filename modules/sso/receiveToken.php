@@ -1,7 +1,7 @@
 <?php
-require_once("configReader.php");
 require_once("apiCall.php");
 
+global $settingData;
 $currentDate = new DateTime();
 $ssoAccessToken = $_GET["access-token"];
 $ssoRefreshToken = $_GET["refresh-token"];
@@ -19,7 +19,6 @@ $_SESSION["ssoIdIzin"] = $ssoIdIzin;
 file_put_contents("oss-sso-receive-token.log", "{$currentDate->format('Y-m-d H:i:s')} - Query string: {$query}\n", FILE_APPEND);
 file_put_contents("oss-sso-receive-token.log", "from: {$from} access token: {$ssoAccessToken} - refresh token: {$ssoRefreshToken} - kode izin: {$ssoKodeIzin} - id izin: {$ssoIdIzin}\n", FILE_APPEND);
 
-$settingData = readConfig();
 $location =
   "Location: {$settingData->identity->identityServerUrl}/Oss" .
   "?accessToken={$ssoAccessToken}" .

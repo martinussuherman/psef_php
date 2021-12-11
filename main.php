@@ -9,9 +9,8 @@ $role = $_SESSION["role"];
 include("modules/template/header.php");
 include("modules/template/menu.php");
 include("modules/template/pageScripts.php");
-include("configReader.php");
 
-$settingData = readConfig();
+global $settingData;
 displayHeader();
 ?>
 
