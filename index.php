@@ -7,6 +7,12 @@ global $settingData;
 $settingData = readConfig();
 
 get('/', 'home.php');
+
+if (!isset($_SESSION["accessToken"])) {
+  header("Location: /");
+  return;
+}
+
 get('/dashboard', 'main.php');
 get('/login', 'login.php');
 get('/logout', 'logout.php');
