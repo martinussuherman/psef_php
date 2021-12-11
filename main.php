@@ -250,14 +250,11 @@ displayHeader();
     }
 
     function unset_sess() {
-      delCookie("sid");
-      delCookie("role");
       window.location = 'logout.php';
     }
   </script>
 
   <script type="text/javascript">
-    const sid = "<?php echo $_COOKIE['sid'] ?>";
     const role = "<?php echo $role; ?>";
 
     $(document).ready(function() {
@@ -279,9 +276,6 @@ displayHeader();
       });
 
       var local_nib = localStorage.getItem("nib");
-      if (sid == '') {
-        unset_sess();
-      }
       $(document).keydown(function(e) {
         keyboardShortcut({
           debug: false,
