@@ -1,6 +1,7 @@
 <?php
 function displayPageScripts(bool $isHome)
 {
+  global $settingData;
 ?>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha512-pgGHFWjBtbKHTTDW5buGZ9mU0nGfxNavf5kWK/Od2ugA//9FuMHAunkAiMe5jeL/5WW1r0UxwKi6D5LpMOJD3w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -60,5 +61,10 @@ function displayPageScripts(bool $isHome)
   <script src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
   <!-- Handlebars -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+
+  <script>
+    let apiv1Url = "<?php echo $settingData->apiServerUrl; ?>/api/v1/";
+    let apiv01Url = "<?php echo $settingData->apiServerUrl; ?>/api/v0.1/";
+  </script>
 <?php
 }
