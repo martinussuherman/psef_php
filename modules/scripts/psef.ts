@@ -5,6 +5,7 @@ import { components as apiv01 } from "./psef-api-v01";
 
 type HomepageNews = apiv1["schemas"]["HomepageNews"];
 type OssFullInfo = apiv01["schemas"]["OssFullInfo"];
+type VoidFunction = () => void;
 
 // Reference: https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
 function setInputFilter(textbox: Element, inputFilter: (value: string) => boolean): void {
@@ -121,6 +122,41 @@ function loadData(url: string, token: string) {
       xhr.setRequestHeader("Authorization", `Bearer ${token}`);
     },
     dataType: "json"
+  });
+}
+
+function patchData(
+  url: string,
+  token: string,
+  toastrTitle: string,
+  successMessage: string,
+  errorMessage: string,
+  formElementSelector: string,
+  routingFunction: VoidFunction) {
+  let formElement = document.querySelector(formElementSelector) as HTMLFormElement;
+  let inputData = Object.fromEntries(new FormData(formElement).entries());
+
+  let options = setToastrOptions();
+
+  $.ajax({
+    url: url,
+    type: "PATCH",
+    beforeSend: function (xhr) {
+      xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+    },
+    data: inputData,
+    contentType: "application/json",
+    success: function (this, data, textStatus, xhr) {
+      if (xhr.status == 204 || xhr.status == 200) {
+        routingFunction();
+        toastr.success(successMessage, toastrTitle, options);
+      } else {
+        toastr.error(errorMessage, toastrTitle, options);
+      }
+    },
+    error: function (xhr, textStatus, errorThrown) {
+      toastr.error(errorMessage, toastrTitle, options);
+    }
   });
 }
 
