@@ -8,11 +8,13 @@ $oidc = new Jumbojett\OpenIDConnectClient(
   $settingData->identity->clientId
 );
 
-$postData = [
-  'token' => $_SESSION["ssoAccessToken"]
-];
+if (isset($_SESSION["ssoAccessToken"])) {
+  $postData = [
+    'token' => $_SESSION["ssoAccessToken"]
+  ];
 
-callPostApi("{$settingData->identity->identityServerUrl}/Oss/RevokeToken", "", $postData);
+  callPostApi("{$settingData->identity->identityServerUrl}/Oss/RevokeToken", "", $postData);
+}
 
 $idToken = $_SESSION["idToken"];
 session_unset();
