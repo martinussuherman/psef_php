@@ -144,7 +144,7 @@ function patchData(
     beforeSend: function (xhr) {
       xhr.setRequestHeader("Authorization", `Bearer ${token}`);
     },
-    data: inputData,
+    data: JSON.stringify(inputData),
     contentType: "application/json",
     success: function (this, data, textStatus, xhr) {
       if (xhr.status == 204 || xhr.status == 200) {
