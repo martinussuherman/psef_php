@@ -39,7 +39,7 @@ function displayContent()
     }
 
     $phone = $userInfoResponse->result->telp;
-    $address = $userInfoResponse->result->alamat;
+    $address = is_null($userInfoResponse->result->alamat) ? "" : $userInfoResponse->result->alamat;
     $nib = $userInfoResponse->result->dataNib[0];
 
     $postData = [
