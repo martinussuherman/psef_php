@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+if ($_SESSION["role"] == "") {
+?>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="card mt-5 py-3">
+          <div class="card-header text-center">
+            <h3>Selamat datang di Sistem PSEF, untuk melanjutkan silahkan pilih pada menu yang ada</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  <?php
+  return;
+}
+  ?>
+
 <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-5 align-self-center">
