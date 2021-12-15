@@ -27,7 +27,7 @@ function setNumberOnlyInputFilter(textbox) {
 }
 function setPhoneNumberInputFilter(textbox) {
     setInputFilter(textbox, function (value) {
-      return /^[+\d\s-+]*$/.test(value);
+        return /^[+\d\s-+]*$/.test(value);
     });
 }
 function setSaveButtonStateOnInputChanged(formElementId, saveButtonElementId) {
@@ -86,6 +86,32 @@ function loadData(url, token) {
             xhr.setRequestHeader("Authorization", "Bearer " + token);
         },
         dataType: "json"
+    });
+}
+function patchData(url, token, toastrTitle, successMessage, errorMessage, formElementSelector, routingFunction) {
+    var formElement = document.querySelector(formElementSelector);
+    var inputData = Object.fromEntries(new FormData(formElement).entries());
+    var options = setToastrOptions();
+    $.ajax({
+        url: url,
+        type: "PATCH",
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Bearer " + token);
+        },
+        data: JSON.stringify(inputData),
+        contentType: "application/json",
+        success: function (data, textStatus, xhr) {
+            if (xhr.status == 204 || xhr.status == 200) {
+                routingFunction();
+                toastr.success(successMessage, toastrTitle, options);
+            }
+            else {
+                toastr.error(errorMessage, toastrTitle, options);
+            }
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            toastr.error(errorMessage, toastrTitle, options);
+        }
     });
 }
 function loadAndDisplayNib(nib, apiServerUrl, token, inputElementId, statusElementId, viewElementId) {
