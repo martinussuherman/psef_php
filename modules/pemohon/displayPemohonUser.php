@@ -30,7 +30,7 @@ function displayContent()
     $userInfoResponse = callPostApi(
       "{$settingData->identity->identityServerUrl}/Oss/UserInfo",
       "",
-      $postData
+      json_encode($postData)
     );
 
     if ($userInfoResponse->success === false) {
@@ -52,7 +52,7 @@ function displayContent()
     $savePemohonResponse = callPostApi(
       "{$settingData->apiServerUrl}/api/v0.1/Pemohon/CurrentUser",
       $_SESSION["accessToken"],
-      $postData
+      json_encode($postData)
     );
 
     if ($savePemohonResponse->success === false) {
