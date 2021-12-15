@@ -125,8 +125,9 @@ function loadData(url: string, token: string) {
   });
 }
 
-function patchData(
+function submitFormData(
   url: string,
+  type: string,
   token: string,
   toastrTitle: string,
   successMessage: string,
@@ -140,7 +141,7 @@ function patchData(
 
   $.ajax({
     url: url,
-    type: "PATCH",
+    type: type,
     beforeSend: function (xhr) {
       xhr.setRequestHeader("Authorization", `Bearer ${token}`);
     },
