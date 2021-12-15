@@ -131,8 +131,8 @@ function displayPemohonUserScript()
     function updatePemohon(event) {
       event.preventDefault();
       patchData(
-        apiv01Url + 'Pemohon/CurrentUser',
-        accesstoken,
+        "<?php echo $settingData->apiServerUrl; ?>/api/v0.1/Pemohon/CurrentUser",
+        "<?php echo $_SESSION["accessToken"]; ?>",
         "Perubahan Data Pemohon",
         "Data Pemohon Berhasil Disimpan",
         "Data Pemohon Gagal Disimpan",
