@@ -92,7 +92,7 @@ function displayContent()
 
         <div id="view-nib"></div>
 
-        <input type="hidden" name="id" value="" type="number">
+        <input value="<?php echo $_SESSION["userId"]; ?>" type="hidden" name="userId">
         <button id="save-pemohon" type="submit" class="btn btn-primary">Simpan</button>
       </form>
     </div>
