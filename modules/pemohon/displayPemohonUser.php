@@ -2,6 +2,9 @@
 require_once("apiCall.php");
 require_once("modules/template/pageDisplay.php");
 
+global $pemohonFound;
+global $isSso;
+
 function displayContent()
 {
   global $settingData;
@@ -10,7 +13,13 @@ function displayContent()
     $_SESSION["accessToken"]
   );
 
-  if ($pemohonResponse->success === false && $pemohonResponse->result != 404) {
+  global $pemohonFound;
+  global $isSso;
+
+  $pemohonFound = $pemohonResponse->result != 404;
+  $isSso = isset($_SESSION["ssoSuccess"]);
+
+  if ($pemohonResponse->success === false && $pemohonFound) {
     displayError("Terdapat masalah dalam menampilkan data Pemohon", $pemohonResponse);
     return;
   }
@@ -19,11 +28,7 @@ function displayContent()
   $address = "";
   $nib = "";
 
-  if (
-    $pemohonResponse->success === false &&
-    $pemohonResponse->result == 404
-    && isset($_SESSION["ssoSuccess"])
-  ) {
+  if ($pemohonResponse->success === false && !$pemohonFound && $isSso) {
     $postData = [
       "token" => $_SESSION["ssoAccessToken"]
     ];
@@ -102,6 +107,10 @@ function displayContent()
 function displayPemohonUserScript()
 {
   global $settingData;
+  global $pemohonFound;
+  global $isSso;
+
+  $type = $pemohonFound || $isSso ? "PATCH" : "POST";
 ?>
   <script>
     jQuery(function() {
@@ -129,9 +138,10 @@ function displayPemohonUserScript()
 
     function updatePemohon(event) {
       event.preventDefault();
-      patchData(
+      submitFormData(
         "<?php echo $settingData->apiServerUrl; ?>/api/v0.1/Pemohon/CurrentUser",
         "<?php echo $_SESSION["accessToken"]; ?>",
+        "<?php echo $type; ?>",
         "Perubahan Data Pemohon",
         "Data Pemohon Berhasil Disimpan",
         "Data Pemohon Gagal Disimpan",
