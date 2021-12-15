@@ -43,7 +43,6 @@ function displayContent()
     $nib = $userInfoResponse->result->dataNib[0];
 
     $postData = [
-      "id" => 0,
       "userId" => "",
       "phone" => $phone,
       "address" => $address,
