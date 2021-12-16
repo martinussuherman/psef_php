@@ -269,9 +269,7 @@ displayHeader();
         success: function(data, textStatus, xhr) {
 
         },
-        error: function(xhr, textStatus, errorThrown) {
-          unset_sess();
-        }
+        error: function(xhr, textStatus, errorThrown) {}
       });
 
       var local_nib = localStorage.getItem("nib");
@@ -319,9 +317,6 @@ displayHeader();
       }
 
       switch (role) {
-        case "":
-          routing('pemohon_user');
-          break;
         case "Psef.Admin":
           routing('pemohon_admin');
           break;
