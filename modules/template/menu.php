@@ -87,13 +87,14 @@ function displayMenuPermohonan($role)
 
 function displayMenuPermohonanAdmin()
 {
+  $href = "javascript:void(0)";
 ?>
   <ul aria-expanded="false" class="collapse first-level">
     <?php
-    displaySidebarMenuItem("routing('rumusan_admin')", "Rumusan", "mdi mdi-file-outline");
-    displaySidebarMenuItem("routing('proses_admin')", "Dalam Proses", "mdi mdi-timer-sand");
-    displaySidebarMenuItem("routing('selesai_admin')", "Selesai", "mdi mdi-check-circle");
-    displaySidebarMenuItem("routing('ditolak_admin')", "Ditolak", "mdi mdi-close-circle");
+    displaySidebarMenuItem("routing('rumusan_admin')", $href, "Rumusan", "mdi mdi-file-outline");
+    displaySidebarMenuItem("routing('proses_admin')", $href, "Dalam Proses", "mdi mdi-timer-sand");
+    displaySidebarMenuItem("routing('selesai_admin')", $href, "Selesai", "mdi mdi-check-circle");
+    displaySidebarMenuItem("routing('ditolak_admin')", $href, "Ditolak", "mdi mdi-close-circle");
     ?>
   </ul>
 <?php
@@ -104,11 +105,11 @@ function displayMenuPermohonanUser()
 ?>
   <ul aria-expanded="false" class="collapse first-level">
     <?php
-    displaySidebarMenuItem("routing('rumusan_user')", "Rumusan", "mdi mdi-file-outline");
-    displaySidebarMenuItem("routing('proses_user')", "Dalam Proses", "mdi mdi-timer-sand");
-    displaySidebarMenuItem("routing('dikembalikan_user')", "Dikembalikan", "mdi mdi-keyboard-return");
-    displaySidebarMenuItem("routing('selesai_user')", "Selesai", "mdi mdi-check-circle");
-    displaySidebarMenuItem("routing('ditolak_user')", "Ditolak", "mdi mdi-close-circle");
+    displaySidebarMenuItem("", "/permohonan-user/rumusan", "Rumusan", "mdi mdi-file-outline");
+    displaySidebarMenuItem("", "/permohonan-user/dalam-proses", "Dalam Proses", "mdi mdi-timer-sand");
+    displaySidebarMenuItem("", "/permohonan-user/dikembalikan", "Dikembalikan", "mdi mdi-keyboard-return");
+    displaySidebarMenuItem("", "/permohonan-user/selesai", "Selesai", "mdi mdi-check-circle");
+    displaySidebarMenuItem("", "/permohonan-user/ditolak", "Ditolak", "mdi mdi-close-circle");
     ?>
   </ul>
 <?php
@@ -116,12 +117,13 @@ function displayMenuPermohonanUser()
 
 function displayMenuPermohonanValidator()
 {
+  $href = "javascript:void(0)";
 ?>
   <ul aria-expanded="false" class="collapse first-level">
     <?php
-    displaySidebarMenuItem("routing('pending_validator')", "Tertunda", "fa fa-exclamation-circle");
-    displaySidebarMenuItem("routing('done_validator')", "Selesai", "fa fa-check-circle");
-    displaySidebarMenuItem("routing('semua_validator')", "Semua", "mdi mdi-file-multiple");
+    displaySidebarMenuItem("routing('pending_validator')", $href, "Tertunda", "fa fa-exclamation-circle");
+    displaySidebarMenuItem("routing('done_validator')", $href, "Selesai", "fa fa-check-circle");
+    displaySidebarMenuItem("routing('semua_validator')", $href, "Semua", "mdi mdi-file-multiple");
     ?>
   </ul>
 <?php
@@ -129,11 +131,12 @@ function displayMenuPermohonanValidator()
 
 function displayMenuPermohonanPendingSemua(string $pendingRoute, string $allRoute)
 {
+  $href = "javascript:void(0)";
 ?>
   <ul aria-expanded="false" class="collapse first-level">
     <?php
-    displaySidebarMenuItem("routing('{$pendingRoute}')", "Tertunda", "fa fa-exclamation-circle");
-    displaySidebarMenuItem("routing('{$allRoute}')", "Semua", "mdi mdi-file-multiple");
+    displaySidebarMenuItem("routing('{$pendingRoute}')", $href, "Tertunda", "fa fa-exclamation-circle");
+    displaySidebarMenuItem("routing('{$allRoute}')", $href, "Semua", "mdi mdi-file-multiple");
     ?>
   </ul>
 <?php
@@ -197,6 +200,8 @@ function displayMenuAdmin($role)
   if (is_null($role) || $role != "Psef.Admin") {
     return;
   }
+
+  $href = "javascript:void(0)";
 ?>
   <li class="sidebar-item">
     <a class="sidebar-link two-column has-arrow" href="javascript:void(0)" aria-expanded="false">
@@ -205,10 +210,10 @@ function displayMenuAdmin($role)
 
     <ul aria-expanded="false" class="collapse first-level">
       <?php
-      displaySidebarMenuItem("routing('provinsi')", "Provinsi", "mdi mdi-adjust");
-      displaySidebarMenuItem("routing('spanduk')", "Spanduk", "mdi mdi-adjust");
-      displaySidebarMenuItem("routing('berita')", "Berita", "mdi mdi-adjust");
-      displaySidebarMenuItem("routing('unduhan')", "Unduhan", "mdi mdi-adjust");
+      displaySidebarMenuItem("routing('provinsi')", $href, "Provinsi", "mdi mdi-adjust");
+      displaySidebarMenuItem("routing('spanduk')", $href, "Spanduk", "mdi mdi-adjust");
+      displaySidebarMenuItem("routing('berita')", $href, "Berita", "mdi mdi-adjust");
+      displaySidebarMenuItem("routing('unduhan')", $href, "Unduhan", "mdi mdi-adjust");
       ?>
     </ul>
   </li>
@@ -258,11 +263,11 @@ function displayMenuUserInfo(string $email, $settingData)
 <?php
 }
 
-function displaySidebarMenuItem(string $route, string $caption, string $iconClass)
+function displaySidebarMenuItem(string $route, string $href, string $caption, string $iconClass)
 {
 ?>
   <li class="sidebar-item">
-    <a onclick="<?php echo $route; ?>" href="javascript:void()" class="sidebar-link">
+    <a onclick="<?php echo $route; ?>" href="<?php echo $href; ?>" class="sidebar-link">
       <i class="<?php echo $iconClass; ?>"></i><?php echo $caption; ?>
     </a>
   </li>
