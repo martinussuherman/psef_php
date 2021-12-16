@@ -176,12 +176,13 @@ function loadAndDisplayNib(
   token: string,
   inputElementId: string,
   statusElementId: string,
-  viewElementId: string) {
+  viewElementId: string,
+  loaderElementSelector?: string) {
   if (nib == undefined || nib == "") {
     return;
   }
 
-  loadData(`${apiServerUrl}/api/v0.1/OssInfo/OssFullInfo?id=${nib}`, token).then(function (data: OssFullInfo) {
+  loadData(`${apiServerUrl}/api/v0.1/OssInfo/OssFullInfo?id=${nib}`, token, loaderElementSelector).then(function (data: OssFullInfo) {
     if (data.keterangan == 'Data NIB tidak ditemukan' ||
       data.keterangan == 'NIB harus 13 karakter.' ||
       data.keterangan == 'Api Key tidak valid') {
