@@ -147,6 +147,7 @@ function submitFormData(
   let formElement = document.querySelector(formElementSelector) as HTMLFormElement;
   let inputData = Object.fromEntries(new FormData(formElement).entries());
   let options = setToastrOptions();
+  let status = false;
 
   $.ajax({
     url: url,
@@ -169,19 +170,17 @@ function submitFormData(
       if (xhr.status == 200 || xhr.status == 201 || xhr.status == 204) {
         routingFunction();
         toastr.success(successMessage, toastrTitle, options);
-        return true;
+        status = true;
       } else {
-        toastr.error(errorMessage, toastrTitle, options);
-        return false;
+        toastr.error(`${errorMessage} - status: ${xhr.status}`, toastrTitle, options);
       }
     },
     error: function (xhr, textStatus, errorThrown) {
-      toastr.error(errorMessage, toastrTitle, options);
-      return false;
+      toastr.error(`${errorMessage} - status: ${xhr.status}`, toastrTitle, options);
     }
   });
 
-  return false;
+  return status;
 }
 
 function loadAndDisplayNib(
