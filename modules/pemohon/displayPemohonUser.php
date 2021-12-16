@@ -131,7 +131,8 @@ function displayPemohonUserScript()
         "<?php echo $_SESSION["accessToken"]; ?>",
         "#input-nib",
         "#status-nib",
-        "#view-nib");
+        "#view-nib",
+        ".preloader");
     }
 
     function routing() {}
@@ -146,8 +147,8 @@ function displayPemohonUserScript()
         "Data Pemohon Berhasil Disimpan",
         "Data Pemohon Gagal Disimpan",
         "#data-update",
-        routing
-      );
+        routing,
+        ".preloader");
     }
   </script>
 <?php
