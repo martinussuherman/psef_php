@@ -101,7 +101,7 @@ function submitFormData(url, type, token, toastrTitle, successMessage, errorMess
         data: JSON.stringify(inputData),
         contentType: "application/json",
         success: function (data, textStatus, xhr) {
-            if (xhr.status == 204 || xhr.status == 200) {
+            if (xhr.status == 200 || xhr.status == 201 || xhr.status == 204) {
                 routingFunction();
                 toastr.success(successMessage, toastrTitle, options);
             }
