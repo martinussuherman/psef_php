@@ -140,8 +140,8 @@ function displayPemohonUserScript()
       event.preventDefault();
       submitFormData(
         "<?php echo $settingData->apiServerUrl; ?>/api/v0.1/Pemohon/CurrentUser",
-        "<?php echo $_SESSION["accessToken"]; ?>",
         "<?php echo $type; ?>",
+        "<?php echo $_SESSION["accessToken"]; ?>",
         "Perubahan Data Pemohon",
         "Data Pemohon Berhasil Disimpan",
         "Data Pemohon Gagal Disimpan",
