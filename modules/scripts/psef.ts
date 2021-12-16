@@ -196,7 +196,10 @@ function loadAndDisplayNib(
     return;
   }
 
-  loadData(`${apiServerUrl}/api/v0.1/OssInfo/OssFullInfo?id=${nib}`, token, loaderElementSelector).then(function (data: OssFullInfo) {
+  let options = setToastrOptions();
+  let request = loadData(`${apiServerUrl}/api/v0.1/OssInfo/OssFullInfo?id=${nib}`, token, loaderElementSelector);
+
+  request.done(function (data: OssFullInfo) {
     if (data.keterangan == 'Data NIB tidak ditemukan' ||
       data.keterangan == 'NIB harus 13 karakter.' ||
       data.keterangan == 'Api Key tidak valid') {
@@ -235,6 +238,10 @@ function loadAndDisplayNib(
           </tr>
         </tbody>
       </table>`);
+  });
+
+  request.fail(function (xhr, textStatus, errorThrown) {
+    toastr.error(`Gagal mengambil data NIB - status: ${xhr.status}`, "Data NIB", options);
   });
 }
 
