@@ -145,7 +145,6 @@ function submitFormData(
   routingFunction: VoidFunction) {
   let formElement = document.querySelector(formElementSelector) as HTMLFormElement;
   let inputData = Object.fromEntries(new FormData(formElement).entries());
-
   let options = setToastrOptions();
 
   $.ajax({
@@ -160,14 +159,19 @@ function submitFormData(
       if (xhr.status == 200 || xhr.status == 201 || xhr.status == 204) {
         routingFunction();
         toastr.success(successMessage, toastrTitle, options);
+        return true;
       } else {
         toastr.error(errorMessage, toastrTitle, options);
+        return false;
       }
     },
     error: function (xhr, textStatus, errorThrown) {
       toastr.error(errorMessage, toastrTitle, options);
+      return false;
     }
   });
+
+  return false;
 }
 
 function loadAndDisplayNib(
