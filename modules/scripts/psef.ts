@@ -136,22 +136,32 @@ function loadData(url: string, token: string, loaderElementSelector?: string) {
 
 function submitFormData(
   url: string,
-  type: string,
+  method: string,
   token: string,
   toastrTitle: string,
   successMessage: string,
   errorMessage: string,
   formElementSelector: string,
-  routingFunction: VoidFunction) {
+  routingFunction: VoidFunction,
+  loaderElementSelector?: string) {
   let formElement = document.querySelector(formElementSelector) as HTMLFormElement;
   let inputData = Object.fromEntries(new FormData(formElement).entries());
   let options = setToastrOptions();
 
   $.ajax({
     url: url,
-    type: type,
+    method: method,
     beforeSend: function (xhr) {
+      if (typeof loaderElementSelector !== "undefined") {
+        $(loaderElementSelector).fadeIn();
+      }
+
       xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+    },
+    complete: function () {
+      if (typeof loaderElementSelector !== "undefined") {
+        $(loaderElementSelector).fadeOut();
+      }
     },
     data: JSON.stringify(inputData),
     contentType: "application/json",
