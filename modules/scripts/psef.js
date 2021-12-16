@@ -78,25 +78,42 @@ function displayHomeNewsItem(resourceUrl, news, index) {
     quill.disable();
     $('.ql-editor').css('padding', '0');
 }
-function loadData(url, token) {
+function loadData(url, token, loaderElementSelector) {
     return $.ajax({
         url: url,
         method: "GET",
         beforeSend: function (xhr) {
+            if (typeof loaderElementSelector !== "undefined") {
+                $(loaderElementSelector).fadeIn();
+            }
             xhr.setRequestHeader("Authorization", "Bearer " + token);
+        },
+        complete: function () {
+            if (typeof loaderElementSelector !== "undefined") {
+                $(loaderElementSelector).fadeOut();
+            }
         },
         dataType: "json"
     });
 }
-function submitFormData(url, type, token, toastrTitle, successMessage, errorMessage, formElementSelector, routingFunction) {
+function submitFormData(url, method, token, toastrTitle, successMessage, errorMessage, formElementSelector, routingFunction, loaderElementSelector) {
     var formElement = document.querySelector(formElementSelector);
     var inputData = Object.fromEntries(new FormData(formElement).entries());
     var options = setToastrOptions();
+    var status = false;
     $.ajax({
         url: url,
-        type: type,
+        method: method,
         beforeSend: function (xhr) {
+            if (typeof loaderElementSelector !== "undefined") {
+                $(loaderElementSelector).fadeIn();
+            }
             xhr.setRequestHeader("Authorization", "Bearer " + token);
+        },
+        complete: function () {
+            if (typeof loaderElementSelector !== "undefined") {
+                $(loaderElementSelector).fadeOut();
+            }
         },
         data: JSON.stringify(inputData),
         contentType: "application/json",
@@ -104,21 +121,25 @@ function submitFormData(url, type, token, toastrTitle, successMessage, errorMess
             if (xhr.status == 200 || xhr.status == 201 || xhr.status == 204) {
                 routingFunction();
                 toastr.success(successMessage, toastrTitle, options);
+                status = true;
             }
             else {
-                toastr.error(errorMessage, toastrTitle, options);
+                toastr.error(errorMessage + " - status: " + xhr.status, toastrTitle, options);
             }
         },
         error: function (xhr, textStatus, errorThrown) {
-            toastr.error(errorMessage, toastrTitle, options);
+            toastr.error(errorMessage + " - status: " + xhr.status, toastrTitle, options);
         }
     });
+    return status;
 }
-function loadAndDisplayNib(nib, apiServerUrl, token, inputElementId, statusElementId, viewElementId) {
+function loadAndDisplayNib(nib, apiServerUrl, token, inputElementId, statusElementId, viewElementId, loaderElementSelector) {
     if (nib == undefined || nib == "") {
         return;
     }
-    loadData(apiServerUrl + "/api/v0.1/OssInfo/OssFullInfo?id=" + nib, token).then(function (data) {
+    var options = setToastrOptions();
+    var request = loadData(apiServerUrl + "/api/v0.1/OssInfo/OssFullInfo?id=" + nib, token, loaderElementSelector);
+    request.done(function (data) {
         if (data.keterangan == 'Data NIB tidak ditemukan' ||
             data.keterangan == 'NIB harus 13 karakter.' ||
             data.keterangan == 'Api Key tidak valid') {
@@ -132,6 +153,9 @@ function loadAndDisplayNib(nib, apiServerUrl, token, inputElementId, statusEleme
         $(statusElementId).html("\n      Data NIB Dapat di Gunakan<br>\n      <a href=\"/view-nib/" + nib + "\" class=\"btn btn-primary\" target=\"_blank\">\n        Periksa Detail NIB\n      </a>");
         $(inputElementId).removeClass('is-invalid').addClass('is-valid');
         $(viewElementId).html("\n      <table class=\"table table-bordered\">\n        <thead class=\"thead-light\">\n          <tr>\n            <th scope=\"col\">Nama Perusahaan</th>\n            <th scope=\"col\">NIB</th>\n            <th scope=\"col\">NPWP Perusahaan</th>\n            <th scope=\"col\">Nomor Telepon Perusahaan</th>\n            <th scope=\"col\">Alamat Perusahaan</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <th>" + data.namaPerseroan + "</th>\n            <th>" + data.nib + "</th>\n            <th>" + data.npwpPerseroan + "</th>\n            <th>" + data.nomorTelponPerseroan + "</th>\n            <th>" + data.alamatPerseroan + "</th>\n          </tr>\n        </tbody>\n      </table>");
+    });
+    request.fail(function (xhr, textStatus, errorThrown) {
+        toastr.error("Gagal mengambil data NIB - status: " + xhr.status, "Data NIB", options);
     });
 }
 function dataTablePemohon(elementSelector, url) {
