@@ -114,12 +114,21 @@ function displayHomeNewsItem(resourceUrl: string, news: HomepageNews, index: num
   $('.ql-editor').css('padding', '0');
 }
 
-function loadData(url: string, token: string) {
+function loadData(url: string, token: string, loaderElementSelector?: string) {
   return $.ajax({
     url: url,
     method: "GET",
     beforeSend: function (xhr) {
+      if (typeof loaderElementSelector !== "undefined") {
+        $(loaderElementSelector).fadeIn();
+      }
+
       xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+    },
+    complete: function () {
+      if (typeof loaderElementSelector !== "undefined") {
+        $(loaderElementSelector).fadeOut();
+      }
     },
     dataType: "json"
   });
