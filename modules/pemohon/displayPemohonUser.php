@@ -16,10 +16,10 @@ function displayContent()
   global $pemohonFound;
   global $isSso;
 
-  $pemohonFound = $pemohonResponse->result != 404;
+  $pemohonFound = $pemohonResponse->success === true && is_object($pemohonResponse->result);
   $isSso = isset($_SESSION["ssoSuccess"]);
 
-  if ($pemohonResponse->success === false && $pemohonFound) {
+  if (!$pemohonFound && $pemohonResponse->result != 404) {
     displayError("Terdapat masalah dalam menampilkan data Pemohon", $pemohonResponse);
     return;
   }
@@ -28,7 +28,7 @@ function displayContent()
   $address = "";
   $nib = "";
 
-  if ($pemohonResponse->success === false && !$pemohonFound && $isSso) {
+  if (!$pemohonFound && $isSso) {
     $postData = [
       "token" => $_SESSION["ssoAccessToken"]
     ];
@@ -65,7 +65,7 @@ function displayContent()
     }
   }
 
-  if ($pemohonResponse->success === true) {
+  if ($pemohonFound) {
     $phone = $pemohonResponse->result->phone;
     $address = $pemohonResponse->result->address;
     $nib = $pemohonResponse->result->nib;
