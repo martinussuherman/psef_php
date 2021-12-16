@@ -145,6 +145,7 @@ function displayMenuPermohonanPendingSemua(string $pendingRoute, string $allRout
 function displayMenuPerizinan($role)
 {
   $route = "";
+  $href = "javascript:void(0)";
 
   switch ($role) {
     case "Psef.Verifikator":
@@ -169,12 +170,12 @@ function displayMenuPerizinan($role)
       $route = "routing('perizinan_admin')";
       break;
     default:
-      $route = "routing('perizinan_user')";
+      $href= "/tanda-daftar";
       break;
   }
 ?>
   <li class="sidebar-item">
-    <a onclick="<?php echo $route; ?>" class="sidebar-link two-column" href="javascript:void()" aria-expanded="false">
+    <a onclick="<?php echo $route; ?>" class="sidebar-link two-column" href="<?php echo $href; ?>" aria-expanded="false">
       <i class="fa fa-id-card"></i>Tanda Terdaftar
     </a>
   </li>
