@@ -88,13 +88,13 @@ function loadData(url, token) {
         dataType: "json"
     });
 }
-function patchData(url, token, toastrTitle, successMessage, errorMessage, formElementSelector, routingFunction) {
+function submitFormData(url, type, token, toastrTitle, successMessage, errorMessage, formElementSelector, routingFunction) {
     var formElement = document.querySelector(formElementSelector);
     var inputData = Object.fromEntries(new FormData(formElement).entries());
     var options = setToastrOptions();
     $.ajax({
         url: url,
-        type: "PATCH",
+        type: type,
         beforeSend: function (xhr) {
             xhr.setRequestHeader("Authorization", "Bearer " + token);
         },
