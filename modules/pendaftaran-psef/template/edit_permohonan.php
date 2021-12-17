@@ -1,3 +1,6 @@
+<?php
+$fileUrl = $settingData->resourceUrl;
+?>
 <!-- Template for edit -->
 <script id="edit-data" type="text/x-handlebars-template">
    <h4 class="card-title">Ubah Data Permohonan</h4>
@@ -82,7 +85,7 @@
         <div class="form-group">
             <label>Salinan STRA</label>
             <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
-                <a href="https://psef.kemkes.go.id{{straUrl}}" target="_blank" id="close-straUrl">{{name_straUrl}}</a>
+                <a href="<?php echo $fileUrl; ?>{{straUrl}}" target="_blank" id="close-straUrl">{{name_straUrl}}</a>
             </div>
             <input type="file" class="form-control" id="straUrl">
             <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
@@ -91,7 +94,7 @@
         <div class="form-group">
             <label>Surat Permohonan</label>
             <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
-                <a href="https://psef.kemkes.go.id{{suratPermohonanUrl}}" target="_blank" id="close-suratPermohonanUrl">{{name_suratPermohonanUrl}}</a>
+                <a href="<?php echo $fileUrl; ?>{{suratPermohonanUrl}}" target="_blank" id="close-suratPermohonanUrl">{{name_suratPermohonanUrl}}</a>
             </div>
             <input type="file" class="form-control" id="suratPermohonanUrl">
             <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
@@ -100,7 +103,7 @@
         <div class="form-group">
             <label>Dokumen Proses Bisnis</label>
             <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
-                <a href="https://psef.kemkes.go.id{{prosesBisnisUrl}}" target="_blank" id="close-prosesBisnisUrl">{{name_prosesBisnisUrl}}</a>
+                <a href="<?php echo $fileUrl; ?>{{prosesBisnisUrl}}" target="_blank" id="close-prosesBisnisUrl">{{name_prosesBisnisUrl}}</a>
             </div>
             <input type="file" class="form-control" id="prosesBisnisUrl">
             <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
@@ -109,7 +112,7 @@
         <div class="form-group">
             <label>Dokumen Application Programmer Interface Sistem PSEF</label>
             <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
-                <a href="https://psef.kemkes.go.id{{dokumenApiUrl}}" target="_blank" id="close-dokumenApiUrl">{{name_dokumenApiUrl}}</a>
+                <a href="<?php echo $fileUrl; ?>{{dokumenApiUrl}}" target="_blank" id="close-dokumenApiUrl">{{name_dokumenApiUrl}}</a>
             </div>
             <input type="file" class="form-control" id="dokumenApiUrl">
             <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
@@ -118,7 +121,7 @@
         <div class="form-group">
             <label>Dokumen PSE Kominfo</label>
             <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
-                <a href="https://psef.kemkes.go.id{{dokumenPseUrl}}" target="_blank" id="close-dokumenPseUrl">{{name_dokumenPseUrl}}</a>
+                <a href="<?php echo $fileUrl; ?>{{dokumenPseUrl}}" target="_blank" id="close-dokumenPseUrl">{{name_dokumenPseUrl}}</a>
             </div>
             <input type="file" class="form-control" id="dokumenPseUrl">
             <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
@@ -127,7 +130,7 @@
         <div class="form-group">
           <label>Dokumen Izin Usaha Berbentuk IUI/PMSE</label>
           <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
-              <a href="https://psef.kemkes.go.id{{izinUsahaUrl}}" target="_blank" id="close-izinUsahaUrl">{{name_izinUsahaUrl}}</a>
+              <a href="<?php echo $fileUrl; ?>{{izinUsahaUrl}}" target="_blank" id="close-izinUsahaUrl">{{name_izinUsahaUrl}}</a>
           </div>
           <input type="file" class="form-control" id="izinUsahaUrl">
           <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
@@ -136,7 +139,7 @@
         <div class="form-group">
           <label>Surat Pernyataan Komitmen bekerjasama dengan Apotek</label>
           <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
-              <a href="https://psef.kemkes.go.id{{komitmenKerjasamaApotekUrl}}" target="_blank" id="close-komitmenKerjasamaApotekUrl">{{name_komitmenKerjasamaApotekUrl}}</a>
+              <a href="<?php echo $fileUrl; ?>{{komitmenKerjasamaApotekUrl}}" target="_blank" id="close-komitmenKerjasamaApotekUrl">{{name_komitmenKerjasamaApotekUrl}}</a>
           </div>
           <input type="file" class="form-control" id="komitmenKerjasamaApotekUrl">
           <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
@@ -145,7 +148,7 @@
         <div class="form-group">
           <label>Surat Pernyataan Keaslian Dokumen</label>
           <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
-              <a href="https://psef.kemkes.go.id{{pernyataanKeaslianDokumenUrl}}" target="_blank" id="close-pernyataanKeaslianDokumenUrl">{{name_pernyataanKeaslianDokumenUrl}}</a>
+              <a href="<?php echo $fileUrl; ?>{{pernyataanKeaslianDokumenUrl}}" target="_blank" id="close-pernyataanKeaslianDokumenUrl">{{name_pernyataanKeaslianDokumenUrl}}</a>
           </div>
           <input type="file" class="form-control" id="pernyataanKeaslianDokumenUrl">
           <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
@@ -155,7 +158,7 @@
         <!-- <div class="form-group">
             <label>SPPL</label>
             <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
-                <a href="https://psef.kemkes.go.id{{spplUrl}}" target="_blank" id="close-spplUrl">{{name_spplUrl}}</a>
+                <a href="<?php echo $fileUrl; ?>{{spplUrl}}" target="_blank" id="close-spplUrl">{{name_spplUrl}}</a>
             </div>
             <input type="file" class="form-control" id="spplUrl">
             <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
@@ -164,7 +167,7 @@
         <div class="form-group">
             <label>Izin Lokasi</label>
             <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
-                <a href="https://psef.kemkes.go.id{{izinLokasiUrl}}" target="_blank" id="close-izinLokasiUrl">{{name_izinLokasiUrl}}</a>
+                <a href="<?php echo $fileUrl; ?>{{izinLokasiUrl}}" target="_blank" id="close-izinLokasiUrl">{{name_izinLokasiUrl}}</a>
             </div>
             <input type="file" class="form-control" id="izinLokasiUrl">
             <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
@@ -173,7 +176,7 @@
         <div class="form-group">
             <label>IMB</label>
             <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
-                <a href="https://psef.kemkes.go.id{{imbUrl}}" target="_blank" id="close-imbUrl">{{name_imbUrl}}</a>
+                <a href="<?php echo $fileUrl; ?>{{imbUrl}}" target="_blank" id="close-imbUrl">{{name_imbUrl}}</a>
             </div>
             <input type="file" class="form-control" id="imbUrl">
             <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
@@ -182,7 +185,7 @@
         <div class="form-group">
             <label>Pembayaran PNBP</label>
             <div class="border p-10" style="background-color: #e9ecef;padding: .375rem .75rem;">
-                <a href="https://psef.kemkes.go.id{{pembayaranPnbpUrl}}" target="_blank" id="close-pembayaranPnbpUrl">{{name_pembayaranPnbpUrl}}</a>
+                <a href="<?php echo $fileUrl; ?>{{pembayaranPnbpUrl}}" target="_blank" id="close-pembayaranPnbpUrl">{{name_pembayaranPnbpUrl}}</a>
             </div>
             <input type="file" class="form-control" id="pembayaranPnbpUrl">
             <small class="form-text text-muted">*Berkas yang anda upload wajib PDF & size file maksimal 5 MB</small>
