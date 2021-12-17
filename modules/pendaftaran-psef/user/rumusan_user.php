@@ -20,7 +20,7 @@ include('../template/modal_pakta.html');
 include('apotek_script.html');
 include('rumah_sakit_script.html');
 include('upload_file_script.html');
-include('edit_permohonan_script.html');
+include('edit_permohonan_script.php');
 ?>
 
 <script>
