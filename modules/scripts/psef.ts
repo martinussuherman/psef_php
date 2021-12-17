@@ -1,5 +1,6 @@
 import moment from "moment";
 import { Quill } from "quill";
+import Swal from "sweetalert2";
 import { components as apiv1 } from "./psef-api-v1";
 import { components as apiv01 } from "./psef-api-v01";
 
@@ -52,6 +53,28 @@ function setSaveButtonStateOnInputChanged(formElementId: string, saveButtonEleme
     })
     .find(saveButtonElementId)
     .prop("disabled", true);
+}
+
+function fileUploadError(
+  isEdit: boolean,
+  fileInputElement: JQuery<HTMLElement>,
+  closeElement: JQuery<HTMLElement>,
+  viewElement: JQuery<HTMLElement>,
+  errorMessage: string) {
+  if (!isEdit) {
+    fileInputElement.prop("required", true);
+  }
+
+  fileInputElement.val("");
+  closeElement.html("No file chosen");
+  closeElement.attr("href", "#");
+  viewElement.val("");
+
+  Swal.fire({
+    title: "Maaf !",
+    text: errorMessage,
+    icon: "error"
+  });
 }
 
 function setToastrOptions() {
