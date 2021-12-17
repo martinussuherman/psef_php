@@ -36,44 +36,7 @@
     // $('#v-imbUrl').val(data.imbUrl)
     // $('#v-pembayaranPnbpUrl').val(data.pembayaranPnbpUrl)
 
-    $('#straUrl').change(function () {
-      upload_stra('edit')
-    });
-    $('#dokumenApiUrl').change(function () {
-      upload_dokapi('edit')
-    });
-    $('#prosesBisnisUrl').change(function () {
-      upload_bisnis('edit')
-    });
-    $('#suratPermohonanUrl').change(function () {
-      upload_permohonan('edit')
-    });
-    $('#dokumenPseUrl').change(function () {
-      upload_dok_pse('edit')
-    });
-    $('#izinUsahaUrl').change(function () {
-      upload_dok_izin_usaha('edit')
-    });
-    $('#komitmenKerjasamaApotekUrl').change(function () {
-      upload_dok_kka('edit')
-    });
-
-    $('#pernyataanKeaslianDokumenUrl').change(function() {
-      uploadPernyataanKeaslianDokumen('edit');
-    });
-
-    // $('#spplUrl').change(function () {
-    //   upload_sppl('edit')
-    // });
-    // $('#izinLokasiUrl').change(function () {
-    //   upload_izin_lokasi('edit')
-    // });
-    // $('#imbUrl').change(function () {
-    //   upload_imb('edit')
-    // });
-    // $('#pembayaranPnbpUrl').change(function () {
-    //   upload_pnbp('edit')
-    // });
+    uploadHandler(true);
   }
 
   function update_data(event) {
