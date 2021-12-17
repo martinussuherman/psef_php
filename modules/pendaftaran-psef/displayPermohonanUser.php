@@ -39,6 +39,22 @@ function displayPermohonanUserScript()
     let apiServerUrl = "<?php echo $settingData->apiServerUrl; ?>";
     let uploadUrl = `${apiServerUrl}/api/v0.1/UploadUserFile`;
 
+    function uploadHandler(isEdit) {
+      setUploadHandler("straUrl", isEdit, uploadUrl, accesstoken);
+      setUploadHandler("dokumenApiUrl", isEdit, uploadUrl, accesstoken);
+      setUploadHandler("prosesBisnisUrl", isEdit, uploadUrl, accesstoken);
+      setUploadHandler("suratPermohonanUrl", isEdit, uploadUrl, accesstoken);
+      setUploadHandler("dokumenPseUrl", isEdit, uploadUrl, accesstoken);
+      setUploadHandler("izinUsahaUrl", isEdit, uploadUrl, accesstoken);
+      setUploadHandler("komitmenKerjasamaApotekUrl", isEdit, uploadUrl, accesstoken);
+      setUploadHandler("pernyataanKeaslianDokumenUrl", isEdit, uploadUrl, accesstoken);
+
+      // setUploadHandler("spplUrl", isEdit, uploadUrl, accesstoken);
+      // setUploadHandler("izinLokasiUrl", isEdit, uploadUrl, accesstoken);
+      // setUploadHandler("imbUrl", isEdit, uploadUrl, accesstoken);
+      // setUploadHandler("pembayaranPnbpUrl", isEdit, uploadUrl, accesstoken);
+    }
+
     jQuery(function() {
       <?php echo $route; ?>;
     });
