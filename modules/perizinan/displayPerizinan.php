@@ -18,4 +18,4 @@ function displayPerizinanScript()
 <?php
 }
 
-displayPage("displayContent", "displayPerizinanScript", "Sistem PSEF - List Tanda Daftar PSEF");
+displayPage("displayContent", "displayPerizinanScript", "Sistem PSEF - Data Tanda Daftar");
