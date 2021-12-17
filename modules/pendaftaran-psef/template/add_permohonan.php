@@ -1,3 +1,6 @@
+<?php
+$idIzin = isset($_SESSION["ssoIdIzin"]) ? $_SESSION["ssoIdIzin"] : "";
+?>
 <!-- Template for add -->
 <script id="add-data" type="text/x-handlebars-template">
   <h4 class="card-title">Tambah Permohonan</h4>
@@ -67,6 +70,12 @@
               <div class="form-group">
                   <label>Nama Tenaga Ahli</label>
                   <input type="text" class="form-control" name="tenagaAhliName" placeholder="Masukan Nama Tenaga Ahli." required>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="form-group">
+                  <label>OSS Id Izin</label>
+                  <input type="text" value="<?php echo $idIzin; ?>" class="form-control" name="idIzin" disabled>
               </div>
           </div>
         </div>
