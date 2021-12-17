@@ -43,6 +43,62 @@ function setSaveButtonStateOnInputChanged(formElementId, saveButtonElementId) {
         .find(saveButtonElementId)
         .prop("disabled", true);
 }
+function fileUploadError(isEdit, fileInputElement, closeElement, viewElement, errorMessage) {
+    if (!isEdit) {
+        fileInputElement.prop("required", true);
+    }
+    fileInputElement.val("");
+    closeElement.html("No file chosen");
+    closeElement.attr("href", "#");
+    viewElement.val("");
+    Swal.fire({
+        title: "Maaf !",
+        text: errorMessage,
+        icon: "error"
+    });
+}
+function uploadFile(isEdit, url, token, fileInputElement, closeElement, viewElement) {
+    var _a, _b, _c, _d;
+    var fileInput = fileInputElement[0];
+    var fileName = (_c = (_b = (_a = fileInput.files) === null || _a === void 0 ? void 0 : _a.item(0)) === null || _b === void 0 ? void 0 : _b.name) !== null && _c !== void 0 ? _c : "";
+    var file = (_d = fileInput.files) === null || _d === void 0 ? void 0 : _d.item(0);
+    var formData = new FormData();
+    formData.append('file', file);
+    if (!/(.*?)\.(pdf)$/.test(fileName) && fileName != "") {
+        fileUploadError(isEdit, fileInputElement, closeElement, viewElement, "Pastikan berkas yang anda upload berupa PDF");
+        return;
+    }
+    if (file.size <= 0 || file.size > 5300000) {
+        fileUploadError(isEdit, fileInputElement, closeElement, viewElement, "Pastikan berkas yang anda upload maksimal 5 MB");
+        return;
+    }
+    $.ajax({
+        url: url,
+        method: "POST",
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Authorization", "Bearer " + token);
+        },
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function (data, textStatus, xhr) {
+            viewElement.val(data);
+            if (!isEdit) {
+                closeElement.html(fileName);
+                closeElement.attr("href", data);
+                fileInputElement.prop("required", true);
+            }
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            fileUploadError(isEdit, fileInputElement, closeElement, viewElement, "Terdapat masalah dalam upload berkas - status: " + xhr.status);
+        }
+    });
+}
+function setUploadHandler(inputElementId, isEdit, url, token) {
+    $("#" + inputElementId).on("change", function () {
+        uploadFile(isEdit, url, token, $("#" + inputElementId), $("#close-" + inputElementId), $("#v-" + inputElementId));
+    });
+}
 function setToastrOptions() {
     var options = {
         closeButton: true,
