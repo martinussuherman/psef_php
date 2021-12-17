@@ -3,6 +3,7 @@ require_once("apiCall.php");
 require_once("modules/template/pageDisplay.php");
 
 global $passedStatus;
+global $settingData;
 $passedStatus = $status;
 
 function displayContent()
@@ -12,6 +13,7 @@ function displayContent()
 function displayPermohonanUserScript()
 {
   global $passedStatus;
+  global $settingData;
 
   switch ($passedStatus) {
     case "dalam-proses":
@@ -33,6 +35,10 @@ function displayPermohonanUserScript()
   }
 ?>
   <script>
+    let accesstoken = "<?php echo $_SESSION["accessToken"]; ?>";
+    let apiServerUrl = "<?php echo $settingData->apiServerUrl; ?>";
+    let uploadUrl = `${apiServerUrl}/api/v0.1/UploadUserFile`;
+
     jQuery(function() {
       <?php echo $route; ?>;
     });
