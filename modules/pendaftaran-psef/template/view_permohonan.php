@@ -35,16 +35,18 @@
     </button>
 
     <?php
-    if ($extraActions == 'ajukan') {
-      buttonAjukan();
-    }
-
-    if ($extraActions == 'setujui') {
-      buttonTeruskanKembalikan();
-    }
-
-    if ($extraActions == 'validasi') {
-      buttonProsesData();
+    if (isset($extraActions)) {
+      switch ($extraActions) {
+        case "ajukan":
+          buttonAjukan();
+          break;
+        case "setujui":
+          buttonTeruskanKembalikan();
+          break;
+        case "validasi":
+          buttonProsesData();
+          break;
+      }
     }
     ?>
   </form>
