@@ -86,7 +86,7 @@ function uploadFile(
   viewElement: JQuery<HTMLElement>) {
   let fileInput = fileInputElement[0] as HTMLInputElement;
   let fileName = fileInput.files?.item(0)?.name ?? "";
-  let file = new File([""], fileName);
+  let file = fileInput.files?.item(0) as File;
   let formData = new FormData();
   formData.append('file', file);
 
