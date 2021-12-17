@@ -77,6 +77,68 @@ function fileUploadError(
   });
 }
 
+function uploadFile(
+  isEdit: boolean,
+  url: string,
+  token: string,
+  fileInputElement: JQuery<HTMLElement>,
+  closeElement: JQuery<HTMLElement>,
+  viewElement: JQuery<HTMLElement>) {
+  let fileInput = fileInputElement[0] as HTMLInputElement;
+  let fileName = fileInput.files?.item(0)?.name ?? "";
+  let file = new File([""], fileName);
+  let formData = new FormData();
+  formData.append('file', file);
+
+  if (!/(.*?)\.(pdf)$/.test(fileName) && fileName != "") {
+    fileUploadError(
+      isEdit,
+      fileInputElement,
+      closeElement,
+      viewElement,
+      "Pastikan berkas yang anda upload berupa PDF");
+    return;
+  }
+
+  if (file.size <= 0 || file.size > 5300000) {
+    fileUploadError(
+      isEdit,
+      fileInputElement,
+      closeElement,
+      viewElement,
+      "Pastikan berkas yang anda upload maksimal 5 MB");
+    return;
+  }
+
+  $.ajax({
+    url: url,
+    method: "POST",
+    beforeSend: function (xhr) {
+      xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+    },
+    data: formData,
+    processData: false,
+    contentType: false,
+    success: function (data: string, textStatus, xhr) {
+      viewElement.val(data);
+
+      if (!isEdit) {
+        closeElement.html(fileName);
+        closeElement.attr("href", data);
+        fileInputElement.prop("required", true);
+      }
+    },
+    error: function (xhr, textStatus, errorThrown) {
+      fileUploadError(
+        isEdit,
+        fileInputElement,
+        closeElement,
+        viewElement,
+        `Terdapat masalah dalam upload berkas - status: ${xhr.status}`);
+    }
+  });
+}
+
 function setToastrOptions() {
   let options: ToastrOptions = {
     closeButton: true,
