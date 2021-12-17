@@ -1,4 +1,7 @@
 <?php
+set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER["DOCUMENT_ROOT"]);
+require_once("configReader.php");
+$settingData = readConfig();
 $fileUrl = $settingData->resourceUrl;
 ?>
 <!-- Dokumen Penunjang -->
