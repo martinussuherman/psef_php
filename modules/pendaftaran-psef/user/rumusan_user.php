@@ -30,7 +30,7 @@ include('edit_permohonan_script.php');
 <script>
   let accesstoken = "<?php echo $_SESSION["accessToken"]; ?>";
   let apiServerUrl = "<?php echo $settingData->apiServerUrl; ?>";
-  let uploadUrl = `${apiServerUrl}/api/v0.1/File/UploadUserFile`;
+  let uploadUrl = `${apiServerUrl}/api/v0.1/UploadUserFile`;
   var arr_detail_add = [];
   var arr_detail_add_x = [];
   var arr_detail_add_klinik = [];
