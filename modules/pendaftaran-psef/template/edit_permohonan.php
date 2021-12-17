@@ -69,6 +69,12 @@
                   <input type="text" value= "{{tenagaAhliName}}" class="form-control" name="tenagaAhliName" placeholder="Masukan Nama Tenaga Ahli." required>
               </div>
           </div>
+          <div class="col-md-4">
+              <div class="form-group">
+                  <label>OSS Id Izin</label>
+                  <input type="text" value="{{idIzin}}" class="form-control" name="idIzin" disabled>
+              </div>
+          </div>
         </div>
 
 <?php include('permohonan_contoh_surat.php'); ?>
