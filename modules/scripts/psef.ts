@@ -6,6 +6,10 @@ import { components as apiv01 } from "./psef-api-v01";
 
 type HomepageNews = apiv1["schemas"]["HomepageNews"];
 type OssFullInfo = apiv01["schemas"]["OssFullInfo"];
+type FileUploadInfo = {
+  "@odata.context": string,
+  value: string
+};
 type VoidFunction = () => void;
 
 // Reference: https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
@@ -119,12 +123,12 @@ function uploadFile(
     data: formData,
     processData: false,
     contentType: false,
-    success: function (data: string, textStatus, xhr) {
-      viewElement.val(data);
+    success: function (data: FileUploadInfo, textStatus, xhr) {
+      viewElement.val(data.value);
 
       if (!isEdit) {
         closeElement.html(fileName);
-        closeElement.attr("href", data);
+        closeElement.attr("href", data.value);
         fileInputElement.prop("required", true);
       }
     },
