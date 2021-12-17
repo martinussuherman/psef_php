@@ -21,7 +21,6 @@ include('../template/modal_rumah_sakit.html');
 
 include('apotek_script.html');
 include('rumah_sakit_script.html');
-include('upload_file_script.html');
 include('edit_permohonan_script.php');
 ?>
 
