@@ -139,6 +139,19 @@ function uploadFile(
   });
 }
 
+function setUploadHandler(inputElementId: string, isEdit: boolean, url: string, token: string) {
+  $(`#${inputElementId}`).on("change", function () {
+    uploadFile(
+      isEdit,
+      url,
+      token,
+      $(`#${inputElementId}`),
+      $(`#close-${inputElementId}`),
+      $(`#v-${inputElementId}`));
+  });
+
+}
+
 function setToastrOptions() {
   let options: ToastrOptions = {
     closeButton: true,
