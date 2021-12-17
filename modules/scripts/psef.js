@@ -82,10 +82,10 @@ function uploadFile(isEdit, url, token, fileInputElement, closeElement, viewElem
         processData: false,
         contentType: false,
         success: function (data, textStatus, xhr) {
-            viewElement.val(data);
+            viewElement.val(data.value);
             if (!isEdit) {
                 closeElement.html(fileName);
-                closeElement.attr("href", data);
+                closeElement.attr("href", data.value);
                 fileInputElement.prop("required", true);
             }
         },
