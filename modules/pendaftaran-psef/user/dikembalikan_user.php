@@ -1,4 +1,8 @@
 <?php
+session_start();
+set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER["DOCUMENT_ROOT"]);
+require_once("configReader.php");
+$settingData = readConfig();
 $extraActions = 'ajukan';
 $pageTitle = 'Permohonan (Dikembalikan)';
 
@@ -22,7 +26,9 @@ include('edit_permohonan_script.php');
 ?>
 
 <script>
-  var accesstoken = <?php echo json_encode($_COOKIE['accesstoken']); ?>;
+  let accesstoken = "<?php echo $_SESSION["accessToken"]; ?>";
+  let apiServerUrl = "<?php echo $settingData->apiServerUrl; ?>";
+  let uploadUrl = `${apiServerUrl}/api/v0.1/UploadUserFile`;
   var arr_detail_add = [];
   var arr_detail_add_x = [];
   var arr_detail_add_klinik = [];
