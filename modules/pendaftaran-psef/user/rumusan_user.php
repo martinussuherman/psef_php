@@ -170,19 +170,7 @@ include('edit_permohonan_script.php');
       }
     })
 
-    setUploadHandler("straUrl", false, uploadUrl, accesstoken);
-    setUploadHandler("dokumenApiUrl", false, uploadUrl, accesstoken);
-    setUploadHandler("prosesBisnisUrl", false, uploadUrl, accesstoken);
-    setUploadHandler("suratPermohonanUrl", false, uploadUrl, accesstoken);
-    setUploadHandler("dokumenPseUrl", false, uploadUrl, accesstoken);
-    setUploadHandler("izinUsahaUrl", false, uploadUrl, accesstoken);
-    setUploadHandler("komitmenKerjasamaApotekUrl", false, uploadUrl, accesstoken);
-    setUploadHandler("pernyataanKeaslianDokumenUrl", false, uploadUrl, accesstoken);
-
-    // setUploadHandler("spplUrl", false, uploadUrl, accesstoken);
-    // setUploadHandler("izinLokasiUrl", false, uploadUrl, accesstoken);
-    // setUploadHandler("imbUrl", false, uploadUrl, accesstoken);
-    // setUploadHandler("pembayaranPnbpUrl", false, uploadUrl, accesstoken);
+    uploadHandler(false);
 
     let val_modal_pakta = '';
 
