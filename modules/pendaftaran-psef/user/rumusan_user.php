@@ -170,50 +170,19 @@ include('edit_permohonan_script.php');
       }
     })
 
-    $('#straUrl').change(function() {
-      upload_stra()
-    });
+    setUploadHandler("straUrl", false, uploadUrl, accesstoken);
+    setUploadHandler("dokumenApiUrl", false, uploadUrl, accesstoken);
+    setUploadHandler("prosesBisnisUrl", false, uploadUrl, accesstoken);
+    setUploadHandler("suratPermohonanUrl", false, uploadUrl, accesstoken);
+    setUploadHandler("dokumenPseUrl", false, uploadUrl, accesstoken);
+    setUploadHandler("izinUsahaUrl", false, uploadUrl, accesstoken);
+    setUploadHandler("komitmenKerjasamaApotekUrl", false, uploadUrl, accesstoken);
+    setUploadHandler("pernyataanKeaslianDokumenUrl", false, uploadUrl, accesstoken);
 
-    $('#dokumenApiUrl').change(function() {
-      upload_dokapi()
-    });
-
-    $('#prosesBisnisUrl').change(function() {
-      upload_bisnis()
-    });
-
-    $('#suratPermohonanUrl').change(function() {
-      upload_permohonan()
-    });
-
-    $('#dokumenPseUrl').change(function() {
-      upload_dok_pse()
-    });
-
-    $('#izinUsahaUrl').change(function() {
-      upload_dok_izin_usaha()
-    });
-
-    $('#komitmenKerjasamaApotekUrl').change(function() {
-      upload_dok_kka()
-    });
-
-    $('#pernyataanKeaslianDokumenUrl').change(function() {
-      uploadPernyataanKeaslianDokumen();
-    });
-
-    // $('#spplUrl').change(function() {
-    //    upload_sppl()
-    // });
-    // $('#izinLokasiUrl').change(function() {
-    //    upload_izin_lokasi()
-    // });
-    // $('#imbUrl').change(function() {
-    //    upload_imb()
-    // });
-    // $('#pembayaranPnbpUrl').change(function() {
-    //    upload_pnbp()
-    // });
+    // setUploadHandler("spplUrl", false, uploadUrl, accesstoken);
+    // setUploadHandler("izinLokasiUrl", false, uploadUrl, accesstoken);
+    // setUploadHandler("imbUrl", false, uploadUrl, accesstoken);
+    // setUploadHandler("pembayaranPnbpUrl", false, uploadUrl, accesstoken);
 
     let val_modal_pakta = '';
 
