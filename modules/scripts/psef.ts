@@ -244,14 +244,12 @@ function submitFormData(
   url: string,
   method: string,
   token: string,
-  toastrTitle: string,
-  successMessage: string,
-  errorMessage: string,
-  formElementSelector: string,
-  routingFunction: VoidFunction,
+  inputData: string,
+  toastrTitle?: string,
+  successMessage?: string,
+  errorMessage?: string,
+  routingFunction?: VoidFunction,
   loaderElementSelector?: string) {
-  let formElement = document.querySelector(formElementSelector) as HTMLFormElement;
-  let inputData = Object.fromEntries(new FormData(formElement).entries());
   let options = setToastrOptions();
   let status = false;
 
@@ -263,26 +261,35 @@ function submitFormData(
         $(loaderElementSelector).fadeIn();
       }
 
-      xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+      setAuthHeader(xhr, token);
     },
     complete: function () {
       if (typeof loaderElementSelector !== "undefined") {
         $(loaderElementSelector).fadeOut();
       }
     },
-    data: JSON.stringify(inputData),
+    data: inputData,
     contentType: "application/json",
-    success: function (this, data, textStatus, xhr) {
+    success: function (data, textStatus, xhr) {
       if (xhr.status == 200 || xhr.status == 201 || xhr.status == 204) {
-        routingFunction();
-        toastr.success(successMessage, toastrTitle, options);
+        if (typeof routingFunction !== "undefined") {
+          routingFunction();
+        }
+
+        if (typeof successMessage !== "undefined") {
+          toastr.success(successMessage, toastrTitle, options);
+        }
         status = true;
       } else {
-        toastr.error(`${errorMessage} - status: ${xhr.status}`, toastrTitle, options);
+        if (typeof errorMessage !== "undefined") {
+          toastr.error(`${errorMessage} - status: ${xhr.status}`, toastrTitle, options);
+        }
       }
     },
     error: function (xhr, textStatus, errorThrown) {
-      toastr.error(`${errorMessage} - status: ${xhr.status}`, toastrTitle, options);
+      if (typeof errorMessage !== "undefined") {
+        toastr.error(`${errorMessage} - status: ${xhr.status}`, toastrTitle, options);
+      }
     }
   });
 
