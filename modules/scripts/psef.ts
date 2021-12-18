@@ -240,6 +240,21 @@ function loadData(url: string, token: string, loaderElementSelector?: string) {
   });
 }
 
+function submitFormDataByFormElement(
+  url: string,
+  method: string,
+  token: string,
+  formElementSelector: string,
+  toastrTitle?: string,
+  successMessage?: string,
+  errorMessage?: string,
+  routingFunction?: VoidFunction,
+  loaderElementSelector?: string) {
+  let formElement = document.querySelector(formElementSelector) as HTMLFormElement;
+  let inputData = Object.fromEntries(new FormData(formElement).entries());
+  return submitFormData(url, method, token, JSON.stringify(inputData), toastrTitle, successMessage, errorMessage, routingFunction, loaderElementSelector);
+}
+
 function submitFormData(
   url: string,
   method: string,
