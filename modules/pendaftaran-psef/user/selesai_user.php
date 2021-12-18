@@ -4,7 +4,6 @@ include('template.php');
 ?>
 
 <script>
-   var accesstoken = <?php echo json_encode($_COOKIE['accesstoken']); ?>;
    var arr_detail_add = [];
    var arr_detail_add_x = [];
    var id_detail_add = 0;
