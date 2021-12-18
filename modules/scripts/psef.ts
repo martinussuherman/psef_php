@@ -122,7 +122,7 @@ function uploadFile(
     url: url,
     method: "POST",
     beforeSend: function (xhr) {
-      xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+      setAuthHeader(xhr, token);
     },
     data: formData,
     processData: false,
@@ -229,7 +229,7 @@ function loadData(url: string, token: string, loaderElementSelector?: string) {
         $(loaderElementSelector).fadeIn();
       }
 
-      xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+      setAuthHeader(xhr, token);
     },
     complete: function () {
       if (typeof loaderElementSelector !== "undefined") {
