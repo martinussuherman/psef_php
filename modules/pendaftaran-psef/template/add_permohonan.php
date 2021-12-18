@@ -75,7 +75,7 @@ $idIzin = isset($_SESSION["ssoIdIzin"]) ? $_SESSION["ssoIdIzin"] : "";
           <div class="col-md-4">
               <div class="form-group">
                   <label>OSS Id Izin</label>
-                  <input type="text" value="<?php echo $idIzin; ?>" class="form-control" name="idIzin" disabled>
+                  <input type="text" value="<?php echo $idIzin; ?>" class="form-control" name="idIzin" placeholder="Masukan Id Izin." required>
               </div>
           </div>
         </div>
