@@ -59,6 +59,10 @@ function setSaveButtonStateOnInputChanged(formElementId: string, saveButtonEleme
     .prop("disabled", true);
 }
 
+function setAuthHeader(xhr: JQuery.jqXHR, token: string) {
+  xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+}
+
 function fileUploadError(
   isEdit: boolean,
   fileInputElement: JQuery<HTMLElement>,
