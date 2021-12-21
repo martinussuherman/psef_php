@@ -82,7 +82,7 @@ include('edit_permohonan_script.php');
           url: url_api + 'Provinsi',
           type: 'GET',
           beforeSend: function(xhr) {
-            xhr.setRequestHeader('Authorization', 'Bearer ' + accesstoken + '');
+            setAuthHeader(xhr, accesstoken);
           },
           dataType: 'json',
           success: function(data, textStatus, xhr) {
@@ -112,7 +112,7 @@ include('edit_permohonan_script.php');
           url: url_api + 'Provinsi',
           type: 'GET',
           beforeSend: function(xhr) {
-            xhr.setRequestHeader('Authorization', 'Bearer ' + accesstoken + '');
+            setAuthHeader(xhr, accesstoken);
           },
           dataType: 'json',
           success: function(data, textStatus, xhr) {
@@ -142,7 +142,7 @@ include('edit_permohonan_script.php');
           url: url_api + 'Provinsi',
           type: 'GET',
           beforeSend: function(xhr) {
-            xhr.setRequestHeader('Authorization', 'Bearer ' + accesstoken + '');
+            setAuthHeader(xhr, accesstoken);
           },
           dataType: 'json',
           success: function(data, textStatus, xhr) {
@@ -225,7 +225,7 @@ include('edit_permohonan_script.php');
       url: url_api_x + 'PermohonanCurrentUser',
       type: 'POST',
       beforeSend: function(xhr) {
-        xhr.setRequestHeader('Authorization', 'Bearer ' + accesstoken + '');
+        setAuthHeader(xhr, accesstoken);
       },
       data: JSON.stringify(data),
       contentType: 'application/json',
@@ -244,7 +244,7 @@ include('edit_permohonan_script.php');
             url: url_api_x + 'PermohonanApotek',
             type: 'POST',
             beforeSend: function(xhr) {
-              xhr.setRequestHeader('Authorization', 'Bearer ' + accesstoken + '');
+              setAuthHeader(xhr, accesstoken);
             },
             data: JSON.stringify(detail_data_save),
             contentType: 'application/json',
@@ -270,7 +270,7 @@ include('edit_permohonan_script.php');
             url: url_api_x + 'PermohonanKlinik',
             type: 'POST',
             beforeSend: function(xhr) {
-              xhr.setRequestHeader('Authorization', 'Bearer ' + accesstoken + '');
+              setAuthHeader(xhr, accesstoken);
             },
             data: JSON.stringify(detail_data_save_klinik),
             contentType: 'application/json',
@@ -296,7 +296,7 @@ include('edit_permohonan_script.php');
             url: url_api_x + 'PermohonanRumahSakit',
             type: 'POST',
             beforeSend: function(xhr) {
-              xhr.setRequestHeader('Authorization', 'Bearer ' + accesstoken + '');
+              setAuthHeader(xhr, accesstoken);
             },
             data: JSON.stringify(detail_data_save_rs),
             contentType: 'application/json',
