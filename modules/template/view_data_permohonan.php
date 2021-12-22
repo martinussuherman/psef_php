@@ -67,4 +67,10 @@
       <input type="text" class="form-control" value="{{data_permohonan.tenagaAhliName}}" disabled>
     </div>
   </div>
+  <div class="col-md-4">
+    <div class="form-group">
+      <label>OSS Id Izin</label>
+      <input type="text" class="form-control" value="{{data_permohonan.idIzin}}" disabled>
+    </div>
+  </div>
 </div>
