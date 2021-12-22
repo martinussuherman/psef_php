@@ -1,4 +1,5 @@
 <?php
+session_start();
 $showAddData = true;
 $extraActions = 'ajukan';
 $pageTitle = 'Permohonan (Rumusan)';
@@ -79,7 +80,7 @@ include('edit_permohonan_script.php');
 
       if (cek_open == 0) {
         $.ajax({
-          url: url_api + 'Provinsi',
+          url: `${apiServerUrl}/api/v1/Provinsi`,
           type: 'GET',
           beforeSend: function(xhr) {
             setAuthHeader(xhr, accesstoken);
@@ -109,7 +110,7 @@ include('edit_permohonan_script.php');
 
       if (cek_open_klinik == 0) {
         $.ajax({
-          url: url_api + 'Provinsi',
+          url: `${apiServerUrl}/api/v1/Provinsi`,
           type: 'GET',
           beforeSend: function(xhr) {
             setAuthHeader(xhr, accesstoken);
@@ -139,7 +140,7 @@ include('edit_permohonan_script.php');
 
       if (cek_open_rs == 0) {
         $.ajax({
-          url: url_api + 'Provinsi',
+          url: `${apiServerUrl}/api/v1/Provinsi`,
           type: 'GET',
           beforeSend: function(xhr) {
             setAuthHeader(xhr, accesstoken);
@@ -222,7 +223,7 @@ include('edit_permohonan_script.php');
     delete data.data_rs
 
     $.ajax({
-      url: url_api_x + 'PermohonanCurrentUser',
+      url: `${apiServerUrl}/api/v0.1/PermohonanCurrentUser`,
       type: 'POST',
       beforeSend: function(xhr) {
         setAuthHeader(xhr, accesstoken);
@@ -241,7 +242,7 @@ include('edit_permohonan_script.php');
           detail_data_save.permohonanId = datax.id;
 
           $.ajax({
-            url: url_api_x + 'PermohonanApotek',
+            url: `${apiServerUrl}/api/v0.1/PermohonanApotek`,
             type: 'POST',
             beforeSend: function(xhr) {
               setAuthHeader(xhr, accesstoken);
@@ -267,7 +268,7 @@ include('edit_permohonan_script.php');
           detail_data_save_klinik.permohonanId = datax.id;
 
           $.ajax({
-            url: url_api_x + 'PermohonanKlinik',
+            url: `${apiServerUrl}/api/v0.1/PermohonanKlinik`,
             type: 'POST',
             beforeSend: function(xhr) {
               setAuthHeader(xhr, accesstoken);
@@ -293,7 +294,7 @@ include('edit_permohonan_script.php');
           detail_data_save_rs.permohonanId = datax.id;
 
           $.ajax({
-            url: url_api_x + 'PermohonanRumahSakit',
+            url: `${apiServerUrl}/api/v0.1/PermohonanRumahSakit`,
             type: 'POST',
             beforeSend: function(xhr) {
               setAuthHeader(xhr, accesstoken);
@@ -306,6 +307,12 @@ include('edit_permohonan_script.php');
               console.log('Error in Operation');
             }
           });
+
+          // submitFormData(
+          //   `${apiServerUrl}/api/v0.1/PermohonanRumahSakit`,
+          //   "POST",
+          //   accesstoken,
+          //   JSON.stringify(detail_data_save_rs));
         }
 
         viewRouting();
