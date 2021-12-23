@@ -87,7 +87,13 @@ include('../template/template_kemkes.php');
             return;
           }
 
-          inputPassphrase(id, `${url_api_x}Permohonan/DirekturJenderalSelesaikan`, accesstoken);
+          // inputPassphrase(id, `${url_api_x}Permohonan/DirekturJenderalSelesaikan`, accesstoken);
+          selesaikanPermohonan(
+            id,
+            `${url_api_x}Permohonan/DirekturJenderalSelesaikan`,
+            accesstoken,
+            viewRouting,
+            ".preloader");
         });
     }
 </script>
