@@ -311,6 +311,25 @@ function submitFormData(
   return status;
 }
 
+function selesaikanPermohonan(
+  permohonanId: string,
+  url: string,
+  token: string,
+  routingFunction?: VoidFunction,
+  loaderElementSelector?: string) {
+  submitFormData(
+    url,
+    "POST",
+    token,
+    JSON.stringify({ permohonanId: parseInt(permohonanId), reason: "" }),
+    "Proses Pembuatan Tanda Daftar",
+    "Permohonan berhasil diproses",
+    "Permohonan gagal diproses",
+    routingFunction,
+    loaderElementSelector
+  );
+}
+
 function loadAndDisplayNib(
   nib: string | undefined,
   apiServerUrl: string,
