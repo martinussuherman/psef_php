@@ -414,3 +414,29 @@ function dataTablePemohon(elementSelector: string, url: string) {
     });
   });
 }
+
+function displayRequestSuccessToastr(
+  xhr: JQuery.jqXHR,
+  toastrTitle: string,
+  successMessage: string,
+  errorMessage: string) {
+  if (xhr.status == 200 || xhr.status == 201 || xhr.status == 204) {
+    displaySuccessToastr(toastrTitle, successMessage);
+  } else {
+    displayRequestErrorToastr(xhr, toastrTitle, errorMessage);
+  }
+}
+
+function displayRequestErrorToastr(xhr: JQuery.jqXHR, title: string, message: string) {
+  displayErrorToastr(title, `${message} - status: ${xhr.status}`);
+}
+
+function displaySuccessToastr(title: string, message: string) {
+  let options = setToastrOptions();
+  toastr.error(message, title, options);
+}
+
+function displayErrorToastr(title: string, message: string) {
+  let options = setToastrOptions();
+  toastr.error(message, title, options);
+}
