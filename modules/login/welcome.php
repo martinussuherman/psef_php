@@ -9,6 +9,7 @@ if ($_SESSION["role"] == "") {
         <div class="card mt-5 py-3">
           <div class="card-header text-center">
             <h3>Selamat datang di Sistem PSEF, untuk melanjutkan silahkan pilih pada menu yang ada</h3>
+            <h3 class="text-danger">PENTING: Mohon periksa dahulu Data Pemohon Anda, sebelum mengajukan Permohonan.</h3>
           </div>
         </div>
       </div>
