@@ -43,6 +43,9 @@ function setSaveButtonStateOnInputChanged(formElementId, saveButtonElementId) {
         .find(saveButtonElementId)
         .prop("disabled", true);
 }
+function setAuthHeader(xhr, token) {
+    xhr.setRequestHeader("Authorization", "Bearer " + token);
+}
 function fileUploadError(isEdit, fileInputElement, closeElement, viewElement, errorMessage) {
     if (!isEdit) {
         fileInputElement.prop("required", true);
@@ -76,7 +79,7 @@ function uploadFile(isEdit, url, token, fileInputElement, closeElement, viewElem
         url: url,
         method: "POST",
         beforeSend: function (xhr) {
-            xhr.setRequestHeader("Authorization", "Bearer " + token);
+            setAuthHeader(xhr, token);
         },
         data: formData,
         processData: false,
@@ -142,7 +145,7 @@ function loadData(url, token, loaderElementSelector) {
             if (typeof loaderElementSelector !== "undefined") {
                 $(loaderElementSelector).fadeIn();
             }
-            xhr.setRequestHeader("Authorization", "Bearer " + token);
+            setAuthHeader(xhr, token);
         },
         complete: function () {
             if (typeof loaderElementSelector !== "undefined") {
@@ -152,9 +155,12 @@ function loadData(url, token, loaderElementSelector) {
         dataType: "json"
     });
 }
-function submitFormData(url, method, token, toastrTitle, successMessage, errorMessage, formElementSelector, routingFunction, loaderElementSelector) {
+function submitFormDataByFormElement(url, method, token, formElementSelector, toastrTitle, successMessage, errorMessage, routingFunction, loaderElementSelector) {
     var formElement = document.querySelector(formElementSelector);
     var inputData = Object.fromEntries(new FormData(formElement).entries());
+    return submitFormData(url, method, token, JSON.stringify(inputData), toastrTitle, successMessage, errorMessage, routingFunction, loaderElementSelector);
+}
+function submitFormData(url, method, token, inputData, toastrTitle, successMessage, errorMessage, routingFunction, loaderElementSelector) {
     var options = setToastrOptions();
     var status = false;
     $.ajax({
@@ -164,30 +170,41 @@ function submitFormData(url, method, token, toastrTitle, successMessage, errorMe
             if (typeof loaderElementSelector !== "undefined") {
                 $(loaderElementSelector).fadeIn();
             }
-            xhr.setRequestHeader("Authorization", "Bearer " + token);
+            setAuthHeader(xhr, token);
         },
         complete: function () {
             if (typeof loaderElementSelector !== "undefined") {
                 $(loaderElementSelector).fadeOut();
             }
         },
-        data: JSON.stringify(inputData),
+        data: inputData,
         contentType: "application/json",
         success: function (data, textStatus, xhr) {
             if (xhr.status == 200 || xhr.status == 201 || xhr.status == 204) {
-                routingFunction();
-                toastr.success(successMessage, toastrTitle, options);
+                if (typeof routingFunction !== "undefined") {
+                    routingFunction();
+                }
+                if (typeof successMessage !== "undefined") {
+                    toastr.success(successMessage, toastrTitle, options);
+                }
                 status = true;
             }
             else {
-                toastr.error(errorMessage + " - status: " + xhr.status, toastrTitle, options);
+                if (typeof errorMessage !== "undefined") {
+                    toastr.error(errorMessage + " - status: " + xhr.status, toastrTitle, options);
+                }
             }
         },
         error: function (xhr, textStatus, errorThrown) {
-            toastr.error(errorMessage + " - status: " + xhr.status, toastrTitle, options);
+            if (typeof errorMessage !== "undefined") {
+                toastr.error(errorMessage + " - status: " + xhr.status, toastrTitle, options);
+            }
         }
     });
     return status;
+}
+function selesaikanPermohonan(permohonanId, url, token, routingFunction, loaderElementSelector) {
+    submitFormData(url, "POST", token, JSON.stringify({ permohonanId: parseInt(permohonanId), reason: "" }), "Proses Permohonan", "Permohonan berhasil diproses", "Permohonan gagal diproses", routingFunction, loaderElementSelector);
 }
 function loadAndDisplayNib(nib, apiServerUrl, token, inputElementId, statusElementId, viewElementId, loaderElementSelector) {
     if (nib == undefined || nib == "") {
@@ -236,4 +253,30 @@ function dataTablePemohon(elementSelector, url) {
             ]
         });
     });
+}
+function displayRequestSucceededToastr(xhr, toastrTitle, successMessage, errorMessage) {
+    if (xhr.status == 200 || xhr.status == 201 || xhr.status == 204) {
+        displaySuccessToastr(toastrTitle, successMessage);
+    }
+    else {
+        displayRequestErrorToastr(xhr, toastrTitle, errorMessage);
+    }
+}
+function displaySuccessToastr(title, message) {
+    var options = setToastrOptions();
+    toastr.error(message, title, options);
+}
+function displayErrorToastr(title, message) {
+    var options = setToastrOptions();
+    toastr.error(message, title, options);
+}
+function displayRequestErrorToastr(xhr, title, message) {
+    displayErrorToastr(title, message + " - status: " + xhr.status);
+}
+function onRequestSuccess(xhr, successStatusCallback, errorStatusCallback) {
+    if (xhr.status == 200 || xhr.status == 201 || xhr.status == 204) {
+        // successStatusCallback();
+        return;
+    }
+    // errorStatusCallback();
 }
