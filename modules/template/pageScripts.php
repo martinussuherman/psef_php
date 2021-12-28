@@ -2,6 +2,7 @@
 function displayPageScripts(bool $isHome)
 {
   global $settingData;
+  $cacheBuster = $settingData->isDevelopment ? "?v=" . rand() : "";
 ?>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha512-pgGHFWjBtbKHTTDW5buGZ9mU0nGfxNavf5kWK/Od2ugA//9FuMHAunkAiMe5jeL/5WW1r0UxwKi6D5LpMOJD3w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -11,8 +12,8 @@ function displayPageScripts(bool $isHome)
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesaw/3.1.2/tablesaw-init.min.js" integrity="sha512-w/1hLca9Fyn6iwnkMxUU55d/OlcA65RnP4v6kJ8NssnzHeHnJBeOzuHEkJ67zpt0ksiH1LQn8FKYZc/TT1O/aQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js" integrity="sha512-lbwH47l/tPXJYG9AcFNoJaTMhGvYWhVM9YI43CT+uteTRRaiLCui8snIgyAN8XWgNjNhCqlAUdzZptso6OCoFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script src="/assets/js/config.js"></script>
-  <script src="/modules/scripts/psef.js"></script>
+  <script src="/assets/js/config.js<?php echo $cacheBuster; ?>"></script>
+  <script src="/modules/scripts/psef.js<?php echo $cacheBuster; ?>"></script>
 
   <?php
   if ($isHome) {
