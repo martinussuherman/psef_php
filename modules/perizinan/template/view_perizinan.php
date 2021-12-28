@@ -1,3 +1,9 @@
+<?php
+set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER["DOCUMENT_ROOT"]);
+require_once("configReader.php");
+$settingData = readConfig();
+$fileUrl = $settingData->resourceUrl;
+?>
 <!-- Template for view -->
 <script id="view-data" type="text/x-handlebars-template">
   <h4 class="card-title">
@@ -96,7 +102,7 @@
     </button>
 
     <button
-      onclick="window.open('https://psef.kemkes.go.id{{data_izin.tandaDaftarUrl}}')"
+      onclick="window.open('<?php echo $fileUrl; ?>{{data_izin.tandaDaftarUrl}}')"
       target="_blank"
       type="button"
       class="btn btn-success"
