@@ -260,13 +260,7 @@ function submitFormData(
   method: string,
   token: string,
   inputData: string,
-  toastrTitle?: string,
-  successMessage?: string,
-  errorMessage?: string,
-  routingFunction?: VoidFunction,
   loaderElementSelector?: string) {
-  let options = setToastrOptions();
-
   return $.ajax({
     url: url,
     method: method,
@@ -283,27 +277,7 @@ function submitFormData(
       }
     },
     data: inputData,
-    contentType: "application/json",
-    success: function (data, textStatus, xhr) {
-      if (xhr.status == 200 || xhr.status == 201 || xhr.status == 204) {
-        if (typeof routingFunction !== "undefined") {
-          routingFunction();
-        }
-
-        if (typeof successMessage !== "undefined") {
-          toastr.success(successMessage, toastrTitle, options);
-        }
-      } else {
-        if (typeof errorMessage !== "undefined") {
-          toastr.error(`${errorMessage} - status: ${xhr.status}`, toastrTitle, options);
-        }
-      }
-    },
-    error: function (xhr, textStatus, errorThrown) {
-      if (typeof errorMessage !== "undefined") {
-        toastr.error(`${errorMessage} - status: ${xhr.status}`, toastrTitle, options);
-      }
-    }
+    contentType: "application/json"
   });
 }
 
