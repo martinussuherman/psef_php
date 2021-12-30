@@ -297,7 +297,7 @@ function selesaikanPermohonan(
   token: string,
   routingFunction?: VoidFunction,
   loaderElementSelector?: string) {
-  submitFormData(
+  let request = submitFormDataWithToastr(
     url,
     "POST",
     token,
@@ -305,8 +305,15 @@ function selesaikanPermohonan(
     "Proses Pembuatan Tanda Daftar",
     "Permohonan berhasil diproses",
     "Permohonan gagal diproses",
-    routingFunction,
     loaderElementSelector
+  );
+
+  request.done(
+    function (data, textStatus, xhr) {
+      if (typeof routingFunction !== "undefined") {
+        routeOnRequestSuccess(xhr, routingFunction);
+      }
+    }
   );
 }
 
