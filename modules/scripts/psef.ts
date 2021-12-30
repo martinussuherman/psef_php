@@ -266,9 +266,8 @@ function submitFormData(
   routingFunction?: VoidFunction,
   loaderElementSelector?: string) {
   let options = setToastrOptions();
-  let status = false;
 
-  $.ajax({
+  return $.ajax({
     url: url,
     method: method,
     beforeSend: function (xhr) {
@@ -294,7 +293,6 @@ function submitFormData(
         if (typeof successMessage !== "undefined") {
           toastr.success(successMessage, toastrTitle, options);
         }
-        status = true;
       } else {
         if (typeof errorMessage !== "undefined") {
           toastr.error(`${errorMessage} - status: ${xhr.status}`, toastrTitle, options);
@@ -307,8 +305,6 @@ function submitFormData(
       }
     }
   });
-
-  return status;
 }
 
 function selesaikanPermohonan(
