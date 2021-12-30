@@ -240,6 +240,31 @@ function loadData(url: string, token: string, loaderElementSelector?: string) {
   });
 }
 
+function submitFormDataWithToastr(url: string,
+  method: string,
+  token: string,
+  inputData: string,
+  toastrTitle: string,
+  successMessage: string,
+  errorMessage: string,
+  loaderElementSelector?: string
+) {
+  let request = submitFormData(url, method, token, inputData, loaderElementSelector);
+
+  request.done(
+    function (data, textStatus, xhr) {
+      displayRequestSuccessToastr(xhr, toastrTitle, successMessage, errorMessage);
+    }
+  );
+  request.fail(
+    function (xhr, textStatus, errorThrown) {
+      displayRequestErrorToastr(xhr, toastrTitle, errorMessage);
+    }
+  );
+
+  return request;
+}
+
 function submitFormData(
   url: string,
   method: string,
