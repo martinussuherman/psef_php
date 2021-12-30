@@ -442,3 +442,8 @@ function routeOnRequestSuccess(xhr: JQuery.jqXHR, routingFunction: VoidFunction)
     routingFunction();
   }
 }
+
+function getFormData(formElementSelector: string) {
+  let formElement = document.querySelector(formElementSelector) as HTMLFormElement;
+  return Object.fromEntries(new FormData(formElement).entries());
+}
