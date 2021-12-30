@@ -139,16 +139,21 @@ function displayPemohonUserScript()
 
     function updatePemohon(event) {
       event.preventDefault();
-      submitFormDataByFormElement(
+
+      let request = submitFormDataWithToastr(
         "<?php echo $settingData->apiServerUrl; ?>/api/v0.1/Pemohon/CurrentUser",
         "<?php echo $type; ?>",
         "<?php echo $_SESSION["accessToken"]; ?>",
-        "#data-update",
+        JSON.stringify(getFormData("#data-update")),
         "Perubahan Data Pemohon",
         "Data Pemohon Berhasil Disimpan",
         "Data Pemohon Gagal Disimpan",
-        routing,
         ".preloader");
+      request.done(
+        function(data, textStatus, xhr) {
+          routeOnRequestSuccess(xhr, routing);
+        }
+      );
     }
   </script>
 <?php
