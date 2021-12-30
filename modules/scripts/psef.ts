@@ -436,3 +436,9 @@ function displayErrorToastr(title: string, message: string) {
   let options = setToastrOptions();
   toastr.error(message, title, options);
 }
+
+function routeOnRequestSuccess(xhr: JQuery.jqXHR, routingFunction: VoidFunction) {
+  if (xhr.status == 200 || xhr.status == 201 || xhr.status == 204) {
+    routingFunction();
+  }
+}
