@@ -425,7 +425,10 @@ export interface paths {
       requestBody: {
         content: {
           "multipart/form-data": {
-            /** User file */
+            /**
+             * Format: binary
+             * @description User file
+             */
             file?: string | null;
           };
         };
@@ -455,7 +458,10 @@ export interface paths {
       requestBody: {
         content: {
           "multipart/form-data": {
-            /** Banner image file */
+            /**
+             * Format: binary
+             * @description Banner image file
+             */
             file?: string | null;
           };
         };
@@ -485,7 +491,10 @@ export interface paths {
       requestBody: {
         content: {
           "multipart/form-data": {
-            /** News image file */
+            /**
+             * Format: binary
+             * @description News image file
+             */
             file?: string | null;
           };
         };
@@ -515,7 +524,10 @@ export interface paths {
       requestBody: {
         content: {
           "multipart/form-data": {
-            /** Unduhan file */
+            /**
+             * Format: binary
+             * @description Unduhan file
+             */
             file?: string | null;
           };
         };
@@ -2632,21 +2644,21 @@ export interface paths {
       /** Permohonan by system update data. */
       requestBody: {
         content: {
-          "application/json;odata.metadata=minimal;odata.streaming=true": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=minimal;odata.streaming=false": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=minimal": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=full;odata.streaming=true": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=full;odata.streaming=false": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=full": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=none;odata.streaming=true": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=none;odata.streaming=false": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=none": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.streaming=true": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.streaming=false": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json": components["schemas"]["GenerateTandaDaftarData"];
-          "application/xml": components["schemas"]["GenerateTandaDaftarData"];
-          "text/json": components["schemas"]["GenerateTandaDaftarData"];
-          "application/*+json": components["schemas"]["GenerateTandaDaftarData"];
+          "application/json;odata.metadata=minimal;odata.streaming=true": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=minimal;odata.streaming=false": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=minimal": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=full;odata.streaming=true": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=full;odata.streaming=false": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=full": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=none;odata.streaming=true": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=none;odata.streaming=false": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=none": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.streaming=true": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.streaming=false": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json": components["schemas"]["PermohonanSystemUpdate"];
+          "application/xml": components["schemas"]["PermohonanSystemUpdate"];
+          "text/json": components["schemas"]["PermohonanSystemUpdate"];
+          "application/*+json": components["schemas"]["PermohonanSystemUpdate"];
         };
       };
     };
@@ -2675,21 +2687,21 @@ export interface paths {
       /** Permohonan by system update data. */
       requestBody: {
         content: {
-          "application/json;odata.metadata=minimal;odata.streaming=true": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=minimal;odata.streaming=false": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=minimal": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=full;odata.streaming=true": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=full;odata.streaming=false": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=full": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=none;odata.streaming=true": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=none;odata.streaming=false": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=none": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.streaming=true": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.streaming=false": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json": components["schemas"]["GenerateTandaDaftarData"];
-          "application/xml": components["schemas"]["GenerateTandaDaftarData"];
-          "text/json": components["schemas"]["GenerateTandaDaftarData"];
-          "application/*+json": components["schemas"]["GenerateTandaDaftarData"];
+          "application/json;odata.metadata=minimal;odata.streaming=true": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=minimal;odata.streaming=false": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=minimal": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=full;odata.streaming=true": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=full;odata.streaming=false": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=full": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=none;odata.streaming=true": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=none;odata.streaming=false": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=none": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.streaming=true": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.streaming=false": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json": components["schemas"]["PermohonanSystemUpdate"];
+          "application/xml": components["schemas"]["PermohonanSystemUpdate"];
+          "text/json": components["schemas"]["PermohonanSystemUpdate"];
+          "application/*+json": components["schemas"]["PermohonanSystemUpdate"];
         };
       };
     };
@@ -2718,21 +2730,21 @@ export interface paths {
       /** Permohonan by system update data. */
       requestBody: {
         content: {
-          "application/json;odata.metadata=minimal;odata.streaming=true": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=minimal;odata.streaming=false": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=minimal": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=full;odata.streaming=true": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=full;odata.streaming=false": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=full": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=none;odata.streaming=true": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=none;odata.streaming=false": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.metadata=none": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.streaming=true": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json;odata.streaming=false": components["schemas"]["GenerateTandaDaftarData"];
-          "application/json": components["schemas"]["GenerateTandaDaftarData"];
-          "application/xml": components["schemas"]["GenerateTandaDaftarData"];
-          "text/json": components["schemas"]["GenerateTandaDaftarData"];
-          "application/*+json": components["schemas"]["GenerateTandaDaftarData"];
+          "application/json;odata.metadata=minimal;odata.streaming=true": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=minimal;odata.streaming=false": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=minimal": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=full;odata.streaming=true": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=full;odata.streaming=false": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=full": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=none;odata.streaming=true": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=none;odata.streaming=false": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.metadata=none": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.streaming=true": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json;odata.streaming=false": components["schemas"]["PermohonanSystemUpdate"];
+          "application/json": components["schemas"]["PermohonanSystemUpdate"];
+          "application/xml": components["schemas"]["PermohonanSystemUpdate"];
+          "text/json": components["schemas"]["PermohonanSystemUpdate"];
+          "application/*+json": components["schemas"]["PermohonanSystemUpdate"];
         };
       };
     };
@@ -4996,1105 +5008,1475 @@ export interface paths {
 
 export interface components {
   schemas: {
-    /** Represents a Apotek. */
+    /** @description Represents a Apotek. */
     Apotek: {
-      /** Gets or sets the unique identifier for the Apotek. */
+      /**
+       * Format: int64
+       * @description Gets or sets the unique identifier for the Apotek.
+       */
       id?: number;
-      /** Gets or sets the Apotek name. */
+      /** @description Gets or sets the Apotek name. */
       name?: string | null;
-      /** Gets or sets the associated Permohonan identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated Permohonan identifier.
+       */
       permohonanId?: number | null;
-      /** Gets or sets the Apotek SIA number. */
+      /** @description Gets or sets the Apotek SIA number. */
       siaNumber?: string | null;
-      /** Gets or sets the Apotek apoteker name. */
+      /** @description Gets or sets the Apotek apoteker name. */
       apotekerName?: string | null;
-      /** Gets or sets the Apotek apoteker STRA number. */
+      /** @description Gets or sets the Apotek apoteker STRA number. */
       straNumber?: string | null;
-      /** Gets or sets the Apotek SIPA number. */
+      /** @description Gets or sets the Apotek SIPA number. */
       sipaNumber?: string | null;
-      /** Gets or sets the Apotek address. */
+      /** @description Gets or sets the Apotek address. */
       address?: string | null;
-      /** Gets or sets the associated Provinsi identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated Provinsi identifier.
+       */
       provinsiId?: number | null;
-      /** (Read only) Gets the associated Provinsi name. */
+      /** @description (Read only) Gets the associated Provinsi name. */
       provinsiName?: string | null;
     };
     ApotekIEnumerableODataValue: {
       value?: components["schemas"]["Apotek"][] | null;
     };
     Void: { [key: string]: unknown };
-    /** Represents a Aktifitas Information. */
+    /** @description Represents a Aktifitas Information. */
     Aktifitas: {
-      /** Gets or sets the Aktifitas user name. */
+      /** @description Gets or sets the Aktifitas user name. */
       userName?: string | null;
-      /** Gets or sets the Aktifitas date. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the Aktifitas date.
+       */
       date?: string;
-      /** Gets or sets the Aktifitas action. */
+      /** @description Gets or sets the Aktifitas action. */
       action?: string | null;
-      /** Gets or sets the Aktifitas item. */
+      /** @description Gets or sets the Aktifitas item. */
       item?: string | null;
-      /** Gets or sets the Aktifitas item identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Aktifitas item identifier.
+       */
       itemId?: number | null;
     };
-    /** Represents a Dashboard Information. */
+    /** @description Represents a Dashboard Information. */
     DashboardInfo: {
-      /** Gets or sets the Dashboard Information total pemohon. */
+      /**
+       * Format: int64
+       * @description Gets or sets the Dashboard Information total pemohon.
+       */
       totalPemohon?: number;
-      /** Gets or sets the Dashboard Information total permohonan pending. */
+      /**
+       * Format: int64
+       * @description Gets or sets the Dashboard Information total permohonan pending.
+       */
       totalPermohonanPending?: number;
-      /** Gets or sets the Dashboard Information total permohonan. */
+      /**
+       * Format: int64
+       * @description Gets or sets the Dashboard Information total permohonan.
+       */
       totalPermohonan?: number;
-      /** Gets or sets the Dashboard Information total permohonan dalam proses. */
+      /**
+       * Format: int64
+       * @description Gets or sets the Dashboard Information total permohonan dalam proses.
+       */
       totalPermohonanDalamProses?: number;
-      /** Gets or sets the Dashboard Information total permohonan ditolak. */
+      /**
+       * Format: int64
+       * @description Gets or sets the Dashboard Information total permohonan ditolak.
+       */
       totalPermohonanDitolak?: number;
-      /** Gets or sets the Dashboard Information total perizinan. */
+      /**
+       * Format: int64
+       * @description Gets or sets the Dashboard Information total perizinan.
+       */
       totalPerizinan?: number;
-      /** Gets or sets the Dashboard Information aktifitas. */
+      /** @description Gets or sets the Dashboard Information aktifitas. */
       aktifitas?: components["schemas"]["Aktifitas"][] | null;
     };
-    /** Represents a History Permohonan. */
+    /** @description Represents a History Permohonan. */
     HistoryPermohonan: {
-      /** Gets or sets the unique identifier for the History Permohonan. */
+      /**
+       * Format: int64
+       * @description Gets or sets the unique identifier for the History Permohonan.
+       */
       id?: number;
-      /** Gets or sets the associated Permohonan identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated Permohonan identifier.
+       */
       permohonanId?: number | null;
-      /** Gets or sets the associated Status Permohonan identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated Status Permohonan identifier.
+       */
       statusId?: number;
-      /** (Read Only) Gets the associated History Permohonan Status name. */
+      /** @description (Read Only) Gets the associated History Permohonan Status name. */
       statusName?: string | null;
-      /** Gets or sets the History Permohonan reason. */
+      /** @description Gets or sets the History Permohonan reason. */
       reason?: string | null;
-      /** Gets or sets the History Permohonan updated date and time. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the History Permohonan updated date and time.
+       */
       updatedAt?: string;
-      /** Gets or sets the History Permohonan updated by. */
+      /** @description Gets or sets the History Permohonan updated by. */
       updatedBy?: string | null;
     };
     HistoryPermohonanIEnumerableODataValue: {
       value?: components["schemas"]["HistoryPermohonan"][] | null;
     };
-    /** Represents a Klinik. */
+    /** @description Represents a Klinik. */
     Klinik: {
-      /** Gets or sets the unique identifier for the Klinik. */
+      /**
+       * Format: int64
+       * @description Gets or sets the unique identifier for the Klinik.
+       */
       id?: number;
-      /** Gets or sets the Klinik name. */
+      /** @description Gets or sets the Klinik name. */
       name?: string | null;
-      /** Gets or sets the associated Permohonan identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated Permohonan identifier.
+       */
       permohonanId?: number | null;
-      /** Gets or sets the Klinik SIA number. */
+      /** @description Gets or sets the Klinik SIA number. */
       siaNumber?: string | null;
-      /** Gets or sets the Klinik Apoteker name. */
+      /** @description Gets or sets the Klinik Apoteker name. */
       apotekerName?: string | null;
-      /** Gets or sets the Klinik Apoteker STRA number. */
+      /** @description Gets or sets the Klinik Apoteker STRA number. */
       straNumber?: string | null;
-      /** Gets or sets the Klinik SIPA number. */
+      /** @description Gets or sets the Klinik SIPA number. */
       sipaNumber?: string | null;
-      /** Gets or sets the Klinik address. */
+      /** @description Gets or sets the Klinik address. */
       address?: string | null;
-      /** Gets or sets the associated Provinsi identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated Provinsi identifier.
+       */
       provinsiId?: number | null;
-      /** (Read only) Gets the associated Provinsi name. */
+      /** @description (Read only) Gets the associated Provinsi name. */
       provinsiName?: string | null;
     };
     KlinikIEnumerableODataValue: {
       value?: components["schemas"]["Klinik"][] | null;
     };
-    /** Represents a OSS Information. */
+    /** @description Represents a OSS Information. */
     OssInfo: {
-      /** Gets or sets the OSS Information NIB. */
+      /** @description Gets or sets the OSS Information NIB. */
       nib?: string | null;
-      /** Gets or sets the OSS Information name. */
+      /** @description Gets or sets the OSS Information company name. */
       name?: string | null;
-      /** Gets or sets the OSS Information address. */
+      /** @description Gets or sets the OSS Information address. */
       address?: string | null;
-      /** Gets or sets the OSS Information NPWP. */
+      /** @description Gets or sets the OSS Information NPWP. */
       npwp?: string | null;
-      /** Gets or sets the OSS Information SIUP. */
-      siup?: string | null;
-      /** Gets or sets the OSS Information director name. */
+      /** @description Gets or sets the OSS Information director name. */
       director?: string | null;
-      /** Gets or sets the OSS Information capital source type. */
-      capitalSourceType?: number;
-      /** Gets or sets the OSS Information company type. */
-      companyType?: number;
-      /** Gets or sets the OSS Information legal entity type. */
-      legalEntityType?: number;
     };
-    /** Represents a OSS Pemegang Saham Information. */
+    /** @description Represents a OSS Pemegang Saham Information. */
     OssPemegangSaham: {
-      /** Gets or sets the JenisPemegangSaham. */
+      /** @description Gets or sets the JenisPemegangSaham. */
       jenisPemegangSaham?: string | null;
-      /** Gets or sets the FlagAsing. */
+      /** @description Gets or sets the FlagAsing. */
       flagAsing?: string | null;
-      /** Gets or sets the TotalModalPemegang. */
+      /**
+       * Format: double
+       * @description Gets or sets the TotalModalPemegang.
+       */
       totalModalPemegang?: number;
-      /** Gets or sets the JabatanPemegangSaham. */
+      /** @description Gets or sets the JabatanPemegangSaham. */
       jabatanPemegangSaham?: string | null;
-      /** Gets or sets the NamaPemegangSaham. */
+      /** @description Gets or sets the NamaPemegangSaham. */
       namaPemegangSaham?: string | null;
-      /** Gets or sets the JnsIdentitasPemegangSaham. */
+      /** @description Gets or sets the JnsIdentitasPemegangSaham. */
       jnsIdentitasPemegangSaham?: string | null;
-      /** Gets or sets the NoIdentitasPemegangSaham. */
+      /** @description Gets or sets the NoIdentitasPemegangSaham. */
       noIdentitasPemegangSaham?: string | null;
-      /** Gets or sets the ValidIdentitasPemegangSaham. */
+      /** @description Gets or sets the ValidIdentitasPemegangSaham. */
       validIdentitasPemegangSaham?: string | null;
-      /** Gets or sets the NegaraAsalPemegangSaham. */
+      /** @description Gets or sets the NegaraAsalPemegangSaham. */
       negaraAsalPemegangSaham?: string | null;
-      /** Gets or sets the PengendaliPemegangSaham. */
+      /** @description Gets or sets the PengendaliPemegangSaham. */
       pengendaliPemegangSaham?: string | null;
-      /** Gets or sets the NpwpPemegangSaham. */
+      /** @description Gets or sets the NpwpPemegangSaham. */
       npwpPemegangSaham?: string | null;
-      /** Gets or sets the AlamatPemegangSaham. */
+      /** @description Gets or sets the AlamatPemegangSaham. */
       alamatPemegangSaham?: string | null;
-      /** Gets or sets the FaxPemegangSaham. */
+      /** @description Gets or sets the FaxPemegangSaham. */
       faxPemegangSaham?: string | null;
-      /** Gets or sets the EmailPemegangSaham. */
+      /** @description Gets or sets the EmailPemegangSaham. */
       emailPemegangSaham?: string | null;
-      /** Gets or sets the FlagPajakPemegangSaham. */
+      /** @description Gets or sets the FlagPajakPemegangSaham. */
       flagPajakPemegangSaham?: string | null;
-      /** Gets or sets the KetPajakPemegangSaham. */
+      /** @description Gets or sets the KetPajakPemegangSaham. */
       ketPajakPemegangSaham?: string | null;
     };
-    /** Represents a OSS Penanggung Jawab Information. */
+    /** @description Represents a OSS Penanggung Jawab Information. */
     OssPenanggungJawab: {
-      /** Gets or sets the FlagAsing. */
+      /** @description Gets or sets the FlagAsing. */
       flagAsing?: string | null;
-      /** Gets or sets the JnsIdentitasPenanggungJwb. */
+      /** @description Gets or sets the JnsIdentitasPenanggungJwb. */
       jnsIdentitasPenanggungJwb?: string | null;
-      /** Gets or sets the NoIdentitasPenanggungJwb. */
+      /** @description Gets or sets the NoIdentitasPenanggungJwb. */
       noIdentitasPenanggungJwb?: string | null;
-      /** Gets or sets the NamaPenanggungJwb. */
+      /** @description Gets or sets the NamaPenanggungJwb. */
       namaPenanggungJwb?: string | null;
-      /** Gets or sets the JabatanPenanggungJwb. */
+      /** @description Gets or sets the JabatanPenanggungJwb. */
       jabatanPenanggungJwb?: string | null;
-      /** Gets or sets the KebangsaanPenanggungJwb. */
+      /** @description Gets or sets the KebangsaanPenanggungJwb. */
       kebangsaanPenanggungJwb?: string | null;
-      /** Gets or sets the NegaraAsalPenanggungJwb. */
+      /** @description Gets or sets the NegaraAsalPenanggungJwb. */
       negaraAsalPenanggungJwb?: string | null;
-      /** Gets or sets the NpwpPenanggungJwb. */
+      /** @description Gets or sets the NpwpPenanggungJwb. */
       npwpPenanggungJwb?: string | null;
-      /** Gets or sets the AlamatPenanggungJwb. */
+      /** @description Gets or sets the AlamatPenanggungJwb. */
       alamatPenanggungJwb?: string | null;
-      /** Gets or sets the JalanPenanggungJwb. */
+      /** @description Gets or sets the JalanPenanggungJwb. */
       jalanPenanggungJwb?: string | null;
-      /** Gets or sets the BlokPenanggungJwb. */
+      /** @description Gets or sets the BlokPenanggungJwb. */
       blokPenanggungJwb?: string | null;
-      /** Gets or sets the NoPenanggungJwb. */
+      /** @description Gets or sets the NoPenanggungJwb. */
       noPenanggungJwb?: string | null;
-      /** Gets or sets the RtRwPenanggungJwb. */
+      /** @description Gets or sets the RtRwPenanggungJwb. */
       rtRwPenanggungJwb?: string | null;
-      /** Gets or sets the KelurahanPenanggungJwb. */
+      /** @description Gets or sets the KelurahanPenanggungJwb. */
       kelurahanPenanggungJwb?: string | null;
-      /** Gets or sets the DaerahIdPenanggungJwb. */
+      /** @description Gets or sets the DaerahIdPenanggungJwb. */
       daerahIdPenanggungJwb?: string | null;
-      /** Gets or sets the KodePosPenanggungJwb. */
+      /** @description Gets or sets the KodePosPenanggungJwb. */
       kodePosPenanggungJwb?: string | null;
-      /** Gets or sets the NoTelpPenanggungJwb. */
+      /** @description Gets or sets the NoTelpPenanggungJwb. */
       noTelpPenanggungJwb?: string | null;
-      /** Gets or sets the NoHpPenanggungJwb. */
+      /** @description Gets or sets the NoHpPenanggungJwb. */
       noHpPenanggungJwb?: string | null;
-      /** Gets or sets the NoFaxPenanggungJwb. */
+      /** @description Gets or sets the NoFaxPenanggungJwb. */
       noFaxPenanggungJwb?: string | null;
-      /** Gets or sets the EmailPenanggungJwb. */
+      /** @description Gets or sets the EmailPenanggungJwb. */
       emailPenanggungJwb?: string | null;
-      /** Gets or sets the FlagPajakPenanggungJwb. */
+      /** @description Gets or sets the FlagPajakPenanggungJwb. */
       flagPajakPenanggungJwb?: string | null;
-      /** Gets or sets the KetPajakPenanggungJwb. */
+      /** @description Gets or sets the KetPajakPenanggungJwb. */
       ketPajakPenanggungJwb?: string | null;
     };
-    /** Represents a OSS Legalitas Information. */
+    /** @description Represents a OSS Legalitas Information. */
     OssLegalitas: {
-      /** Gets or sets the JenisLegal. */
+      /** @description Gets or sets the JenisLegal. */
       jenisLegal?: string | null;
-      /** Gets or sets the NoLegal. */
+      /** @description Gets or sets the NoLegal. */
       noLegal?: string | null;
-      /** Gets or sets the TglLegal. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the TglLegal.
+       */
       tglLegal?: string | null;
-      /** Gets or sets the AlamatNotaris. */
+      /** @description Gets or sets the AlamatNotaris. */
       alamatNotaris?: string | null;
-      /** Gets or sets the NamaNotaris. */
+      /** @description Gets or sets the NamaNotaris. */
       namaNotaris?: string | null;
-      /** Gets or sets the TeleponNotaris. */
+      /** @description Gets or sets the TeleponNotaris. */
       teleponNotaris?: string | null;
     };
-    /** Represents a OSS Rptka Tki Pendamping Information. */
+    /** @description Represents a OSS Rptka Tki Pendamping Information. */
     OssRptkaTkiPendamping: {
-      /** Gets or sets the IdJabatan. */
+      /**
+       * Format: int32
+       * @description Gets or sets the IdJabatan.
+       */
       idJabatan?: number;
-      /** Gets or sets the IdPendamping. */
+      /**
+       * Format: int32
+       * @description Gets or sets the IdPendamping.
+       */
       idPendamping?: number;
-      /** Gets or sets the Nama. */
+      /** @description Gets or sets the Nama. */
       nama?: string | null;
-      /** Gets or sets the Nik. */
+      /** @description Gets or sets the Nik. */
       nik?: string | null;
-      /** Gets or sets the Jabatan. */
+      /** @description Gets or sets the Jabatan. */
       jabatan?: string | null;
-      /** Gets or sets the Hp. */
+      /** @description Gets or sets the Hp. */
       hp?: string | null;
-      /** Gets or sets the Email. */
+      /** @description Gets or sets the Email. */
       email?: string | null;
-      /** Gets or sets the Foto. */
+      /** @description Gets or sets the Foto. */
       foto?: string | null;
-      /** Gets or sets the PendidikanMin. */
+      /** @description Gets or sets the PendidikanMin. */
       pendidikanMin?: string | null;
-      /** Gets or sets the Sertifikat. */
+      /** @description Gets or sets the Sertifikat. */
       sertifikat?: string | null;
-      /** Gets or sets the PengalamanKerja. */
+      /**
+       * Format: int32
+       * @description Gets or sets the PengalamanKerja.
+       */
       pengalamanKerja?: number;
-      /** Gets or sets the Keterangan. */
+      /** @description Gets or sets the Keterangan. */
       keterangan?: string | null;
     };
-    /** Represents a OSS Rptka Jabatan Information. */
+    /** @description Represents a OSS Rptka Jabatan Information. */
     OssRptkaJabatan: {
-      /** Gets or sets the IdJabatan. */
+      /**
+       * Format: int32
+       * @description Gets or sets the IdJabatan.
+       */
       idJabatan?: number;
-      /** Gets or sets the Jabatan. */
+      /** @description Gets or sets the Jabatan. */
       jabatan?: string | null;
-      /** Gets or sets the Jumlah. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Jumlah.
+       */
       jumlah?: number;
-      /** Gets or sets the TglMulai. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the TglMulai.
+       */
       tglMulai?: string | null;
-      /** Gets or sets the TglSelesai. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the TglSelesai.
+       */
       tglSelesai?: string | null;
-      /** Gets or sets the Keterangan. */
+      /** @description Gets or sets the Keterangan. */
       keterangan?: string | null;
-      /** Gets or sets the list of RptkaTkiPendamping. */
+      /** @description Gets or sets the list of RptkaTkiPendamping. */
       rptkaTkiPendamping?:
         | components["schemas"]["OssRptkaTkiPendamping"][]
         | null;
     };
-    /** Represents a OSS Rptka Negara Information. */
+    /** @description Represents a OSS Rptka Negara Information. */
     OssRptkaNegara: {
-      /** Gets or sets the IdNegara. */
+      /** @description Gets or sets the IdNegara. */
       idNegara?: string | null;
-      /** Gets or sets the Jumlah. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Jumlah.
+       */
       jumlah?: number;
     };
-    /** Represents a OSS Rptka Lokasi Information. */
+    /** @description Represents a OSS Rptka Lokasi Information. */
     OssRptkaLokasi: {
-      /** Gets or sets the LokasiId. */
+      /** @description Gets or sets the LokasiId. */
       lokasiId?: string | null;
-      /** Gets or sets the Jumlah. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Jumlah.
+       */
       jumlah?: number;
     };
-    /** Represents a OSS Rptka Information. */
+    /** @description Represents a OSS Rptka Information. */
     OssRptka: {
-      /** Gets or sets the JenisRptka. */
+      /** @description Gets or sets the JenisRptka. */
       jenisRptka?: string | null;
-      /** Gets or sets the NoRptka. */
+      /** @description Gets or sets the NoRptka. */
       noRptka?: string | null;
-      /** Gets or sets the RptkaAwal. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the RptkaAwal.
+       */
       rptkaAwal?: string | null;
-      /** Gets or sets the RptkaAkhir. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the RptkaAkhir.
+       */
       rptkaAkhir?: string | null;
-      /** Gets or sets the RptkaGaji. */
+      /**
+       * Format: double
+       * @description Gets or sets the RptkaGaji.
+       */
       rptkaGaji?: number;
-      /** Gets or sets the JumlahTkaRptka. */
+      /**
+       * Format: int32
+       * @description Gets or sets the JumlahTkaRptka.
+       */
       jumlahTkaRptka?: number;
-      /** Gets or sets the JangkaPenggunaanWaktu. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the JangkaPenggunaanWaktu.
+       */
       jangkaPenggunaanWaktu?: string | null;
-      /** Gets or sets the JangkaWaktuPermohonanRptka. */
+      /**
+       * Format: int32
+       * @description Gets or sets the JangkaWaktuPermohonanRptka.
+       */
       jangkaWaktuPermohonanRptka?: number;
-      /** Gets or sets the list of RptkaJabatan. */
+      /** @description Gets or sets the list of RptkaJabatan. */
       rptkaJabatan?: components["schemas"]["OssRptkaJabatan"][] | null;
-      /** Gets or sets the list of RptkaNegara. */
+      /** @description Gets or sets the list of RptkaNegara. */
       rptkaNegara?: components["schemas"]["OssRptkaNegara"][] | null;
-      /** Gets or sets the list of RptkaLokasi. */
+      /** @description Gets or sets the list of RptkaLokasi. */
       rptkaLokasi?: components["schemas"]["OssRptkaLokasi"][] | null;
     };
-    /** Represents a OSS Proyek Lokasi Lokasi Information. */
+    /** @description Represents a OSS Proyek Lokasi Lokasi Information. */
     OssProyekLokasiLokasi: {
-      /** Gets or sets the Serial. */
+      /** @description Gets or sets the Serial. */
       serial?: string | null;
-      /** Gets or sets the LatLng. */
+      /** @description Gets or sets the LatLng. */
       latLng?: string | null;
     };
-    /** Represents a OSS Proyek Posisi Information. */
+    /** @description Represents a OSS Proyek Posisi Information. */
     OssProyekPosisi: {
-      /** Gets or sets the IdProyekPosisi. */
+      /** @description Gets or sets the IdProyekPosisi. */
       idProyekPosisi?: string | null;
-      /** Gets or sets the IdProyekLokasi. */
+      /** @description Gets or sets the IdProyekLokasi. */
       idProyekLokasi?: string | null;
-      /** Gets or sets the PosisiLokasi. */
+      /** @description Gets or sets the PosisiLokasi. */
       posisiLokasi?: string | null;
     };
-    /** Represents a OSS Proyek Lokasi Information. */
+    /** @description Represents a OSS Proyek Lokasi Information. */
     OssProyekLokasi: {
-      /** Gets or sets the IdProyekLokasi. */
+      /** @description Gets or sets the IdProyekLokasi. */
       idProyekLokasi?: string | null;
-      /** Gets or sets the ProyekDaerahId. */
+      /** @description Gets or sets the ProyekDaerahId. */
       proyekDaerahId?: string | null;
-      /** Gets or sets the KdKawasan. */
+      /** @description Gets or sets the KdKawasan. */
       kdKawasan?: string | null;
-      /** Gets or sets the AlamatUsaha. */
+      /** @description Gets or sets the AlamatUsaha. */
       alamatUsaha?: string | null;
-      /** Gets or sets the IdKegiatan. */
+      /** @description Gets or sets the IdKegiatan. */
       idKegiatan?: string | null;
-      /** Gets or sets the ResponseKegiatan. */
+      /** @description Gets or sets the ResponseKegiatan. */
       responseKegiatan?: string | null;
-      /** Gets or sets the JenisKawasan. */
+      /** @description Gets or sets the JenisKawasan. */
       jenisKawasan?: string | null;
-      /** Gets or sets the JenisLokasi. */
+      /** @description Gets or sets the JenisLokasi. */
       jenisLokasi?: string | null;
-      /** Gets or sets the StatusLokasi. */
+      /** @description Gets or sets the StatusLokasi. */
       statusLokasi?: string | null;
-      /** Gets or sets the list of DataLokasiProyek. */
+      /** @description Gets or sets the list of DataLokasiProyek. */
       dataLokasiProyek?:
         | components["schemas"]["OssProyekLokasiLokasi"][]
         | null;
-      /** Gets or sets the list of DataPosisiProyek. */
+      /** @description Gets or sets the list of DataPosisiProyek. */
       dataPosisiProyek?: components["schemas"]["OssProyekPosisi"][] | null;
     };
-    /** Represents a OSS Proyek Produk Information. */
+    /** @description Represents a OSS Proyek Produk Information. */
     OssProyekProduk: {
-      /** Gets or sets the IdProduk. */
+      /** @description Gets or sets the IdProduk. */
       idProduk?: string | null;
-      /** Gets or sets the IdProyek. */
+      /** @description Gets or sets the IdProyek. */
       idProyek?: string | null;
-      /** Gets or sets the Kbli. */
+      /** @description Gets or sets the Kbli. */
       kbli?: string | null;
-      /** Gets or sets the IdBidangUsaha. */
+      /** @description Gets or sets the IdBidangUsaha. */
       idBidangUsaha?: string | null;
-      /** Gets or sets the JenisProduksi. */
+      /** @description Gets or sets the JenisProduksi. */
       jenisProduksi?: string | null;
-      /** Gets or sets the Kapasitas. */
+      /** @description Gets or sets the Kapasitas. */
       kapasitas?: string | null;
-      /** Gets or sets the Satuan. */
+      /** @description Gets or sets the Satuan. */
       satuan?: string | null;
-      /** Gets or sets the MerkDagang. */
+      /** @description Gets or sets the MerkDagang. */
       merkDagang?: string | null;
-      /** Gets or sets the PemegangHaki. */
+      /** @description Gets or sets the PemegangHaki. */
       pemegangHaki?: string | null;
-      /** Gets or sets the PemegangPaten. */
+      /** @description Gets or sets the PemegangPaten. */
       pemegangPaten?: string | null;
-      /** Gets or sets the PiNomor. */
+      /** @description Gets or sets the PiNomor. */
       piNomor?: string | null;
-      /** Gets or sets the PiTanggal. */
+      /** @description Gets or sets the PiTanggal. */
       piTanggal?: string | null;
-      /** Gets or sets the PiNpwp. */
+      /** @description Gets or sets the PiNpwp. */
       piNpwp?: string | null;
-      /** Gets or sets the IdKbliTa. */
+      /** @description Gets or sets the IdKbliTa. */
       idKbliTa?: string | null;
-      /** Gets or sets the Tkdn. */
+      /** @description Gets or sets the Tkdn. */
       tkdn?: string | null;
     };
-    /** Represents a OSS Proyek Information. */
+    /** @description Represents a OSS Proyek Information. */
     OssProyek: {
-      /** Gets or sets the IdProyek. */
+      /** @description Gets or sets the IdProyek. */
       idProyek?: string | null;
-      /** Gets or sets the NomorProyek. */
+      /** @description Gets or sets the NomorProyek. */
       nomorProyek?: string | null;
-      /** Gets or sets the UraianUsaha. */
+      /** @description Gets or sets the UraianUsaha. */
       uraianUsaha?: string | null;
-      /** Gets or sets the JumlahTkiL. */
+      /**
+       * Format: int32
+       * @description Gets or sets the JumlahTkiL.
+       */
       jumlahTkiL?: number;
-      /** Gets or sets the JumlahTkiP. */
+      /**
+       * Format: int32
+       * @description Gets or sets the JumlahTkiP.
+       */
       jumlahTkiP?: number;
-      /** Gets or sets the JumlahTkaL. */
+      /**
+       * Format: int32
+       * @description Gets or sets the JumlahTkaL.
+       */
       jumlahTkaL?: number;
-      /** Gets or sets the JumlahTkaP. */
+      /**
+       * Format: int32
+       * @description Gets or sets the JumlahTkaP.
+       */
       jumlahTkaP?: number;
-      /** Gets or sets the Kbli. */
+      /** @description Gets or sets the Kbli. */
       kbli?: string | null;
-      /** Gets or sets the Sektor. */
+      /** @description Gets or sets the Sektor. */
       sektor?: string | null;
-      /** Gets or sets the MemilikiMenguasai. */
+      /** @description Gets or sets the MemilikiMenguasai. */
       memilikiMenguasai?: string | null;
-      /** Gets or sets the JenisLokasi. */
+      /** @description Gets or sets the JenisLokasi. */
       jenisLokasi?: string | null;
-      /** Gets or sets the StatusTanah. */
+      /** @description Gets or sets the StatusTanah. */
       statusTanah?: string | null;
-      /** Gets or sets the LuasTanah. */
+      /**
+       * Format: double
+       * @description Gets or sets the LuasTanah.
+       */
       luasTanah?: number;
-      /** Gets or sets the SatuanLuasTanah. */
+      /** @description Gets or sets the SatuanLuasTanah. */
       satuanLuasTanah?: string | null;
-      /** Gets or sets the PembelianPematangTanah. */
+      /**
+       * Format: double
+       * @description Gets or sets the PembelianPematangTanah.
+       */
       pembelianPematangTanah?: number;
-      /** Gets or sets the BangunanGedung. */
+      /**
+       * Format: double
+       * @description Gets or sets the BangunanGedung.
+       */
       bangunanGedung?: number;
-      /** Gets or sets the MesinPeralatan. */
+      /**
+       * Format: double
+       * @description Gets or sets the MesinPeralatan.
+       */
       mesinPeralatan?: number;
-      /** Gets or sets the MesinPeralatanUsd. */
+      /**
+       * Format: double
+       * @description Gets or sets the MesinPeralatanUsd.
+       */
       mesinPeralatanUsd?: number;
-      /** Gets or sets the InvestasiLain. */
+      /**
+       * Format: double
+       * @description Gets or sets the InvestasiLain.
+       */
       investasiLain?: number;
-      /** Gets or sets the SubJumlah. */
+      /**
+       * Format: double
+       * @description Gets or sets the SubJumlah.
+       */
       subJumlah?: number;
-      /** Gets or sets the ModalKerja. */
+      /**
+       * Format: double
+       * @description Gets or sets the ModalKerja.
+       */
       modalKerja?: number;
-      /** Gets or sets the JumlahInvestasi. */
+      /**
+       * Format: double
+       * @description Gets or sets the JumlahInvestasi.
+       */
       jumlahInvestasi?: number;
-      /** Gets or sets the TanggalKurs. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the TanggalKurs.
+       */
       tanggalKurs?: string | null;
-      /** Gets or sets the NilaiKurs. */
+      /**
+       * Format: double
+       * @description Gets or sets the NilaiKurs.
+       */
       nilaiKurs?: number;
-      /** Gets or sets the KdKawasan. */
+      /**
+       * Format: int32
+       * @description Gets or sets the KdKawasan.
+       */
       kdKawasan?: number;
-      /** Gets or sets the JawabLokasiB. */
+      /** @description Gets or sets the JawabLokasiB. */
       jawabLokasiB?: string | null;
-      /** Gets or sets the JawabLokasiC. */
+      /** @description Gets or sets the JawabLokasiC. */
       jawabLokasiC?: string | null;
-      /** Gets or sets the JawabLokasiD. */
+      /** @description Gets or sets the JawabLokasiD. */
       jawabLokasiD?: string | null;
-      /** Gets or sets the JawabLokasiE. */
+      /** @description Gets or sets the JawabLokasiE. */
       jawabLokasiE?: string | null;
-      /** Gets or sets the JawabLokasiF. */
+      /** @description Gets or sets the JawabLokasiF. */
       jawabLokasiF?: string | null;
-      /** Gets or sets the JawabLokasiG. */
+      /** @description Gets or sets the JawabLokasiG. */
       jawabLokasiG?: string | null;
-      /** Gets or sets the FlagPerluasan. */
+      /** @description Gets or sets the FlagPerluasan. */
       flagPerluasan?: string | null;
-      /** Gets or sets the FlagCabang. */
+      /** @description Gets or sets the FlagCabang. */
       flagCabang?: string | null;
-      /** Gets or sets the NpwpCabang. */
+      /** @description Gets or sets the NpwpCabang. */
       npwpCabang?: string | null;
-      /** Gets or sets the NamaCabang. */
+      /** @description Gets or sets the NamaCabang. */
       namaCabang?: string | null;
-      /** Gets or sets the JenisIdentitasPj. */
+      /** @description Gets or sets the JenisIdentitasPj. */
       jenisIdentitasPj?: string | null;
-      /** Gets or sets the NoIdentitasPj. */
+      /** @description Gets or sets the NoIdentitasPj. */
       noIdentitasPj?: string | null;
-      /** Gets or sets the NamaPj. */
+      /** @description Gets or sets the NamaPj. */
       namaPj?: string | null;
-      /** Gets or sets the StatusProyek. */
+      /** @description Gets or sets the StatusProyek. */
       statusProyek?: string | null;
-      /** Gets or sets the JenisProyek. */
+      /** @description Gets or sets the JenisProyek. */
       jenisProyek?: string | null;
-      /** Gets or sets the NamaKegiatan. */
+      /** @description Gets or sets the NamaKegiatan. */
       namaKegiatan?: string | null;
-      /** Gets or sets the FlagMerger. */
+      /** @description Gets or sets the FlagMerger. */
       flagMerger?: string | null;
-      /** Gets or sets the NpwpPerseroanMerger. */
+      /** @description Gets or sets the NpwpPerseroanMerger. */
       npwpPerseroanMerger?: string | null;
-      /** Gets or sets the NamaPerseroanMerger. */
+      /** @description Gets or sets the NamaPerseroanMerger. */
       namaPerseroanMerger?: string | null;
-      /** Gets or sets the SkalaUsaha. */
+      /** @description Gets or sets the SkalaUsaha. */
       skalaUsaha?: string | null;
-      /** Gets or sets the SkalaResiko. */
+      /** @description Gets or sets the SkalaResiko. */
       skalaResiko?: string | null;
-      /** Gets or sets the DeskripsiKegiatan. */
+      /** @description Gets or sets the DeskripsiKegiatan. */
       deskripsiKegiatan?: string | null;
-      /** Gets or sets the list of DataLokasiProyek. */
+      /** @description Gets or sets the list of DataLokasiProyek. */
       dataLokasiProyek?: components["schemas"]["OssProyekLokasi"][] | null;
-      /** Gets or sets the list of DataProyekProduk. */
+      /** @description Gets or sets the list of DataProyekProduk. */
       dataProyekProduk?: components["schemas"]["OssProyekProduk"][] | null;
     };
-    /** Represents a OSS Dni Information. */
+    /** @description Represents a OSS Dni Information. */
     OssDni: {
-      /** Gets or sets the KdDni. */
+      /**
+       * Format: int32
+       * @description Gets or sets the KdDni.
+       */
       kdDni?: number;
     };
-    /** Represents a OSS Checklist Persyaratan Information. */
+    /** @description Represents a OSS Checklist Persyaratan Information. */
     OssChecklistPersyaratan: {
-      /** Gets or sets the IdSyarat. */
+      /** @description Gets or sets the IdSyarat. */
       idSyarat?: string | null;
-      /** Gets or sets the NoDokumen. */
+      /** @description Gets or sets the NoDokumen. */
       noDokumen?: string | null;
-      /** Gets or sets the TglDokumen. */
+      /** @description Gets or sets the TglDokumen. */
       tglDokumen?: string | null;
-      /** Gets or sets the FileDokumen. */
+      /** @description Gets or sets the FileDokumen. */
       fileDokumen?: string | null;
-      /** Gets or sets the Keterangan. */
+      /** @description Gets or sets the Keterangan. */
       keterangan?: string | null;
     };
-    /** Represents a OSS Checklist Information. */
+    /** @description Represents a OSS Checklist Information. */
     OssChecklist: {
-      /** Gets or sets the IdProduk. */
+      /** @description Gets or sets the IdProduk. */
       idProduk?: string | null;
-      /** Gets or sets the IdProyek. */
+      /** @description Gets or sets the IdProyek. */
       idProyek?: string | null;
-      /** Gets or sets the IdIzin. */
+      /** @description Gets or sets the IdIzin. */
       idIzin?: string | null;
-      /** Gets or sets the JenisIzin. */
+      /** @description Gets or sets the JenisIzin. */
       jenisIzin?: string | null;
-      /** Gets or sets the KdIzin. */
+      /** @description Gets or sets the KdIzin. */
       kdIzin?: string | null;
-      /** Gets or sets the KdDaerah. */
+      /** @description Gets or sets the KdDaerah. */
       kdDaerah?: string | null;
-      /** Gets or sets the NamaIzin. */
+      /** @description Gets or sets the NamaIzin. */
       namaIzin?: string | null;
-      /** Gets or sets the NoIzin. */
+      /** @description Gets or sets the NoIzin. */
       noIzin?: string | null;
-      /** Gets or sets the TglIzin. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the TglIzin.
+       */
       tglIzin?: string | null;
-      /** Gets or sets the Instansi. */
+      /** @description Gets or sets the Instansi. */
       instansi?: string | null;
-      /** Gets or sets the IdBidangSpesifik. */
+      /** @description Gets or sets the IdBidangSpesifik. */
       idBidangSpesifik?: string | null;
-      /** Gets or sets the BidangSpesifik. */
+      /** @description Gets or sets the BidangSpesifik. */
       bidangSpesifik?: string | null;
-      /** Gets or sets the IdKewenangan. */
+      /**
+       * Format: int32
+       * @description Gets or sets the IdKewenangan.
+       */
       idKewenangan?: number;
-      /** Gets or sets the ParameterKewenangan. */
+      /** @description Gets or sets the ParameterKewenangan. */
       parameterKewenangan?: string | null;
-      /** Gets or sets the Kewenangan. */
+      /** @description Gets or sets the Kewenangan. */
       kewenangan?: string | null;
-      /** Gets or sets the FileIzin. */
+      /** @description Gets or sets the FileIzin. */
       fileIzin?: string | null;
-      /** Gets or sets the FileIzinOss. */
+      /** @description Gets or sets the FileIzinOss. */
       fileIzinOss?: string | null;
-      /** Gets or sets the FlagChecklist. */
+      /** @description Gets or sets the FlagChecklist. */
       flagChecklist?: string | null;
-      /** Gets or sets the StatusChecklist. */
+      /** @description Gets or sets the StatusChecklist. */
       statusChecklist?: string | null;
-      /** Gets or sets the FlagTransaksional. */
+      /** @description Gets or sets the FlagTransaksional. */
       flagTransaksional?: string | null;
-      /** Gets or sets the FlagPerpanjangan. */
+      /** @description Gets or sets the FlagPerpanjangan. */
       flagPerpanjangan?: string | null;
-      /** Gets or sets the KdDokumen. */
+      /** @description Gets or sets the KdDokumen. */
       kdDokumen?: string | null;
-      /** Gets or sets the NmDokumen. */
+      /** @description Gets or sets the NmDokumen. */
       nmDokumen?: string | null;
-      /** Gets or sets the list of DataPersyaratan. */
+      /** @description Gets or sets the list of DataPersyaratan. */
       dataPersyaratan?:
         | components["schemas"]["OssChecklistPersyaratan"][]
         | null;
     };
-    /** Represents a Full OSS Information. */
+    /** @description Represents a Full OSS Information. */
     OssFullInfo: {
-      /** Gets or sets the Keterangan. */
+      /** @description Gets or sets the Keterangan. */
       keterangan?: string | null;
-      /** Gets or sets the Nib. */
+      /** @description Gets or sets the Nib. */
       nib?: string | null;
-      /** Gets or sets the TglPengajuanNib. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the TglPengajuanNib.
+       */
       tglPengajuanNib?: string | null;
-      /** Gets or sets the TglTerbitNib. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the TglTerbitNib.
+       */
       tglTerbitNib?: string | null;
-      /** Gets or sets the TglPerubahanNib. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the TglPerubahanNib.
+       */
       tglPerubahanNib?: string | null;
-      /** Gets or sets the OssId. */
+      /** @description Gets or sets the OssId. */
       ossId?: string | null;
-      /** Gets or sets the JenisPelakuUsaha. */
+      /** @description Gets or sets the JenisPelakuUsaha. */
       jenisPelakuUsaha?: string | null;
-      /** Gets or sets the NoNpp. */
+      /** @description Gets or sets the NoNpp. */
       noNpp?: string | null;
-      /** Gets or sets the NoVa. */
+      /** @description Gets or sets the NoVa. */
       noVa?: string | null;
-      /** Gets or sets the NoWlkp. */
+      /** @description Gets or sets the NoWlkp. */
       noWlkp?: string | null;
-      /** Gets or sets the FlagPerusahaan. */
+      /** @description Gets or sets the FlagPerusahaan. */
       flagPerusahaan?: string | null;
-      /** Gets or sets the FlagEkspor. */
+      /** @description Gets or sets the FlagEkspor. */
       flagEkspor?: string | null;
-      /** Gets or sets the FlagImpor. */
+      /** @description Gets or sets the FlagImpor. */
       flagImpor?: string | null;
-      /** Gets or sets the JenisApi. */
+      /** @description Gets or sets the JenisApi. */
       jenisApi?: string | null;
-      /** Gets or sets the GabungNegara. */
+      /** @description Gets or sets the GabungNegara. */
       gabungNegara?: string | null;
-      /** Gets or sets the NegaraPmaDominan. */
+      /** @description Gets or sets the NegaraPmaDominan. */
       negaraPmaDominan?: string | null;
-      /** Gets or sets the TotalPma. */
+      /**
+       * Format: double
+       * @description Gets or sets the TotalPma.
+       */
       totalPma?: number;
-      /** Gets or sets the NilaiPmaDominan. */
+      /**
+       * Format: double
+       * @description Gets or sets the NilaiPmaDominan.
+       */
       nilaiPmaDominan?: number;
-      /** Gets or sets the NilaiPmdn. */
+      /**
+       * Format: double
+       * @description Gets or sets the NilaiPmdn.
+       */
       nilaiPmdn?: number;
-      /** Gets or sets the PersenPma. */
+      /**
+       * Format: int32
+       * @description Gets or sets the PersenPma.
+       */
       persenPma?: number;
-      /** Gets or sets the PersenPmdn. */
+      /**
+       * Format: int32
+       * @description Gets or sets the PersenPmdn.
+       */
       persenPmdn?: number;
-      /** Gets or sets the KdKawasan. */
+      /**
+       * Format: int32
+       * @description Gets or sets the KdKawasan.
+       */
       kdKawasan?: number;
-      /** Gets or sets the JenisKawasan. */
+      /** @description Gets or sets the JenisKawasan. */
       jenisKawasan?: string | null;
-      /** Gets or sets the VersiPia. */
+      /** @description Gets or sets the VersiPia. */
       versiPia?: string | null;
-      /** Gets or sets the JangkaWaktu. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the JangkaWaktu.
+       */
       jangkaWaktu?: string | null;
-      /** Gets or sets the StatusBadanHukum. */
+      /** @description Gets or sets the StatusBadanHukum. */
       statusBadanHukum?: string | null;
-      /** Gets or sets the StatusPenanamanModal. */
+      /** @description Gets or sets the StatusPenanamanModal. */
       statusPenanamanModal?: string | null;
-      /** Gets or sets the NpwpPerseroan. */
+      /** @description Gets or sets the NpwpPerseroan. */
       npwpPerseroan?: string | null;
-      /** Gets or sets the NamaPerseroan. */
+      /** @description Gets or sets the NamaPerseroan. */
       namaPerseroan?: string | null;
-      /** Gets or sets the NamaSingkatan. */
+      /** @description Gets or sets the NamaSingkatan. */
       namaSingkatan?: string | null;
-      /** Gets or sets the JenisPerseroan. */
+      /** @description Gets or sets the JenisPerseroan. */
       jenisPerseroan?: string | null;
-      /** Gets or sets the StatusPerseroan. */
+      /** @description Gets or sets the StatusPerseroan. */
       statusPerseroan?: string | null;
-      /** Gets or sets the AlamatPerseroan. */
+      /** @description Gets or sets the AlamatPerseroan. */
       alamatPerseroan?: string | null;
-      /** Gets or sets the RtRwPerseroan. */
+      /** @description Gets or sets the RtRwPerseroan. */
       rtRwPerseroan?: string | null;
-      /** Gets or sets the KelurahanPerseroan. */
+      /** @description Gets or sets the KelurahanPerseroan. */
       kelurahanPerseroan?: string | null;
-      /** Gets or sets the PerseroanDaerahId. */
+      /** @description Gets or sets the PerseroanDaerahId. */
       perseroanDaerahId?: string | null;
-      /** Gets or sets the KodePosPerseroan. */
+      /** @description Gets or sets the KodePosPerseroan. */
       kodePosPerseroan?: string | null;
-      /** Gets or sets the NomorTelponPerseroan. */
+      /** @description Gets or sets the NomorTelponPerseroan. */
       nomorTelponPerseroan?: string | null;
-      /** Gets or sets the EmailPerusahaan. */
+      /** @description Gets or sets the EmailPerusahaan. */
       emailPerusahaan?: string | null;
-      /** Gets or sets the DalamBentukUang. */
+      /**
+       * Format: double
+       * @description Gets or sets the DalamBentukUang.
+       */
       dalamBentukUang?: number;
-      /** Gets or sets the DalamBentukLain. */
+      /** @description Gets or sets the DalamBentukLain. */
       dalamBentukLain?: string | null;
-      /** Gets or sets the TotalModalDasar. */
+      /**
+       * Format: double
+       * @description Gets or sets the TotalModalDasar.
+       */
       totalModalDasar?: number;
-      /** Gets or sets the TotalModalDitempatkan. */
+      /**
+       * Format: double
+       * @description Gets or sets the TotalModalDitempatkan.
+       */
       totalModalDitempatkan?: number;
-      /** Gets or sets the FlagUmk. */
+      /** @description Gets or sets the FlagUmk. */
       flagUmk?: string | null;
-      /** Gets or sets the list of PemegangSaham. */
+      /** @description Gets or sets the list of PemegangSaham. */
       pemegangSaham?: components["schemas"]["OssPemegangSaham"][] | null;
-      /** Gets or sets the list of PenanggungJwb. */
+      /** @description Gets or sets the list of PenanggungJwb. */
       penanggungJwb?: components["schemas"]["OssPenanggungJawab"][] | null;
-      /** Gets or sets the NoPengesahan. */
+      /** @description Gets or sets the NoPengesahan. */
       noPengesahan?: string | null;
-      /** Gets or sets the TglPengesahan. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the TglPengesahan.
+       */
       tglPengesahan?: string | null;
-      /** Gets or sets the NoAktaLama. */
+      /** @description Gets or sets the NoAktaLama. */
       noAktaLama?: string | null;
-      /** Gets or sets the TglAktaLama. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the TglAktaLama.
+       */
       tglAktaLama?: string | null;
-      /** Gets or sets the NoPengesahanLama. */
+      /** @description Gets or sets the NoPengesahanLama. */
       noPengesahanLama?: string | null;
-      /** Gets or sets the TglPengesahanLama. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the TglPengesahanLama.
+       */
       tglPengesahanLama?: string | null;
-      /** Gets or sets the list of Legalitas. */
+      /** @description Gets or sets the list of Legalitas. */
       legalitas?: components["schemas"]["OssLegalitas"][] | null;
       dataRptka?: components["schemas"]["OssRptka"];
-      /** Gets or sets the list of DataProyek. */
+      /** @description Gets or sets the list of DataProyek. */
       dataProyek?: components["schemas"]["OssProyek"][] | null;
-      /** Gets or sets the list of DataDni. */
+      /** @description Gets or sets the list of DataDni. */
       dataDni?: components["schemas"]["OssDni"][] | null;
-      /** Gets or sets the list of DataChecklist. */
+      /** @description Gets or sets the list of DataChecklist. */
       dataChecklist?: components["schemas"]["OssChecklist"][] | null;
-      /** Gets or sets the JenisIdUserProses. */
+      /** @description Gets or sets the JenisIdUserProses. */
       jenisIdUserProses?: string | null;
-      /** Gets or sets the NoIdUserProses. */
+      /** @description Gets or sets the NoIdUserProses. */
       noIdUserProses?: string | null;
-      /** Gets or sets the NamaUserProses. */
+      /** @description Gets or sets the NamaUserProses. */
       namaUserProses?: string | null;
-      /** Gets or sets the EmailUserProses. */
+      /** @description Gets or sets the EmailUserProses. */
       emailUserProses?: string | null;
-      /** Gets or sets the HpUserProses. */
+      /** @description Gets or sets the HpUserProses. */
       hpUserProses?: string | null;
-      /** Gets or sets the AlamatUserProses. */
+      /** @description Gets or sets the AlamatUserProses. */
       alamatUserProses?: string | null;
-      /** Gets or sets the JnsKelaminUserProses. */
+      /** @description Gets or sets the JnsKelaminUserProses. */
       jnsKelaminUserProses?: string | null;
-      /** Gets or sets the TempatLahirUserProses. */
+      /** @description Gets or sets the TempatLahirUserProses. */
       tempatLahirUserProses?: string | null;
-      /** Gets or sets the TglLahirUserProses. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the TglLahirUserProses.
+       */
       tglLahirUserProses?: string | null;
-      /** Gets or sets the DaerahIdUserProses. */
+      /** @description Gets or sets the DaerahIdUserProses. */
       daerahIdUserProses?: string | null;
-      /** Gets or sets the RtRwUserProses. */
+      /** @description Gets or sets the RtRwUserProses. */
       rtRwUserProses?: string | null;
-      /** Gets or sets the AgamaUserProses. */
+      /** @description Gets or sets the AgamaUserProses. */
       agamaUserProses?: string | null;
-      /** Gets or sets the StatusPerkawinanUserProses. */
+      /** @description Gets or sets the StatusPerkawinanUserProses. */
       statusPerkawinanUserProses?: string | null;
-      /** Gets or sets the PekerjaanUserProses. */
+      /** @description Gets or sets the PekerjaanUserProses. */
       pekerjaanUserProses?: string | null;
-      /** Gets or sets the StatusNib. */
+      /** @description Gets or sets the StatusNib. */
       statusNib?: string | null;
-      /** Gets or sets the TipeDokumen. */
+      /** @description Gets or sets the TipeDokumen. */
       tipeDokumen?: string | null;
     };
-    /** Represents a Pemohon with User information. */
+    /** @description Represents a Pemohon with User information. */
     PemohonUserInfo: {
-      /** Gets or sets the unique identifier for the Pemohon. */
+      /**
+       * Format: int32
+       * @description Gets or sets the unique identifier for the Pemohon.
+       */
       id?: number;
-      /** Gets or sets the associated user identifier. */
+      /** @description Gets or sets the associated user identifier. */
       userId?: string | null;
-      /** Gets or sets the Pemohon phone number. */
+      /** @description Gets or sets the Pemohon phone number. */
       phone?: string | null;
-      /** Gets or sets the Pemohon address. */
+      /** @description Gets or sets the Pemohon address. */
       address?: string | null;
-      /** Gets or sets the Pemohon NIB. */
+      /** @description Gets or sets the Pemohon NIB. */
       nib?: string | null;
-      /** (Read Only) Gets the Pemohon company name. */
+      /** @description (Read Only) Gets the Pemohon company name. */
       companyName?: string | null;
-      /** (Read Only) Gets the Pemohon penanggung jawab. */
+      /** @description (Read Only) Gets the Pemohon penanggung jawab. */
       penanggungJawab?: string | null;
-      /** Gets or sets the Pemohon name. */
+      /** @description Gets or sets the Pemohon name. */
       name?: string | null;
-      /** Gets or sets the Pemohon email. */
+      /** @description Gets or sets the Pemohon email. */
       email?: string | null;
     };
     PemohonUserInfoIEnumerableODataValue: {
       value?: components["schemas"]["PemohonUserInfo"][] | null;
     };
-    /** Represents a Pemohon. */
+    /** @description Represents a Pemohon. */
     PemohonUpdate: {
-      /** Gets or sets the associated user identifier. */
+      /** @description Gets or sets the associated user identifier. */
       userId?: string | null;
-      /** Gets or sets the Pemohon phone number. */
+      /** @description Gets or sets the Pemohon phone number. */
       phone?: string | null;
-      /** Gets or sets the Pemohon address. */
+      /** @description Gets or sets the Pemohon address. */
       address?: string | null;
-      /** Gets or sets the Pemohon NIB. */
+      /** @description Gets or sets the Pemohon NIB. */
       nib?: string | null;
-      /** Gets or sets the Pemohon company name. */
+      /** @description Gets or sets the Pemohon company name. */
       companyName?: string | null;
-      /** Gets or sets the Pemohon penanggung jawab. */
+      /** @description Gets or sets the Pemohon penanggung jawab. */
       penanggungJawab?: string | null;
     };
-    /** Represents a Pemohon. */
+    /** @description Represents a Pemohon. */
     PemohonView: {
-      /** Gets or sets the unique identifier for the Pemohon. */
+      /**
+       * Format: int32
+       * @description Gets or sets the unique identifier for the Pemohon.
+       */
       id?: number;
-      /** Gets or sets the associated user identifier. */
+      /** @description Gets or sets the associated user identifier. */
       userId?: string | null;
-      /** Gets or sets the Pemohon phone number. */
+      /** @description Gets or sets the Pemohon phone number. */
       phone?: string | null;
-      /** Gets or sets the Pemohon address. */
+      /** @description Gets or sets the Pemohon address. */
       address?: string | null;
-      /** Gets or sets the Pemohon NIB. */
+      /** @description Gets or sets the Pemohon NIB. */
       nib?: string | null;
-      /** Gets or sets the Pemohon company name. */
+      /** @description Gets or sets the Pemohon company name. */
       companyName?: string | null;
-      /** Gets or sets the Pemohon penanggung jawab. */
+      /** @description Gets or sets the Pemohon penanggung jawab. */
       penanggungJawab?: string | null;
     };
-    /** Represents a Perizinan View information. */
+    /** @description Represents a Perizinan View information. */
     PerizinanView: {
-      /** Gets or sets the unique identifier for the Perizinan. */
+      /**
+       * Format: int32
+       * @description Gets or sets the unique identifier for the Perizinan.
+       */
       id?: number;
-      /** Gets or sets the Perizinan number. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated Permohonan identifier..
+       */
+      permohonanId?: number;
+      /** @description Gets or sets the Perizinan number. */
       perizinanNumber?: string | null;
-      /** Gets or sets the Perizinan issued date. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the Perizinan issued date.
+       */
       issuedAt?: string;
-      /** Gets or sets the Perizinan expired date. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the Perizinan expired date.
+       */
       expiredAt?: string;
-      /** Gets or sets the Perizinan Tanda Daftar document url. */
+      /** @description Gets or sets the Perizinan Tanda Daftar document url. */
       tandaDaftarUrl?: string | null;
-      /** Gets or sets the Perizinan company name. */
+      /** @description Gets or sets the Perizinan company name. */
       companyName?: string | null;
-      /** Gets or sets the Perizinan domain. */
+      /** @description Gets or sets the Perizinan domain. */
       domain?: string | null;
     };
     PerizinanViewIEnumerableODataValue: {
       value?: components["schemas"]["PerizinanView"][] | null;
     };
-    /** Represents a Perizinan Update information. */
+    /** @description Represents a Perizinan Update information. */
     PerizinanUpdate: {
-      /** Gets or sets the associated Permohonan identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated Permohonan identifier.
+       */
       permohonanId?: number | null;
-      /** Gets or sets the associated Previous Perizinan identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated Previous Perizinan identifier.
+       */
       previousId?: number | null;
-      /** Gets or sets the Perizinan number. */
+      /** @description Gets or sets the Perizinan number. */
       perizinanNumber?: string | null;
-      /** Gets or sets the Perizinan issued date. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the Perizinan issued date.
+       */
       issuedAt?: string;
-      /** Gets or sets the Perizinan expired date. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the Perizinan expired date.
+       */
       expiredAt?: string;
-      /** Gets or sets the Perizinan Tanda Daftar document url. */
+      /** @description Gets or sets the Perizinan Tanda Daftar document url. */
       tandaDaftarUrl?: string | null;
     };
-    /** Represents a Perizinan Halaman Muka information. */
+    /** @description Represents a Perizinan Halaman Muka information. */
     PerizinanHalamanMuka: {
-      /** Gets or sets the Perizinan number. */
+      /** @description Gets or sets the Perizinan number. */
       perizinanNumber?: string | null;
-      /** Gets or sets the Perizinan company name. */
+      /** @description Gets or sets the Perizinan company name. */
       companyName?: string | null;
-      /** Gets or sets the Perizinan domain. */
+      /** @description Gets or sets the Perizinan domain. */
       domain?: string | null;
-      /** Gets or sets the Perizinan issued date. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the Perizinan issued date.
+       */
       issuedAt?: string;
     };
     PerizinanHalamanMukaIEnumerableODataValue: {
       value?: components["schemas"]["PerizinanHalamanMuka"][] | null;
     };
-    /** Represents a Permohonan. */
+    /** @description Represents a Permohonan. */
     Permohonan: {
-      /** Gets or sets the unique identifier for the Permohonan. */
+      /**
+       * Format: int32
+       * @description Gets or sets the unique identifier for the Permohonan.
+       */
       id?: number;
-      /** Gets or sets the associated Pemohon identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated Pemohon identifier.
+       */
       pemohonId?: number | null;
-      /** Gets or sets the associated previous Perizinan identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated previous Perizinan identifier.
+       */
       previousPerizinanId?: number | null;
-      /** Gets or sets the associated Perizinan identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated Perizinan identifier.
+       */
       perizinanId?: number | null;
-      /** Gets or sets the Permohonan submit date. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the Permohonan submit date.
+       */
       submittedAt?: string;
-      /** Gets or sets the associated Permohonan Status identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated Permohonan Status identifier.
+       */
       statusId?: number;
-      /** (Read Only) Gets the associated Permohonan Status name. */
+      /** @description (Read Only) Gets the associated Permohonan Status name. */
       statusName?: string | null;
-      /** (Read Only) Gets the associated Permohonan Status name for Pemohon. */
+      /** @description (Read Only) Gets the associated Permohonan Status name for Pemohon. */
       pemohonStatusName?: string | null;
-      /** Gets or sets the associated Permohonan Type identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated Permohonan Type identifier.
+       */
       typeId?: number;
-      /** (Read Only) Gets the associated Permohonan Type name. */
+      /** @description (Read Only) Gets the associated Permohonan Type name. */
       typeName?: string | null;
-      /** Gets or sets the Permohonan number. */
+      /** @description Gets or sets the Permohonan number. */
       permohonanNumber?: string | null;
-      /** Gets or sets the Permohonan domain. */
+      /** @description Gets or sets the Permohonan domain. */
       domain?: string | null;
-      /** Gets or sets the Permohonan system name. */
+      /** @description Gets or sets the Permohonan system name. */
       systemName?: string | null;
-      /** Gets or sets the Permohonan provider name. */
+      /** @description Gets or sets the Permohonan provider name. */
       providerName?: string | null;
-      /** Gets or sets the Permohonan tenaga ahli name. */
+      /** @description Gets or sets the Permohonan tenaga ahli name. */
       tenagaAhliName?: string | null;
-      /** Gets or sets the Permohonan apoteker name. */
+      /** @description Gets or sets the Permohonan apoteker name. */
       apotekerName?: string | null;
-      /** Gets or sets the Permohonan apoteker email. */
+      /** @description Gets or sets the Permohonan apoteker email. */
       apotekerEmail?: string | null;
-      /** Gets or sets the Permohonan apoteker phone number. */
+      /** @description Gets or sets the Permohonan apoteker phone number. */
       apotekerPhone?: string | null;
-      /** Gets or sets the Permohonan apoteker NIK. */
+      /** @description Gets or sets the Permohonan apoteker NIK. */
       apotekerNik?: string | null;
-      /** Gets or sets the Permohonan apoteker STRA number. */
+      /** @description Gets or sets the Permohonan apoteker STRA number. */
       straNumber?: string | null;
-      /** Gets or sets the Permohonan apoteker STRA expiry date. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the Permohonan apoteker STRA expiry date.
+       */
       straExpiry?: string;
-      /** Gets or sets the Permohonan apoteker STRA document url. */
+      /** @description Gets or sets the Permohonan apoteker STRA document url. */
       straUrl?: string | null;
-      /** Gets or sets the Permohonan Surat Permohonan document url. */
+      /** @description Gets or sets the Permohonan Surat Permohonan document url. */
       suratPermohonanUrl?: string | null;
-      /** Gets or sets the Permohonan Proses Bisnis document url. */
+      /** @description Gets or sets the Permohonan Proses Bisnis document url. */
       prosesBisnisUrl?: string | null;
-      /** Gets or sets the Permohonan Dokumen Api document url. */
+      /** @description Gets or sets the Permohonan Dokumen Api document url. */
       dokumenApiUrl?: string | null;
-      /** Gets or sets the Permohonan Dokumen PSE Kominfo document url. */
+      /** @description Gets or sets the Permohonan Dokumen PSE Kominfo document url. */
       dokumenPseUrl?: string | null;
-      /** Gets or sets the Permohonan izin usaha document url. */
+      /** @description Gets or sets the Permohonan izin usaha document url. */
       izinUsahaUrl?: string | null;
-      /** Gets or sets the Permohonan komitmen kerjasama apotek document url. */
+      /** @description Gets or sets the Permohonan komitmen kerjasama apotek document url. */
       komitmenKerjasamaApotekUrl?: string | null;
-      /** Gets or sets the Permohonan SPPL document url. */
+      /** @description Gets or sets the Permohonan SPPL document url. */
       spplUrl?: string | null;
-      /** Gets or sets the Permohonan Izin Lokasi document url. */
+      /** @description Gets or sets the Permohonan Izin Lokasi document url. */
       izinLokasiUrl?: string | null;
-      /** Gets or sets the Permohonan IMB document url. */
+      /** @description Gets or sets the Permohonan IMB document url. */
       imbUrl?: string | null;
-      /** Gets or sets the Permohonan Pembayaran PNBP document url. */
+      /** @description Gets or sets the Permohonan Pembayaran PNBP document url. */
       pembayaranPnbpUrl?: string | null;
-      /** Gets or sets the Permohonan Pernyataan Keaslian Dokumen document url. */
+      /** @description Gets or sets the Permohonan Pernyataan Keaslian Dokumen document url. */
       pernyataanKeaslianDokumenUrl?: string | null;
-      /** Gets or sets the Permohonan last update. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the Permohonan last update.
+       */
       lastUpdate?: string;
-      /** Gets or sets the Permohonan id izin (received from OSS). */
+      /** @description Gets or sets the Permohonan id izin (received from OSS). */
       idIzin?: string | null;
-      /** Gets or sets the Permohonan id proyek. */
+      /** @description Gets or sets the Permohonan id proyek. */
       idProyek?: string | null;
     };
     PermohonanIEnumerableODataValue: {
       value?: components["schemas"]["Permohonan"][] | null;
     };
-    /** Represents Permohonan update data. */
+    /** @description Represents Permohonan update data. */
     PermohonanSystemUpdate: {
-      /** Gets or sets the update Permohonan unique identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the update Permohonan unique identifier.
+       */
       permohonanId?: number;
-      /** Gets or sets the update reason. */
+      /** @description Gets or sets the update reason. */
       reason?: string | null;
     };
-    /** Represents Permohonan update to generate tanda daftar data. */
-    GenerateTandaDaftarData: {
-      /** Gets or sets the NIK. */
-      nik?: string | null;
-      /** Gets or sets the passphrase. */
-      passphrase?: string | null;
-      /** Gets or sets the update Permohonan unique identifier. */
-      permohonanId?: number;
-      /** Gets or sets the update reason. */
-      reason?: string | null;
-    };
-    /** Represents basic Permohonan with Pemohon data. */
+    /** @description Represents basic Permohonan with Pemohon data. */
     PermohonanPemohon: {
-      /** Gets or sets the Permohonan unique identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Permohonan unique identifier.
+       */
       permohonanId?: number;
-      /** Gets or sets the Permohonan submit date. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the Permohonan submit date.
+       */
       submittedAt?: string;
-      /** Gets or sets the Permohonan number. */
+      /** @description Gets or sets the Permohonan number. */
       permohonanNumber?: string | null;
-      /** Gets or sets the Permohonan domain. */
+      /** @description Gets or sets the Permohonan domain. */
       domain?: string | null;
-      /** Gets or sets the Permohonan last update. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the Permohonan last update.
+       */
       lastUpdate?: string;
-      /** (Read Only) Gets the associated Permohonan Status name. */
+      /** @description (Read Only) Gets the associated Permohonan Status name. */
       statusName?: string | null;
-      /** (Read Only) Gets the associated Permohonan Type name. */
+      /** @description (Read Only) Gets the associated Permohonan Type name. */
       typeName?: string | null;
-      /** Gets or sets the Pemohon NIB. */
+      /** @description Gets or sets the Pemohon NIB. */
       nib?: string | null;
-      /** Gets or sets the Pemohon company name. */
+      /** @description Gets or sets the Pemohon company name. */
       companyName?: string | null;
-      /** Gets or sets the Pemohon penanggung jawab. */
+      /** @description Gets or sets the Pemohon penanggung jawab. */
       penanggungJawab?: string | null;
-      /** Gets or sets the Pemohon name. */
+      /** @description Gets or sets the Pemohon name. */
       name?: string | null;
-      /** Gets or sets the Pemohon email. */
+      /** @description Gets or sets the Pemohon email. */
       email?: string | null;
-      /** Gets or sets the Permohonan total days from start. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Permohonan total days from start.
+       */
       totalDays?: number;
-      /** Gets or sets the Permohonan user level days. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Permohonan user level days.
+       */
       userLevelDays?: number;
     };
     PermohonanPemohonIEnumerableODataValue: {
       value?: components["schemas"]["PermohonanPemohon"][] | null;
     };
-    /** Represents multiple Apotek update data. */
+    /** @description Represents multiple Apotek update data. */
     PermohonanApotek: {
-      /** Gets or sets the Permohonan unique identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Permohonan unique identifier.
+       */
       permohonanId?: number;
-      /** Gets or sets list of Apotek to post. */
+      /** @description Gets or sets list of Apotek to post. */
       apotek?: components["schemas"]["Apotek"][] | null;
     };
-    /** Represents multiple Klinik update data. */
+    /** @description Represents multiple Klinik update data. */
     PermohonanKlinik: {
-      /** Gets or sets the Permohonan unique identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Permohonan unique identifier.
+       */
       permohonanId?: number;
-      /** Gets or sets list of Klinik to post. */
+      /** @description Gets or sets list of Klinik to post. */
       klinik?: components["schemas"]["Klinik"][] | null;
     };
-    /** Represents a Rumah Sakit. */
+    /** @description Represents a Rumah Sakit. */
     RumahSakit: {
-      /** Gets or sets the unique identifier for the Rumah Sakit. */
+      /**
+       * Format: int64
+       * @description Gets or sets the unique identifier for the Rumah Sakit.
+       */
       id?: number;
-      /** Gets or sets the Rumah Sakit name. */
+      /** @description Gets or sets the Rumah Sakit name. */
       name?: string | null;
-      /** Gets or sets the associated Permohonan identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated Permohonan identifier.
+       */
       permohonanId?: number | null;
-      /** Gets or sets the Rumah Sakit SIA number. */
+      /** @description Gets or sets the Rumah Sakit SIA number. */
       siaNumber?: string | null;
-      /** Gets or sets the Rumah Sakit Apoteker name. */
+      /** @description Gets or sets the Rumah Sakit Apoteker name. */
       apotekerName?: string | null;
-      /** Gets or sets the Rumah Sakit Apoteker STRA number. */
+      /** @description Gets or sets the Rumah Sakit Apoteker STRA number. */
       straNumber?: string | null;
-      /** Gets or sets the Rumah Sakit SIPA number. */
+      /** @description Gets or sets the Rumah Sakit SIPA number. */
       sipaNumber?: string | null;
-      /** Gets or sets the Rumah Sakit address. */
+      /** @description Gets or sets the Rumah Sakit address. */
       address?: string | null;
-      /** Gets or sets the associated Provinsi identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated Provinsi identifier.
+       */
       provinsiId?: number | null;
-      /** (Read only) Gets the associated Provinsi name. */
+      /** @description (Read only) Gets the associated Provinsi name. */
       provinsiName?: string | null;
     };
     RumahSakitIEnumerableODataValue: {
       value?: components["schemas"]["RumahSakit"][] | null;
     };
-    /** Represents multiple Rumah Sakit update data. */
+    /** @description Represents multiple Rumah Sakit update data. */
     PermohonanRumahSakit: {
-      /** Gets or sets the Permohonan unique identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Permohonan unique identifier.
+       */
       permohonanId?: number;
-      /** Gets or sets list of Rumah Sakit to post. */
+      /** @description Gets or sets list of Rumah Sakit to post. */
       rumahSakit?: components["schemas"]["RumahSakit"][] | null;
     };
-    /** Represents a Permohonan Status. */
+    /** @description Represents a Permohonan Status. */
     PermohonanStatus: {
-      /** Gets or sets the unique identifier for the Permohonan Status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the unique identifier for the Permohonan Status.
+       */
       id?: number;
-      /** Gets or sets the Permohonan Status name. */
+      /** @description Gets or sets the Permohonan Status name. */
       name?: string | null;
-      /** Gets or sets the Permohonan Status name displayed to user. */
+      /** @description Gets or sets the Permohonan Status name displayed to user. */
       pemohonDisplayedName?: string | null;
     };
     PermohonanStatusIEnumerableODataValue: {
       value?: components["schemas"]["PermohonanStatus"][] | null;
     };
-    /** Represents a Permohonan Type. */
+    /** @description Represents a Permohonan Type. */
     PermohonanType: {
-      /** Gets or sets the unique identifier for the Permohonan Type. */
+      /**
+       * Format: int32
+       * @description Gets or sets the unique identifier for the Permohonan Type.
+       */
       id?: number;
-      /** Gets or sets the Permohonan Type name. */
+      /** @description Gets or sets the Permohonan Type name. */
       name?: string | null;
     };
     PermohonanTypeIEnumerableODataValue: {
       value?: components["schemas"]["PermohonanType"][] | null;
     };
-    /** Represents a Verifikasi Permohonan. */
+    /** @description Represents a Verifikasi Permohonan. */
     VerifikasiPermohonan: {
-      /** Gets or sets the unique identifier for the Verifikasi Permohonan. */
+      /**
+       * Format: int32
+       * @description Gets or sets the unique identifier for the Verifikasi Permohonan.
+       */
       id?: number;
-      /** Gets or sets the associated Permohonan identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated Permohonan identifier.
+       */
       permohonanId?: number | null;
-      /** Gets or sets the Verifikasi Permohonan domain check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan domain check status.
+       */
       domainCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan domain check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan domain check reason. */
       domainCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan system name check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan system name check status.
+       */
       systemNameCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan system name check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan system name check reason. */
       systemNameCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan provider name check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan provider name check status.
+       */
       providerNameCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan provider name check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan provider name check reason. */
       providerNameCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan tenaga ahli name check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan tenaga ahli name check status.
+       */
       tenagaAhliNameCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan tenaga ahli name check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan tenaga ahli name check reason. */
       tenagaAhliNameCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan apoteker name check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan apoteker name check status.
+       */
       apotekerNameCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan apoteker name check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan apoteker name check reason. */
       apotekerNameCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan apoteker email check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan apoteker email check status.
+       */
       apotekerEmailCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan apoteker email check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan apoteker email check reason. */
       apotekerEmailCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan apoteker phone check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan apoteker phone check status.
+       */
       apotekerPhoneCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan apoteker phone check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan apoteker phone check reason. */
       apotekerPhoneCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan apoteker NIK check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan apoteker NIK check status.
+       */
       apotekerNikCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan apoteker NIK check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan apoteker NIK check reason. */
       apotekerNikCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan STRA number check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan STRA number check status.
+       */
       straNumberCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan STRA number check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan STRA number check reason. */
       straNumberCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan STRA expiry check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan STRA expiry check status.
+       */
       straExpiryCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan STRA expiry check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan STRA expiry check reason. */
       straExpiryCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan STRA check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan STRA check status.
+       */
       straUrlCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan STRA check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan STRA check reason. */
       straUrlCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan surat permohonan check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan surat permohonan check status.
+       */
       suratPermohonanUrlCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan surat permohonan check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan surat permohonan check reason. */
       suratPermohonanUrlCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan proses bisnis check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan proses bisnis check status.
+       */
       prosesBisnisUrlCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan proses bisnis check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan proses bisnis check reason. */
       prosesBisnisUrlCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan dokumen API check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan dokumen API check status.
+       */
       dokumenApiUrlCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan dokumen API check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan dokumen API check reason. */
       dokumenApiUrlCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan dokumen PSE check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan dokumen PSE check status.
+       */
       dokumenPseUrlCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan dokumen PSE check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan dokumen PSE check reason. */
       dokumenPseUrlCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan izin usaha check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan izin usaha check status.
+       */
       izinUsahaUrlCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan izin usaha check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan izin usaha check reason. */
       izinUsahaUrlCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan komitmen kerjasama apotek check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan komitmen kerjasama apotek check status.
+       */
       komitmenKerjasamaApotekUrlCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan komitmen kerjasama apotek check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan komitmen kerjasama apotek check reason. */
       komitmenKerjasamaApotekUrlCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan SPPL check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan SPPL check status.
+       */
       spplUrlCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan SPPL check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan SPPL check reason. */
       spplUrlCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan izin lokasi check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan izin lokasi check status.
+       */
       izinLokasiUrlCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan izin lokasi check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan izin lokasi check reason. */
       izinLokasiUrlCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan IMB check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan IMB check status.
+       */
       imbUrlCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan IMB check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan IMB check reason. */
       imbUrlCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan pembayaran PNBP check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan pembayaran PNBP check status.
+       */
       pembayaranPnbpUrlCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan pembayaran PNBP check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan pembayaran PNBP check reason. */
       pembayaranPnbpUrlCheckReason?: string | null;
-      /** Gets or sets the Verifikasi Permohonan pernyataan keaslian dokumen check status. */
+      /**
+       * Format: int32
+       * @description Gets or sets the Verifikasi Permohonan pernyataan keaslian dokumen check status.
+       */
       pernyataanKeaslianDokumenUrlCheck?: number;
-      /** Gets or sets the Verifikasi Permohonan pernyataan keaslian dokumen check reason. */
+      /** @description Gets or sets the Verifikasi Permohonan pernyataan keaslian dokumen check reason. */
       pernyataanKeaslianDokumenUrlCheckReason?: string | null;
     };
     VerifikasiPermohonanIEnumerableODataValue: {

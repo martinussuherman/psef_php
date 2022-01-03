@@ -1721,88 +1721,121 @@ export interface paths {
 
 export interface components {
   schemas: {
-    /** Represents a Desa/Kelurahan. */
+    /** @description Represents a Desa/Kelurahan. */
     DesaKelurahan: {
-      /** Gets or sets the unique identifier for the Desa/Kelurahan. */
+      /**
+       * Format: int32
+       * @description Gets or sets the unique identifier for the Desa/Kelurahan.
+       */
       id?: number;
-      /** Gets or sets the Desa/Kelurahan name. */
+      /** @description Gets or sets the Desa/Kelurahan name. */
       name?: string | null;
-      /** Gets or sets the associated Kecamatan identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated Kecamatan identifier.
+       */
       kecamatanId?: number | null;
     };
     DesaKelurahanIEnumerableODataValue: {
       value?: components["schemas"]["DesaKelurahan"][] | null;
     };
     Void: { [key: string]: unknown };
-    /** Represents a Homepage Banner. */
+    /** @description Represents a Homepage Banner. */
     HomepageBanner: {
-      /** Gets or sets the unique identifier for the Homepage Banner. */
+      /**
+       * Format: int32
+       * @description Gets or sets the unique identifier for the Homepage Banner.
+       */
       id?: number;
-      /** Gets or sets the Homepage Banner url. */
+      /** @description Gets or sets the Homepage Banner url. */
       url?: string | null;
     };
     HomepageBannerIEnumerableODataValue: {
       value?: components["schemas"]["HomepageBanner"][] | null;
     };
-    /** Represents a Homepage News. */
+    /** @description Represents a Homepage News. */
     HomepageNews: {
-      /** Gets or sets the unique identifier for the Homepage News. */
+      /**
+       * Format: int32
+       * @description Gets or sets the unique identifier for the Homepage News.
+       */
       id?: number;
-      /** Gets or sets the Homepage News title. */
+      /** @description Gets or sets the Homepage News title. */
       title?: string | null;
-      /** Gets or sets the Homepage News content. */
+      /** @description Gets or sets the Homepage News content. */
       content?: string | null;
-      /** Gets or sets the Homepage News image url. */
+      /** @description Gets or sets the Homepage News image url. */
       imageUrl?: string | null;
-      /** Gets or sets the Homepage News link url. */
+      /** @description Gets or sets the Homepage News link url. */
       linkUrl?: string | null;
-      /** Gets or sets the Homepage News published at. */
+      /**
+       * Format: date-time
+       * @description Gets or sets the Homepage News published at.
+       */
       publishedAt?: string;
     };
     HomepageNewsIEnumerableODataValue: {
       value?: components["schemas"]["HomepageNews"][] | null;
     };
-    /** Represents a Homepage Unduhan. */
+    /** @description Represents a Homepage Unduhan. */
     HomepageUnduhan: {
-      /** Gets or sets the unique identifier for the Homepage Unduhan. */
+      /**
+       * Format: int32
+       * @description Gets or sets the unique identifier for the Homepage Unduhan.
+       */
       id?: number;
-      /** Gets or sets the Homepage Unduhan title. */
+      /** @description Gets or sets the Homepage Unduhan title. */
       title?: string | null;
-      /** Gets or sets the Homepage Unduhan url. */
+      /** @description Gets or sets the Homepage Unduhan url. */
       url?: string | null;
     };
     HomepageUnduhanIEnumerableODataValue: {
       value?: components["schemas"]["HomepageUnduhan"][] | null;
     };
-    /** Represents a Kabupaten/Kota. */
+    /** @description Represents a Kabupaten/Kota. */
     KabupatenKota: {
-      /** Gets or sets the unique identifier for the Kabupaten/Kota. */
+      /**
+       * Format: int32
+       * @description Gets or sets the unique identifier for the Kabupaten/Kota.
+       */
       id?: number;
-      /** Gets or sets the Kabupaten/Kota name. */
+      /** @description Gets or sets the Kabupaten/Kota name. */
       name?: string | null;
-      /** Gets or sets the associated Provinsi identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated Provinsi identifier.
+       */
       provinsiId?: number | null;
     };
     KabupatenKotaIEnumerableODataValue: {
       value?: components["schemas"]["KabupatenKota"][] | null;
     };
-    /** Represents a Kecamatan. */
+    /** @description Represents a Kecamatan. */
     Kecamatan: {
-      /** Gets or sets the unique identifier for the Kecamatan. */
+      /**
+       * Format: int32
+       * @description Gets or sets the unique identifier for the Kecamatan.
+       */
       id?: number;
-      /** Gets or sets the Kecamatan name. */
+      /** @description Gets or sets the Kecamatan name. */
       name?: string | null;
-      /** Gets or sets the associated Kabupaten/Kota identifier. */
+      /**
+       * Format: int32
+       * @description Gets or sets the associated Kabupaten/Kota identifier.
+       */
       kabupatenKotaId?: number | null;
     };
     KecamatanIEnumerableODataValue: {
       value?: components["schemas"]["Kecamatan"][] | null;
     };
-    /** Represents a Provinsi. */
+    /** @description Represents a Provinsi. */
     Provinsi: {
-      /** Gets or sets the unique identifier for the Provinsi. */
+      /**
+       * Format: int32
+       * @description Gets or sets the unique identifier for the Provinsi.
+       */
       id?: number;
-      /** Gets or sets the Provinsi name. */
+      /** @description Gets or sets the Provinsi name. */
       name?: string | null;
     };
     ProvinsiIEnumerableODataValue: {
