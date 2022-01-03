@@ -420,7 +420,7 @@ function displayRequestErrorToastr(xhr: JQuery.jqXHR, title: string, message: st
 
 function displaySuccessToastr(title: string, message: string) {
   let options = setToastrOptions();
-  toastr.error(message, title, options);
+  toastr.success(message, title, options);
 }
 
 function displayErrorToastr(title: string, message: string) {
