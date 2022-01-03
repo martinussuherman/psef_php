@@ -414,6 +414,62 @@ function dataTablePemohon(elementSelector: string, url: string) {
   });
 }
 
+function loadDataTablePerizinan(apiUrl: string, resourceUrl: string, dataTableElementSelector: string) {
+  $(dataTableElementSelector)
+    .on('xhr.dt', function (e, settings, json: PhpApiResponse, xhr) {
+      json.data = json.rows;
+      json.recordsTotal = json.recordsFiltered = json.total;
+    })
+    .DataTable({
+      processing: true,
+      serverSide: true,
+      scrollY: "100vh",
+      scrollX: true,
+      ajax: {
+        url: apiUrl,
+        method: "POST",
+        dataSrc: function (json: PhpApiResponse) {
+          let responseData = json.data as apiv01["schemas"]["PerizinanViewIEnumerableODataValue"]["value"];
+          let data = [];
+
+          for (let i = 0; i < responseData!.length; i++) {
+            let action = `
+                <button onclick="view_data('${responseData![i].permohonanId}', '${responseData![i].id}')" class="btn btn-xs btn-block btn-info">
+                  Lihat Detail Data
+                </button>
+                <a href="${resourceUrl}${responseData![i].tandaDaftarUrl}" target="_blank" class="btn btn-xs btn-block btn-success">
+                  Unduh Tanda Daftar
+                </a>`;
+
+            data.push(setDataTablePerizinanRow(responseData![i], action));
+          }
+
+          return data;
+        },
+        data: function (requestData: DataTables.AjaxDataRequest) {
+          return configureDataTablePerizinanRequest(requestData);
+        }
+      }
+    });
+}
+
+function setDataTablePerizinanRow(data: PerizinanView, action: string) {
+  let row = [
+    data.perizinanNumber,
+    data.domain,
+    moment(data.issuedAt).format("YYYY-MM-DD"),
+    moment(data.expiredAt).format("YYYY-MM-DD"),
+    action
+  ];
+
+  return row;
+}
+
+function configureDataTablePerizinanRequest(request: DataTables.AjaxDataRequest) {
+  let sortFields = ['perizinanNumber', 'domain', 'issuedAt', 'expiredAt'];
+  return configureDataTableAjaxRequest('Perizinan', 'perizinanNumber', 1, sortFields, request);
+}
+
 function configureDataTableAjaxRequest(
   moduleName: string,
   searchedFields: string,
