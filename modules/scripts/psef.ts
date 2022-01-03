@@ -6,6 +6,18 @@ import { components as apiv01 } from "./psef-api-v01";
 
 type HomepageNews = apiv1["schemas"]["HomepageNews"];
 type OssFullInfo = apiv01["schemas"]["OssFullInfo"];
+type PerizinanView = apiv01["schemas"]["PerizinanView"];
+type PhpApiResponseArray =
+  apiv01["schemas"]["PemohonUserInfoIEnumerableODataValue"] |
+  apiv01["schemas"]["PerizinanViewIEnumerableODataValue"];
+type PhpApiResponse = {
+  rows: PhpApiResponseArray["value"],
+  data: PhpApiResponseArray["value"],
+  total: number,
+  foffset: number
+  recordsTotal: number,
+  recordsFiltered: number
+};
 type FileUploadInfo = {
   "@odata.context": string,
   value: string
