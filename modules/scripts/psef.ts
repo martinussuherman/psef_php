@@ -414,6 +414,29 @@ function dataTablePemohon(elementSelector: string, url: string) {
   });
 }
 
+function configureDataTableAjaxRequest(
+  moduleName: string,
+  searchedFields: string,
+  numberOfSearchFields: number,
+  sortFields: string[],
+  requestData: DataTables.AjaxDataRequest) {
+  let colNumber = requestData.order[0].column;
+  let sortDirection = requestData.order[0].dir;
+
+  let data = {
+    fpage: (requestData.start + requestData.length) / requestData.length,
+    frows: requestData.length,
+    fsearch: requestData.search.value,
+    forder: sortFields[colNumber],
+    fsort: sortDirection,
+    fmodul: moduleName,
+    flsearch: searchedFields,
+    ftots: numberOfSearchFields
+  };
+
+  return data;
+}
+
 function displayRequestSuccessToastr(
   xhr: JQuery.jqXHR,
   toastrTitle: string,
