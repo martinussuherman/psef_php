@@ -155,15 +155,18 @@ function loadData(url, token, loaderElementSelector) {
         dataType: "json"
     });
 }
-function submitFormDataByFormElement(url, method, token, formElementSelector, toastrTitle, successMessage, errorMessage, routingFunction, loaderElementSelector) {
-    var formElement = document.querySelector(formElementSelector);
-    var inputData = Object.fromEntries(new FormData(formElement).entries());
-    return submitFormData(url, method, token, JSON.stringify(inputData), toastrTitle, successMessage, errorMessage, routingFunction, loaderElementSelector);
+function submitFormDataWithToastr(url, method, token, inputData, toastrTitle, successMessage, errorMessage, loaderElementSelector) {
+    var request = submitFormData(url, method, token, inputData, loaderElementSelector);
+    request.done(function (data, textStatus, xhr) {
+        displayRequestSuccessToastr(xhr, toastrTitle, successMessage, errorMessage);
+    });
+    request.fail(function (xhr, textStatus, errorThrown) {
+        displayRequestErrorToastr(xhr, toastrTitle, errorMessage);
+    });
+    return request;
 }
-function submitFormData(url, method, token, inputData, toastrTitle, successMessage, errorMessage, routingFunction, loaderElementSelector) {
-    var options = setToastrOptions();
-    var status = false;
-    $.ajax({
+function submitFormData(url, method, token, inputData, loaderElementSelector) {
+    return $.ajax({
         url: url,
         method: method,
         beforeSend: function (xhr) {
@@ -178,33 +181,16 @@ function submitFormData(url, method, token, inputData, toastrTitle, successMessa
             }
         },
         data: inputData,
-        contentType: "application/json",
-        success: function (data, textStatus, xhr) {
-            if (xhr.status == 200 || xhr.status == 201 || xhr.status == 204) {
-                if (typeof routingFunction !== "undefined") {
-                    routingFunction();
-                }
-                if (typeof successMessage !== "undefined") {
-                    toastr.success(successMessage, toastrTitle, options);
-                }
-                status = true;
-            }
-            else {
-                if (typeof errorMessage !== "undefined") {
-                    toastr.error(errorMessage + " - status: " + xhr.status, toastrTitle, options);
-                }
-            }
-        },
-        error: function (xhr, textStatus, errorThrown) {
-            if (typeof errorMessage !== "undefined") {
-                toastr.error(errorMessage + " - status: " + xhr.status, toastrTitle, options);
-            }
-        }
+        contentType: "application/json"
     });
-    return status;
 }
 function selesaikanPermohonan(permohonanId, url, token, routingFunction, loaderElementSelector) {
-    submitFormData(url, "POST", token, JSON.stringify({ permohonanId: parseInt(permohonanId), reason: "" }), "Proses Permohonan", "Permohonan berhasil diproses", "Permohonan gagal diproses", routingFunction, loaderElementSelector);
+    var request = submitFormDataWithToastr(url, "POST", token, JSON.stringify({ permohonanId: parseInt(permohonanId), reason: "" }), "Proses Pembuatan Tanda Daftar", "Permohonan berhasil diproses", "Permohonan gagal diproses", loaderElementSelector);
+    request.done(function (data, textStatus, xhr) {
+        if (typeof routingFunction !== "undefined") {
+            routeOnRequestSuccess(xhr, routingFunction);
+        }
+    });
 }
 function loadAndDisplayNib(nib, apiServerUrl, token, inputElementId, statusElementId, viewElementId, loaderElementSelector) {
     if (nib == undefined || nib == "") {
@@ -254,7 +240,65 @@ function dataTablePemohon(elementSelector, url) {
         });
     });
 }
-function displayRequestSucceededToastr(xhr, toastrTitle, successMessage, errorMessage) {
+function loadDataTablePerizinan(apiUrl, resourceUrl, dataTableElementSelector) {
+    $(dataTableElementSelector)
+        .on('xhr.dt', function (e, settings, json, xhr) {
+        json.data = json.rows;
+        json.recordsTotal = json.recordsFiltered = json.total;
+    })
+        .DataTable({
+        processing: true,
+        serverSide: true,
+        scrollY: "100vh",
+        scrollX: true,
+        ajax: {
+            url: apiUrl,
+            method: "POST",
+            dataSrc: function (json) {
+                var responseData = json.data;
+                var data = [];
+                for (var i = 0; i < responseData.length; i++) {
+                    var action = "\n                <button onclick=\"view_data('" + responseData[i].permohonanId + "', '" + responseData[i].id + "')\" class=\"btn btn-xs btn-block btn-info\">\n                  Lihat Detail Data\n                </button>\n                <a href=\"" + resourceUrl + responseData[i].tandaDaftarUrl + "\" target=\"_blank\" class=\"btn btn-xs btn-block btn-success\">\n                  Unduh Tanda Daftar\n                </a>";
+                    data.push(setDataTablePerizinanRow(responseData[i], action));
+                }
+                return data;
+            },
+            data: function (requestData) {
+                return configureDataTablePerizinanRequest(requestData);
+            }
+        }
+    });
+}
+function setDataTablePerizinanRow(data, action) {
+    var row = [
+        data.perizinanNumber,
+        data.domain,
+        moment(data.issuedAt).format("YYYY-MM-DD"),
+        moment(data.expiredAt).format("YYYY-MM-DD"),
+        action
+    ];
+    return row;
+}
+function configureDataTablePerizinanRequest(request) {
+    var sortFields = ['perizinanNumber', 'domain', 'issuedAt', 'expiredAt'];
+    return configureDataTableAjaxRequest('Perizinan', 'perizinanNumber', 1, sortFields, request);
+}
+function configureDataTableAjaxRequest(moduleName, searchedFields, numberOfSearchFields, sortFields, requestData) {
+    var colNumber = requestData.order[0].column;
+    var sortDirection = requestData.order[0].dir;
+    var data = {
+        fpage: (requestData.start + requestData.length) / requestData.length,
+        frows: requestData.length,
+        fsearch: requestData.search.value,
+        forder: sortFields[colNumber],
+        fsort: sortDirection,
+        fmodul: moduleName,
+        flsearch: searchedFields,
+        ftots: numberOfSearchFields
+    };
+    return data;
+}
+function displayRequestSuccessToastr(xhr, toastrTitle, successMessage, errorMessage) {
     if (xhr.status == 200 || xhr.status == 201 || xhr.status == 204) {
         displaySuccessToastr(toastrTitle, successMessage);
     }
@@ -262,21 +306,23 @@ function displayRequestSucceededToastr(xhr, toastrTitle, successMessage, errorMe
         displayRequestErrorToastr(xhr, toastrTitle, errorMessage);
     }
 }
+function displayRequestErrorToastr(xhr, title, message) {
+    displayErrorToastr(title, message + " - status: " + xhr.status);
+}
 function displaySuccessToastr(title, message) {
     var options = setToastrOptions();
-    toastr.error(message, title, options);
+    toastr.success(message, title, options);
 }
 function displayErrorToastr(title, message) {
     var options = setToastrOptions();
     toastr.error(message, title, options);
 }
-function displayRequestErrorToastr(xhr, title, message) {
-    displayErrorToastr(title, message + " - status: " + xhr.status);
-}
-function onRequestSuccess(xhr, successStatusCallback, errorStatusCallback) {
+function routeOnRequestSuccess(xhr, routingFunction) {
     if (xhr.status == 200 || xhr.status == 201 || xhr.status == 204) {
-        // successStatusCallback();
-        return;
+        routingFunction();
     }
-    // errorStatusCallback();
+}
+function getFormData(formElementSelector) {
+    var formElement = document.querySelector(formElementSelector);
+    return Object.fromEntries(new FormData(formElement).entries());
 }
