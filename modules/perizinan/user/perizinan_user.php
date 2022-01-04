@@ -1,5 +1,9 @@
 <?php
-include('../template/template.php');
+set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER["DOCUMENT_ROOT"]);
+require_once("configReader.php");
+require_once('../template/template.php');
+$settingData = readConfig();
+$fileUrl = $settingData->resourceUrl;
 ?>
 
 <script>
