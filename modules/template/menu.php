@@ -149,22 +149,12 @@ function displayMenuPerizinan($role)
 
   switch ($role) {
     case "Psef.Verifikator":
-      $route = "routing('perizinan_verif')";
-      break;
     case "Psef.Kasi":
-      $route = "routing('perizinan_kasi')";
-      break;
     case "Psef.Kasubdit":
-      $route = "routing('perizinan_kasubdit')";
-      break;
     case "Psef.Diryanfar":
-      $route = "routing('perizinan_diryanfar')";
-      break;
     case "Psef.Dirjen":
-      $route = "routing('perizinan_dirjen')";
-      break;
     case "Psef.ValidatorSertifikat":
-      $route = "routing('perizinan_validator')";
+      $route = "routing('perizinan_user')";
       break;
     case "Psef.Admin":
       $route = "routing('perizinan_admin')";
