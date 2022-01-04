@@ -12,6 +12,7 @@
       "@types/datatables.net": "^1.10.19",
       "@types/jquery": "^3.5.5",
       "@types/quill": "^2.0.9",
-      "@types/toastr": "^2.1.39"
+      "@types/toastr": "^2.1.39",
+      "openapi-typescript": "^5.0.0"
    }
 }
