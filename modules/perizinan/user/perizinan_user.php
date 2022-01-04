@@ -7,7 +7,7 @@ $fileUrl = $settingData->resourceUrl;
 ?>
 
 <script>
-    var accesstoken = "<?php echo $_SESSION["accessToken"]; ?>";
+    var accesstoken = <?php echo json_encode($_COOKIE['accesstoken']); ?>;
 
     $(document).ready(function() {
       loadDataTablePerizinan(url_api_php, "<?php echo $fileUrl; ?>", "#zero_config");
