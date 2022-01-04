@@ -135,8 +135,6 @@ function displayPemohonUserScript()
         ".preloader");
     }
 
-    function routing() {}
-
     function updatePemohon(event) {
       event.preventDefault();
 
@@ -151,7 +149,7 @@ function displayPemohonUserScript()
         ".preloader");
       request.done(
         function(data, textStatus, xhr) {
-          routeOnRequestSuccess(xhr, routing);
+          setSaveButtonStateOnInputChanged("#data-update", "#save-pemohon");
         }
       );
     }
