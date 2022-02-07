@@ -493,6 +493,14 @@ function configureDataTableAjaxRequest(
   return data;
 }
 
+function downloadOSSIzin(id: number, apiUrl: string, resourceUrl: string, token: string, loaderElementSelector?: string) {
+  let request = loadData(`${apiUrl}/api/v0.1/Perizinan/DownloadFileIzinOss?perizinanId=${id}`, token, loaderElementSelector);
+
+  request.done(function (data: ODataStringResponse) {
+    window.open(`${resourceUrl}${data.value}`, "_blank");
+  });
+}
+
 function displayRequestSuccessToastr(
   xhr: JQuery.jqXHR,
   toastrTitle: string,
