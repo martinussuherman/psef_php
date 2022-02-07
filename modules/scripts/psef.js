@@ -240,7 +240,7 @@ function dataTablePemohon(elementSelector, url) {
         });
     });
 }
-function loadDataTablePerizinan(apiUrl, resourceUrl, dataTableElementSelector) {
+function loadDataTablePerizinan(phpApiUrl, apiUrl, resourceUrl, token, dataTableElementSelector, loaderElementSelector) {
     $(dataTableElementSelector)
         .on('xhr.dt', function (e, settings, json, xhr) {
         json.data = json.rows;
@@ -252,13 +252,13 @@ function loadDataTablePerizinan(apiUrl, resourceUrl, dataTableElementSelector) {
         scrollY: "100vh",
         scrollX: true,
         ajax: {
-            url: apiUrl,
+            url: phpApiUrl,
             method: "POST",
             dataSrc: function (json) {
                 var responseData = json.data;
                 var data = [];
                 for (var i = 0; i < responseData.length; i++) {
-                    var action = "\n                <button onclick=\"view_data('" + responseData[i].permohonanId + "', '" + responseData[i].id + "')\" class=\"btn btn-xs btn-block btn-info\">\n                  Lihat Detail Data\n                </button>\n                <a href=\"" + resourceUrl + responseData[i].tandaDaftarUrl + "\" target=\"_blank\" class=\"btn btn-xs btn-block btn-success\">\n                  Unduh Tanda Daftar\n                </a>";
+                    var action = "\n                <button onclick=\"view_data('" + responseData[i].permohonanId + "', '" + responseData[i].id + "')\" class=\"btn btn-xs btn-block btn-info\">\n                  Lihat Detail Data\n                </button>\n                <a href=\"" + resourceUrl + responseData[i].tandaDaftarUrl + "\" target=\"_blank\" class=\"btn btn-xs btn-block btn-success\">\n                  Unduh Tanda Daftar\n                </a>\n                <button onclick=\"downloadOSSIzin(" + responseData[i].id + ", '" + apiUrl + "', '" + resourceUrl + "', '" + token + "', '" + loaderElementSelector + "')\" class=\"btn btn-xs btn-block btn-primary\">\n                  Unduh Izin OSS\n                </button>";
                     data.push(setDataTablePerizinanRow(responseData[i], action));
                 }
                 return data;
@@ -297,6 +297,12 @@ function configureDataTableAjaxRequest(moduleName, searchedFields, numberOfSearc
         ftots: numberOfSearchFields
     };
     return data;
+}
+function downloadOSSIzin(id, apiUrl, resourceUrl, token, loaderElementSelector) {
+    var request = loadData(apiUrl + "/api/v0.1/Perizinan/DownloadFileIzinOss?perizinanId=" + id, token, loaderElementSelector);
+    request.done(function (data) {
+        window.open(resourceUrl + data.value, "_blank");
+    });
 }
 function displayRequestSuccessToastr(xhr, toastrTitle, successMessage, errorMessage) {
     if (xhr.status == 200 || xhr.status == 201 || xhr.status == 204) {
