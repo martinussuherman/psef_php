@@ -154,13 +154,11 @@ function displayMenuPerizinan($role)
     case "Psef.Diryanfar":
     case "Psef.Dirjen":
     case "Psef.ValidatorSertifikat":
+    case "Psef.Admin":
       $route = "routing('perizinan_user')";
       break;
-    case "Psef.Admin":
-      $route = "routing('perizinan_admin')";
-      break;
     default:
-      $href= "/tanda-daftar";
+      $href = "/tanda-daftar";
       break;
   }
 ?>
