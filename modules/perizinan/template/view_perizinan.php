@@ -3,6 +3,7 @@ set_include_path(get_include_path() . PATH_SEPARATOR . $_SERVER["DOCUMENT_ROOT"]
 require_once("configReader.php");
 $settingData = readConfig();
 $fileUrl = $settingData->resourceUrl;
+$apiUrl = $settingData->apiServerUrl;
 ?>
 <!-- Template for view -->
 <script id="view-data" type="text/x-handlebars-template">
@@ -108,6 +109,13 @@ $fileUrl = $settingData->resourceUrl;
       class="btn btn-success"
     >
       Unduh Tanda Daftar
+    </button>
+    <button
+      onclick="downloadOSSIzin({{data_izin.id}}, '<?php echo $apiUrl; ?>', '<?php echo $fileUrl; ?>', '<?php echo $_SESSION["accessToken"]; ?>', '.preloader')"
+      type="button"
+      class="btn btn-secondary"
+    >
+      Unduh Izin OSS
     </button>
   </form>
 </script>
