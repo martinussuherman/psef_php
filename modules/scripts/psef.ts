@@ -414,7 +414,13 @@ function dataTablePemohon(elementSelector: string, url: string) {
   });
 }
 
-function loadDataTablePerizinan(apiUrl: string, resourceUrl: string, dataTableElementSelector: string) {
+function loadDataTablePerizinan(
+  phpApiUrl: string,
+  apiUrl: string,
+  resourceUrl: string,
+  token: string,
+  dataTableElementSelector: string,
+  loaderElementSelector?: string) {
   $(dataTableElementSelector)
     .on('xhr.dt', function (e, settings, json: PhpApiResponse, xhr) {
       json.data = json.rows;
@@ -426,7 +432,7 @@ function loadDataTablePerizinan(apiUrl: string, resourceUrl: string, dataTableEl
       scrollY: "100vh",
       scrollX: true,
       ajax: {
-        url: apiUrl,
+        url: phpApiUrl,
         method: "POST",
         dataSrc: function (json: PhpApiResponse) {
           let responseData = json.data as apiv01["schemas"]["PerizinanViewIEnumerableODataValue"]["value"];
@@ -439,7 +445,10 @@ function loadDataTablePerizinan(apiUrl: string, resourceUrl: string, dataTableEl
                 </button>
                 <a href="${resourceUrl}${responseData![i].tandaDaftarUrl}" target="_blank" class="btn btn-xs btn-block btn-success">
                   Unduh Tanda Daftar
-                </a>`;
+                </a>
+                <button onclick="downloadOSSIzin(${responseData![i].id}, '${apiUrl}', '${resourceUrl}', '${token}', '${loaderElementSelector}')" class="btn btn-xs btn-block btn-primary">
+                  Unduh Izin OSS
+                </button>`;
 
             data.push(setDataTablePerizinanRow(responseData![i], action));
           }
