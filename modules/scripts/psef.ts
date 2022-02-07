@@ -18,7 +18,7 @@ type PhpApiResponse = {
   recordsTotal: number,
   recordsFiltered: number
 };
-type FileUploadInfo = {
+type ODataStringResponse = {
   "@odata.context": string,
   value: string
 };
@@ -139,7 +139,7 @@ function uploadFile(
     data: formData,
     processData: false,
     contentType: false,
-    success: function (data: FileUploadInfo, textStatus, xhr) {
+    success: function (data: ODataStringResponse, textStatus, xhr) {
       viewElement.val(data.value);
 
       if (!isEdit) {
