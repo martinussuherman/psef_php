@@ -90,11 +90,11 @@ $fileUrl = $settingData->resourceUrl;
     <hr class="m-t-0">
 
     <?php
-    include('../../template/view_data_permohonan.php');
-    include('../../template/view_dokumen.php');
-    include('../../template/table_apotek.php');
-    include('../../template/table_klinik.php');
-    include('../../template/table_rumah_sakit.php');
+    require_once('../../template/view_data_permohonan.php');
+    require_once('../../template/view_dokumen.php');
+    require_once('../../template/table_apotek.php');
+    require_once('../../template/table_klinik.php');
+    require_once('../../template/table_rumah_sakit.php');
     ?>
 
     <button type="button" class="btn btn-danger" onclick="viewRouting()">
