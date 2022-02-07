@@ -61,6 +61,6 @@
 </div>
 
 <?php
-include('../../template/common_script.php');
-include('view_perizinan.php');
+require_once('../../template/common_script.php');
+require_once('view_perizinan.php');
 ?>
