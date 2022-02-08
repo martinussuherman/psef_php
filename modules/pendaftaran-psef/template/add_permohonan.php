@@ -1,5 +1,5 @@
 <?php
-$idIzin = isset($_SESSION["ssoIdIzin"]) ? $_SESSION["ssoIdIzin"] : "";
+$idIzin = $_SESSION["ssoIdIzin"] ?? "";
 ?>
 <!-- Template for add -->
 <script id="add-data" type="text/x-handlebars-template">
