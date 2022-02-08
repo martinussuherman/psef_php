@@ -6,7 +6,7 @@ require_once("pageScripts.php");
 function displayPage(callable $contentFunction, $scriptFunction, string $pageTitle)
 {
   global $settingData;
-  $role = $_SESSION["role"];
+  $role = $_SESSION["role"] ?? "";
 ?>
   <!DOCTYPE html>
   <html lang="en" dir="ltr">
@@ -63,7 +63,7 @@ function displayPage(callable $contentFunction, $scriptFunction, string $pageTit
               </ul>
 
               <ul class="navbar-nav float-right">
-                <?php displayMenuUserInfo($_SESSION["email"], $settingData); ?>
+                <?php displayMenuUserInfo($_SESSION["email"] ?? "", $settingData); ?>
               </ul>
             </div>
           </nav>
