@@ -25,7 +25,7 @@ $_SESSION["accessToken"] = $accessToken;
 $_SESSION["refreshToken"] = $oidc->getRefreshToken();
 $_SESSION["tokenExpired"] = $userClaims->exp;
 $_SESSION["userId"] = $userClaims->sub;
-$_SESSION["role"] = isset($userClaims->role) ? $userClaims->role : "";
+$_SESSION["role"] = $userClaims->role ?? "";
 $_SESSION["email"] = $idTokenData->email;
 
 setcookie('accesstoken', $accessToken, time() + 86400, "/");
