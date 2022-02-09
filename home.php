@@ -124,6 +124,12 @@ displayHeader();
                       <a target="_blank" href="/assets/doc/Contoh%20Surat%20Pernyataan.docx" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start text-primary">
                         <h5>Contoh Surat Pernyataan</h5><i class="fa fa-download"></i>
                       </a>
+                      <a target="_blank" href="/assets/doc/Surat%20Komitmen%20Bekerja%20Sama%20dengan%20Apotek.docx" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start text-primary">
+                        <h5>Surat Komitmen Bekerja Sama dengan Apotek</h5><i class="fa fa-download"></i>
+                      </a>
+                      <a target="_blank" href="/assets/doc/Surat%20Permohonan.docx" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start text-primary">
+                        <h5>Surat Permohonan</h5><i class="fa fa-download"></i>
+                      </a>
                     </div>
                   </div>
 
