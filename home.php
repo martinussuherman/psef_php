@@ -70,8 +70,8 @@ displayHeader();
                   <div class="card">
                     <h4 class="card-header bg-dark text-white">TENTANG PENDAFTARAN PSEF</h4>
                     <p class="card-body text-justify" style="font-size: 1.25em;">
-                      Pendaftaran Penyedia Sistem Elektronik Farmasi (PSEF) merupakan persyaratan untuk
-                      Penyedia Sistem Elektronik (PSE) yang memfasilitasi pelayanan kefarmasian.<br />
+                      Pendaftaran Penyelenggara Sistem Elektronik Farmasi (PSEF) merupakan persyaratan untuk
+                      Penyelenggara Sistem Elektronik (PSE) yang memfasilitasi pelayanan kefarmasian.<br />
                       Pelaku usaha yang dapat mendaftarkan diri sebagai PSEF adalah pelaku usaha berbadan hukum, dan telah
                       atau akan bekerjasama dengan pelaksana pekerjaan kefarmasian sesuai dengan ketentuan yang berlaku.<br />
                       Pemberi pelayanan kefarmasian yang difasilitasi oleh PSEF harus berupa apotek yang resmi dan berizin.
