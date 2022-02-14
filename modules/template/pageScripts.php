@@ -12,6 +12,7 @@ function displayPageScripts()
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesaw/3.1.2/tablesaw.jquery.min.js" integrity="sha512-/Un6gjn0IXHJtR9j8VBYmN3ZoAVNMTQTufizEkeImLkb67lxsJcXv/cFswbOig2v5ykbGxX6zngh4u8ff7FJ0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tablesaw/3.1.2/tablesaw-init.min.js" integrity="sha512-w/1hLca9Fyn6iwnkMxUU55d/OlcA65RnP4v6kJ8NssnzHeHnJBeOzuHEkJ67zpt0ksiH1LQn8FKYZc/TT1O/aQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+  <script src="/modules/scripts/psef.js?set=cache-buster"></script>
   <script src="/assets/libs/sweetalert2/dist/sweetalert2.all.min.js"></script>
   <script src="/assets/libs/select2/dist/js/select2.full.min.js"></script>
   <script src="/assets/libs/toastr/build/toastr.min.js"></script>
