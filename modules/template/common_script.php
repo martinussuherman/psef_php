@@ -273,7 +273,7 @@
       error: function(xhr, textStatus, errorThrown) {
         $("#cek_nib").css("color", "white");
         $('#cek_nib').html('')
-        $( "#nib" ).removeClass("is-valid is-invalid");
+        $("#nib").removeClass("is-valid is-invalid");
         $('#status_nib').val(0)
       }
     });
@@ -600,7 +600,7 @@
         $.ajax({
           url: apiUrl,
           type: 'POST',
-          beforeSend: function (xhr) {
+          beforeSend: function(xhr) {
             xhr.setRequestHeader('Authorization', 'Bearer ' + token + '');
           },
           data: JSON.stringify({
@@ -608,7 +608,7 @@
             permohonanId: parseInt(permohonanId)
           }),
           contentType: 'application/json',
-          success: function (data, textStatus, xhr) {
+          success: function(data, textStatus, xhr) {
             if (xhr.status == 204) {
               Swal.fire(
                 'Berhasil!',
@@ -626,7 +626,7 @@
               'error'
             );
           },
-          error: function (xhr, textStatus, errorThrown) {
+          error: function(xhr, textStatus, errorThrown) {
             console.log('Error in Operation');
           }
         });
