@@ -358,7 +358,7 @@ include('edit_permohonan_script.html');
         viewRouting();
       },
       error: function(xhr, textStatus, errorThrown) {
-        displayErrorToastr("Simpan Data Permohonan", "Data permohonan gagal disimpan");
+        displayRequestErrorToastr(xhr, "Simpan Data Permohonan", "Data permohonan gagal disimpan");
       }
     });
 
