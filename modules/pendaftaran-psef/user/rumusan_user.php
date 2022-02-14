@@ -230,6 +230,7 @@ include('edit_permohonan_script.html');
     event.preventDefault();
 
     if (form.checkValidity() === false) {
+      displayErrorToastr("Isian Data Permohonan", "Isian data permohonan belum lengkap, mohon cek kembali");
       event.stopPropagation();
       scrollToTop();
       return false;
@@ -353,10 +354,11 @@ include('edit_permohonan_script.html');
           });
         }
 
+        displaySuccessToastr("Simpan Data Permohonan", "Data permohonan berhasil disimpan");
         viewRouting();
       },
       error: function(xhr, textStatus, errorThrown) {
-        console.log('Error in Operation');
+        displayErrorToastr("Simpan Data Permohonan", "Data permohonan gagal disimpan");
       }
     });
 
