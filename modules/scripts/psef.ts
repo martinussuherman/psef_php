@@ -414,6 +414,11 @@ function dataTablePemohon(elementSelector: string, url: string) {
   });
 }
 
+function dataTableODataSelect(data: DataTables.AjaxDataRequest) {
+  let select = data.columns.map(item => item.data);
+  return select.join(",");
+}
+
 function dataTableODataSort(data: DataTables.AjaxDataRequest) {
   let order = data.order.map(item => (`${data.columns[item.column].data} ${item.dir}`));
   return order.join(",");
