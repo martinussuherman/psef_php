@@ -390,14 +390,13 @@ function loadAndDisplayNib(
   });
 }
 
-function dataTablePemohon(elementSelector: string, url: string) {
+function dataTablePemohon(elementSelector: string, apiServerUrl: string, token: string) {
   jQuery(function () {
     $(elementSelector).DataTable({
       processing: true,
       serverSide: true,
-      ajax: {
-        url: url,
-        method: "POST"
+      ajax: function (data, callback, settings) {
+        dataTableODataProxy(`${apiServerUrl}/api/v0.1/Pemohon`, token, data as DataTables.AjaxDataRequest, callback, settings);
       },
       columns: [
         { data: "id" },
