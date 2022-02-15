@@ -414,6 +414,25 @@ function dataTablePemohon(elementSelector: string, url: string) {
   });
 }
 
+function dataTableODataProxy(
+  url: string,
+  token: string,
+  data: DataTables.AjaxDataRequest,
+  callback: (data: any) => void,
+  settings: DataTables.SettingsLegacy) {
+  let select = dataTableODataSelect(data);
+  let order = dataTableODataSort(data);
+  let query = `${url}?$top=${data.length}&$skip=${data.start}&$select=${select}&$orderby=${order}`;
+  let request = loadData(query, token);
+
+  request.done(function (data) {
+    console.debug(data);
+    callback(data);
+  });
+
+  return request;
+}
+
 function dataTableODataSelect(data: DataTables.AjaxDataRequest) {
   let select = data.columns.map(item => item.data);
   return select.join(",");
