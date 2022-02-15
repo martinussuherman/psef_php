@@ -485,17 +485,7 @@ function loadDataTablePerizinan(
           let data = [];
 
           for (let i = 0; i < responseData!.length; i++) {
-            let action = `
-                <button onclick="view_data('${responseData![i].permohonanId}', '${responseData![i].id}')" class="btn btn-xs btn-block btn-info">
-                  Lihat Detail Data
-                </button>
-                <a href="${resourceUrl}${responseData![i].tandaDaftarUrl}" target="_blank" class="btn btn-xs btn-block btn-success">
-                  Unduh Tanda Daftar
-                </a>
-                <button onclick="downloadOSSIzin(${responseData![i].id}, '${apiUrl}', '${resourceUrl}', '${token}', '${loaderElementSelector}')" class="btn btn-xs btn-block btn-primary">
-                  Unduh Izin OSS
-                </button>`;
-
+            let action = perizinanAction(apiUrl, resourceUrl, token, responseData![i], loaderElementSelector);
             data.push(setDataTablePerizinanRow(responseData![i], action));
           }
 
