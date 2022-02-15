@@ -217,14 +217,13 @@ function loadAndDisplayNib(nib, apiServerUrl, token, inputElementId, statusEleme
         toastr.error("Gagal mengambil data NIB - status: " + xhr.status, "Data NIB", options);
     });
 }
-function dataTablePemohon(elementSelector, url) {
+function dataTablePemohon(elementSelector, apiServerUrl, token) {
     jQuery(function () {
         $(elementSelector).DataTable({
             processing: true,
             serverSide: true,
-            ajax: {
-                url: url,
-                method: "POST"
+            ajax: function (data, callback, settings) {
+                dataTableODataProxy(apiServerUrl + "/api/v0.1/Pemohon", token, data, callback, settings);
             },
             columns: [
                 { data: "id" },
@@ -239,6 +238,34 @@ function dataTablePemohon(elementSelector, url) {
             ]
         });
     });
+}
+function dataTableODataProxy(url, token, data, callback, settings) {
+    var select = dataTableODataSelect(data);
+    var order = dataTableODataSort(data);
+    var query = url + "?$top=" + data.length + "&$skip=" + data.start + "&$select=" + select + "&$orderby=" + order;
+    var request = loadData(query, token);
+    request.done(function (data) {
+        console.debug(data);
+        callback(data);
+    });
+    return request;
+}
+function dataTableODataSelect(data) {
+    var select = data.columns.map(function (item) { return item.data; });
+    return select.join(",");
+}
+function dataTableODataSort(data) {
+    var order = data.order.map(function (item) { return (data.columns[item.column].data + " " + item.dir); });
+    return order.join(",");
+}
+function permohonanAction(permohonan, isViewOnly, showAlasanDikembalikan) {
+    if (isViewOnly) {
+        return "\n      <td>\n        <button onclick=\"permohonanCurrentUser(" + permohonan.id + ", false, " + showAlasanDikembalikan + ")\" type=\"button\" class=\"btn btn-xs btn-block waves-effect waves-light btn-info\">\n          Lihat Detail Data\n        </button>\n      </td>";
+    }
+    return "\n    <td>\n      <button onclick=\"permohonanCurrentUser(" + permohonan.id + ", true, " + showAlasanDikembalikan + ")\" type=\"button\" class=\"btn btn-xs btn-block waves-effect waves-light btn-info\">\n        Lihat Detail Data\n      </button>\n      <button onclick=\"edit_data_permohonan(" + permohonan.id + ")\" type=\"button\" class=\"btn btn-xs btn-block waves-effect waves-light btn-primary\">\n        Ubah Permohonan\n      </button>\n      <button onclick=\"edit_data_apotek(" + permohonan.id + ", " + permohonan.permohonanNumber + ")\" type=\"button\" class=\"btn btn-xs btn-block waves-effect waves-light btn-secondary\">\n        Ubah Apotek\n      </button>\n      <button onclick=\"edit_data_rs(" + permohonan.id + ", " + permohonan.permohonanNumber + ")\" type=\"button\" class=\"btn btn-xs btn-block waves-effect waves-light btn-danger\">\n        Ubah Rumah Sakit\n      </button>\n      <button onclick=\"ajukan_permohonan(" + permohonan.id + ")\" type=\"button\" class=\"btn btn-xs btn-block waves-effect waves-light btn-success\">\n        Ajukan Permohonan\n      </button>\n    </td>";
+}
+function perizinanAction(apiUrl, resourceUrl, token, perizinan, loaderElementSelector) {
+    return "\n    <button onclick=\"view_data('" + perizinan.permohonanId + "', '" + perizinan.id + "')\" class=\"btn btn-xs btn-block btn-info\">\n      Lihat Detail Data\n    </button>\n    <a href=\"" + resourceUrl + perizinan.tandaDaftarUrl + "\" target=\"_blank\" class=\"btn btn-xs btn-block btn-success\">\n      Unduh Tanda Daftar\n    </a>\n    <button onclick=\"downloadOSSIzin(" + perizinan.id + ", '" + apiUrl + "', '" + resourceUrl + "', '" + token + "', '" + loaderElementSelector + "')\" class=\"btn btn-xs btn-block btn-primary\">\n      Unduh Izin OSS\n    </button>";
 }
 function loadDataTablePerizinan(phpApiUrl, apiUrl, resourceUrl, token, dataTableElementSelector, loaderElementSelector) {
     $(dataTableElementSelector)
@@ -258,7 +285,7 @@ function loadDataTablePerizinan(phpApiUrl, apiUrl, resourceUrl, token, dataTable
                 var responseData = json.data;
                 var data = [];
                 for (var i = 0; i < responseData.length; i++) {
-                    var action = "\n                <button onclick=\"view_data('" + responseData[i].permohonanId + "', '" + responseData[i].id + "')\" class=\"btn btn-xs btn-block btn-info\">\n                  Lihat Detail Data\n                </button>\n                <a href=\"" + resourceUrl + responseData[i].tandaDaftarUrl + "\" target=\"_blank\" class=\"btn btn-xs btn-block btn-success\">\n                  Unduh Tanda Daftar\n                </a>\n                <button onclick=\"downloadOSSIzin(" + responseData[i].id + ", '" + apiUrl + "', '" + resourceUrl + "', '" + token + "', '" + loaderElementSelector + "')\" class=\"btn btn-xs btn-block btn-primary\">\n                  Unduh Izin OSS\n                </button>";
+                    var action = perizinanAction(apiUrl, resourceUrl, token, responseData[i], loaderElementSelector);
                     data.push(setDataTablePerizinanRow(responseData[i], action));
                 }
                 return data;
