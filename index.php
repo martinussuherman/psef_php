@@ -12,6 +12,8 @@ get('/logout', 'logout.php');
 get('/sso/receive-token', 'modules/sso/receiveToken.php');
 get('/sso/ids-sso', 'modules/sso/identityServerCallback.php');
 
+get('/test', 'testDataTable.php');
+
 if (!isset($_SESSION["accessToken"])) {
   header("Location: /");
   return;
@@ -23,3 +25,4 @@ get('/pemohon-user', 'modules/pemohon/displayPemohonUser.php');
 get('/permohonan-user/$status', 'modules/pendaftaran-psef/displayPermohonanUser.php');
 get('/tanda-daftar', 'modules/perizinan/displayPerizinan.php');
 post('/call-api', 'api/api.php');
+post('/odata-api/$entity', 'api/oDataApi.php');
