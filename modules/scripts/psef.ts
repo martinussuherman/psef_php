@@ -445,6 +445,36 @@ function dataTableODataSort(data: DataTables.AjaxDataRequest) {
   return order.join(",");
 }
 
+function permohonanAction(permohonan: PermohonanView, isViewOnly: boolean, showAlasanDikembalikan: boolean) {
+  if (isViewOnly) {
+    return `
+      <td>
+        <button onclick="permohonanCurrentUser(${permohonan.id}, false, ${showAlasanDikembalikan})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">
+          Lihat Detail Data
+        </button>
+      </td>`;
+  }
+
+  return `
+    <td>
+      <button onclick="permohonanCurrentUser(${permohonan.id}, true, ${showAlasanDikembalikan})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">
+        Lihat Detail Data
+      </button>
+      <button onclick="edit_data_permohonan(${permohonan.id})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-primary">
+        Ubah Permohonan
+      </button>
+      <button onclick="edit_data_apotek(${permohonan.id}, ${permohonan.permohonanNumber})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-secondary">
+        Ubah Apotek
+      </button>
+      <button onclick="edit_data_rs(${permohonan.id}, ${permohonan.permohonanNumber})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-danger">
+        Ubah Rumah Sakit
+      </button>
+      <button onclick="ajukan_permohonan(${permohonan.id})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-success">
+        Ajukan Permohonan
+      </button>
+    </td>`;
+}
+
 function perizinanAction(
   apiUrl: string,
   resourceUrl: string,
