@@ -442,6 +442,24 @@ function dataTableODataSort(data: DataTables.AjaxDataRequest) {
   return order.join(",");
 }
 
+function perizinanAction(
+  apiUrl: string,
+  resourceUrl: string,
+  token: string,
+  perizinan?: PerizinanView,
+  loaderElementSelector?: string) {
+  return `
+    <button onclick="view_data('${perizinan!.permohonanId}', '${perizinan!.id}')" class="btn btn-xs btn-block btn-info">
+      Lihat Detail Data
+    </button>
+    <a href="${resourceUrl}${perizinan!.tandaDaftarUrl}" target="_blank" class="btn btn-xs btn-block btn-success">
+      Unduh Tanda Daftar
+    </a>
+    <button onclick="downloadOSSIzin(${perizinan!.id}, '${apiUrl}', '${resourceUrl}', '${token}', '${loaderElementSelector}')" class="btn btn-xs btn-block btn-primary">
+      Unduh Izin OSS
+    </button>`;
+}
+
 function loadDataTablePerizinan(
   phpApiUrl: string,
   apiUrl: string,
