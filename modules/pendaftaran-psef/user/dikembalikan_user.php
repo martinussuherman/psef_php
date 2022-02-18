@@ -49,7 +49,7 @@ include('edit_permohonan_script.php');
         "url": url_api_php,
         "type": "POST",
         "dataSrc": function(json) {
-          return permohonanFromJson(json, false);
+          return permohonanFromJson(json, false, true);
         },
         "data": function(d) {
           return permohonanAjaxRequest(d, 'PermohonanCurrentUser/Dikembalikan');
