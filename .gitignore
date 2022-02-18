@@ -2,6 +2,13 @@
 /vendor
 /.vscode
 /node_modules
+/assets
+/assets_portal
+/dist
+/dompdf-master
+/PHPExcel
+/usrm
+composer.phar
 pnpm-lock.yaml
 service-account-credentials.json
 appsettings.json
