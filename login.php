@@ -28,10 +28,11 @@ $_SESSION["tokenExpired"] = $userClaims->exp;
 $_SESSION["role"] = $userClaims->role ?? "";
 $_SESSION["email"] = $idTokenData->email;
 
-setcookie('sid', $userClaims->sub, time() + 86400, "/");
-setcookie('role', $userClaims->role ?? "", time() + 86400, "/");
-setcookie('email',  $idTokenData->email, time() + 86400, "/");
-setcookie('idtoken', $idToken, time() + 86400, "/");
-setcookie('accesstoken', $accessToken, time() + 86400, "/");
+$cookieExpiry = time() + 172800;
+setcookie('sid', $userClaims->sub, $cookieExpiry, "/");
+setcookie('role', $userClaims->role ?? "", $cookieExpiry, "/");
+setcookie('email',  $idTokenData->email, $cookieExpiry, "/");
+setcookie('idtoken', $idToken, $cookieExpiry, "/");
+setcookie('accesstoken', $accessToken, $cookieExpiry, "/");
 
 header("Location: ./");
