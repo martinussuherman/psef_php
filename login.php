@@ -28,6 +28,7 @@ $_SESSION["userId"] = $userClaims->sub;
 $_SESSION["role"] = $userClaims->role ?? "";
 $_SESSION["email"] = $idTokenData->email;
 
-setcookie('accesstoken', $accessToken, time() + 86400, "/");
+$cookieExpiry = time() + 172800;
+setcookie('accesstoken', $accessToken, $cookieExpiry, "/");
 
 header("Location: /dashboard");
