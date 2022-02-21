@@ -1,3 +1,6 @@
+import moment from "moment";
+import { Quill } from "quill";
+import Swal from "sweetalert2";
 // Reference: https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
 function setInputFilter(textbox, inputFilter) {
     ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function (event) {
@@ -44,7 +47,7 @@ function setSaveButtonStateOnInputChanged(formElementId, saveButtonElementId) {
         .prop("disabled", true);
 }
 function setAuthHeader(xhr, token) {
-    xhr.setRequestHeader("Authorization", "Bearer " + token);
+    xhr.setRequestHeader("Authorization", `Bearer ${token}`);
 }
 function fileUploadError(isEdit, fileInputElement, closeElement, viewElement, errorMessage) {
     if (!isEdit) {
@@ -61,11 +64,10 @@ function fileUploadError(isEdit, fileInputElement, closeElement, viewElement, er
     });
 }
 function uploadFile(isEdit, url, token, fileInputElement, closeElement, viewElement) {
-    var _a, _b, _c, _d;
-    var fileInput = fileInputElement[0];
-    var fileName = (_c = (_b = (_a = fileInput.files) === null || _a === void 0 ? void 0 : _a.item(0)) === null || _b === void 0 ? void 0 : _b.name) !== null && _c !== void 0 ? _c : "";
-    var file = (_d = fileInput.files) === null || _d === void 0 ? void 0 : _d.item(0);
-    var formData = new FormData();
+    let fileInput = fileInputElement[0];
+    let fileName = fileInput.files?.item(0)?.name ?? "";
+    let file = fileInput.files?.item(0);
+    let formData = new FormData();
     formData.append('file', file);
     if (!/(.*?)\.(pdf)$/.test(fileName) && fileName != "") {
         fileUploadError(isEdit, fileInputElement, closeElement, viewElement, "Pastikan berkas yang anda upload berupa PDF");
@@ -93,17 +95,17 @@ function uploadFile(isEdit, url, token, fileInputElement, closeElement, viewElem
             }
         },
         error: function (xhr, textStatus, errorThrown) {
-            fileUploadError(isEdit, fileInputElement, closeElement, viewElement, "Terdapat masalah dalam upload berkas - status: " + xhr.status);
+            fileUploadError(isEdit, fileInputElement, closeElement, viewElement, `Terdapat masalah dalam upload berkas - status: ${xhr.status}`);
         }
     });
 }
 function setUploadHandler(inputElementId, isEdit, url, token) {
-    $("#" + inputElementId).on("change", function () {
-        uploadFile(isEdit, url, token, $("#" + inputElementId), $("#close-" + inputElementId), $("#v-" + inputElementId));
+    $(`#${inputElementId}`).on("change", function () {
+        uploadFile(isEdit, url, token, $(`#${inputElementId}`), $(`#close-${inputElementId}`), $(`#v-${inputElementId}`));
     });
 }
 function setToastrOptions() {
-    var options = {
+    let options = {
         closeButton: true,
         debug: false,
         newestOnTop: false,
@@ -122,17 +124,31 @@ function setToastrOptions() {
     return options;
 }
 function displayOssSsoToastr(statusCode, message) {
-    var options = setToastrOptions();
-    var title = "OSS SSO";
+    let options = setToastrOptions();
+    let title = "OSS SSO";
     if (statusCode == 200) {
-        toastr.success(message + "<br /> Silahkan klik Masuk untuk melanjutkan ke dalam dasboard", title, options);
+        toastr.success(`${message}<br /> Silahkan klik Masuk untuk melanjutkan ke dalam dasboard`, title, options);
         return;
     }
     toastr.error(message, title, options);
 }
 function displayHomeNewsItem(resourceUrl, news, index) {
-    $("#homePageNews").append("<div class=\"col-lg-6\">\n      <div class=\"card\">\n        <img class=\"card-img-top img-responsive\" src=\"" + resourceUrl + news.imageUrl + "\" alt=\"News Image\"/>\n        <div class=\"card-body\">\n          <div class=\"d-flex no-block align-items-center m-b-15\">\n            <span><i class=\"ti-calendar\"></i> " + moment(news.publishedAt).format("YYYY-MM-DD") + "</span>\n          </div>\n          <h3 class=\"font-normal\">" + news.title + "</h3>\n          <p class=\"m-b-0 m-t-10\" id=\"page-news-" + index + "\"></p>\n          <a href=\"" + news.linkUrl + "\" class=\"btn btn-success btn-rounded waves-effect waves-light m-t-20\" target=\"_blank\">\n            Read more\n          </a>\n        </div>\n      </div>\n    </div>");
-    var quill = new Quill("#page-news-" + index, {});
+    $("#homePageNews").append(`<div class="col-lg-6">
+      <div class="card">
+        <img class="card-img-top img-responsive" src="${resourceUrl}${news.imageUrl}" alt="News Image"/>
+        <div class="card-body">
+          <div class="d-flex no-block align-items-center m-b-15">
+            <span><i class="ti-calendar"></i> ${moment(news.publishedAt).format("YYYY-MM-DD")}</span>
+          </div>
+          <h3 class="font-normal">${news.title}</h3>
+          <p class="m-b-0 m-t-10" id="page-news-${index}"></p>
+          <a href="${news.linkUrl}" class="btn btn-success btn-rounded waves-effect waves-light m-t-20" target="_blank">
+            Read more
+          </a>
+        </div>
+      </div>
+    </div>`);
+    let quill = new Quill(`#page-news-${index}`, {});
     quill.setContents(JSON.parse(news.content));
     quill.disable();
     $('.ql-editor').css('padding', '0');
@@ -156,7 +172,7 @@ function loadData(url, token, loaderElementSelector) {
     });
 }
 function submitFormDataWithToastr(url, method, token, inputData, toastrTitle, successMessage, errorMessage, loaderElementSelector) {
-    var request = submitFormData(url, method, token, inputData, loaderElementSelector);
+    let request = submitFormData(url, method, token, inputData, loaderElementSelector);
     request.done(function (data, textStatus, xhr) {
         displayRequestSuccessToastr(xhr, toastrTitle, successMessage, errorMessage);
     });
@@ -185,7 +201,7 @@ function submitFormData(url, method, token, inputData, loaderElementSelector) {
     });
 }
 function selesaikanPermohonan(permohonanId, url, token, routingFunction, loaderElementSelector) {
-    var request = submitFormDataWithToastr(url, "POST", token, JSON.stringify({ permohonanId: parseInt(permohonanId), reason: "" }), "Proses Pembuatan Tanda Daftar", "Permohonan berhasil diproses", "Permohonan gagal diproses", loaderElementSelector);
+    let request = submitFormDataWithToastr(url, "POST", token, JSON.stringify({ permohonanId: parseInt(permohonanId), reason: "" }), "Proses Pembuatan Tanda Daftar", "Permohonan berhasil diproses", "Permohonan gagal diproses", loaderElementSelector);
     request.done(function (data, textStatus, xhr) {
         if (typeof routingFunction !== "undefined") {
             routeOnRequestSuccess(xhr, routingFunction);
@@ -196,8 +212,8 @@ function loadAndDisplayNib(nib, apiServerUrl, token, inputElementId, statusEleme
     if (nib == undefined || nib == "") {
         return;
     }
-    var options = setToastrOptions();
-    var request = loadData(apiServerUrl + "/api/v0.1/OssInfo/OssFullInfo?id=" + nib, token, loaderElementSelector);
+    let options = setToastrOptions();
+    let request = loadData(`${apiServerUrl}/api/v0.1/OssInfo/OssFullInfo?id=${nib}`, token, loaderElementSelector);
     request.done(function (data) {
         if (data.keterangan == 'Data NIB tidak ditemukan' ||
             data.keterangan == 'NIB harus 13 karakter.' ||
@@ -209,12 +225,36 @@ function loadAndDisplayNib(nib, apiServerUrl, token, inputElementId, statusEleme
             return;
         }
         $(statusElementId).css('color', 'green');
-        $(statusElementId).html("\n      Data NIB Dapat di Gunakan<br>\n      <a href=\"/view-nib/" + nib + "\" class=\"btn btn-primary\" target=\"_blank\">\n        Periksa Detail NIB\n      </a>");
+        $(statusElementId).html(`
+      Data NIB Dapat di Gunakan<br>
+      <a href="/view-nib/${nib}" class="btn btn-primary" target="_blank">
+        Periksa Detail NIB
+      </a>`);
         $(inputElementId).removeClass('is-invalid').addClass('is-valid');
-        $(viewElementId).html("\n      <table class=\"table table-bordered\">\n        <thead class=\"thead-light\">\n          <tr>\n            <th scope=\"col\">Nama Perusahaan</th>\n            <th scope=\"col\">NIB</th>\n            <th scope=\"col\">NPWP Perusahaan</th>\n            <th scope=\"col\">Nomor Telepon Perusahaan</th>\n            <th scope=\"col\">Alamat Perusahaan</th>\n          </tr>\n        </thead>\n        <tbody>\n          <tr>\n            <th>" + data.namaPerseroan + "</th>\n            <th>" + data.nib + "</th>\n            <th>" + data.npwpPerseroan + "</th>\n            <th>" + data.nomorTelponPerseroan + "</th>\n            <th>" + data.alamatPerseroan + "</th>\n          </tr>\n        </tbody>\n      </table>");
+        $(viewElementId).html(`
+      <table class="table table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Nama Perusahaan</th>
+            <th scope="col">NIB</th>
+            <th scope="col">NPWP Perusahaan</th>
+            <th scope="col">Nomor Telepon Perusahaan</th>
+            <th scope="col">Alamat Perusahaan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>${data.namaPerseroan}</th>
+            <th>${data.nib}</th>
+            <th>${data.npwpPerseroan}</th>
+            <th>${data.nomorTelponPerseroan}</th>
+            <th>${data.alamatPerseroan}</th>
+          </tr>
+        </tbody>
+      </table>`);
     });
     request.fail(function (xhr, textStatus, errorThrown) {
-        toastr.error("Gagal mengambil data NIB - status: " + xhr.status, "Data NIB", options);
+        toastr.error(`Gagal mengambil data NIB - status: ${xhr.status}`, "Data NIB", options);
     });
 }
 function dataTablePemohon(elementSelector, apiServerUrl, token) {
@@ -223,7 +263,7 @@ function dataTablePemohon(elementSelector, apiServerUrl, token) {
             processing: true,
             serverSide: true,
             ajax: function (data, callback, settings) {
-                dataTableODataProxy(apiServerUrl + "/api/v0.1/Pemohon", token, data, callback, settings);
+                dataTableODataProxy(`${apiServerUrl}/api/v0.1/Pemohon`, token, data, callback, settings);
             },
             columns: [
                 { data: "id" },
@@ -240,10 +280,10 @@ function dataTablePemohon(elementSelector, apiServerUrl, token) {
     });
 }
 function dataTableODataProxy(url, token, data, callback, settings) {
-    var select = dataTableODataSelect(data);
-    var order = dataTableODataSort(data);
-    var query = url + "?$top=" + data.length + "&$skip=" + data.start + "&$select=" + select + "&$orderby=" + order;
-    var request = loadData(query, token);
+    let select = dataTableODataSelect(data);
+    let order = dataTableODataSort(data);
+    let query = `${url}?$top=${data.length}&$skip=${data.start}&$select=${select}&$orderby=${order}`;
+    let request = loadData(query, token);
     request.done(function (data) {
         console.debug(data);
         callback(data);
@@ -251,21 +291,70 @@ function dataTableODataProxy(url, token, data, callback, settings) {
     return request;
 }
 function dataTableODataSelect(data) {
-    var select = data.columns.map(function (item) { return item.data; });
+    let select = data.columns.map(item => item.data);
     return select.join(",");
 }
 function dataTableODataSort(data) {
-    var order = data.order.map(function (item) { return (data.columns[item.column].data + " " + item.dir); });
+    let order = data.order.map(item => (`${data.columns[item.column].data} ${item.dir}`));
     return order.join(",");
 }
 function permohonanAction(permohonan, isViewOnly, showAlasanDikembalikan) {
     if (isViewOnly) {
-        return "\n      <td>\n        <button onclick=\"permohonanCurrentUser(" + permohonan.id + ", false, " + showAlasanDikembalikan + ")\" type=\"button\" class=\"btn btn-xs btn-block waves-effect waves-light btn-info\">\n          Lihat Detail Data\n        </button>\n      </td>";
+        return `
+      <td>
+        <button onclick="permohonanCurrentUser(${permohonan.id}, false, ${showAlasanDikembalikan})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">
+          Lihat Detail Data
+        </button>
+      </td>`;
     }
-    return "\n    <td>\n      <button onclick=\"permohonanCurrentUser(" + permohonan.id + ", true, " + showAlasanDikembalikan + ")\" type=\"button\" class=\"btn btn-xs btn-block waves-effect waves-light btn-info\">\n        Lihat Detail Data\n      </button>\n      <button onclick=\"edit_data_permohonan(" + permohonan.id + ")\" type=\"button\" class=\"btn btn-xs btn-block waves-effect waves-light btn-primary\">\n        Ubah Permohonan\n      </button>\n      <button onclick=\"edit_data_apotek(" + permohonan.id + ", " + permohonan.permohonanNumber + ")\" type=\"button\" class=\"btn btn-xs btn-block waves-effect waves-light btn-secondary\">\n        Ubah Apotek\n      </button>\n      <button onclick=\"edit_data_rs(" + permohonan.id + ", " + permohonan.permohonanNumber + ")\" type=\"button\" class=\"btn btn-xs btn-block waves-effect waves-light btn-danger\">\n        Ubah Rumah Sakit\n      </button>\n      <button onclick=\"ajukan_permohonan(" + permohonan.id + ")\" type=\"button\" class=\"btn btn-xs btn-block waves-effect waves-light btn-success\">\n        Ajukan Permohonan\n      </button>\n    </td>";
+    return `
+    <td>
+      <button onclick="permohonanCurrentUser(${permohonan.id}, true, ${showAlasanDikembalikan})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">
+        Lihat Detail Data
+      </button>
+      <button onclick="edit_data_permohonan(${permohonan.id})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-primary">
+        Ubah Permohonan
+      </button>
+      <button onclick="edit_data_apotek(${permohonan.id}, ${permohonan.permohonanNumber})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-secondary">
+        Ubah Apotek
+      </button>
+      <button onclick="edit_data_rs(${permohonan.id}, ${permohonan.permohonanNumber})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-danger">
+        Ubah Rumah Sakit
+      </button>
+      <button onclick="ajukan_permohonan(${permohonan.id})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-success">
+        Ajukan Permohonan
+      </button>
+    </td>`;
 }
 function perizinanAction(apiUrl, resourceUrl, token, perizinan, loaderElementSelector) {
-    return "\n    <button onclick=\"view_data('" + perizinan.permohonanId + "', '" + perizinan.id + "')\" class=\"btn btn-xs btn-block btn-info\">\n      Lihat Detail Data\n    </button>\n    <a href=\"" + resourceUrl + perizinan.tandaDaftarUrl + "\" target=\"_blank\" class=\"btn btn-xs btn-block btn-success\">\n      Unduh Tanda Daftar\n    </a>\n    <button onclick=\"downloadOSSIzin(" + perizinan.id + ", '" + apiUrl + "', '" + resourceUrl + "', '" + token + "', '" + loaderElementSelector + "')\" class=\"btn btn-xs btn-block btn-primary\">\n      Unduh Izin OSS\n    </button>";
+    return `
+    <button onclick="view_data('${perizinan.permohonanId}', '${perizinan.id}')" class="btn btn-xs btn-block btn-info">
+      Lihat Detail Data
+    </button>
+    <a href="${resourceUrl}${perizinan.tandaDaftarUrl}" target="_blank" class="btn btn-xs btn-block btn-success">
+      Unduh Tanda Daftar
+    </a>
+    <button onclick="downloadOSSIzin(${perizinan.id}, '${apiUrl}', '${resourceUrl}', '${token}', '${loaderElementSelector}')" class="btn btn-xs btn-block btn-primary">
+      Unduh Izin OSS
+    </button>`;
+}
+function permohonanDataTableSource(json, isViewOnly, showAlasanDikembalikan = false) {
+    let responseData = json.data;
+    let data = [];
+    for (let i = 0; i < responseData.length; i++) {
+        let action = permohonanAction(responseData[i], isViewOnly, showAlasanDikembalikan);
+        data.push(setDataTablePermohonanRow(responseData[i], action));
+    }
+    return data;
+}
+function perizinanDataTableSource(json, apiUrl, resourceUrl, token, loaderElementSelector) {
+    let responseData = json.data;
+    let data = [];
+    for (let i = 0; i < responseData.length; i++) {
+        let action = perizinanAction(apiUrl, resourceUrl, token, responseData[i], loaderElementSelector);
+        data.push(setDataTablePerizinanRow(responseData[i], action));
+    }
+    return data;
 }
 function loadDataTablePerizinan(phpApiUrl, apiUrl, resourceUrl, token, dataTableElementSelector, loaderElementSelector) {
     $(dataTableElementSelector)
@@ -282,13 +371,7 @@ function loadDataTablePerizinan(phpApiUrl, apiUrl, resourceUrl, token, dataTable
             url: phpApiUrl,
             method: "POST",
             dataSrc: function (json) {
-                var responseData = json.data;
-                var data = [];
-                for (var i = 0; i < responseData.length; i++) {
-                    var action = perizinanAction(apiUrl, resourceUrl, token, responseData[i], loaderElementSelector);
-                    data.push(setDataTablePerizinanRow(responseData[i], action));
-                }
-                return data;
+                return perizinanDataTableSource(json, apiUrl, resourceUrl, token, loaderElementSelector);
             },
             data: function (requestData) {
                 return configureDataTablePerizinanRequest(requestData);
@@ -296,8 +379,19 @@ function loadDataTablePerizinan(phpApiUrl, apiUrl, resourceUrl, token, dataTable
         }
     });
 }
+function setDataTablePermohonanRow(data, action) {
+    let row = [
+        data.permohonanNumber,
+        data.domain,
+        data.straNumber,
+        moment(data.straExpiry).format("YYYY-MM-DD"),
+        data.pemohonStatusName,
+        action
+    ];
+    return row;
+}
 function setDataTablePerizinanRow(data, action) {
-    var row = [
+    let row = [
         data.perizinanNumber,
         data.domain,
         moment(data.issuedAt).format("YYYY-MM-DD"),
@@ -307,13 +401,13 @@ function setDataTablePerizinanRow(data, action) {
     return row;
 }
 function configureDataTablePerizinanRequest(request) {
-    var sortFields = ['perizinanNumber', 'domain', 'issuedAt', 'expiredAt'];
+    let sortFields = ['perizinanNumber', 'domain', 'issuedAt', 'expiredAt'];
     return configureDataTableAjaxRequest('Perizinan', 'perizinanNumber', 1, sortFields, request);
 }
 function configureDataTableAjaxRequest(moduleName, searchedFields, numberOfSearchFields, sortFields, requestData) {
-    var colNumber = requestData.order[0].column;
-    var sortDirection = requestData.order[0].dir;
-    var data = {
+    let colNumber = requestData.order[0].column;
+    let sortDirection = requestData.order[0].dir;
+    let data = {
         fpage: (requestData.start + requestData.length) / requestData.length,
         frows: requestData.length,
         fsearch: requestData.search.value,
@@ -326,10 +420,10 @@ function configureDataTableAjaxRequest(moduleName, searchedFields, numberOfSearc
     return data;
 }
 function downloadOSSIzin(id, apiUrl, resourceUrl, token, loaderElementSelector) {
-    var request = loadData(apiUrl + "/api/v0.1/Perizinan/DownloadFileIzinOss?perizinanId=" + id, token, loaderElementSelector);
+    let request = loadData(`${apiUrl}/api/v0.1/Perizinan/DownloadFileIzinOss?perizinanId=${id}`, token, loaderElementSelector);
     request.done(function (data, textStatus, xhr) {
         displayRequestSuccessToastr(xhr, "Download Izin OSS", "Download berhasil", "Download gagal");
-        window.open("" + resourceUrl + data.value, "_blank");
+        window.open(`${resourceUrl}${data.value}`, "_blank");
     });
     request.fail(function (xhr, textStatus, errorThrown) {
         displayRequestErrorToastr(xhr, "Download Izin OSS", "Download gagal");
@@ -345,14 +439,14 @@ function displayRequestSuccessToastr(xhr, toastrTitle, successMessage, errorMess
     }
 }
 function displayRequestErrorToastr(xhr, title, message) {
-    displayErrorToastr(title, message + " - status: " + xhr.status);
+    displayErrorToastr(title, `${message} - status: ${xhr.status}`);
 }
 function displaySuccessToastr(title, message) {
-    var options = setToastrOptions();
+    let options = setToastrOptions();
     toastr.success(message, title, options);
 }
 function displayErrorToastr(title, message) {
-    var options = setToastrOptions();
+    let options = setToastrOptions();
     toastr.error(message, title, options);
 }
 function routeOnRequestSuccess(xhr, routingFunction) {
@@ -361,6 +455,6 @@ function routeOnRequestSuccess(xhr, routingFunction) {
     }
 }
 function getFormData(formElementSelector) {
-    var formElement = document.querySelector(formElementSelector);
+    let formElement = document.querySelector(formElementSelector);
     return Object.fromEntries(new FormData(formElement).entries());
 }
