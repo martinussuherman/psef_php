@@ -493,6 +493,23 @@ function perizinanAction(
     </button>`;
 }
 
+function perizinanDataTableSource(
+  json: PhpApiResponse,
+  apiUrl: string,
+  resourceUrl: string,
+  token: string,
+  loaderElementSelector?: string) {
+  let responseData = json.data as apiv01["schemas"]["PerizinanViewIEnumerableODataValue"]["value"];
+  let data = [];
+
+  for (let i = 0; i < responseData!.length; i++) {
+    let action = perizinanAction(apiUrl, resourceUrl, token, responseData![i], loaderElementSelector);
+    data.push(setDataTablePerizinanRow(responseData![i], action));
+  }
+
+  return data;
+}
+
 function loadDataTablePerizinan(
   phpApiUrl: string,
   apiUrl: string,
