@@ -540,6 +540,19 @@ function loadDataTablePerizinan(
     });
 }
 
+function setDataTablePermohonanRow(data: PermohonanView, action: string) {
+  let row = [
+    data.permohonanNumber,
+    data.domain,
+    data.straNumber,
+    moment(data.straExpiry).format("YYYY-MM-DD"),
+    data.pemohonStatusName,
+    action
+  ];
+
+  return row;
+}
+
 function setDataTablePerizinanRow(data: PerizinanView, action: string) {
   let row = [
     data.perizinanNumber,
