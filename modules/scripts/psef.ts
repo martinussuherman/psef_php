@@ -493,6 +493,21 @@ function perizinanAction(
     </button>`;
 }
 
+function permohonanDataTableSource(
+  json: PhpApiResponse,
+  isViewOnly: boolean,
+  showAlasanDikembalikan: boolean = false) {
+  let responseData = json.data as apiv01["schemas"]["PermohonanPemohonIEnumerableODataValue"]["value"];
+  let data = [];
+
+  for (let i = 0; i < responseData!.length; i++) {
+    let action = permohonanAction(responseData![i], isViewOnly, showAlasanDikembalikan);
+    data.push(setDataTablePermohonanRow(responseData![i], action));
+  }
+
+  return data;
+}
+
 function perizinanDataTableSource(
   json: PhpApiResponse,
   apiUrl: string,
