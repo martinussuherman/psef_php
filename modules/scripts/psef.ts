@@ -531,15 +531,7 @@ function loadDataTablePerizinan(
         url: phpApiUrl,
         method: "POST",
         dataSrc: function (json: PhpApiResponse) {
-          let responseData = json.data as apiv01["schemas"]["PerizinanViewIEnumerableODataValue"]["value"];
-          let data = [];
-
-          for (let i = 0; i < responseData!.length; i++) {
-            let action = perizinanAction(apiUrl, resourceUrl, token, responseData![i], loaderElementSelector);
-            data.push(setDataTablePerizinanRow(responseData![i], action));
-          }
-
-          return data;
+          return perizinanDataTableSource(json, apiUrl, resourceUrl, token, loaderElementSelector);
         },
         data: function (requestData: DataTables.AjaxDataRequest) {
           return configureDataTablePerizinanRequest(requestData);
