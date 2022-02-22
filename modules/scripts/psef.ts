@@ -7,8 +7,11 @@ import { components as apiv01 } from "./psef-api-v01";
 type HomepageNews = apiv1["schemas"]["HomepageNews"];
 type OssFullInfo = apiv01["schemas"]["OssFullInfo"];
 type PerizinanView = apiv01["schemas"]["PerizinanView"];
+type PermohonanView = apiv01["schemas"]["Permohonan"];
 type PhpApiResponseArray =
   apiv01["schemas"]["PemohonUserInfoIEnumerableODataValue"] |
+  apiv01["schemas"]["PermohonanIEnumerableODataValue"] |
+  apiv01["schemas"]["PermohonanPemohonIEnumerableODataValue"] |
   apiv01["schemas"]["PerizinanViewIEnumerableODataValue"];
 type PhpApiResponse = {
   rows: PhpApiResponseArray["value"],
@@ -442,6 +445,86 @@ function dataTableODataSort(data: DataTables.AjaxDataRequest) {
   return order.join(",");
 }
 
+function permohonanAction(permohonan: PermohonanView, isViewOnly: boolean, showAlasanDikembalikan: boolean) {
+  if (isViewOnly) {
+    return `
+      <td>
+        <button onclick="permohonanCurrentUser(${permohonan.id}, false, ${showAlasanDikembalikan})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">
+          Lihat Detail Data
+        </button>
+      </td>`;
+  }
+
+  return `
+    <td>
+      <button onclick="permohonanCurrentUser(${permohonan.id}, true, ${showAlasanDikembalikan})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-info">
+        Lihat Detail Data
+      </button>
+      <button onclick="edit_data_permohonan(${permohonan.id})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-primary">
+        Ubah Permohonan
+      </button>
+      <button onclick="edit_data_apotek(${permohonan.id}, ${permohonan.permohonanNumber})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-secondary">
+        Ubah Apotek
+      </button>
+      <button onclick="edit_data_rs(${permohonan.id}, ${permohonan.permohonanNumber})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-danger">
+        Ubah Rumah Sakit
+      </button>
+      <button onclick="ajukan_permohonan(${permohonan.id})" type="button" class="btn btn-xs btn-block waves-effect waves-light btn-success">
+        Ajukan Permohonan
+      </button>
+    </td>`;
+}
+
+function perizinanAction(
+  apiUrl: string,
+  resourceUrl: string,
+  token: string,
+  perizinan?: PerizinanView,
+  loaderElementSelector?: string) {
+  return `
+    <button onclick="view_data('${perizinan!.permohonanId}', '${perizinan!.id}')" class="btn btn-xs btn-block btn-info">
+      Lihat Detail Data
+    </button>
+    <a href="${resourceUrl}${perizinan!.tandaDaftarUrl}" target="_blank" class="btn btn-xs btn-block btn-success">
+      Unduh Tanda Daftar
+    </a>
+    <button onclick="downloadOSSIzin(${perizinan!.id}, '${apiUrl}', '${resourceUrl}', '${token}', '${loaderElementSelector}')" class="btn btn-xs btn-block btn-primary">
+      Unduh Izin OSS
+    </button>`;
+}
+
+function permohonanDataTableSource(
+  json: PhpApiResponse,
+  isViewOnly: boolean,
+  showAlasanDikembalikan: boolean = false) {
+  let responseData = json.data as apiv01["schemas"]["PermohonanPemohonIEnumerableODataValue"]["value"];
+  let data = [];
+
+  for (let i = 0; i < responseData!.length; i++) {
+    let action = permohonanAction(responseData![i], isViewOnly, showAlasanDikembalikan);
+    data.push(setDataTablePermohonanRow(responseData![i], action));
+  }
+
+  return data;
+}
+
+function perizinanDataTableSource(
+  json: PhpApiResponse,
+  apiUrl: string,
+  resourceUrl: string,
+  token: string,
+  loaderElementSelector?: string) {
+  let responseData = json.data as apiv01["schemas"]["PerizinanViewIEnumerableODataValue"]["value"];
+  let data = [];
+
+  for (let i = 0; i < responseData!.length; i++) {
+    let action = perizinanAction(apiUrl, resourceUrl, token, responseData![i], loaderElementSelector);
+    data.push(setDataTablePerizinanRow(responseData![i], action));
+  }
+
+  return data;
+}
+
 function loadDataTablePerizinan(
   phpApiUrl: string,
   apiUrl: string,
@@ -463,31 +546,26 @@ function loadDataTablePerizinan(
         url: phpApiUrl,
         method: "POST",
         dataSrc: function (json: PhpApiResponse) {
-          let responseData = json.data as apiv01["schemas"]["PerizinanViewIEnumerableODataValue"]["value"];
-          let data = [];
-
-          for (let i = 0; i < responseData!.length; i++) {
-            let action = `
-                <button onclick="view_data('${responseData![i].permohonanId}', '${responseData![i].id}')" class="btn btn-xs btn-block btn-info">
-                  Lihat Detail Data
-                </button>
-                <a href="${resourceUrl}${responseData![i].tandaDaftarUrl}" target="_blank" class="btn btn-xs btn-block btn-success">
-                  Unduh Tanda Daftar
-                </a>
-                <button onclick="downloadOSSIzin(${responseData![i].id}, '${apiUrl}', '${resourceUrl}', '${token}', '${loaderElementSelector}')" class="btn btn-xs btn-block btn-primary">
-                  Unduh Izin OSS
-                </button>`;
-
-            data.push(setDataTablePerizinanRow(responseData![i], action));
-          }
-
-          return data;
+          return perizinanDataTableSource(json, apiUrl, resourceUrl, token, loaderElementSelector);
         },
         data: function (requestData: DataTables.AjaxDataRequest) {
           return configureDataTablePerizinanRequest(requestData);
         }
       }
     });
+}
+
+function setDataTablePermohonanRow(data: PermohonanView, action: string) {
+  let row = [
+    data.permohonanNumber,
+    data.domain,
+    data.straNumber,
+    moment(data.straExpiry).format("YYYY-MM-DD"),
+    data.pemohonStatusName,
+    action
+  ];
+
+  return row;
 }
 
 function setDataTablePerizinanRow(data: PerizinanView, action: string) {
