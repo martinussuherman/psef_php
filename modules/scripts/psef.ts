@@ -449,6 +449,24 @@ function dataTableODataSort(data: DataTables.AjaxDataRequest) {
   return order.join(",");
 }
 
+function savePermohonanSub(
+  apiUrl: string,
+  token: string,
+  dataPermohonan: PermohonanView,
+  data?: PermohonanSub[]
+) {
+  if (data == undefined) {
+    return;
+  }
+
+  data.forEach(element => {
+    element.permohonanId = dataPermohonan.id;
+    delete element.iddetail;
+  });
+
+  return submitFormData(apiUrl, "POST", token, JSON.stringify(data));
+}
+
 function permohonanAction(permohonan: PermohonanView, isViewOnly: boolean, showAlasanDikembalikan: boolean) {
   if (isViewOnly) {
     return `
