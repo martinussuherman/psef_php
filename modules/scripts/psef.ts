@@ -25,6 +25,10 @@ type ODataStringResponse = {
   "@odata.context": string,
   value: string
 };
+type PermohonanSub = {
+  permohonanId?: number,
+  iddetail?: string
+};
 type VoidFunction = () => void;
 
 // Reference: https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
@@ -443,6 +447,24 @@ function dataTableODataSelect(data: DataTables.AjaxDataRequest) {
 function dataTableODataSort(data: DataTables.AjaxDataRequest) {
   let order = data.order.map(item => (`${data.columns[item.column].data} ${item.dir}`));
   return order.join(",");
+}
+
+function savePermohonanSub(
+  apiUrl: string,
+  token: string,
+  dataPermohonan: PermohonanView,
+  data?: PermohonanSub[]
+) {
+  if (data == undefined) {
+    return;
+  }
+
+  data.forEach(element => {
+    element.permohonanId = dataPermohonan.id;
+    delete element.iddetail;
+  });
+
+  return submitFormData(apiUrl, "POST", token, JSON.stringify(data));
 }
 
 function permohonanAction(permohonan: PermohonanView, isViewOnly: boolean, showAlasanDikembalikan: boolean) {

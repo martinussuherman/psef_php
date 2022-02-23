@@ -1,6 +1,3 @@
-import moment from "moment";
-import { Quill } from "quill";
-import Swal from "sweetalert2";
 // Reference: https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
 function setInputFilter(textbox, inputFilter) {
     ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function (event) {
@@ -297,6 +294,16 @@ function dataTableODataSelect(data) {
 function dataTableODataSort(data) {
     let order = data.order.map(item => (`${data.columns[item.column].data} ${item.dir}`));
     return order.join(",");
+}
+function savePermohonanSub(apiUrl, token, dataPermohonan, data) {
+    if (data == undefined) {
+        return;
+    }
+    data.forEach(element => {
+        element.permohonanId = dataPermohonan.id;
+        delete element.iddetail;
+    });
+    return submitFormData(apiUrl, "POST", token, JSON.stringify(data));
 }
 function permohonanAction(permohonan, isViewOnly, showAlasanDikembalikan) {
     if (isViewOnly) {
