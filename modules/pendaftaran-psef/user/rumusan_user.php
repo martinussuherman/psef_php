@@ -321,6 +321,57 @@ include('edit_permohonan_script.php');
         console.log('Error in Operation');
       }
     });
+  }
 
+  function savePermohonan(event) {
+    let form = event.target;
+    form.classList.add('was-validated');
+    event.preventDefault();
+
+    if (form.checkValidity() === false) {
+      displayErrorToastr("Isian Permohonan", "Isian Permohonan belum lengkap, mohon cek kembali");
+      event.stopPropagation();
+      scrollToTop();
+      return false;
+    }
+
+    let data = getFormData("#add-data-new");
+    data.typeId = 1;
+
+    let dataApotek = data.data != "" ? JSON.parse(data.data)?.detail : undefined;
+    let dataKlinik = data_klinik.data != "" ? JSON.parse(data.data_klinik)?.detail : undefined;
+    let dataRumahSakit = data.data_rs != "" ? JSON.parse(data.data_rs)?.detail : undefined;
+
+    delete data.data;
+    delete data.data_klinik;
+    delete data.data_rs;
+
+    let url = `${apiServerUrl}/api/v0.1/PermohonanCurrentUser`;
+    let request = submitFormData(url, "POST", accesstoken, JSON.stringify(data), ".preloader");
+
+    request.done(
+      function(dataPermohonan, textStatus, xhr) {
+        savePermohonanSub(
+          `${apiServerUrl}/api/v0.1/PermohonanApotek`,
+          accesstoken,
+          dataPermohonan,
+          dataApotek);
+
+        savePermohonanSub(
+          `${apiServerUrl}/api/v0.1/PermohonanKlinik`,
+          accesstoken,
+          dataPermohonan,
+          dataKlinik);
+
+        savePermohonanSub(
+          `${apiServerUrl}/api/v0.1/PermohonanRumahSakit`,
+          accesstoken,
+          dataPermohonan,
+          dataRumahSakit);
+
+        displayRequestSuccessToastr(xhr, "Simpan Permohonan", "Permohonan berhasil disimpan", "Permohonan gagal disimpan");
+        viewRouting();
+      }
+    );
   }
 </script>
