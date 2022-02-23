@@ -25,6 +25,10 @@ type ODataStringResponse = {
   "@odata.context": string,
   value: string
 };
+type PermohonanSub = {
+  permohonanId?: number,
+  iddetail?: string
+};
 type VoidFunction = () => void;
 
 // Reference: https://stackoverflow.com/questions/469357/html-text-input-allow-only-numeric-input
