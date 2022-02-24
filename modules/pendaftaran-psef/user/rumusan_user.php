@@ -339,7 +339,7 @@ include('edit_permohonan_script.php');
     data.typeId = 1;
 
     let dataApotek = data.data != "" ? JSON.parse(data.data)?.detail : undefined;
-    let dataKlinik = data_klinik.data != "" ? JSON.parse(data.data_klinik)?.detail : undefined;
+    let dataKlinik = data.data_klinik != "" ? JSON.parse(data.data_klinik)?.detail : undefined;
     let dataRumahSakit = data.data_rs != "" ? JSON.parse(data.data_rs)?.detail : undefined;
 
     delete data.data;
