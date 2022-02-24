@@ -373,5 +373,11 @@ include('edit_permohonan_script.php');
         viewRouting();
       }
     );
+
+    request.fail(
+      function (xhr, textStatus, errorThrown) {
+        displayRequestErrorToastr(xhr, "Simpan Permohonan", "Permohonan gagal disimpan");
+      }
+    );
   }
 </script>
