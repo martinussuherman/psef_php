@@ -55,29 +55,20 @@
     data.typeId = 1;
     data.pemohonId = parseInt(data.pemohonId)
     data.id = parseInt(data.id)
-    let id_permohonan = data.id
+    let url = `${apiServerUrl}/api/v0.1/PermohonanCurrentUser(${data.id})`;
+    let request = submitFormData(url, "PATCH", accesstoken, JSON.stringify(data), ".preloader");
 
-    $.ajax({
-      url: url_api_x + 'PermohonanCurrentUser(' + id_permohonan + ')',
-      type: 'PATCH',
-      beforeSend: function (xhr) {
-        xhr.setRequestHeader('Authorization', 'Bearer ' + accesstoken + '');
-      },
-      data: JSON.stringify(data),
-      contentType: 'application/json',
-      success: function (data, textStatus, xhr) {
-        if (xhr.status == '204' || xhr.status == '200') {
-          viewRouting();
-          toastr.success("Memperbarui Permohonan", 'Berhasil!');
-        } else {
-          toastr.error("Memperbarui Permohonan", 'Gagal!');
-        }
-      },
-      error: function (xhr, textStatus, errorThrown) {
-        console.log('Error in Operation');
+    request.done(
+      function (data, textStatus, xhr) {
+        displayRequestSuccessToastr(xhr, "Simpan Permohonan", "Permohonan berhasil disimpan", "Permohonan gagal disimpan");
+        viewRouting();
       }
-    });
-
+    );
+    request.fail(
+      function (xhr, textStatus, errorThrown) {
+        displayRequestErrorToastr(xhr, "Simpan Permohonan", "Permohonan gagal disimpan");
+      }
+    );
   }
 
   function ajukan_permohonan(id) {
