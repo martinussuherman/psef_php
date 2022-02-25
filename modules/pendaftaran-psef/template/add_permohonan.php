@@ -4,7 +4,7 @@ $idIzin = $_SESSION["ssoIdIzin"] ?? "";
 <!-- Template for add -->
 <script id="add-data" type="text/x-handlebars-template">
   <h4 class="card-title">Tambah Permohonan</h4>
-    <form class="m-t-30 needs-validation" id="add-data-new" onsubmit="data_save(event)" novalidate>
+    <form class="m-t-30 needs-validation" id="add-data-new" onsubmit="savePermohonan(event)" novalidate>
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">

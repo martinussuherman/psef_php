@@ -180,149 +180,6 @@ include('edit_permohonan_script.php');
     })
   }
 
-  function data_save(event) {
-    let form = event.target;
-    form.classList.add('was-validated');
-    event.preventDefault();
-
-    if (form.checkValidity() === false) {
-      event.stopPropagation();
-      scrollToTop();
-      return false;
-    }
-
-    var data = $('#add-data-new').serializeFormJSON();
-    data.typeId = 1;
-    console.log(data);
-
-    let detail_data_save
-    let detail_data_save_klinik
-    let detail_data_save_rs
-
-    if (data.data != '') {
-
-      if (data.data != '{"detail":[]}') {
-        detail_data_save = JSON.parse(data.data)
-      }
-    }
-
-    if (data.data_klinik != '') {
-      if (data.data_klinik != '{"detail":[]}') {
-        detail_data_save_klinik = JSON.parse(data.data_klinik)
-      }
-    }
-
-    if (data.data_rs != '') {
-      if (data.data_rs != '{"detail":[]}') {
-        detail_data_save_rs = JSON.parse(data.data_rs)
-      }
-    }
-
-    delete data.data
-    delete data.data_klinik
-    delete data.data_rs
-
-    $.ajax({
-      url: `${apiServerUrl}/api/v0.1/PermohonanCurrentUser`,
-      type: 'POST',
-      beforeSend: function(xhr) {
-        setAuthHeader(xhr, accesstoken);
-      },
-      data: JSON.stringify(data),
-      contentType: 'application/json',
-      success: function(datax, textStatus, xhr) {
-        if (detail_data_save !== undefined) {
-          $.each(detail_data_save.detail, function(indexa, valuea) {
-            detail_data_save.detail[indexa].permohonanId = datax.id;
-            delete detail_data_save.detail[indexa].iddetail;
-          });
-
-          detail_data_save.apotek = detail_data_save.detail;
-          delete detail_data_save.detail;
-          detail_data_save.permohonanId = datax.id;
-
-          $.ajax({
-            url: `${apiServerUrl}/api/v0.1/PermohonanApotek`,
-            type: 'POST',
-            beforeSend: function(xhr) {
-              setAuthHeader(xhr, accesstoken);
-            },
-            data: JSON.stringify(detail_data_save),
-            contentType: 'application/json',
-            success: function(datac, textStatus, xhrx) {
-            },
-            error: function(xhr, textStatus, errorThrown) {
-              console.log('Error in Operation');
-            }
-          });
-        }
-
-        if (detail_data_save_klinik !== undefined) {
-          $.each(detail_data_save_klinik.detail, function(indexa, valuea) {
-            detail_data_save_klinik.detail[indexa].permohonanId = datax.id;
-            delete detail_data_save_klinik.detail[indexa].iddetail;
-          });
-
-          detail_data_save_klinik.klinik = detail_data_save_klinik.detail;
-          delete detail_data_save_klinik.detail;
-          detail_data_save_klinik.permohonanId = datax.id;
-
-          $.ajax({
-            url: `${apiServerUrl}/api/v0.1/PermohonanKlinik`,
-            type: 'POST',
-            beforeSend: function(xhr) {
-              setAuthHeader(xhr, accesstoken);
-            },
-            data: JSON.stringify(detail_data_save_klinik),
-            contentType: 'application/json',
-            success: function(datac, textStatus, xhrx) {
-            },
-            error: function(xhr, textStatus, errorThrown) {
-              console.log('Error in Operation');
-            }
-          });
-        }
-
-        if (detail_data_save_rs !== undefined) {
-          $.each(detail_data_save_rs.detail, function(indexa, valuea) {
-            detail_data_save_rs.detail[indexa].permohonanId = datax.id;
-            delete detail_data_save_rs.detail[indexa].iddetail;
-          });
-
-          detail_data_save_rs.rumahSakit = detail_data_save_rs.detail;
-          delete detail_data_save_rs.detail;
-          detail_data_save_rs.permohonanId = datax.id;
-
-          $.ajax({
-            url: `${apiServerUrl}/api/v0.1/PermohonanRumahSakit`,
-            type: 'POST',
-            beforeSend: function(xhr) {
-              setAuthHeader(xhr, accesstoken);
-            },
-            data: JSON.stringify(detail_data_save_rs),
-            contentType: 'application/json',
-            success: function(datac, textStatus, xhrx) {
-            },
-            error: function(xhr, textStatus, errorThrown) {
-              console.log('Error in Operation');
-            }
-          });
-
-          // submitFormData(
-          //   `${apiServerUrl}/api/v0.1/PermohonanRumahSakit`,
-          //   "POST",
-          //   accesstoken,
-          //   JSON.stringify(detail_data_save_rs));
-        }
-
-        viewRouting();
-      },
-      error: function(xhr, textStatus, errorThrown) {
-        console.log('Error in Operation');
-      }
-    });
-  }
-
   function savePermohonan(event) {
     let form = event.target;
     form.classList.add('was-validated');
@@ -339,7 +196,7 @@ include('edit_permohonan_script.php');
     data.typeId = 1;
 
     let dataApotek = data.data != "" ? JSON.parse(data.data)?.detail : undefined;
-    let dataKlinik = data_klinik.data != "" ? JSON.parse(data.data_klinik)?.detail : undefined;
+    let dataKlinik = data.data_klinik != "" ? JSON.parse(data.data_klinik)?.detail : undefined;
     let dataRumahSakit = data.data_rs != "" ? JSON.parse(data.data_rs)?.detail : undefined;
 
     delete data.data;
@@ -371,6 +228,12 @@ include('edit_permohonan_script.php');
 
         displayRequestSuccessToastr(xhr, "Simpan Permohonan", "Permohonan berhasil disimpan", "Permohonan gagal disimpan");
         viewRouting();
+      }
+    );
+
+    request.fail(
+      function (xhr, textStatus, errorThrown) {
+        displayRequestErrorToastr(xhr, "Simpan Permohonan", "Permohonan gagal disimpan");
       }
     );
   }
