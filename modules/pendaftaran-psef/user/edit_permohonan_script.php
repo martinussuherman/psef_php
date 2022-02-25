@@ -45,6 +45,7 @@
     event.preventDefault();
 
     if (form.checkValidity() === false) {
+      displayErrorToastr("Isian Permohonan", "Isian Permohonan belum lengkap, mohon cek kembali");
       event.stopPropagation();
       scrollToTop();
       return false;
