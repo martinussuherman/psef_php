@@ -51,7 +51,7 @@
       return false;
     }
 
-    var data = $('#data-update').serializeFormJSON();
+    let data = getFormData("#data-update");
     data.typeId = 1;
     data.pemohonId = parseInt(data.pemohonId)
     data.id = parseInt(data.id)
