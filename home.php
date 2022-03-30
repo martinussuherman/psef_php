@@ -318,24 +318,12 @@ function displayMobileMenu($settingData)
   ?>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav mx-5">
-      <li class="nav-item mt-5 mb-3">
-        <a href="/login" class="btn btn-rounded btn-block btn-info">
-          Masuk
-        </a>
-      </li>
-
       <?php
       if (!isset($_SESSION["ssoSuccess"])) {
       ?>
-        <li class="nav-item mb-3">
-          <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/Register" class="btn btn-rounded btn-block btn-success" target="_blank">
-            Daftar
-          </a>
-        </li>
-
-        <li class="nav-item mb-3">
-          <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/ForgotPassword" class="text-white" target="_blank">
-            <i class="fa fa-lock m-r-5"></i> Lupa Kata Sandi?
+        <li class="nav-item mt-5 mb-3">
+          <a href="/login" class="btn btn-rounded btn-block btn-info">
+            Masuk
           </a>
         </li>
       <?php
@@ -362,20 +350,13 @@ function displayDesktopLoginLink($settingData)
     <img src="/assets/internal/logo-psef-white.png" alt="logo" width="60%" />
   </div>
 
-  <a href="/login" class="btn btn-block btn-lg btn-rounded btn-primary mt-3">Masuk</a>
-
   <?php
-  if (isset($_SESSION["ssoSuccess"])) {
+  if (!isset($_SESSION["ssoSuccess"])) {
     return;
   }
   ?>
 
-  <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/Register" class="btn btn-block btn-lg btn-rounded btn-success mb-2" target="_blank">Daftar</a>
+  <a href="/login" class="btn btn-block btn-lg btn-rounded btn-primary mt-3">Masuk</a>
 
-  <div class="text-right mb-3">
-    <a href="<?php echo $settingData->identity->identityServerUrl; ?>/Account/ForgotPassword" class="text-white" target="_blank">
-      <i class="fa fa-lock m-r-5"></i> Lupa Kata Sandi?
-    </a>
-  </div>
 <?php
 }
