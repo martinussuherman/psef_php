@@ -319,7 +319,7 @@ function displayMobileMenu($settingData)
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav mx-5">
       <?php
-      if (!isset($_SESSION["ssoSuccess"])) {
+      if (isset($_SESSION["ssoSuccess"]) && $_SESSION["ssoSuccess"] == true) {
       ?>
         <li class="nav-item mt-5 mb-3">
           <a href="/login" class="btn btn-rounded btn-block btn-info">
@@ -351,7 +351,7 @@ function displayDesktopLoginLink($settingData)
   </div>
 
   <?php
-  if (!isset($_SESSION["ssoSuccess"])) {
+  if (!isset($_SESSION["ssoSuccess"]) || $_SESSION["ssoSuccess"] == false) {
     return;
   }
   ?>
