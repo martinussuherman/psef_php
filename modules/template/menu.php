@@ -8,13 +8,13 @@ function displayMenuPemohon($role)
     case "Psef.Verifikator":
       $route = "routing('pemohon_verif')";
       break;
-    case "Psef.Kasi":
+    case "Psef.Supervisor":
       $route = "routing('pemohon_kasi')";
       break;
-    case "Psef.Kasubdit":
+    case "Psef.Timja":
       $route = "routing('pemohon_kasubdit')";
       break;
-    case "Psef.Diryanfar":
+    case "Psef.Dirpenyanfar":
       $route = "routing('pemohon_diryanfar')";
       break;
     case "Psef.Dirjen":
@@ -64,15 +64,15 @@ function displayMenuPermohonan($role)
       displayMenuPermohonanPendingSemua("pending_verif", "semua_verif");
     }
 
-    if ($role == "Psef.Kasi") {
+    if ($role == "Psef.Supervisor") {
       displayMenuPermohonanPendingSemua("pending_kasi", "semua_kasi");
     }
 
-    if ($role == "Psef.Kasubdit") {
+    if ($role == "Psef.Timja") {
       displayMenuPermohonanPendingSemua("pending_kasubdit", "semua_kasubdit");
     }
 
-    if ($role == "Psef.Diryanfar") {
+    if ($role == "Psef.Dirpenyanfar") {
       displayMenuPermohonanPendingSemua("pending_diryanfar", "semua_diryanfar");
     }
 
@@ -149,9 +149,9 @@ function displayMenuPerizinan($role)
 
   switch ($role) {
     case "Psef.Verifikator":
-    case "Psef.Kasi":
-    case "Psef.Kasubdit":
-    case "Psef.Diryanfar":
+    case "Psef.Supervisor":
+    case "Psef.Timja":
+    case "Psef.Dirpenyanfar":
     case "Psef.Dirjen":
     case "Psef.ValidatorSertifikat":
     case "Psef.Admin":
