@@ -140,15 +140,15 @@ if ($_SESSION["role"] == "") {
           cek_pending_permohonan('VerifikatorPendingTotal', 'pending_verif', 'Verifikator');
           break;
 
-        case 'Psef.Kasi':
+        case 'Psef.Supervisor':
           cek_pending_permohonan('KepalaSeksiPendingTotal', 'pending_kasi', 'KepalaSeksi');
           break;
 
-        case 'Psef.Kasubdit':
+        case 'Psef.Timja':
           cek_pending_permohonan('KepalaSubDirektoratPendingTotal', 'pending_kasubdit', 'KepalaSubDirektorat');
           break;
 
-        case 'Psef.Diryanfar':
+        case 'Psef.Dirpenyanfar':
           cek_pending_permohonan('DirekturPelayananFarmasiPendingTotal', 'pending_diryanfar', 'DirekturPelayananFarmasi');
           break;
 
