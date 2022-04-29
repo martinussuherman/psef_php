@@ -61,6 +61,14 @@ displayHeader();
 
                   <hr />
 
+                  <div class="jumbotron text-center">
+                    <h1 class="text-danger">
+                      PENGUMUMAN: PENUTUPAN SEMENTARA PERIZINAN PSEF
+                    </h1>
+
+                    <img src="/assets/internal/penutupan-sementara-perizinan-psef.jpg"/>
+                  </div>
+
                   <div class="jumbotron text-center" style="background-image: url(../assets/images/bg2.jpg);">
                     <h1>Selamat Datang di Sistem PSEF</h1>
                     <hr />
