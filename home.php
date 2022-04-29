@@ -66,7 +66,7 @@ displayHeader();
                       PENGUMUMAN: PENUTUPAN SEMENTARA PERIZINAN PSEF
                     </h1>
 
-                    <img src="/assets/internal/penutupan-sementara-perizinan-psef.jpg"/>
+                    <img src="/assets/internal/penutupan-sementara-perizinan-psef.jpg" width="100%"/>
                   </div>
 
                   <div class="jumbotron text-center" style="background-image: url(../assets/images/bg2.jpg);">
