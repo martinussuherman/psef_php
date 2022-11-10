@@ -13,6 +13,6 @@
       "@types/jquery": "^3.5.5",
       "@types/quill": "^2.0.9",
       "@types/toastr": "^2.1.39",
-      "openapi-typescript": "^5.0.0"
+      "openapi-typescript": "^6.0.1"
    }
 }
